@@ -1,0 +1,6 @@
+autoload/
+plugged/
+undo/
+spell/
+.netrwhist
+.DS_Store

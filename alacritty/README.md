@@ -1,0 +1,3 @@
+# Alacritty config
+
+muy pog
