@@ -26,7 +26,7 @@ let g:gruvbox_italics = 0
 let g:onedark_hide_endofbuffer = 1
 
 " Colorscheme
-colorscheme nord " gruvbox8(_hard/_soft), gruvbox-material, onedark, nord
+colorscheme gruvbox8_hard " gruvbox8(_hard/_soft), gruvbox-material, onedark, nord
 
 " Netrw configuration
 let g:netrw_altw = 1

@@ -2,7 +2,7 @@ local lualine = require 'lualine'
 
 local config = {
   options = {
-    theme = 'onedark',
+    theme = 'gruvbox',
 
     -- no arrows in tabline
     section_separators = '',
