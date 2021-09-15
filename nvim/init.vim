@@ -22,15 +22,19 @@ source $HOME/.config/nvim/plugins/treesitter.vim
 let g:gruvbox_material_disable_italic_comment = 1
 let g:everforest_disable_italic_comment = 1
 let g:sonokai_disable_italic_comment = 1
+let g:edge_disable_italic_comment = 1
 let g:gruvbox_italics = 0
 
-" Everforest theme (default: soft, *medium*, hard)
+" Everforest theme (soft, medium(default), hard)
 " let g:everforest_background = 'hard'
 
-" Sonokai theme (*default*, atlantis, andromeda, shusia, maia, espresso)
+" Sonokai theme (default, atlantis, andromeda, shusia, maia, espresso)
 let g:sonokai_style = 'atlantis'
 
-" Colorscheme (gruvbox8[_hard/_soft], gruvbox-material, onedark, nord, sonokai, everforest)
+" Edge style (default, aura, neon)
+let g:edge_style = 'neon'
+
+" Colorscheme (gruvbox8[_hard/_soft], gruvbox-material, nord, sonokai, everforest, edge)
 colorscheme everforest
 
 " Netrw configuration

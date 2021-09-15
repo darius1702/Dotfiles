@@ -8,10 +8,10 @@ call plug#begin('~/.config/nvim/plugged')
 " Color schemes
 Plug 'sainnhe/gruvbox-material'     " gruvbox-material
 Plug 'lifepillar/vim-gruvbox8'      " gruvbox8(_hard/_soft)
-Plug 'joshdick/onedark.vim'         " onedark
 Plug 'arcticicestudio/nord-vim'     " nord
 Plug 'sainnhe/sonokai'              " sonokai
 Plug 'sainnhe/everforest'           " everforest
+Plug 'sainnhe/edge'                 " edge
 "LaTeX
 Plug 'lervag/vimtex'
 " Syntax
