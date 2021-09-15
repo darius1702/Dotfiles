@@ -13,13 +13,18 @@ precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 zstyle ':vcs_info:git:*' formats '[%b] '
 
-PROMPT=$'%B%F{#A7C080}%3~%b %F{#DBBC7F}${vcs_info_msg_0_}%F{#D3C6AA}%(!.#.\u232a)%f'
+# PROMPT=$'%B%F{#A7C080}%3~%b %F{#DBBC7F}${vcs_info_msg_0_}%F{#D3C6AA}%(!.#.\u232a)%f'
+PROMPT=$'%B%F{green}%3~%b %F{yellow}${vcs_info_msg_0_}%F{white}%(!.#.\u232a)%f'
 
 # Make Shift-Tab go to previous completion suggestion
 zmodload zsh/complist
 bindkey -M menuselect '^[[Z' reverse-menu-complete
 
+# No vim bindings in zsh
+bindkey -e
+
 export LANG="en_US.UTF-8"
+export PAGER="nvim -R"
 export MANPAGER="nvim -c 'set ft=man' -"
 export EDITOR=nvim
 export CLICOLOR=1

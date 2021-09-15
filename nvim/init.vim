@@ -34,7 +34,7 @@ let g:sonokai_style = 'atlantis'
 " Edge style (default, aura, neon)
 let g:edge_style = 'neon'
 
-" Colorscheme (gruvbox8[_hard/_soft], gruvbox-material, nord, sonokai, everforest, edge)
+" Colorscheme (gruvbox8[_hard/_soft], nord, gruvbox-material, sonokai, everforest, edge)
 colorscheme everforest
 
 " Netrw configuration
