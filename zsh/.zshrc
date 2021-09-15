@@ -13,7 +13,7 @@ precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 zstyle ':vcs_info:git:*' formats '[%b] '
 
-PROMPT=$'%B%F{#98C379}%3~%b %F{#E5C07B}${vcs_info_msg_0_}%F{#ABB2BF}%(!.#.\u232a)%f'
+PROMPT=$'%B%F{#A7C080}%3~%b %F{#DBBC7F}${vcs_info_msg_0_}%F{#D3C6AA}%(!.#.\u232a)%f'
 
 # Make Shift-Tab go to previous completion suggestion
 zmodload zsh/complist
