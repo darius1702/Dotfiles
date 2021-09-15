@@ -20,13 +20,18 @@ source $HOME/.config/nvim/plugins/treesitter.vim
 
 " Italics are cringe
 let g:gruvbox_material_disable_italic_comment = 1
+let g:everforest_disable_italic_comment = 1
+let g:sonokai_disable_italic_comment = 1
 let g:gruvbox_italics = 0
 
-" Hide end of buffer tilde
-let g:onedark_hide_endofbuffer = 1
+" Everforest theme (default: soft, *medium*, hard)
+" let g:everforest_background = 'hard'
 
-" Colorscheme
-colorscheme gruvbox8_hard " gruvbox8(_hard/_soft), gruvbox-material, onedark, nord
+" Sonokai theme (*default*, atlantis, andromeda, shusia, maia, espresso)
+let g:sonokai_style = 'atlantis'
+
+" Colorscheme (gruvbox8[_hard/_soft], gruvbox-material, onedark, nord, sonokai, everforest)
+colorscheme everforest
 
 " Netrw configuration
 let g:netrw_altw = 1
@@ -38,12 +43,5 @@ au BufEnter * set fo-=c fo-=r fo-=o
 filetype plugin on
 syntax on
 
-" Automatically deletes all trailing whitespace on save
+" Automatically delete all trailing whitespace on save
 autocmd BufWritePre * %s/\s\+$//e
-
-" No background etc
-"hi! Normal ctermbg=NONE guibg=NONE
-"hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
-"hi! link LineNr guibg
-"hi! link SignColumn LineNr
-"hi! EndOfBuffer ctermbg=NONE guibg=NONE

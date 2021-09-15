@@ -10,7 +10,9 @@ Plug 'sainnhe/gruvbox-material'     " gruvbox-material
 Plug 'lifepillar/vim-gruvbox8'      " gruvbox8(_hard/_soft)
 Plug 'joshdick/onedark.vim'         " onedark
 Plug 'arcticicestudio/nord-vim'     " nord
-" LaTeX
+Plug 'sainnhe/sonokai'              " sonokai
+Plug 'sainnhe/everforest'           " everforest
+"LaTeX
 Plug 'lervag/vimtex'
 " Syntax
 Plug 'jiangmiao/auto-pairs'

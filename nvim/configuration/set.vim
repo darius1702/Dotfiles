@@ -1,7 +1,9 @@
 autocmd FileType tex set spell
 set spelllang=de_de,en_us
 
-set termguicolors
+if has('termguicolors')
+    set termguicolors
+endif
 set bg=dark
 set scrolloff=3
 set matchpairs+=<:>

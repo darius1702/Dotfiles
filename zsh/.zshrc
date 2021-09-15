@@ -20,11 +20,12 @@ zmodload zsh/complist
 bindkey -M menuselect '^[[Z' reverse-menu-complete
 
 export LANG="en_US.UTF-8"
-export PAGER=most
+export MANPAGER="nvim -c 'set ft=man' -"
 export EDITOR=nvim
 export CLICOLOR=1
 export HISTFILE="$HOME/.config/zsh/.zsh_history"
 
+# Quick-edit configs
 alias zc="vim ~/.config/zsh/.zshrc"
 alias vc="vim ~/.config/nvim/init.vim"
 
@@ -44,28 +45,13 @@ alias lla="exa --git -la --no-user"
 alias ltr="exa --git -laT"
 alias G="git"
 
+# mkdir and cd, duh
 function cdir {
   mkdir -p $1
   cd $1
 }
 
-function nord {
-  # call when onedark is selected to switch to nord
-  [ -f ~/.config/alacritty/nord.yml ] \
-  && \mv ~/.config/alacritty/alacritty.yml ~/.config/alacritty/onedark.yml \
-  && \mv ~/.config/alacritty/nord.yml ~/.config/alacritty/alacritty.yml \
-  || echo "Already on nord"
-}
-
-function onedark {
-  # call when nord is selected to switch to onedark
-  [ -f ~/.config/alacritty/onedark.yml ] \
-  && \mv ~/.config/alacritty/alacritty.yml ~/.config/alacritty/nord.yml \
-  && \mv ~/.config/alacritty/onedark.yml ~/.config/alacritty/alacritty.yml \
-  || echo "Already on onedark"
-}
-
-# macOS yaa
+# macOS yaa, sometimes maven needs this to find Java 16
 export JAVA_HOME="$HOME/Library/Java/JavaVirtualMachines/openjdk-16.0.1/Contents/Home"
 
 # No underline under filenames in syntax highlighting
@@ -73,4 +59,5 @@ export JAVA_HOME="$HOME/Library/Java/JavaVirtualMachines/openjdk-16.0.1/Contents
 ZSH_HIGHLIGHT_STYLES[path]=none
 ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 
+# Syntax highlighting
 source $HOME/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
