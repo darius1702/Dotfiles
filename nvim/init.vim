@@ -15,10 +15,10 @@ source $HOME/.config/nvim/configuration/plug.vim
 
 " Plugin config files
 source $HOME/.config/nvim/plugins/line.lua
-source $HOME/.config/nvim/plugins/telescope.vim
+source $HOME/.config/nvim/plugins/telescope.lua
 source $HOME/.config/nvim/plugins/treesitter.vim
 
-" Italics are cringe
+" Italics bad
 let g:gruvbox_material_disable_italic_comment = 1
 let g:everforest_disable_italic_comment = 1
 let g:sonokai_disable_italic_comment = 1
@@ -32,7 +32,7 @@ let g:gruvbox_italics = 0
 let g:sonokai_style = 'atlantis'
 
 " Edge style (default, aura, neon)
-let g:edge_style = 'neon'
+" let g:edge_style = 'aura'
 
 " Colorscheme (gruvbox8[_hard/_soft], nord, gruvbox-material, sonokai, everforest, edge)
 colorscheme everforest
