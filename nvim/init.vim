@@ -25,6 +25,12 @@ let g:sonokai_disable_italic_comment = 1
 let g:edge_disable_italic_comment = 1
 let g:gruvbox_italics = 0
 
+" No sign column background
+let g:everforest_sign_column_background = 'none'
+let g:sonokai_sign_column_background = 'none'
+let g:edge_sign_column_background = 'none'
+let g:gruvbox_material_sign_column_background = 'none'
+
 " Everforest theme (soft, medium(default), hard)
 " let g:everforest_background = 'hard'
 
