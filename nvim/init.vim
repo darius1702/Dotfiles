@@ -25,6 +25,12 @@ let g:sonokai_disable_italic_comment = 1
 let g:edge_disable_italic_comment = 1
 let g:gruvbox_italics = 0
 
+" Probably something good
+let g:everforest_better_performance = 1
+let g:sonokai_better_performance = 1
+let g:edge_better_performance = 1
+let g:gruvbox_material_better_performance = 1
+
 " No sign column background
 let g:everforest_sign_column_background = 'none'
 let g:sonokai_sign_column_background = 'none'
