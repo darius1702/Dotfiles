@@ -29,8 +29,7 @@ set langmenu=en_US
 set expandtab
 set shiftwidth=4
 set softtabstop=4
-set autoindent
-set smartindent
+set autoindent smartindent breakindent
 set hidden
 set nobackup
 set nowritebackup
