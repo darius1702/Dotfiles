@@ -63,6 +63,17 @@ function cdir {
   cd $1
 }
 
+function gui {
+    # Remember to update this
+    selection=$(echo "everforest\\nedge\\nnord\\nsonokai_maia\\ngruvbox_material" | fzf --prompt='colors: ')
+
+    # In case fzf returns '' because of <C-c> etc.
+    [ -z $selection ] && selection='everforest'
+
+    # In-place sed heresy
+    sed -i '' "s/colors: \*.*$/colors: \*${selection}/" $HOME/.config/alacritty/alacritty.yml
+}
+
 # macOS yaa, sometimes maven needs this to find Java 16
 export JAVA_HOME="$HOME/Library/Java/JavaVirtualMachines/openjdk-16.0.1/Contents/Home"
 
