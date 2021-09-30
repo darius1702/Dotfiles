@@ -55,7 +55,6 @@ alias la="exa -a"
 alias ll="exa --git -l --no-user"
 alias lla="exa --git -la --no-user"
 alias ltr="exa --git -laT"
-alias G="git"
 
 # mkdir and cd, duh
 function cdir {
