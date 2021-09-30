@@ -32,7 +32,7 @@ bindkey -e
 
 export LANG="en_US.UTF-8"
 export PAGER="nvim -R"
-export MANPAGER="nvim -c 'set ft=man' -"
+export MANPAGER="nvim +Man!"
 export EDITOR=nvim
 export CLICOLOR=1
 export HISTFILE="$HOME/.config/zsh/.zsh_history"
