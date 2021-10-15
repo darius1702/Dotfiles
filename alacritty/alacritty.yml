@@ -168,7 +168,7 @@ schemes:
       white:   '#fdf6e3' # base3
 
 # nord, edge, everforest, gruvbox_material, sonokai_maia, solarized_dark
-colors: *solarized_dark
+colors: *everforest
 
 #env:
   # TERM variable
