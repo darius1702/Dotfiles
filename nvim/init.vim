@@ -41,10 +41,10 @@ let g:gruvbox_material_sign_column_background = 'none'
 " let g:everforest_background = 'hard'
 
 " Sonokai theme (default, atlantis, andromeda, shusia, maia, espresso)
-let g:sonokai_style = 'atlantis'
+let g:sonokai_style = 'maia'
 
 " Edge style (default, aura, neon)
-" let g:edge_style = 'aura'
+let g:edge_style = 'default'
 
 " Colorscheme (gruvbox8[_hard/_soft], nord, gruvbox-material, sonokai, everforest, edge)
 colorscheme everforest
