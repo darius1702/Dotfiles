@@ -77,11 +77,13 @@
     (evil-set-undo-system 'undo-tree))
 
 (use-package evil-collection
+  :diminish evil-collection-unimpaired-mode
   :after magit
   :config
   (evil-collection-init))
 
 (use-package magit
+  :diminish auto-revert-mode
   :after evil
   )
 
