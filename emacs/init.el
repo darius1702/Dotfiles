@@ -87,9 +87,15 @@
   :after evil
   )
 
+(use-package git-gutter
+  :diminish
+  :config
+  (global-git-gutter-mode 1))
+
 ;; collection of themes
 (use-package doom-themes)
 
+;; use smex for ido style M-x
 ;; (require 'ido)
 ;; (ido-mode t)
 
@@ -161,9 +167,9 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    '("47db50ff66e35d3a440485357fb6acb767c100e135ccdf459060407f8baea7b2" "4b0e826f58b39e2ce2829fab8ca999bcdc076dec35187bf4e9a4b938cb5771dc" "234dbb732ef054b109a9e5ee5b499632c63cc24f7c2383a849815dacc1727cb6" "333958c446e920f5c350c4b4016908c130c3b46d590af91e1e7e2a0611f1e8c5" "028c226411a386abc7f7a0fba1a2ebfae5fe69e2a816f54898df41a6a3412bb5" "4f1d2476c290eaa5d9ab9d13b60f2c0f1c8fa7703596fa91b235db7f99a9441b" "f6665ce2f7f56c5ed5d91ed5e7f6acb66ce44d0ef4acfaa3a42c7cfe9e9a9013" "cf922a7a5c514fad79c483048257c5d8f242b21987af0db813d3f0b138dfaf53" "4b6b6b0a44a40f3586f0f641c25340718c7c626cbf163a78b5a399fbe0226659" "0d01e1e300fcafa34ba35d5cf0a21b3b23bc4053d388e352ae6a901994597ab1" "7eea50883f10e5c6ad6f81e153c640b3a288cd8dc1d26e4696f7d40f754cc703" "03e26cd42c3225e6376d7808c946f7bed6382d795618a82c8f3838cd2097a9cc" default))
+ '(initial-frame-alist '((fullscreen . maximized)))
  '(package-selected-packages
-   '(evil-collection undo-tree evil helpful gruber-darker-theme ivy-rich swiper diminish markdown-mode which-key rainbow-delimiters raninbow-delimiters doom-themes exec-path-from-shell latex-preview-pane magit use-package ivy))
- '(initial-frame-alist (quote ((fullscreen . maximized))))
+   '(git-gutter evil-collection undo-tree evil helpful gruber-darker-theme ivy-rich swiper diminish markdown-mode which-key rainbow-delimiters raninbow-delimiters doom-themes exec-path-from-shell latex-preview-pane magit use-package ivy))
  '(show-paren-mode t))
 
 (custom-set-faces
