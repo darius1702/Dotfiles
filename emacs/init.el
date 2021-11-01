@@ -58,10 +58,10 @@
 
 ;; HASKELL
 (use-package haskell-mode) ; is this neccesary, idk
-(add-hook 'haskell-mode-hook 'haskell-indent-mode)
+; (add-hook 'haskell-mode-hook 'haskell-indent-mode) ;; broken for some reason
 (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
 (add-hook 'haskell-mode-hook 'haskell-doc-mode)
-(add-hook 'haskell-mode-hook 'hindent-mode)
+(add-hook 'haskell-mode-hook 'hindent-mode) ;; remember to install that package
 (setq hindent-reformat-buffer-on-save t)
 
 ;; EVIL MODE SUPREMACY YAAAAAAS
