@@ -1,6 +1,8 @@
 " Fugitive
-nnoremap <silent> <leader>gs :G<CR> " git status
-nnoremap <silent> <leader>cc :G commit<CR> " git commit
+" git status
+nnoremap <silent> <leader>gs :G<CR>
+" git commit
+nnoremap <silent> <leader>cc :G commit<CR>
 
 " Tab for next buffer and shift+tab for previous buffer
 nnoremap <silent> <TAB> :bnext<CR>
@@ -26,3 +28,7 @@ nnoremap <leader>/ <cmd>lua require('telescope.builtin').current_buffer_fuzzy_fi
 " TeX
 autocmd FileType tex inoremap <buffer> \\bi \begin{itemize}<CR>\end{itemize}<ESC>O\item
 autocmd FileType tex inoremap <buffer> \\bf \begin{frame}<CR>\end{frame}<ESC>kf}a{}<ESC>ha
+
+" Haskell
+autocmd FileType haskell nnoremap <buffer> <leader>hl :!hlint %<CR>
+autocmd FileType haskell nnoremap <buffer> <leader>hi :!hindent %<CR><CR>
