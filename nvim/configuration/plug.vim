@@ -22,7 +22,7 @@ Plug 'aklt/plantuml-syntax'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 " LSP
-Plug 'neovim/nvim-lspconfig'
+Plug 'neovim/nvim-lspconfig' " Will probably use this sometime
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
