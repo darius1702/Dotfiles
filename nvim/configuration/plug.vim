@@ -18,11 +18,12 @@ Plug 'lervag/vimtex'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
 Plug 'aklt/plantuml-syntax'
+Plug 'tpope/vim-surround'
 " Git
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 " LSP
-Plug 'neovim/nvim-lspconfig' " Will probably use this sometime
+Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
