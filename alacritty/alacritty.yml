@@ -212,12 +212,12 @@ font:
   # Bold font face
   bold:
     family: Iosevka Nerd Font Mono
-    style: Regular
+    style: Medium
 
   # Italic font face
   italic:
     family: Iosevka Nerd Font Mono
-    style: Light
+    style: Oblique
 
   # Bold italic font face
   bold_italic:
