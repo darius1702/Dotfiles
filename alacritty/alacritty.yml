@@ -184,9 +184,9 @@ window:
     columns: 200
     lines: 60
 
-  #position:
-  #  x: 0
-  #  y: 0
+  # position:
+  #   x: 0
+  #   y: 0
 
   padding:
     x: 0
