@@ -47,7 +47,12 @@ let g:sonokai_style = 'maia'
 let g:edge_style = 'default'
 
 " Colorscheme (gruvbox8[_hard/_soft], nord, gruvbox-material, sonokai, everforest, edge)
-colorscheme everforest
+" This makes vim remember the colorscheme, so no explicit setting is needed
+augroup restoreColorscheme
+    au!
+    autocmd ColorScheme * let g:PREVCOLOR = get (g:, "colors_name", "default")
+    autocmd BufWinEnter * ++once exe 'colorscheme ' . get(g:, "PREVCOLOR", "default")
+augroup END
 
 " Netrw configuration
 let g:netrw_altw = 1

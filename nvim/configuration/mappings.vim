@@ -1,3 +1,8 @@
+" Shift + J/K moves selected lines down/up in visual mode
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+
 " Fugitive
 " git status
 nnoremap <silent> <leader>gs :G<CR>
