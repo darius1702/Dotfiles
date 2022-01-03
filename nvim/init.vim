@@ -46,7 +46,7 @@ let g:sonokai_style = 'maia'
 " Edge style (default, aura, neon)
 let g:edge_style = 'default'
 
-" Colorscheme (gruvbox8[_hard/_soft], nord, gruvbox-material, sonokai, everforest, edge)
+" Colorscheme (gruvbox8[_hard/_soft], nord, gruvbox-material, sonokai, everforest, edge, catppuccin)
 " This makes vim remember the colorscheme, so no explicit setting is needed
 augroup restoreColorscheme
     au!

@@ -15,7 +15,8 @@ zstyle ':vcs_info:git:*' formats '[%b] '
 
 # Prompt variables
 DIR=$'%B%F{green}%3~%b'
-CHAR=$'%F{white}%(!.#.\u232a)%f'
+CHAR='%F{white}%(!.#.$)%f '
+# CHAR=$'%F{white}%(!.#.\u232a)%f'
 
 # Single-line prompt
 PROMPT=$'${DIR} %F{yellow}${vcs_info_msg_0_}%f${CHAR}'
@@ -64,7 +65,7 @@ function cdir {
 
 function gui {
     # Remember to update this
-    selection=$(echo "everforest\\nedge\\nnord\\nsonokai_maia\\ngruvbox_material\\nsolarized_dark" | fzf --prompt='colors: ')
+    selection=$(echo "everforest\\nedge\\nnord\\nsonokai_maia\\ngruvbox_material\\nsolarized_dark\\ncatppuccin" | fzf --prompt='colors: ')
 
     # In case fzf returns '' because of <C-c> etc.
     [ -z $selection ] && selection='everforest'
