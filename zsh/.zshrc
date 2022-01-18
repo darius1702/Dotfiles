@@ -63,7 +63,7 @@ function cdir {
   cd $1
 }
 
-function gui {
+gui() {
     # Remember to update this
     selection=$(echo "everforest\\nedge\\nnord\\nsonokai_maia\\ngruvbox_material\\ncatppuccin" | fzf --prompt='colors: ')
 
