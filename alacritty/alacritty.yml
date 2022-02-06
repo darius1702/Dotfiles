@@ -118,29 +118,6 @@ schemes:
       cyan:    '#83c092'
       white:   '#d3c6aa'
 
-  sonokai_maia: &sonokai_maia
-    primary:
-      background: '#273136'
-      foreground: '#e1e2e3'
-    normal:
-      black: '#1c1e1f'
-      red: '#f76c7c'
-      green: '#9cd57b'
-      yellow: '#e3d367'
-      blue: '#78cee9'
-      magenta: '#baa0f8'
-      cyan: '#f3a96a'
-      white: '#e1e2e3'
-    bright:
-      black: '#1c1e1f'
-      red: '#f76c7c'
-      green: '#9cd57b'
-      yellow: '#e3d367'
-      blue: '#78cee9'
-      magenta: '#baa0f8'
-      cyan: '#f3a96a'
-      white: '#e1e2e3'
-
   # Catppuccin!
   catppuccin: &catppuccin
     # Default colors
@@ -175,7 +152,7 @@ schemes:
       - { index: 16, color: '#F2CECF' }
       - { index: 17, color: '#3E4058' }
 
-# nord, edge, everforest, gruvbox_material, sonokai_maia, solarized_dark, catpuccin
+# nord, edge, everforest, gruvbox_material, solarized_dark, catpuccin
 colors: *everforest
 
 #env:

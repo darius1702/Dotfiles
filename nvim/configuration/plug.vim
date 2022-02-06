@@ -9,7 +9,6 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'sainnhe/gruvbox-material'     " gruvbox-material
 Plug 'lifepillar/vim-gruvbox8'      " gruvbox8(_hard/_soft)
 Plug 'arcticicestudio/nord-vim'     " nord
-Plug 'sainnhe/sonokai'              " sonokai
 Plug 'sainnhe/everforest'           " everforest
 Plug 'sainnhe/edge'                 " edge
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}                 " edge

@@ -21,32 +21,26 @@ source $HOME/.config/nvim/plugins/treesitter.vim
 " Italics bad
 let g:gruvbox_material_disable_italic_comment = 1
 let g:everforest_disable_italic_comment = 1
-let g:sonokai_disable_italic_comment = 1
 let g:edge_disable_italic_comment = 1
 let g:gruvbox_italics = 0
 
 " Probably something good
 let g:everforest_better_performance = 1
-let g:sonokai_better_performance = 1
 let g:edge_better_performance = 1
 let g:gruvbox_material_better_performance = 1
 
 " No sign column background
 let g:everforest_sign_column_background = 'none'
-let g:sonokai_sign_column_background = 'none'
 let g:edge_sign_column_background = 'none'
 let g:gruvbox_material_sign_column_background = 'none'
 
 " Everforest theme (soft, medium(default), hard)
 " let g:everforest_background = 'hard'
 
-" Sonokai theme (default, atlantis, andromeda, shusia, maia, espresso)
-let g:sonokai_style = 'maia'
-
 " Edge style (default, aura, neon)
 let g:edge_style = 'default'
 
-" Colorscheme (gruvbox8[_hard/_soft], nord, gruvbox-material, sonokai, everforest, edge, catppuccin)
+" Colorscheme (gruvbox8[_hard/_soft], nord, gruvbox-material, everforest, edge, catppuccin)
 " This makes vim remember the colorscheme, so no explicit setting is needed
 augroup restoreColorscheme
     au!
