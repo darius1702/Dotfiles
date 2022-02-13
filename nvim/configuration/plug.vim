@@ -8,16 +8,14 @@ call plug#begin('~/.config/nvim/plugged')
 " Color schemes
 Plug 'sainnhe/gruvbox-material'     " gruvbox-material
 Plug 'lifepillar/vim-gruvbox8'      " gruvbox8(_hard/_soft)
-Plug 'arcticicestudio/nord-vim'     " nord
 Plug 'sainnhe/everforest'           " everforest
 Plug 'sainnhe/edge'                 " edge
-Plug 'catppuccin/nvim', {'as': 'catppuccin'}                 " edge
-"LaTeX
+Plug 'EdenEast/nightfox.nvim'       " (night/nord/day/dusk/dawn)fox
+" LaTeX
 Plug 'lervag/vimtex'
 " Syntax
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
-Plug 'aklt/plantuml-syntax'
 Plug 'tpope/vim-surround'
 " Git
 Plug 'airblade/vim-gitgutter'

@@ -65,7 +65,7 @@ function cdir {
 
 gui() {
     # Remember to update this
-    selection=$(echo "everforest\\nedge\\nnord\\ngruvbox_material\\ncatppuccin" | fzf --prompt='colors: ')
+    selection=$(echo "everforest\\nedge\\ngruvbox_material\\nnordfox" | fzf --prompt='colors: ')
 
     # In case fzf returns '' because of <C-c> etc.
     [ -z $selection ] && selection='everforest'

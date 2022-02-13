@@ -49,6 +49,33 @@ schemes:
       cyan: '#6d96a5'
       white: '#aeb3bb'
 
+  nordfox: &nordfox
+    primary:
+      background: '0x2e3440'
+      foreground: '0xb9bfca'
+    normal:
+      black:   '0x3b4252'
+      red:     '0xbf616a'
+      green:   '0xa3be8c'
+      yellow:  '0xebcb8b'
+      blue:    '0x81a1c1'
+      magenta: '0xb48ead'
+      cyan:    '0x88c0d0'
+      white:   '0xe5e9f0'
+    bright:
+      black:   '0x465780'
+      red:     '0xd06f79'
+      green:   '0xb1d196'
+      yellow:  '0xf0d399'
+      blue:    '0x8cafd2'
+      magenta: '0xc895bf'
+      cyan:    '0x93ccdc'
+      white:   '0xe7ecf4'
+    indexed_colors:
+      - { index: 16, color: '0xc9826b' }
+      - { index: 17, color: '0xbf88bc' }
+
+
   gruvbox_material_dark: &gruvbox_material
     primary:
       background: '#282828'
@@ -118,42 +145,8 @@ schemes:
       cyan:    '#83c092'
       white:   '#d3c6aa'
 
-  # Catppuccin!
-  catppuccin: &catppuccin
-    # Default colors
-    primary:
-      background: '#1E1E28'
-      foreground: '#DADAE8'
-    # Colors the cursor will use if `custom_cursor_colors` is true
-    cursor:
-      text: '#1E1E28'
-      cursor: '#B1E3AD'
-    # Normal colors
-    normal:
-      black:   '#6E6C7E'
-      red:     '#E38C8F'
-      green:   '#B1E3AD'
-      yellow:  '#EBDDAA'
-      blue:    '#A4B9EF'
-      magenta: '#C6AAE8'
-      cyan:    '#E5B4E2'
-      white:   '#DADAE8'
-    # Bright colors
-    bright:
-      black:   '#6E6C7E'
-      red:     '#E38C8F'
-      green:   '#B1E3AD'
-      yellow:  '#EBDDAA'
-      blue:    '#A4B9EF'
-      magenta: '#C6AAE8'
-      cyan:    '#E5B4E2'
-      white:   '#DADAE8'
-    indexed_colors:
-      - { index: 16, color: '#F2CECF' }
-      - { index: 17, color: '#3E4058' }
-
-# nord, edge, everforest, gruvbox_material, solarized_dark, catpuccin
-colors: *everforest
+# nord, edge, everforest, gruvbox_material, solarized_dark, nordfox
+colors: *nordfox
 
 #env:
   # TERM variable
