@@ -6,10 +6,8 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
 " Color schemes
-Plug 'sainnhe/gruvbox-material'     " gruvbox-material
 Plug 'lifepillar/vim-gruvbox8'      " gruvbox8(_hard/_soft)
 Plug 'sainnhe/everforest'           " everforest
-Plug 'sainnhe/edge'                 " edge
 Plug 'EdenEast/nightfox.nvim'       " (night/nord/day/dusk/dawn)fox
 " LaTeX
 Plug 'lervag/vimtex'
@@ -25,6 +23,4 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-" Lualine
-Plug 'nvim-lualine/lualine.nvim'
 call plug#end()
