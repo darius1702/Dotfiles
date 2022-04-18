@@ -42,7 +42,6 @@ set ignorecase
 set nocompatible
 
 " Persistent undo
-" Don't forget mkdir folder $HOME/.vim/undo
 set undofile
 set undodir=$HOME/.config/nvim/undo
 set undolevels=1000
