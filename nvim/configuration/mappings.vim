@@ -8,10 +8,6 @@ nnoremap <silent> <leader>gs :G<CR>
 " git commit
 nnoremap <silent> <leader>cc :G commit<CR>
 
-" Tab for next buffer and shift+tab for previous buffer
-nnoremap <silent> <TAB> :bnext<CR>
-nnoremap <silent> <S-TAB> :bprevious<CR>
-
 " Shortcutting split navigation, saving a keypress
 map <C-h> <C-w>h
 map <C-j> <C-w>j
