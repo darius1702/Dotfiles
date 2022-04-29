@@ -74,9 +74,6 @@ gui() {
     sed -i '' "s/colors: \*.*$/colors: \*${selection}/" $HOME/.config/alacritty/alacritty.yml
 }
 
-# macOS yaa, sometimes maven needs this to find Java 16
-export JAVA_HOME="$HOME/Library/Java/JavaVirtualMachines/openjdk-16.0.1/Contents/Home"
-
 # No underline under filenames in syntax highlighting
 (( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[path]=none

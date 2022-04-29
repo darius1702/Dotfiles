@@ -18,6 +18,9 @@ source $HOME/.config/nvim/configuration/plug.vim
 " Plugin config files
 source $HOME/.config/nvim/plugins/config.lua
 
+" Hardtime
+let g:hardtime_default_on = 1
+
 " Netrw configuration
 let g:netrw_altw = 1
 let g:netrw_liststyle = 3

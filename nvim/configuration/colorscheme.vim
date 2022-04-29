@@ -3,6 +3,7 @@
 " Italics bad
 let g:everforest_disable_italic_comment = 1
 let g:gruvbox_italics = 0
+let g:github_comment_style="none"
 
 " Probably something good
 let g:everforest_better_performance = 1
