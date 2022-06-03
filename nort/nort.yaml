@@ -1,0 +1,3 @@
+editor: 'nvim'
+viewer: 'bat'
+notes_path: '~/Documents/Notes'

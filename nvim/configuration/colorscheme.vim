@@ -6,6 +6,8 @@ let g:gruvbox_italics = 0
 let g:github_comment_style= "NONE"
 let g:github_keyword_style= "NONE"
 
+let g:kit_italic = "0"
+
 " Probably something good
 let g:everforest_better_performance = 1
 

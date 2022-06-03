@@ -9,6 +9,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'lifepillar/vim-gruvbox8'
 Plug 'sainnhe/everforest'
 Plug 'EdenEast/nightfox.nvim'
+Plug 'tadachs/kit.vim'
 " Hardtime
 Plug 'takac/vim-hardtime'
 " LaTeX

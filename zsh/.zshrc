@@ -41,7 +41,12 @@ export HISTFILE="$HOME/.config/zsh/.zsh_history"
 # Quick-edit configs
 alias zc="vim ~/.config/zsh/.zshrc"
 alias vc="vim ~/.config/nvim/init.vim"
+alias fv="fzf | xargs nvim"
 
+FZF="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
+
+alias fzf=$FZF
+alias ne="nort list | $FZF | xargs $HOME/Library/Python/3.8/bin/nort edit"
 alias vim=nvim
 alias pip=pip3
 alias python=python3
@@ -65,7 +70,7 @@ function cdir {
 
 gui() {
     # Remember to update this
-    selection=$(echo "everforest\\nedge\\ngruvbox_material\\nnordfox" | fzf --prompt='colors: ')
+    selection=$(echo "everforest\\nedge\\ngruvbox_material\\nnordfox" | \fzf --prompt='colors: ' --reverse --height 20%)
 
     # In case fzf returns '' because of <C-c> etc.
     [ -z $selection ] && selection='everforest'

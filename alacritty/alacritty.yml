@@ -97,7 +97,7 @@ schemes:
       white:   '#d3c6aa'
 
 # nordfox, gruvbox_material, edge, everforest
-colors: *everforest
+colors: *nordfox
 
 #env:
   # TERM variable
