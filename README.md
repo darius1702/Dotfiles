@@ -1,3 +1,3 @@
 # Config files
 
-zsh, alacritty, nvim (, neofetch)
+./install.sh requires [GNU Stow](https://www.gnu.org/software/stow/)
