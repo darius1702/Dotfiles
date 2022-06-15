@@ -5,6 +5,7 @@ zstyle ':completion:*' menu select
 setopt no_list_ambiguous
 setopt auto_cd
 setopt prompt_subst
+setopt globdots
 unsetopt PROMPT_SP
 # setopt MENU_COMPLETE   # auto insert first completion match
 
@@ -83,6 +84,9 @@ gui() {
 (( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[path]=none
 ZSH_HIGHLIGHT_STYLES[path_prefix]=none
+
+# Starship
+eval $(starship init zsh)
 
 # Syntax highlighting
 source $HOME/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
