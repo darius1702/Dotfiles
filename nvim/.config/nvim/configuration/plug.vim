@@ -6,10 +6,9 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
 " Color schemes
-Plug 'lifepillar/vim-gruvbox8'
 Plug 'sainnhe/everforest'
-Plug 'EdenEast/nightfox.nvim'
 Plug 'tadachs/kit.vim'
+Plug 'arcticicestudio/nord-vim'
 " Hardtime
 Plug 'takac/vim-hardtime'
 " LaTeX
