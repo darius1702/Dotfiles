@@ -12,18 +12,18 @@ unsetopt PROMPT_SP
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
-zstyle ':vcs_info:git:*' formats '[%b] '
+zstyle ':vcs_info:git:*' formats '%F{white}on %B%F{magenta}%b'
 
 # Prompt variables
-DIR=$'%B%F{green}%3~%b'
-CHAR='%F{white}%(!.#.$)%f '
+DIR=$'%B%F{cyan}%3~%b'
+CHAR=$'%F{green}%(!.#.\u276f)%f '
 # CHAR=$'%F{white}%(!.#.\u232a)%f'
 
 # Single-line prompt
-PROMPT=$'${DIR} %F{yellow}${vcs_info_msg_0_}%f${CHAR}'
+# PROMPT=$'${DIR} ${vcs_info_msg_0_}%b%f${CHAR}'
 
 # Multi-line prompt
-# PROMPT=$'\u256d ${DIR} %F{yellow}${vcs_info_msg_0_}%f\n\u2570\u2500 ${CHAR}'
+PROMPT=$'\n${DIR} ${vcs_info_msg_0_}%b%f\n${CHAR}'
 
 # Make Shift-Tab go to previous completion suggestion
 zmodload zsh/complist
@@ -84,9 +84,6 @@ gui() {
 (( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[path]=none
 ZSH_HIGHLIGHT_STYLES[path_prefix]=none
-
-# Starship
-eval $(starship init zsh)
 
 # Syntax highlighting
 source $HOME/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

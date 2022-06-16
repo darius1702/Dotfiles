@@ -20,6 +20,8 @@ source $HOME/.config/nvim/plugins/config.lua
 
 " Hardtime
 let g:hardtime_default_on = 1
+let g:hardtime_maxcount = 3
+let g:list_of_disabled_keys = ["<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
 
 " Netrw configuration
 let g:netrw_altw = 1
