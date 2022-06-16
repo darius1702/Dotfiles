@@ -17,6 +17,8 @@ source $HOME/.config/nvim/configuration/plug.vim
 
 " Plugin config files
 source $HOME/.config/nvim/plugins/config.lua
+source $HOME/.config/nvim/plugins/lsp_installer.lua
+source $HOME/.config/nvim/plugins/lsp_config.lua
 
 " Hardtime
 let g:hardtime_default_on = 1
