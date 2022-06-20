@@ -19,6 +19,10 @@ source $HOME/.config/nvim/configuration/plug.vim
 source $HOME/.config/nvim/plugins/config.lua
 source $HOME/.config/nvim/plugins/lsp_config.lua
 
+" Vimux
+let g:VimuxUseNearest = 0
+let g:VimuxPromptString = "Run: "
+
 " Hardtime
 let g:hardtime_default_on = 1
 let g:hardtime_maxcount = 3

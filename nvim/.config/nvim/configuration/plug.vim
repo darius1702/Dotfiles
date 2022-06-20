@@ -19,6 +19,8 @@ Plug 'tpope/vim-surround'
 " Git
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+" tmux
+Plug 'preservim/vimux'
 " LSP
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'

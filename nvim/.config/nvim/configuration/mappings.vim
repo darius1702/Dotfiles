@@ -8,6 +8,13 @@ nnoremap <silent> <leader>gs :G<CR>
 " git commit
 nnoremap <silent> <leader>cc :G commit<CR>
 
+" Vimux
+nnoremap <silent> <leader>vp :VimuxPromptCommand<CR>
+nnoremap <silent> <leader>vl :VimuxRunLastCommand<CR>
+nnoremap <silent> <leader>vc :VimuxCloseRunner<CR>
+nnoremap <silent> <leader>vz :VimuxZoomRunner<CR>
+nnoremap <silent> <leader>vi :VimuxInterruptRunner<CR>
+
 " Shortcutting split navigation, saving a keypress
 map <C-h> <C-w>h
 map <C-j> <C-w>j
