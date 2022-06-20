@@ -12,7 +12,7 @@ unsetopt PROMPT_SP
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
-zstyle ':vcs_info:git:*' formats '%F{white}on %B%F{magenta}%b'
+zstyle ':vcs_info:git:*' formats '%F{white} on %B%F{magenta}%b'
 
 # Prompt variables
 DIR=$'%B%F{cyan}%3~%b'
@@ -20,10 +20,10 @@ CHAR=$'%F{green}%(!.#.\u276f)%f '
 # CHAR=$'%F{white}%(!.#.\u232a)%f'
 
 # Single-line prompt
-# PROMPT=$'${DIR} ${vcs_info_msg_0_}%b%f${CHAR}'
+PROMPT=$'${DIR}${vcs_info_msg_0_}%b%f ${CHAR}'
 
 # Multi-line prompt
-PROMPT=$'\n${DIR} ${vcs_info_msg_0_}%b%f\n${CHAR}'
+# PROMPT=$'\n${DIR}${vcs_info_msg_0_}%b%f\n${CHAR}'
 
 # Make Shift-Tab go to previous completion suggestion
 zmodload zsh/complist
