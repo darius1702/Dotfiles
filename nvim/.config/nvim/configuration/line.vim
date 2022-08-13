@@ -8,7 +8,7 @@ set statusline+=%#PmenuSel#
 set statusline+=%{StatuslineGit()}
 set statusline+=%#CursorColumn#
 set statusline+=\ %f
-set statusline+=%m
+set statusline+=\ %m
 set statusline+=%=
 set statusline+=%#CursorColumn#
 set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
