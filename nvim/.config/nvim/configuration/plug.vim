@@ -8,6 +8,8 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'sainnhe/everforest'
 Plug 'tadachs/kit.vim'
 Plug 'arcticicestudio/nord-vim'
+" Statusline
+Plug 'nvim-lualine/lualine.nvim'
 " Hardtime
 Plug 'takac/vim-hardtime'
 " LaTeX

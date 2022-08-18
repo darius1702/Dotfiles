@@ -10,14 +10,16 @@ let mapleader = "\<space>"
 source $HOME/.config/nvim/configuration/mappings.vim
 source $HOME/.config/nvim/configuration/set.vim
 source $HOME/.config/nvim/configuration/colorscheme.vim
-source $HOME/.config/nvim/configuration/line.vim
 
 " Plugin manager
 source $HOME/.config/nvim/configuration/plug.vim
 
 " Plugin config files
+source $HOME/.config/nvim/configuration/line.lua
 source $HOME/.config/nvim/plugins/config.lua
 source $HOME/.config/nvim/plugins/lsp_config.lua
+
+colorscheme nord
 
 " Vimux
 let g:VimuxUseNearest = 0
