@@ -38,7 +38,7 @@ let g:netrw_banner = 0
 " Miscellaneous
 au BufEnter * set fo-=c fo-=r fo-=o
 filetype plugin on
-syntax on
+syntax enable
 
 " Automatically delete all trailing whitespace on save
 autocmd BufWritePre * %s/\s\+$//e
