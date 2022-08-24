@@ -29,8 +29,8 @@ PROMPT=$'${DIR}${vcs_info_msg_0_}%b%f ${CHAR}'
 zmodload zsh/complist
 bindkey -M menuselect '^[[Z' reverse-menu-complete
 
-# No vim bindings in zsh
-bindkey -e
+# vi-mode
+bindkey -v
 
 export LANG="en_US.UTF-8"
 export PAGER="nvim -R"

@@ -7,7 +7,7 @@ call plug#begin('~/.config/nvim/plugged')
 " Color schemes
 Plug 'sainnhe/everforest'
 Plug 'tadachs/kit.vim'
-Plug 'arcticicestudio/nord-vim'
+Plug 'shaunsingh/nord.nvim'
 " Statusline
 Plug 'nvim-lualine/lualine.nvim'
 " Hardtime

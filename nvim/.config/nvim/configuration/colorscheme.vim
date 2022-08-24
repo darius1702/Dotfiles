@@ -3,9 +3,7 @@
 " Italics bad
 let g:everforest_disable_italic_comment = 1
 let g:gruvbox_italics = 0
-let g:github_comment_style= "NONE"
-let g:github_keyword_style= "NONE"
-
+let g:nord_italic = v:false
 let g:kit_italic = "0"
 
 " Probably something good
