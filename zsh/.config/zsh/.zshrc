@@ -51,6 +51,7 @@ alias fzf=$FZF
 alias ne="nort list | fzf --preview 'bat --color=always --style=numbers --line-range=:500 $HOME/Documents/Notes/{}.md' | xargs $HOME/Library/Python/3.8/bin/nort edit"
 alias vim=nvim
 alias ts="tmux new-session -s"
+alias gui="alacritty-themes" # requires github.com/rajasegar/alacritty-themes
 
 alias pip=pip3
 alias python=python3
@@ -70,17 +71,6 @@ alias ltr="exa --git -laT"
 function cdir {
   mkdir -p $1
   cd $1
-}
-
-gui() {
-    # Remember to update this
-    selection=$(echo "everforest\\nedge\\ngruvbox_material\\nnordfox" | \fzf --prompt='colors: ' --reverse --height 20%)
-
-    # In case fzf returns '' because of <C-c> etc.
-    [ -z $selection ] && selection='everforest'
-
-    # In-place sed heresy
-    sed -i '' "s/colors: \*.*$/colors: \*${selection}/" $HOME/.config/alacritty/alacritty.yml
 }
 
 # No underline under filenames in syntax highlighting

@@ -1,113 +1,13 @@
-# Color Schemes, doesn't work if not on top :(
-schemes:
-  nordfox: &nordfox
-    primary:
-      background: '0x2e3440'
-      foreground: '0xd8dee9' # from arcticicestudio/nord-alacritty instead of nordfox
-    normal:
-      black:   '0x3b4252'
-      red:     '0xbf616a'
-      green:   '0xa3be8c'
-      yellow:  '0xebcb8b'
-      blue:    '0x81a1c1'
-      magenta: '0xb48ead'
-      cyan:    '0x88c0d0'
-      white:   '0xe5e9f0'
-    bright:
-      black:   '0x465780'
-      red:     '0xd06f79'
-      green:   '0xb1d196'
-      yellow:  '0xf0d399'
-      blue:    '0x8cafd2'
-      magenta: '0xc895bf'
-      cyan:    '0x93ccdc'
-      white:   '0xe7ecf4'
-    indexed_colors:
-      - { index: 16, color: '0xc9826b' }
-      - { index: 17, color: '0xbf88bc' }
-
-
-  gruvbox_material_dark: &gruvbox_material
-    primary:
-      background: '#282828'
-      foreground: '#d4be98'
-    normal:
-      black:   '#282828'
-      red:     '#ea6962'
-      green:   '#a9b665'
-      yellow:  '#d8a657'
-      blue:    '#7daea3'
-      magenta: '#d3869b'
-      cyan:    '#89b482'
-      white:   '#d4be98'
-    bright:
-      black:   '#282828'
-      red:     '#ea6962'
-      green:   '#a9b665'
-      yellow:  '#d8a657'
-      blue:    '#7daea3'
-      magenta: '#d3869b'
-      cyan:    '#89b482'
-      white:   '#d4be98'
-
-  edge_dark: &edge
-    primary:
-      background: '#2b2d37'
-      foreground: '#c5cdd9'
-    normal:
-      black: '#3a3e4e'
-      red: '#ec7279'
-      green: '#a0c980'
-      yellow: '#deb974'
-      blue: '#6cb6eb'
-      magenta: '#d38aea'
-      cyan: '#5dbbc1'
-      white: '#c5cdd9'
-    bright:
-      black: '#3a3e4e'
-      red: '#ec7279'
-      green: '#a0c980'
-      yellow: '#deb974'
-      blue: '#6cb6eb'
-      magenta: '#d38aea'
-      cyan: '#5dbbc1'
-      white: '#c5cdd9'
-
-  everforest_dark: &everforest
-    primary:
-      background: '#2f383e'
-      foreground: '#d3c6aa'
-    normal:
-      black:   '#4b565c'
-      red:     '#e67e80'
-      green:   '#a7c080'
-      yellow:  '#dbbc7f'
-      blue:    '#7fbbb3'
-      magenta: '#d699b6'
-      cyan:    '#83c092'
-      white:   '#d3c6aa'
-    bright:
-      black:   '#4b565c'
-      red:     '#e67e80'
-      green:   '#a7c080'
-      yellow:  '#dbbc7f'
-      blue:    '#7fbbb3'
-      magenta: '#d699b6'
-      cyan:    '#83c092'
-      white:   '#d3c6aa'
-
-# nordfox, gruvbox_material, edge, everforest
-colors: *nordfox
+# Using github.com/rajasegar/alacritty-themes for colors
 
 #env:
-  # TERM variable
-  #
-  # This value is used to set the `$TERM` environment variable for
-  # each instance of Alacritty. If it is not present, alacritty will
-  # check the local terminfo database and use `alacritty` if it is
-  # available, otherwise `xterm-256color` is used.
-  #TERM: alacritty
-
+# TERM variable
+#
+# This value is used to set the `$TERM` environment variable for
+# each instance of Alacritty. If it is not present, alacritty will
+# check the local terminfo database and use `alacritty` if it is
+# available, otherwise `xterm-256color` is used.
+#TERM: alacritty
 window:
   dimensions:
     columns: 200
@@ -116,7 +16,6 @@ window:
   # position:
   #   x: 0
   #   y: 0
-
   padding:
     x: 0
     y: 0
@@ -159,29 +58,52 @@ font:
   #offset:
   #  x: 0
   #  y: 0
-
   #glyph_offset:
   #  x: 0
   #  y: 0
-
   # Thin stroke font rendering (macOS only)
   #
   # Thin strokes are suitable for retina displays, but for non-retina screens
   # it is recommended to set `use_thin_strokes` to `false`.
   use_thin_strokes: true
-
-# draw_bold_text_with_bright_colors: false
-
-# Background opacity
-# background_opacity: 1
-
-# cursor:
+  # draw_bold_text_with_bright_colors: false
+  # Background opacity
+  # background_opacity: 1
+  # cursor:
   # Cursor style
   # style:
-    # Cursor shape
-    #
-    # Values for `shape`:
-    #   - ▇ Block
-    #   - _ Underline
-    #   - | Beam
-    # shape: Beam
+  # Cursor shape
+  #
+  # Values for `shape`:
+  #   - ▇ Block
+  #   - _ Underline
+  #   - | Beam
+  # shape: Beam
+colors:
+  # Default colors
+  primary:
+    background: '#2E3440'
+    foreground: '#D8DEE9'
+
+  # Normal colors
+  normal:
+    black: '#3B4252'
+    red: '#BF616A'
+    green: '#A3BE8C'
+    yellow: '#EBCB8B'
+    blue: '#81A1C1'
+    magenta: '#B48EAD'
+    cyan: '#88C0D0'
+    white: '#E5E9F0'
+
+  # Bright colors
+  bright:
+    black: '#4C566A'
+    red: '#BF616A'
+    green: '#A3BE8C'
+    yellow: '#EBCB8B'
+    blue: '#81A1C1'
+    magenta: '#B48EAD'
+    cyan: '#8FBCBB'
+    white: '#ECEFF4'
+theme: Nord
