@@ -45,10 +45,12 @@ alias vc="vim ~/.config/nvim/init.vim"
 alias tc="vim ~/.tmux.conf"
 alias fv="fzf | xargs nvim"
 
-FZF="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
+function ne {
+    f="$(ls $HOME/Documents/Notes | fzf --reverse --height 40% --preview "cat $HOME/Documents/Notes/{}")"
+    p="$HOME/Documents/Notes/${f}"
+    [ -z $f ] || nvim $p
+}
 
-alias fzf=$FZF
-alias ne="nort list | fzf --preview 'bat --color=always --style=numbers --line-range=:500 $HOME/Documents/Notes/{}.md' | xargs $HOME/Library/Python/3.8/bin/nort edit"
 alias vim=nvim
 alias ts="tmux new-session -s"
 alias gui="alacritty-themes" # requires github.com/rajasegar/alacritty-themes
