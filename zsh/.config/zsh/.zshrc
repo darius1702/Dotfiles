@@ -29,8 +29,8 @@ PROMPT=$'${DIR}${vcs_info_msg_0_}%b%f ${CHAR}'
 zmodload zsh/complist
 bindkey -M menuselect '^[[Z' reverse-menu-complete
 
-# vi-mode
-bindkey -v
+# vi-mode (Disabled in favor of the vi-mode plugin below)
+# bindkey -v
 
 export LANG="en_US.UTF-8"
 export PAGER="nvim -R"
@@ -79,6 +79,9 @@ function cdir {
 (( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[path]=none
 ZSH_HIGHLIGHT_STYLES[path_prefix]=none
+
+# Better vi-mode
+source $HOME/.config/zsh/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 # Syntax highlighting
 source $HOME/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
