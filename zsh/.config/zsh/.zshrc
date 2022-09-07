@@ -38,6 +38,8 @@ export MANPAGER="nvim +Man!"
 export EDITOR=nvim
 export CLICOLOR=1
 export HISTFILE="$HOME/.config/zsh/.zsh_history"
+export HISTSIZE=100000
+export SAVEHIST=$HISTSIZE
 
 # Quick-edit configs
 alias zc="vim ~/.config/zsh/.zshrc"
