@@ -16,10 +16,11 @@ nnoremap <silent> <leader>vz :VimuxZoomRunner<CR>
 nnoremap <silent> <leader>vi :VimuxInterruptRunner<CR>
 
 " Shortcutting split navigation, saving a keypress
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
+" Overwritten by tmux-navigator I guess
+" map <C-h> <C-w>h
+" map <C-j> <C-w>j
+" map <C-k> <C-w>k
+" map <C-l> <C-w>l
 
 " Telescope
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
@@ -35,3 +36,6 @@ autocmd FileType tex inoremap <buffer> \\bf \begin{frame}<CR>\end{frame}<ESC>kf}
 " Haskell
 autocmd FileType haskell nnoremap <buffer> <leader>hl :!hlint %<CR>
 autocmd FileType haskell nnoremap <buffer> <leader>hi :!hindent %<CR><CR>
+
+" Markdown
+autocmd FileType markdown nnoremap <buffer> <leader>cb 0f[lrx

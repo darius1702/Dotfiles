@@ -23,7 +23,7 @@ CHAR=$'%F{green}%(!.#.\u276f)%f '
 PROMPT=$'${DIR}${vcs_info_msg_0_}%b%f ${CHAR}'
 
 # Multi-line prompt
-# PROMPT=$'\n${DIR}${vcs_info_msg_0_}%b%f\n${CHAR}'
+# PROMPT=$'${DIR}${vcs_info_msg_0_}%b%f\n${CHAR}'
 
 # Make Shift-Tab go to previous completion suggestion
 zmodload zsh/complist

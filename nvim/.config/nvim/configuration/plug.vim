@@ -9,6 +9,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'sainnhe/everforest'
 Plug 'tadachs/kit.vim'
 Plug 'shaunsingh/nord.nvim'
+Plug 'navarasu/onedark.nvim'
 
 " Statusline
 Plug 'nvim-lualine/lualine.nvim'
@@ -23,6 +24,7 @@ Plug 'lervag/vimtex'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'norcalli/nvim-colorizer.lua'
 
 " Git
 Plug 'airblade/vim-gitgutter'
@@ -30,6 +32,7 @@ Plug 'tpope/vim-fugitive'
 
 " tmux
 Plug 'preservim/vimux'
+Plug 'christoomey/vim-tmux-navigator'
 
 " LSP
 Plug 'nvim-lua/plenary.nvim'
