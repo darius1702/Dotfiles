@@ -53,6 +53,11 @@ function ne {
     [ -z $f ] || nvim $p
 }
 
+function nn {
+    p="$HOME/Documents/Notes/$1.md"
+    [ -z $1 ] && echo "no filename given" || nvim $p
+}
+
 alias vim=nvim
 alias ts="tmux new-session -s"
 alias gui="alacritty-themes" # requires github.com/rajasegar/alacritty-themes
@@ -69,7 +74,8 @@ alias l="exa "
 alias la="exa -a"
 alias ll="exa --git -l --no-user"
 alias lla="exa --git -la --no-user"
-alias ltr="exa --git -laT"
+alias ltr="exa --git -lT"
+alias latr="exa --git -laT"
 
 # mkdir and cd, duh
 function cdir {
