@@ -1,6 +1,18 @@
+" The better auto-pairs
+inoremap <silent> {<CR> {<CR><CR><BS>}<ESC>ka<TAB>
+
 " Shift + J/K moves selected lines down/up in visual mode
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+
+nnoremap <silent> <leader>p "+p
+xnoremap <silent> <leader>p "_dP
+
+nnoremap <silent> <leader>y "+y
+vnoremap <silent> <leader>y "+y
+
+nnoremap <silent> <leader>d "_d
+vnoremap <silent> <leader>d "_d
 
 " Fugitive
 " git status
@@ -14,13 +26,6 @@ nnoremap <silent> <leader>vl :VimuxRunLastCommand<CR>
 nnoremap <silent> <leader>vc :VimuxCloseRunner<CR>
 nnoremap <silent> <leader>vz :VimuxZoomRunner<CR>
 nnoremap <silent> <leader>vi :VimuxInterruptRunner<CR>
-
-" Shortcutting split navigation, saving a keypress
-" Overwritten by tmux-navigator I guess
-" map <C-h> <C-w>h
-" map <C-j> <C-w>j
-" map <C-k> <C-w>k
-" map <C-l> <C-w>l
 
 " Telescope
 nnoremap <leader>ff <cmd>Telescope find_files<cr>

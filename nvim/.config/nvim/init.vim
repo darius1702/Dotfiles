@@ -21,12 +21,13 @@ source $HOME/.config/nvim/plugins/lsp_config.lua
 
 colorscheme onedark
 
+" VimWiki
+let g:vimwiki_list = [{'path': '~/Documents/Notes/',
+                        \ 'syntax': 'markdown', 'ext': '.md'}]
+
 " Vimux
 let g:VimuxUseNearest = 0
 let g:VimuxPromptString = "Run: "
-
-" Autopairs remaps <BS> making lualine flicker :(
-let g:AutoPairsMapBS = 0
 
 " Hardtime
 let g:hardtime_default_on = 1

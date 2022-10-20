@@ -1,5 +1,6 @@
--- lsp-isntaller
-require("nvim-lsp-installer").setup {}
+-- mason (lsp etc installer)
+require("mason").setup {}
+require("mason-lspconfig").setup {}
 
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -39,8 +40,15 @@ local lsp_flags = {
   -- This is the default in Nvim 0.7+
   debounce_text_changes = 150,
 }
-require('lspconfig')['tsserver'].setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
+
+local servers = {
+    "tsserver", "clangd"
 }
+
+for _, lsp in ipairs(servers) do
+    require('lspconfig')[lsp].setup{
+        on_attach = on_attach,
+        flags = lsp_flags,
+    }
+end
 

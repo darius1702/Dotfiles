@@ -20,8 +20,10 @@ Plug 'takac/vim-hardtime'
 " LaTeX
 Plug 'lervag/vimtex'
 
+" VimWiki
+Plug 'vimwiki/vimwiki'
+
 " Syntax
-Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'norcalli/nvim-colorizer.lua'
@@ -39,7 +41,8 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'williamboman/nvim-lsp-installer'
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
 Plug 'neovim/nvim-lspconfig'
 
 call plug#end()

@@ -38,7 +38,6 @@ set updatetime=50
 set go=a
 set mouse=a
 set nohlsearch
-set clipboard+=unnamedplus
 set ignorecase
 set nocompatible
 
