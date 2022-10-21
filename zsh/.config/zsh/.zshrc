@@ -46,7 +46,7 @@ alias zc="nvim ~/.config/zsh/.zshrc"
 alias vc="nvim ~/.config/nvim/init.vim"
 alias tc="nvim ~/.tmux.conf"
 alias fv="fzf | xargs nvim"
-alias ww="nvim ~/Documents/Notes/index.md"
+alias ww="nvim ~/Documents/Notes/vimwiki/index.md"
 
 function ne {
     f="$(ls $HOME/Documents/Notes | fzf --reverse --height 40% --preview "cat $HOME/Documents/Notes/{}")"
@@ -57,7 +57,6 @@ function ne {
 function nn {
     p="$HOME/Documents/Notes/$1.md"
     [ -z $1 ] && echo "no filename given" || nvim $p
-    [ -z $1 ] || echo "[$1]($1.md)" >> "$HOME/Documents/Notes/index.md"
 }
 
 alias vim=nvim

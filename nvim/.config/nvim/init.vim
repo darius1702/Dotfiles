@@ -22,7 +22,7 @@ source $HOME/.config/nvim/plugins/lsp_config.lua
 colorscheme onedark
 
 " VimWiki
-let g:vimwiki_list = [{'path': '~/Documents/Notes/',
+let g:vimwiki_list = [{'path': '~/Documents/Notes/vimwiki/',
                         \ 'syntax': 'markdown', 'ext': '.md'}]
 
 " Vimux
