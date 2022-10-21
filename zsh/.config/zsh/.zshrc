@@ -46,7 +46,7 @@ alias zc="nvim ~/.config/zsh/.zshrc"
 alias vc="nvim ~/.config/nvim/init.vim"
 alias tc="nvim ~/.tmux.conf"
 alias fv="fzf | xargs nvim"
-alias ww="nvim ~/Documents/Notes/vimwiki/index.md"
+alias ww="nvim ~/Documents/Notes/vimwiki/index.wiki"
 
 function ne {
     f="$(ls $HOME/Documents/Notes | fzf --reverse --height 40% --preview "cat $HOME/Documents/Notes/{}")"
