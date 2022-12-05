@@ -14,7 +14,6 @@ if !has('gui_running')
   set t_Co=256
 endif
 
-set cursorline
 set noshowmode
 set laststatus=2 " 1 for no statusline
 " set showtabline=2 " 1 for only when more than 1 tab is open

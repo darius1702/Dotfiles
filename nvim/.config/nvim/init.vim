@@ -19,7 +19,7 @@ source $HOME/.config/nvim/configuration/line.lua
 source $HOME/.config/nvim/plugins/config.lua
 source $HOME/.config/nvim/plugins/lsp_config.lua
 
-colorscheme onedark
+colorscheme gruvbox
 
 " VimWiki
 let g:vimwiki_list = [{'path': '~/Documents/Notes/vimwiki/'}]
@@ -29,7 +29,7 @@ let g:VimuxUseNearest = 0
 let g:VimuxPromptString = "Run: "
 
 " Hardtime
-let g:hardtime_default_on = 1
+" let g:hardtime_default_on = 1
 let g:hardtime_maxcount = 3
 let g:hardtime_allow_different_key = 1
 let g:list_of_disabled_keys = ["<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]

@@ -46,18 +46,6 @@ alias zc="nvim ~/.config/zsh/.zshrc"
 alias vc="nvim ~/.config/nvim/init.vim"
 alias tc="nvim ~/.tmux.conf"
 alias fv="fzf | xargs nvim"
-alias ww="nvim ~/Documents/Notes/vimwiki/index.wiki"
-
-function ne {
-    f="$(ls $HOME/Documents/Notes | fzf --reverse --height 40% --preview "cat $HOME/Documents/Notes/{}")"
-    p="$HOME/Documents/Notes/${f}"
-    [ -z $f ] || nvim $p
-}
-
-function nn {
-    p="$HOME/Documents/Notes/$1.md"
-    [ -z $1 ] && echo "no filename given" || nvim $p
-}
 
 alias vim=nvim
 alias ts="tmux new-session -s"
@@ -70,13 +58,11 @@ alias gcm="git commit -m"
 alias find="fd"
 alias cp="cp -iv"
 alias mv="mv -iv"
-alias ls="exa "
-alias l="exa "
-alias la="exa -a"
-alias ll="exa --git -l --no-user"
-alias lla="exa --git -la --no-user"
-alias ltr="exa --git -lT"
-alias latr="exa --git -laT"
+
+alias l="ls --color=auto"
+alias la="ls -a --color=auto"
+alias ll="ls -l --color=auto"
+alias lla="ls -l --color=auto"
 
 # mkdir and cd, duh
 function cdir {
