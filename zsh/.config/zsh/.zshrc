@@ -49,13 +49,8 @@ alias fv="fzf | xargs nvim"
 
 alias vim=nvim
 alias ts="tmux new-session -s"
-alias gui="alacritty-themes" # requires github.com/rajasegar/alacritty-themes
 
-alias pip=pip3
-alias python=python3
-alias py=python3
 alias gcm="git commit -m"
-alias find="fd"
 alias cp="cp -iv"
 alias mv="mv -iv"
 
