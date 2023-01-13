@@ -10,7 +10,7 @@ Plug 'sainnhe/everforest'
 Plug 'tadachs/kit.vim'
 Plug 'shaunsingh/nord.nvim'
 Plug 'navarasu/onedark.nvim'
-Plug 'morhetz/gruvbox'
+Plug 'sainnhe/gruvbox-material'
 
 " Statusline
 Plug 'nvim-lualine/lualine.nvim'

@@ -55,6 +55,7 @@ alias cp="cp -iv"
 alias mv="mv -iv"
 
 alias l="ls --color=auto"
+alias ls="ls --color=auto"
 alias la="ls -a --color=auto"
 alias ll="ls -l --color=auto"
 alias lla="ls -l --color=auto"
@@ -74,4 +75,4 @@ ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 source $HOME/.config/zsh/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 # Syntax highlighting
-source $HOME/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source $HOME/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
