@@ -1,0 +1,181 @@
+# Please see https://i3wm.org/docs/userguide.html for a complete reference!
+
+# Wallpaper
+exec --no-startup-id feh --bg-fill $HOME/Documents/Wall/wall47.png
+
+# Screen lock
+exec --no-startup-id xss-lock -- $HOME/.config/i3/lock.sh
+
+# ALT Key
+set $mod Mod4
+
+focus_follows_mouse no
+
+# border style
+for_window [class=".*"] border pixel 1
+
+# gaps (only works on i3-gaps or i3 version >= 4.22)
+# gaps inner 10
+
+# show gaps only when there is more than 1 window on current workspace
+# smart_gaps on
+
+# only draw borders when there is more than 1 window on current workspace
+smart_borders on
+
+# Requires noto-fonts package
+font pango: Iosevka Nerd Font Mono Semibold 14
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# terminal
+bindsym $mod+Return exec --no-startup-id alacritty
+
+# browser
+bindsym $mod+b exec --no-startup-id firefox
+
+# vimwiki
+bindsym $mod+Shift+w exec --no-startup-id alacritty -e nvim +VimwikiIndex
+
+# kill focused window
+bindsym $mod+q kill
+
+# dmenu_run
+bindsym $mod+d exec --no-startup-id dmenu_run
+
+# passmenu
+bindsym $mod+Shift+p exec --no-startup-id bash $HOME/Software/thirdparty/scripts/passmenu.sh
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# lock
+bindsym $mod+ctrl+l exec --no-startup-id sleep 1 && xset dpms force suspend
+
+# exit
+bindsym $mod+Shift+x exec "i3-msg exit"
+
+# volume contrls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl  -- set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec --no-startup-id pactl -- set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec --no-startup-id pactl -- set-source-mute 0 toggle
+
+# backlight controls
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s 30+
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 30-
+
+# screenshots
+bindsym Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# toggle spawn direction
+bindsym $mod+t split toggle
+
+# focus the parent container
+# bindsym $mod+a focus parent
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# resize window (you can also use the mouse for that)
+bindsym $mod+u resize shrink width 10 px or 10 ppt
+bindsym $mod+i resize grow height 10 px or 10 ppt
+bindsym $mod+o resize shrink height 10 px or 10 ppt
+bindsym $mod+p resize grow width 10 px or 10 ppt
+
+# yoinked from https://gist.github.com/sainnhe/ad5cbc4f05c4ced83f80e54d9a75d22f (sainnhe gruvbox-material)
+set $bg_dark #1d2021
+set $bg #282828
+set $fg #d4be98
+set $black #3c3836
+set $red #ea6962
+set $green #a9b665
+set $yellow #d8a657
+set $blue #7daea3
+set $magenta #d3869b
+set $cyan #89b482
+
+# class                 border|backgr|text|indicator|child_border
+client.focused          $blue $blue $bg_dark $cyan $fg
+client.focused_inactive $bg_dark $bg_dark $yellow $magenta $bg_dark
+client.unfocused        $bg_dark $bg_dark $yellow $magenta $bg_dark
+client.urgent           $red $red $fg $red $red
+
+# i3bar
+bar {
+        status_command i3status -c $HOME/.config/i3/i3status.conf
+        separator_symbol "  "
+        position top
+        colors {
+                # bar background color
+                background $bg_dark
+                # text color used for blocks that do not have a color specified.
+                statusline $fg
+                # workspaces section
+                #                    border  backgr. text
+                focused_workspace    $green $green $bg_dark
+                inactive_workspace   $bg $bg $fg
+                active_workspace     $bg $bg $blue
+                urgent_workspace     $red $red $bg_dark
+        }
+
+}
