@@ -1,0 +1,103 @@
+#env:
+# TERM variable
+#
+# This value is used to set the `$TERM` environment variable for
+# each instance of Alacritty. If it is not present, alacritty will
+# check the local terminfo database and use `alacritty` if it is
+# available, otherwise `xterm-256color` is used.
+#TERM: alacritty
+window:
+  # dimensions:
+    # columns: 200
+    # lines: 60
+
+  # position:
+  #   x: 0
+  #   y: 0
+  padding:
+    x: 5
+    y: 0
+
+  # Spread additional padding evenly around the terminal content.
+  dynamic_padding: true
+
+  # Window decorations
+  #
+  # Values for `decorations`:
+  #     - full: Borders and title bar
+  #     - none: Neither borders nor title bar
+  decorations: none
+
+# Font configuration
+font:
+  # Normal (roman) font face
+  normal:
+    family: Iosevka Nerd Font Mono
+    style: Regular
+
+  # Bold font face
+  bold:
+    family: Iosevka Nerd Font Mono
+    style: Medium
+
+  # Italic font face
+  italic:
+    family: Iosevka Nerd Font Mono
+    style: Oblique
+
+  # Bold italic font face
+  bold_italic:
+    family: Iosevka Nerd Font Mono
+    style: Oblique
+
+  # Point size
+  size: 10.0
+
+  #offset:
+  #  x: 0
+  #  y: 0
+  #glyph_offset:
+  #  x: 0
+  #  y: 0
+
+  # draw_bold_text_with_bright_colors: false
+  # Background opacity
+  # background_opacity: 1
+  # cursor:
+  # Cursor style
+  # style:
+  # Cursor shape
+  #
+  # Values for `shape`:
+  #   - ▇ Block
+  #   - _ Underline
+  #   - | Beam
+  # shape: Beam
+
+# Colors: https://gist.github.com/sainnhe/ad5cbc4f05c4ced83f80e54d9a75d22f
+# The definition of color schemes.
+schemes:
+  gruvbox_material_medium_dark: &gruvbox_material_medium_dark
+    primary:
+      background: '0x282828'
+      foreground: '0xd4be98'
+    normal:
+      black:   '0x3c3836'
+      red:     '0xea6962'
+      green:   '0xa9b665'
+      yellow:  '0xd8a657'
+      blue:    '0x7daea3'
+      magenta: '0xd3869b'
+      cyan:    '0x89b482'
+      white:   '0xd4be98'
+    bright:
+      black:   '0x3c3836'
+      red:     '0xea6962'
+      green:   '0xa9b665'
+      yellow:  '0xd8a657'
+      blue:    '0x7daea3'
+      magenta: '0xd3869b'
+      cyan:    '0x89b482'
+      white:   '0xd4be98'
+# Apply the color scheme.
+colors: *gruvbox_material_medium_dark
