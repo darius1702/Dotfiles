@@ -7,7 +7,9 @@ setopt auto_cd
 setopt prompt_subst
 setopt globdots
 unsetopt PROMPT_SP
-# setopt MENU_COMPLETE   # auto insert first completion match
+
+# auto insert first completion match
+# setopt MENU_COMPLETE
 
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
@@ -17,13 +19,7 @@ zstyle ':vcs_info:git:*' formats '%F{white} on %B%F{magenta}%b'
 # Prompt variables
 DIR=$'%B%F{cyan}%3~%b'
 CHAR=$'%F{green}%(!.#.\u276f)%f '
-# CHAR=$'%F{white}%(!.#.\u232a)%f'
-
-# Single-line prompt
 PROMPT=$'${DIR}${vcs_info_msg_0_}%b%f ${CHAR}'
-
-# Multi-line prompt
-# PROMPT=$'${DIR}${vcs_info_msg_0_}%b%f\n${CHAR}'
 
 # Make Shift-Tab go to previous completion suggestion
 zmodload zsh/complist
@@ -45,6 +41,7 @@ export SAVEHIST=$HISTSIZE
 alias zc="nvim ~/.config/zsh/.zshrc"
 alias vc="nvim ~/.config/nvim/init.vim"
 alias tc="nvim ~/.tmux.conf"
+
 alias fv="fzf | xargs nvim"
 
 alias vim=nvim
@@ -60,19 +57,7 @@ alias la="ls -a --color=auto"
 alias ll="ls -l --color=auto"
 alias lla="ls -l --color=auto"
 
-# mkdir and cd, duh
-function cdir {
-  mkdir -p $1
-  cd $1
-}
-
-# No underline under filenames in syntax highlighting
-(( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
-ZSH_HIGHLIGHT_STYLES[path]=none
-ZSH_HIGHLIGHT_STYLES[path_prefix]=none
+alias grep="grep --color=auto"
 
 # Better vi-mode
 source $HOME/.config/zsh/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-
-# Syntax highlighting
-# source $HOME/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
