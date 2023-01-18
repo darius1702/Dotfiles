@@ -1,7 +1,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 # Wallpaper
-exec --no-startup-id feh --bg-fill $HOME/Documents/Wall/wall47.png
+exec --no-startup-id ~/.fehbg
 
 # Screen lock
 exec --no-startup-id xss-lock -- $HOME/.config/i3/lock.sh
@@ -138,6 +138,12 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# move workspaces between monitors
+bindsym $mod+ctrl+shift+k move workspace to output up
+bindsym $mod+ctrl+shift+j move workspace to output down
+bindsym $mod+ctrl+shift+h move workspace to output left
+bindsym $mod+ctrl+shift+l move workspace to output right
 
 # resize window (you can also use the mouse for that)
 bindsym $mod+u resize shrink width 10 px or 10 ppt
