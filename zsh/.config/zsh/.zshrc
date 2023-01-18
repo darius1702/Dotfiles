@@ -47,6 +47,7 @@ alias fv="fzf | xargs nvim"
 
 alias vim=nvim
 alias ts="tmux new-session -s"
+alias z=zathura
 
 alias gcm="git commit -m"
 alias cp="cp -iv"
