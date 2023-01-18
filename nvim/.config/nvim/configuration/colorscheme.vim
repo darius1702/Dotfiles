@@ -14,11 +14,3 @@ let g:everforest_sign_column_background = "NONE"
 
 " Everforest theme (soft, medium(default), hard)
 " let g:everforest_background = 'hard'
-
-" This makes vim remember the colorscheme, so no explicit setting is needed
-" <!> does not work with lualine for some reason <!>
-" augroup restoreColorscheme
-"     au!
-"     autocmd ColorScheme * let g:PREVCOLOR = get (g:, "colors_name", "default")
-"     autocmd BufWinEnter * ++once exe 'colorscheme ' . get(g:, "PREVCOLOR", "default")
-" augroup END

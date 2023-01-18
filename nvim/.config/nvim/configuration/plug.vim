@@ -15,9 +15,6 @@ Plug 'sainnhe/gruvbox-material'
 " Statusline
 Plug 'nvim-lualine/lualine.nvim'
 
-" Hardtime
-Plug 'takac/vim-hardtime'
-
 " LaTeX
 Plug 'lervag/vimtex'
 
@@ -37,7 +34,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'preservim/vimux'
 Plug 'christoomey/vim-tmux-navigator'
 
-" LSP
+" LSP and other utils
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'

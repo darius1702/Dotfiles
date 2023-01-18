@@ -24,15 +24,15 @@ colorscheme gruvbox-material
 " VimWiki
 let g:vimwiki_list = [{'path': '~/Documents/Notes/vimwiki/'}]
 
+" Vimtex
+let g:vimtex_view_method = 'zathura'
+let g:vimtex_compiler_latexmk = {
+    \ 'build_dir' : 'build',
+    \ }
+
 " Vimux
 let g:VimuxUseNearest = 0
 let g:VimuxPromptString = "Run: "
-
-" Hardtime
-" let g:hardtime_default_on = 1
-let g:hardtime_maxcount = 3
-let g:hardtime_allow_different_key = 1
-let g:list_of_disabled_keys = ["<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
 
 " Netrw configuration
 let g:netrw_altw = 1
