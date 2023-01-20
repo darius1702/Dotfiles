@@ -6,11 +6,9 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 
 " Color schemes
+Plug 'sainnhe/gruvbox-material'
 Plug 'sainnhe/everforest'
 Plug 'tadachs/kit.vim'
-Plug 'shaunsingh/nord.nvim'
-Plug 'navarasu/onedark.nvim'
-Plug 'sainnhe/gruvbox-material'
 
 " Statusline
 Plug 'nvim-lualine/lualine.nvim'
@@ -34,13 +32,29 @@ Plug 'tpope/vim-fugitive'
 Plug 'preservim/vimux'
 Plug 'christoomey/vim-tmux-navigator'
 
-" LSP and other utils
+" Utils
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'williamboman/mason.nvim'
-Plug 'williamboman/mason-lspconfig.nvim'
-Plug 'neovim/nvim-lspconfig'
+
+" LSP Support
+Plug 'neovim/nvim-lspconfig'             " Required
+Plug 'williamboman/mason.nvim'           " Optional
+Plug 'williamboman/mason-lspconfig.nvim' " Optional
+
+" Autocompletion Engine
+Plug 'hrsh7th/nvim-cmp'         " Required
+Plug 'hrsh7th/cmp-nvim-lsp'     " Required
+Plug 'hrsh7th/cmp-buffer'       " Optional
+Plug 'hrsh7th/cmp-path'         " Optional
+Plug 'saadparwaiz1/cmp_luasnip' " Optional
+Plug 'hrsh7th/cmp-nvim-lua'     " Optional
+
+"  Snippets
+Plug 'L3MON4D3/LuaSnip'             " Required
+Plug 'rafamadriz/friendly-snippets' " Optional
+
+Plug 'VonHeikemen/lsp-zero.nvim', {'branch': 'v1.x'}
 
 call plug#end()
