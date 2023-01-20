@@ -31,7 +31,7 @@ bindkey -M menuselect '^[[Z' reverse-menu-complete
 export LANG="en_US.UTF-8"
 export PAGER="nvim -R"
 export MANPAGER="nvim +Man!"
-export EDITOR=nvim
+export EDITOR="nvim"
 export CLICOLOR=1
 export HISTFILE="$HOME/.config/zsh/.zsh_history"
 export HISTSIZE=100000
@@ -60,6 +60,7 @@ alias ll="ls -l --color=auto"
 alias lla="ls -l --color=auto"
 
 alias grep="grep --color=auto"
+alias catkin_make="catkin_make -DCMAKE_EXPORT_COMPILE_COMMANDS=1"
 
 # Better vi-mode
 source $HOME/.config/zsh/zsh-vi-mode/zsh-vi-mode.plugin.zsh

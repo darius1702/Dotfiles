@@ -27,7 +27,7 @@ set splitbelow splitright
 
 set langmenu=en_US
 set expandtab
-set shiftwidth=4
+set shiftwidth=2
 set softtabstop=4
 set autoindent smartindent breakindent
 set hidden
