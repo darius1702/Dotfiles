@@ -169,6 +169,9 @@ client.focused_inactive $bg_dark $bg_dark $yellow $magenta $bg_dark
 client.unfocused        $bg_dark $bg_dark $yellow $magenta $bg_dark
 client.urgent           $red $red $fg $red $red
 
+# polybar
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
 # i3bar
 bar {
         status_command i3status -c $HOME/.config/i3/i3status.conf
