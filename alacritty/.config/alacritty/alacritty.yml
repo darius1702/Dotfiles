@@ -48,7 +48,7 @@ font:
   # Bold italic font face
   bold_italic:
     family: Iosevka Nerd Font Mono
-    style: Oblique
+    style: Medium Oblique
 
   # Point size
   size: 8.5
