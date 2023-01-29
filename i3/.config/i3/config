@@ -152,21 +152,20 @@ bindsym $mod+o resize shrink height 10 px or 10 ppt
 bindsym $mod+p resize grow width 10 px or 10 ppt
 
 # yoinked from https://gist.github.com/sainnhe/ad5cbc4f05c4ced83f80e54d9a75d22f (sainnhe gruvbox-material)
-set $bg_dark #1d2021
-set $bg #282828
-set $fg #d4be98
-set $black #3c3836
-set $red #ea6962
-set $green #a9b665
-set $yellow #d8a657
-set $blue #7daea3
-set $magenta #d3869b
-set $cyan #89b482
+set $bg #161821
+set $fg #d2d4de
+set $black #161821
+set $red #e27878
+set $green #b4be82
+set $yellow #e2a478
+set $blue #84a0c6
+set $magenta #a093c7
+set $cyan #89b8c2
 
 # class                 border|backgr|text|indicator|child_border
-client.focused          $blue $blue $bg_dark $cyan $fg
-client.focused_inactive $bg_dark $bg_dark $yellow $magenta $bg_dark
-client.unfocused        $bg_dark $bg_dark $yellow $magenta $bg_dark
+client.focused          $blue $blue $bg $green $blue
+client.focused_inactive $bg $bg $yellow $magenta $bg
+client.unfocused        $bg $bg $yellow $magenta $bg
 client.urgent           $red $red $fg $red $red
 
 # polybar
@@ -179,15 +178,15 @@ bar {
         position top
         colors {
                 # bar background color
-                background $bg_dark
+                background $bg
                 # text color used for blocks that do not have a color specified.
                 statusline $fg
                 # workspaces section
                 #                    border  backgr. text
-                focused_workspace    $green $green $bg_dark
+                focused_workspace    $blue $blue $bg
                 inactive_workspace   $bg $bg $fg
                 active_workspace     $bg $bg $blue
-                urgent_workspace     $red $red $bg_dark
+                urgent_workspace     $red $red $bg
         }
 
 }

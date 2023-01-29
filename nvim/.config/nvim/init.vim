@@ -19,7 +19,7 @@ source $HOME/.config/nvim/configuration/line.lua
 source $HOME/.config/nvim/plugins/config.lua
 source $HOME/.config/nvim/plugins/lsp_config.lua
 
-colorscheme gruvbox-material
+colorscheme iceberg
 
 " VimWiki
 let g:vimwiki_list = [{'path': '~/Documents/Notes/vimwiki/'}]

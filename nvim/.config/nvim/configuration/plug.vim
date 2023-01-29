@@ -9,6 +9,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'sainnhe/gruvbox-material'
 Plug 'sainnhe/everforest'
 Plug 'tadachs/kit.vim'
+Plug 'cocopon/iceberg.vim'
 
 " Statusline
 Plug 'nvim-lualine/lualine.nvim'
