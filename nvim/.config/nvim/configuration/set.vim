@@ -7,7 +7,7 @@ endif
 set bg=dark
 set scrolloff=3
 set matchpairs+=<:>
-set signcolumn=auto
+set signcolumn=yes
 set path+=**
 
 if !has('gui_running')
