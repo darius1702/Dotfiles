@@ -152,6 +152,7 @@ bindsym $mod+o resize shrink height 10 px or 10 ppt
 bindsym $mod+p resize grow width 10 px or 10 ppt
 
 # yoinked from https://gist.github.com/sainnhe/ad5cbc4f05c4ced83f80e54d9a75d22f (sainnhe gruvbox-material)
+set $bg_dark #101215
 set $bg #161821
 set $fg #d2d4de
 set $black #161821
@@ -164,8 +165,8 @@ set $cyan #89b8c2
 
 # class                 border|backgr|text|indicator|child_border
 client.focused          $blue $blue $bg $green $blue
-client.focused_inactive $bg $bg $yellow $magenta $bg
-client.unfocused        $bg $bg $yellow $magenta $bg
+client.focused_inactive $bg $bg $yellow $magenta $bg_dark
+client.unfocused        $bg $bg $yellow $magenta $bg_dark
 client.urgent           $red $red $fg $red $red
 
 # polybar
@@ -178,7 +179,7 @@ bar {
         position top
         colors {
                 # bar background color
-                background $bg
+                background $bg_dark
                 # text color used for blocks that do not have a color specified.
                 statusline $fg
                 # workspaces section
