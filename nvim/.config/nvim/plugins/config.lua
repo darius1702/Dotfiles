@@ -6,6 +6,7 @@ require('nvim-treesitter.configs').setup{
   }
 }
 require('telescope').setup{}
+require('neogit').setup{}
 require('colorizer').setup{
   '*'; -- highlight all files
 }

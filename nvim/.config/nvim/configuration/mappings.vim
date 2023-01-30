@@ -14,11 +14,8 @@ vnoremap <silent> <leader>y "+y
 nnoremap <silent> <leader>d "_d
 vnoremap <silent> <leader>d "_d
 
-" Fugitive
-" git status
-nnoremap <silent> <leader>gs :G<CR>
-" git commit
-nnoremap <silent> <leader>cc :G commit<CR>
+" Neogit
+nnoremap <silent> <leader>gs :Neogit<CR>
 
 " Vimux
 nnoremap <silent> <leader>vp :VimuxPromptCommand<CR>

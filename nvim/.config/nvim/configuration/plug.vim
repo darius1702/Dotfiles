@@ -27,7 +27,7 @@ Plug 'norcalli/nvim-colorizer.lua'
 
 " Git
 Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
+Plug 'TimUntersberger/neogit'
 
 " tmux
 Plug 'preservim/vimux'
