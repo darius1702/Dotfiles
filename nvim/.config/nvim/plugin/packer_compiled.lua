@@ -74,10 +74,10 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["gruvbox-material"] = {
+  ["iceberg.vim"] = {
     loaded = true,
-    path = "/home/darius/.local/share/nvim/site/pack/packer/start/gruvbox-material",
-    url = "https://github.com/sainnhe/gruvbox-material"
+    path = "/home/darius/.local/share/nvim/site/pack/packer/start/iceberg.vim",
+    url = "https://github.com/cocopon/iceberg.vim"
   },
   ["nvim-treesitter"] = {
     loaded = true,
@@ -98,11 +98,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/darius/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
-  },
-  ["vim-fugitive"] = {
-    loaded = true,
-    path = "/home/darius/.local/share/nvim/site/pack/packer/start/vim-fugitive",
-    url = "https://github.com/tpope/vim-fugitive"
   }
 }
 
