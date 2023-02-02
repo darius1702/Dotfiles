@@ -44,6 +44,7 @@ alias tc="nvim ~/.tmux.conf"
 alias ic="nvim ~/.config/i3/config"
 
 alias fv="fzf | xargs nvim"
+alias todo="rg -i 'todo|fixme'"
 
 alias vim=nvim
 alias v=nvim

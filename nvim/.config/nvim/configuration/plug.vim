@@ -17,6 +17,9 @@ Plug 'nvim-lualine/lualine.nvim'
 " LaTeX
 Plug 'lervag/vimtex'
 
+" Autopairs
+Plug 'windwp/nvim-autopairs'
+
 " Neorg
 Plug 'nvim-neorg/neorg'
 

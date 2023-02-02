@@ -5,6 +5,7 @@ require('nvim-treesitter.configs').setup{
     additional_vim_regex_highlughting = false,
   }
 }
+require('nvim-autopairs').setup{}
 require('telescope').setup{}
 require('neogit').setup{}
 require('colorizer').setup{

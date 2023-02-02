@@ -1,6 +1,3 @@
-" The better auto-pairs
-inoremap <silent> {<CR> {<CR><CR><BS>}<ESC>ka<TAB>
-
 " Shift + J/K moves selected lines down/up in visual mode
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
