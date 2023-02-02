@@ -28,7 +28,7 @@ require("lazy").setup({
 	"nvim-neorg/neorg",
 
 	-- Syntax
-	"tpope/vim-commentary",
+	"numToStr/Comment.nvim",
 	"tpope/vim-surround",
 	"norcalli/nvim-colorizer.lua",
 

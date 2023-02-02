@@ -1,3 +1,6 @@
+-- tealksjd
+-- asdfasdsa
+-- sda
 vim.cmd([[set spelllang=de_de,en_us]])
 local settings = {
   bg = "dark",
@@ -25,9 +28,10 @@ local settings = {
   hlsearch = false,
   ignorecase = true,
   undofile = true,
-  undodir="$HOME/.config/nvim/undo",
   undoreload = 10000,
 }
+
+vim.cmd([[set undodir=$HOME/.config/nvim/undo]])
 
 for k, v in pairs(settings) do
   vim.opt[k] = v
