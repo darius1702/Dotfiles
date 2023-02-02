@@ -1,6 +1,3 @@
--- tealksjd
--- asdfasdsa
--- sda
 vim.cmd([[set spelllang=de_de,en_us]])
 local settings = {
   bg = "dark",
