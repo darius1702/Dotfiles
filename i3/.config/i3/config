@@ -15,7 +15,7 @@ focus_follows_mouse no
 for_window [class=".*"] border pixel 1
 
 # gaps (only works on i3-gaps or i3 version >= 4.22)
-# gaps inner 10
+gaps inner 10
 
 # show gaps only when there is more than 1 window on current workspace
 # smart_gaps on
@@ -35,8 +35,8 @@ bindsym $mod+Return exec --no-startup-id alacritty
 # browser
 bindsym $mod+b exec --no-startup-id firefox
 
-# vimwiki
-bindsym $mod+Shift+w exec --no-startup-id alacritty -e nvim +VimwikiIndex
+# neorg
+bindsym $mod+n exec --no-startup-id alacritty -e nvim +"Neorg workspace notes"
 
 # pulsemixer
 bindsym $mod+m exec --no-startup-id alacritty -e pulsemixer

@@ -21,9 +21,6 @@ source $HOME/.config/nvim/plugins/lsp_config.lua
 
 colorscheme iceberg
 
-" VimWiki
-let g:vimwiki_list = [{'path': '~/Documents/Notes/vimwiki/'}]
-
 " Vimtex
 let g:vimtex_view_method = 'zathura'
 let g:vimtex_compiler_latexmk = {

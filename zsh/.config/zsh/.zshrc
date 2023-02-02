@@ -46,6 +46,7 @@ alias ic="nvim ~/.config/i3/config"
 alias fv="fzf | xargs nvim"
 
 alias vim=nvim
+alias v=nvim
 alias ts="tmux new-session -s"
 alias z=zathura
 

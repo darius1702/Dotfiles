@@ -17,8 +17,8 @@ Plug 'nvim-lualine/lualine.nvim'
 " LaTeX
 Plug 'lervag/vimtex'
 
-" VimWiki
-Plug 'vimwiki/vimwiki'
+" Neorg
+Plug 'nvim-neorg/neorg'
 
 " Syntax
 Plug 'tpope/vim-commentary'
