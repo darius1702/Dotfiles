@@ -52,6 +52,7 @@ alias ts="tmux new-session -s"
 alias z=zathura
 
 alias gcm="git commit -m"
+alias gs="nvim +\"Neogit\""
 alias cp="cp -iv"
 alias mv="mv -iv"
 
@@ -66,4 +67,4 @@ alias catkin_make="catkin_make -DCMAKE_EXPORT_COMPILE_COMMANDS=1"
 
 # Better vi-mode
 source $HOME/.config/zsh/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-source $HOME/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source $HOME/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
