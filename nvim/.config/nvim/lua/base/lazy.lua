@@ -18,6 +18,14 @@ require("lazy").setup({
   -- Statusline
   "nvim-lualine/lualine.nvim",
 
+  -- Ros
+  "tadachs/mutils.nvim",
+  {
+    'tadachs/ros-nvim',
+    config = function() require("ros-nvim").setup({only_workspace = true}) end,
+    dependencies = { "tadachs/mutils.nvim" },
+  },
+
   -- LaTeX
   "lervag/vimtex",
 

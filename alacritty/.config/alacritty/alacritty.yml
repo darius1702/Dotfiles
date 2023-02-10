@@ -51,7 +51,7 @@ font:
     style: Medium Oblique
 
   # Point size
-  size: 8.5
+  size: 9
 
   #offset:
   #  x: 0
@@ -79,7 +79,7 @@ font:
 schemes:
   ncf: &ncf
     primary:
-      background: '#171717'
+      background: '#141414'
       foreground: '#e1e1e1'
     normal:
       black:   '#151515'

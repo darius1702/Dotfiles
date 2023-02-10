@@ -10,7 +10,7 @@ require'nvim-treesitter.configs'.setup {
     enable = true,
 
     -- Let vimtex handle latex highlighting
-    disable = { "latex" }, 
+    disable = { "latex" },
 
     additional_vim_regex_highlighting = false,
   }
