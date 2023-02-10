@@ -77,50 +77,18 @@ font:
 # Colors: https://gist.github.com/sainnhe/ad5cbc4f05c4ced83f80e54d9a75d22f
 # The definition of color schemes.
 schemes:
-  gruvbox_material_medium_dark: &gruvbox_material_medium_dark
+  ncf: &ncf
     primary:
-      background: '0x282828'
-      foreground: '0xd4be98'
+      background: '#171717'
+      foreground: '#e1e1e1'
     normal:
-      black:   '0x3c3836'
-      red:     '0xea6962'
-      green:   '0xa9b665'
-      yellow:  '0xd8a657'
-      blue:    '0x7daea3'
-      magenta: '0xd3869b'
-      cyan:    '0x89b482'
-      white:   '0xd4be98'
-    bright:
-      black:   '0x3c3836'
-      red:     '0xea6962'
-      green:   '0xa9b665'
-      yellow:  '0xd8a657'
-      blue:    '0x7daea3'
-      magenta: '0xd3869b'
-      cyan:    '0x89b482'
-      white:   '0xd4be98'
-
-  iceberg_dark: &iceberg
-    primary:
-      background: '#161821'
-      foreground: '#d2d4de'
-    normal:
-      black:   '#161821'
-      red:     '#e27878'
-      green:   '#b4be82'
-      yellow:  '#e2a478'
-      blue:    '#84a0c6'
-      magenta: '#a093c7'
-      cyan:    '#89b8c2'
-      white:   '#c6c8d1'
-    bright:
-      black:   '#6b7089'
-      red:     '#e98989'
-      green:   '#c0ca8e'
-      yellow:  '#e9b189'
-      blue:    '#91acd1'
-      magenta: '#ada0d3'
-      cyan:    '#95c4ce'
-      white:   '#d2d4de'
+      black:   '#151515'
+      red:     '#cc6666'
+      green:   '#90a959'
+      yellow:  '#f4bf75'
+      blue:    '#a5d6ff'
+      magenta: '#aa759f'
+      cyan:    '#88afa2'
+      white:   '#f1f1f1'
 # Apply the color scheme.
-colors: *iceberg
+colors: *ncf

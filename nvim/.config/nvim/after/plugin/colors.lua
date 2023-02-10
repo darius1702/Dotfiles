@@ -1,5 +1,5 @@
 function set_colors(color)
-	color = color or "iceberg"
+	color = color or "no-clown-fiesta"
 	vim.cmd.colorscheme(color)
 end
 

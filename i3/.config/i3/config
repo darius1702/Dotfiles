@@ -35,6 +35,9 @@ bindsym $mod+Return exec --no-startup-id alacritty
 # browser
 bindsym $mod+b exec --no-startup-id firefox
 
+# books
+bindsym $mod+Shift+b exec --no-startup-id fd . ~/Documents/Books --type f | dmenu -i -p "Book:" -l 20 | xargs -I{} zathura {}
+
 # neorg
 bindsym $mod+n exec --no-startup-id alacritty -e nvim +"Neorg workspace notes"
 
@@ -151,20 +154,22 @@ bindsym $mod+i resize grow height 10 px or 10 ppt
 bindsym $mod+o resize shrink height 10 px or 10 ppt
 bindsym $mod+p resize grow width 10 px or 10 ppt
 
-# yoinked from https://gist.github.com/sainnhe/ad5cbc4f05c4ced83f80e54d9a75d22f (sainnhe gruvbox-material)
-set $bg_dark #101215
-set $bg #161821
-set $fg #d2d4de
-set $black #161821
-set $red #e27878
-set $green #b4be82
-set $yellow #e2a478
-set $blue #84a0c6
-set $magenta #a093c7
-set $cyan #89b8c2
+set $fg #E1E1E1
+set $black #151515
+set $bg_dark #171717
+set $accent #202020
+set $bg #373737
+set $blue #A5D6FF
+set $cyan #88afa2
+set $red #CC6666
+set $green #90A959
+set $yellow #F4BF75
+set $orange #FFA557
+set $magenta #AA759F
+
 
 # class                 border|backgr|text|indicator|child_border
-client.focused          $blue $blue $bg $green $blue
+client.focused          $cyan $blue $bg $green $cyan
 client.focused_inactive $bg $bg $yellow $magenta $bg_dark
 client.unfocused        $bg $bg $yellow $magenta $bg_dark
 client.urgent           $red $red $fg $red $red
@@ -184,7 +189,7 @@ bar {
                 statusline $fg
                 # workspaces section
                 #                    border  backgr. text
-                focused_workspace    $blue $blue $bg
+                focused_workspace    $cyan $cyan $bg
                 inactive_workspace   $bg $bg $fg
                 active_workspace     $bg $bg $blue
                 urgent_workspace     $red $red $bg

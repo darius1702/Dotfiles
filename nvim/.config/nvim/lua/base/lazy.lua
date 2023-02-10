@@ -13,7 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   -- Colors
-  "cocopon/iceberg.vim",
+  "aktersnurra/no-clown-fiesta.nvim",
 
   -- Statusline
   "nvim-lualine/lualine.nvim",
@@ -32,16 +32,27 @@ require("lazy").setup({
       load = {
         ["core.defaults"] = {}, -- Loads default behaviour
         ["core.norg.dirman"] = { -- Manages Neorg workspaces
-          config = {
-            workspaces = {
-              notes = "~/Documents/Notes/neorg/",
-            },
+        config = {
+          workspaces = {
+            notes = "~/Documents/Notes/neorg/",
           },
         },
       },
+      ["core.norg.concealer"] = {
+        config = {
+          folds = false,
+        },
+      },
+      ["core.norg.completion"] = {
+        config = {
+          engine = "nvim-cmp",
+        }
+      },
+      ["core.integrations.treesitter"] = {},
     },
-    dependencies = { { "nvim-lua/plenary.nvim" } },
   },
+  dependencies = { { "nvim-lua/plenary.nvim" } },
+},
 
   -- Syntax
   "numToStr/Comment.nvim",
