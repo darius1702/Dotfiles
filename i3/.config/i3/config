@@ -156,7 +156,7 @@ bindsym $mod+p resize grow width 10 px or 10 ppt
 
 set $fg #E1E1E1
 set $black #151515
-set $bg_dark #171717
+set $bg_dark #141414
 set $accent #202020
 set $bg #373737
 set $blue #A5D6FF
