@@ -80,6 +80,7 @@ require("lazy").setup({
   "nvim-lua/popup.nvim",
   "nvim-telescope/telescope.nvim",
   {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+  "nvim-treesitter/playground",
 
   -- LSPZero
   {
