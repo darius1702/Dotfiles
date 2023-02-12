@@ -39,7 +39,7 @@ bindsym $mod+b exec --no-startup-id firefox
 bindsym $mod+Shift+b exec --no-startup-id fd . ~/Documents/Books --type f | dmenu -i -p "Book:" -l 20 | xargs -I{} zathura {}
 
 # neorg
-bindsym $mod+n exec --no-startup-id alacritty -e nvim +"Neorg workspace notes"
+bindsym $mod+n exec --no-startup-id alacritty -e nvim +"lua require('neorg').setup{}" +"Neorg workspace notes"
 
 # pulsemixer
 bindsym $mod+m exec --no-startup-id alacritty -e pulsemixer

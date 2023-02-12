@@ -4,6 +4,7 @@ local settings = {
   scrolloff = 3,
   signcolumn = "yes",
   showmode = false,
+  showcmd = false,
   laststatus = 2,
   cmdheight = 1,
   encoding = "utf-8",
