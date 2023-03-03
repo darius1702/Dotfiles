@@ -18,3 +18,7 @@ vim.cmd[[highlight lualine_a_visual guifg=#cc6666]]
 vim.cmd[[highlight lualine_a_replace guifg=#f4bf75]]
 vim.cmd[[highlight lualine_a_command guifg=#aa759f]]
 vim.cmd[[highlight lualine_c_normal guibg=#202020]]
+
+vim.cmd[[set foldmethod=expr]]
+vim.cmd[[set foldexpr=nvim_treesitter#foldexpr()]]
+vim.cmd[[set nofoldenable]]

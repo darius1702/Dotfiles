@@ -1,13 +1,18 @@
-vim.cmd([[set spelllang=de_de,en_us]])
+vim.cmd([[set spelllang=en_us]])
 local settings = {
+
+  -- default values anyway, maybe remove sometime
   bg = "dark",
+  hidden = true,
+  encoding = "utf-8",
+  laststatus = 2,
+  --
+
   scrolloff = 3,
   signcolumn = "yes",
   showmode = false,
   showcmd = false,
-  laststatus = 2,
   cmdheight = 1,
-  encoding = "utf-8",
   number = true,
   relativenumber = true,
   splitbelow = true,
@@ -19,7 +24,6 @@ local settings = {
   autoindent = true,
   smartindent = true,
   breakindent = true,
-  hidden = true,
   updatetime = 50,
   go = "a",
   mouse = "a",
@@ -36,6 +40,7 @@ for k, v in pairs(settings) do
 end
 
 vim.g.vimtex_view_method = "zathura"
+vim.g.vimtex_view_forward_search_on_start = false
 vim.g.vimtex_compiler_latexmk = {
   build_dir = "build",
 }
