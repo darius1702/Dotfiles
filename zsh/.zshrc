@@ -1,4 +1,5 @@
 source ~/.config/zsh/.zshrc
 
-[ -f "/home/darius/.ghcup/env" ] && source "/home/darius/.ghcup/env" # ghcup-env
+# go
+export PATH="/home/darius/Software/thirdparty/go/bin/:$PATH"
 export PATH=~/go/bin:$PATH
