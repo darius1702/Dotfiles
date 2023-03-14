@@ -58,9 +58,9 @@ alias mv="mv -iv"
 
 alias l="ls --color=auto"
 alias ls="ls --color=auto"
-alias la="ls -a --color=auto"
+alias la="ls -A --color=auto"
 alias ll="ls -l --color=auto"
-alias lla="ls -la --color=auto"
+alias lla="ls -lA --color=auto"
 
 alias grep="grep --color=auto"
 alias catkin_make="catkin_make -DCMAKE_EXPORT_COMPILE_COMMANDS=1"

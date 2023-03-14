@@ -20,10 +20,6 @@ require("lazy").setup({
       vim.cmd.colorscheme('no-clown-fiesta')
     end,
   },
-  {
-    "darius1702/kit.vim",
-    dir = "~/Projects/kit.vim/"
-  },
 
   -- Statusline
   "nvim-lualine/lualine.nvim",
@@ -61,6 +57,7 @@ require("lazy").setup({
             workspaces = {
               notes = "~/Documents/Notes/neorg/",
             },
+            default_workspace = "notes",
           },
         },
         ["core.norg.completion"] = {
@@ -75,7 +72,10 @@ require("lazy").setup({
   },
 
   -- Syntax
-  "numToStr/Comment.nvim",
+  {
+    "numToStr/Comment.nvim",
+    config = true,
+  },
   {
     "kylechui/nvim-surround",
     config = true,
@@ -86,12 +86,24 @@ require("lazy").setup({
   },
 
   -- Git
-  "airblade/vim-gitgutter",
+  {
+    "lewis6991/gitsigns.nvim",
+    opts = {
+      signs = {
+        delete = { text = "│" },
+      },
+    },
+    lazy = false,
+    keys = {
+      { "<leader>hp", "<cmd>Gitsigns preview_hunk<cr>", desc = "Preview Hunk"},
+      { "<leader>hb", "<cmd>Gitsigns blame_line<cr>", desc = "Blame current line"},
+    }
+  },
   {
     "TimUntersberger/neogit",
     config = true,
     keys = {
-      { "<leader>gs", "<cmd>Neogit<cr>", desc = "Neogit" }
+      { "<leader>gs", "<cmd>Neogit kind=replace<cr>", desc = "Neogit" }
     }
   },
 
