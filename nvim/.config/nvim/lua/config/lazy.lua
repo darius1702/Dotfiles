@@ -18,7 +18,7 @@ require("lazy").setup({
         transparent = true,
       }
       vim.cmd.colorscheme('no-clown-fiesta')
-    end,
+    end
   },
 
   -- Statusline
@@ -30,6 +30,20 @@ require("lazy").setup({
     config = function() require("ros-nvim").setup({only_workspace = true }) end,
     -- branch = "devel",
     dependencies = { "tadachs/mutils.nvim" },
+  },
+
+  -- Markdown
+  {
+    "iamcco/markdown-preview.nvim",
+    build = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+    config = function()
+      vim.g.mkdp_auto_close = 1
+      vim.g.mkdp_command_for_global = 1
+      vim.g.mkdp_browser = "surf"
+    end,
+    -- cmd = {"MarkdownPreview"},
   },
 
   -- LaTeX
@@ -91,6 +105,7 @@ require("lazy").setup({
     opts = {
       signs = {
         delete = { text = "│" },
+        changedelete = { text = "│" },
       },
     },
     lazy = false,
