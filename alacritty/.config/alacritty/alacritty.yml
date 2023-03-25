@@ -74,7 +74,6 @@ font:
   #   - | Beam
   # shape: Beam
 
-# Colors: https://gist.github.com/sainnhe/ad5cbc4f05c4ced83f80e54d9a75d22f
 # The definition of color schemes.
 schemes:
   ncf: &ncf
@@ -83,10 +82,10 @@ schemes:
       foreground: '#e1e1e1'
     normal:
       black:   '#151515'
-      red:     '#cc6666'
+      red:     '#b46958'
       green:   '#90a959'
       yellow:  '#f4bf75'
-      blue:    '#a5d6ff'
+      blue:    '#bad7ff'
       magenta: '#aa759f'
       cyan:    '#88afa2'
       white:   '#f1f1f1'
