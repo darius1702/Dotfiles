@@ -8,6 +8,11 @@ setopt prompt_subst
 setopt globdots
 unsetopt PROMPT_SP
 
+# Use space bar in normal mode to edit command in editor
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd " " edit-command-line
+
 # auto insert first completion match
 # setopt MENU_COMPLETE
 
@@ -58,9 +63,9 @@ alias mv="mv -iv"
 
 alias l="ls --color=auto"
 alias ls="ls --color=auto"
-alias la="ls -A --color=auto"
-alias ll="ls -l --color=auto"
-alias lla="ls -lA --color=auto"
+alias la="ls -Ah --color=auto"
+alias ll="ls -lh --color=auto"
+alias lla="ls -lAh --color=auto"
 
 alias grep="grep --color=auto"
 alias catkin_make="catkin_make -DCMAKE_EXPORT_COMPILE_COMMANDS=1"
