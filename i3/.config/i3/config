@@ -33,10 +33,10 @@ floating_modifier $mod
 bindsym $mod+Return exec --no-startup-id alacritty
 
 # browser
-bindsym $mod+b exec --no-startup-id firefox
+bindsym $mod+Shift+b exec --no-startup-id firefox
 
 # books
-bindsym $mod+Shift+b exec --no-startup-id fd . ~/Documents/Books --type f | dmenu -i -p "Book:" -l 20 | xargs -I{} zathura {}
+bindsym $mod+b exec --no-startup-id fd . ~/Documents/Books --type f | dmenu -i -p "Book:" -l 20 | xargs -I{} zathura {}
 
 # uni
 bindsym $mod+s exec --no-startup-id fd . ~/Documents/Vorlesungen --type f | dmenu -i -p "Skript:" -l 20 | xargs -I{} zathura {}
@@ -51,7 +51,7 @@ bindsym $mod+m exec --no-startup-id alacritty -e pulsemixer
 bindsym $mod+q kill
 
 # dmenu_run
-bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+d exec --no-startup-id dmenu_run -p "Run: " -l 6 -g 6
 
 # passmenu
 bindsym $mod+Shift+p exec --no-startup-id bash /home/darius/Software/scripts/passmenu.sh
