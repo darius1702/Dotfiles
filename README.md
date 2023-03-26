@@ -2,3 +2,7 @@
 
 ![screenshot](./screenshot.png)
 ./install.sh requires [GNU Stow](https://www.gnu.org/software/stow/)
+
+# TODO
+- [ ] Try to move dmenu config here without breaking git
+- [ ] Replace stow */ with individual calls, move scripts dir here
