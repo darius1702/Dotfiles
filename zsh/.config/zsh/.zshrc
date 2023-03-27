@@ -57,7 +57,6 @@ alias ts="tmux new-session -s"
 alias z=zathura
 
 alias gcm="git commit -m"
-alias gs="nvim +\"Neogit\""
 alias cp="cp -iv"
 alias mv="mv -iv"
 
