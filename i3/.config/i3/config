@@ -9,6 +9,9 @@ exec --no-startup-id xss-lock -- $HOME/.config/i3/lock.sh
 # ALT Key
 set $mod Mod4
 
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
 # Mouse settings
 focus_follows_mouse no
 mouse_warping none
@@ -27,9 +30,6 @@ smart_borders on
 
 # Requires noto-fonts package
 font pango: Iosevka Nerd Font Mono Semibold 12
-
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
 
 # terminal
 bindsym $mod+Return exec --no-startup-id alacritty
