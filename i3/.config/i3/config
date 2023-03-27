@@ -1,7 +1,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 # Wallpaper
-exec --no-startup-id ~/.fehbg
+exec_always --no-startup-id ~/.fehbg
 
 # Screen lock
 exec --no-startup-id xss-lock -- $HOME/.config/i3/lock.sh
@@ -9,7 +9,9 @@ exec --no-startup-id xss-lock -- $HOME/.config/i3/lock.sh
 # ALT Key
 set $mod Mod4
 
+# Mouse settings
 focus_follows_mouse no
+mouse_warping none
 
 # border style
 for_window [class=".*"] border pixel 1
