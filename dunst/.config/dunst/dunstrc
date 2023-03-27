@@ -21,7 +21,7 @@
 
     ### Geometry ###
 
-    geometry = "500x7-10+40"
+    geometry = "500x7-15+40"
     # dynamic width from 0 to 300
     # width = (0, 300)
     # constant width of 300
@@ -162,7 +162,7 @@
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
     # Markup is allowed
-    format = "<b>%s</b>\n%b"
+    format = "<b>%s</b>\n%b\n%p"
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
@@ -179,10 +179,13 @@
 
     # Specify where to make an ellipsis in long lines.
     # Possible values are "start", "middle" and "end".
-    ellipsize = middle
+    ellipsize = end
 
     # Ignore newlines '\n' in notifications.
     ignore_newline = no
+
+    # Break long text to multiple lines
+    word_wrap = yes
 
     # Stack together notifications with the same content
     stack_duplicates = true
