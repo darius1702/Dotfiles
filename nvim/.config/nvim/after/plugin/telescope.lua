@@ -1,3 +1,22 @@
+require('telescope').setup {
+  pickers = {
+    buffers = {
+      theme = "ivy",
+    },
+    current_buffer_fuzzy_find = {
+      theme = "ivy",
+    },
+    help_tags = {
+      theme = "ivy",
+    },
+    man_pages = {
+      -- list all sections instead of just (1)
+      sections = { "ALL" },
+      theme = "ivy",
+    },
+  },
+}
+
 local builtin = require('telescope.builtin')
 
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
