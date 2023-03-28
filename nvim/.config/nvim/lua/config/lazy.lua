@@ -123,7 +123,16 @@ require("lazy").setup({
   },
 
   -- tmux
-  "preservim/vimux",
+  {
+    "preservim/vimux",
+    keys = {
+      {"<leader>vp", ":VimuxPromptCommand<CR>", desc = "VimuxPromptCommand"},
+      {"<leader>vl", ":VimuxRunLastCommand<CR>", desc = "VimuxRunLastCommand"},
+      {"<leader>vc", ":VimuxCloseRunner<CR>", desc = "VimuxCloseRunner"},
+      {"<leader>vz", ":VimuxZoomRunner<CR>", desc = "VimuxZoomRunner"},
+      {"<leader>vi", ":VimuxInterruptRunner<CR>", desc = "VimuxInterruptRunner"},
+    },
+  },
   "christoomey/vim-tmux-navigator",
 
   -- Utils
