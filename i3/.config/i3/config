@@ -56,7 +56,7 @@ bindsym $mod+q kill
 bindsym $mod+d exec --no-startup-id dmenu_run -p "Run: " -l 6 -g 6
 
 # passmenu
-bindsym $mod+Shift+p exec --no-startup-id bash /home/darius/Software/scripts/passmenu.sh
+bindsym $mod+Shift+p exec --no-startup-id bash $HOME/Dotfiles/scripts/passmenu.sh
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
