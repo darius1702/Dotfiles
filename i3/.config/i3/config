@@ -19,7 +19,7 @@ mouse_warping none
 # border style
 for_window [class=".*"] border pixel 1
 
-# gaps (only works on i3-gaps or i3 version >= 4.22)
+# gaps
 gaps inner 10
 
 # show gaps only when there is more than 1 window on current workspace
@@ -28,7 +28,7 @@ gaps inner 10
 # only draw borders when there is more than 1 window on current workspace
 smart_borders on
 
-# Requires noto-fonts package
+# download from: https://www.nerdfonts.com/font-downloads
 font pango: Iosevka Nerd Font Mono Semibold 12
 
 # terminal

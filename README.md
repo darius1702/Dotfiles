@@ -12,5 +12,4 @@
 
 # Credits
 - Most colors from [everforest](https://github.com/sainnhe/everforest)
-- FG and BG from  [no-clown-fiesta](https://github.com/aktersnurra/no-clown-fiesta.nvim)
 - Bash script for password selection: [passmenu](https://gist.github.com/willpower232/230ccd3da46306a37250c282c37798ee)
