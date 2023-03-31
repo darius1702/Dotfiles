@@ -12,13 +12,15 @@ require("lazy").setup({
 
   -- Colors
   {
-    "aktersnurra/no-clown-fiesta.nvim",
+    "sainnhe/everforest",
     config = function()
-      require('no-clown-fiesta').setup{
-        transparent = true,
-      }
-      vim.cmd.colorscheme('no-clown-fiesta')
-    end
+      vim.g.everforest_transparent_background = 1
+      vim.g.everforest_better_performance = 1
+      vim.g.everforest_disable_italic_comment = 1
+      vim.g.everforest_diagnostic_virtual_text = "colored"
+      vim.cmd[[ let g:everforest_colors_override = {'fg' : ['#e1e1e1', '223'], 'bg_visual' : ['#2E383C', '52']} ]]
+      vim.cmd.colorscheme('everforest')
+    end,
   },
 
   -- Statusline

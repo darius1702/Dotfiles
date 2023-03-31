@@ -8,8 +8,10 @@ local settings = {
   laststatus = 2,
   --
 
+  ruler = false,
   scrolloff = 3,
   signcolumn = "yes",
+  cursorline = true,
   showmode = false,
   showcmd = false,
   cmdheight = 1,
@@ -34,6 +36,7 @@ local settings = {
 }
 
 vim.cmd([[set undodir=$HOME/.config/nvim/undo]])
+vim.o.grepprg="rg --vimgrep --no-heading -i --"
 
 for k, v in pairs(settings) do
   vim.opt[k] = v

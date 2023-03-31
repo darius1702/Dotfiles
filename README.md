@@ -3,6 +3,10 @@
 ![screenshot](./screenshot.png)
 ./install.sh requires [GNU Stow](https://www.gnu.org/software/stow/)
 
+# Colors
+- Most colors from [everforest](https://github.com/sainnhe/everforest)
+- FG and BG from  [no-clown-fiesta](https://github.com/aktersnurra/no-clown-fiesta.nvim)
+
 # TODO
 - [ ] Add back 'gs' zsh alias to open neogit
     - Need to find a clean way to do it because neogit is lazy loaded only on '<leader>gs'

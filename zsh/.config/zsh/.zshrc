@@ -19,7 +19,7 @@ bindkey -M vicmd " " edit-command-line
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
-zstyle ':vcs_info:git:*' formats '%F{white} on %B%F{magenta}%b'
+zstyle ':vcs_info:git:*' formats '%F{fg} on %B%F{magenta}%b'
 
 # Prompt variables
 DIR=$'%B%F{cyan}%3~%b'

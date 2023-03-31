@@ -76,18 +76,28 @@ font:
 
 # The definition of color schemes.
 schemes:
-  ncf: &ncf
-    primary:
-      background: '#141414'
-      foreground: '#e1e1e1'
-    normal:
-      black:   '#151515'
-      red:     '#b46958'
-      green:   '#90a959'
-      yellow:  '#f4bf75'
-      blue:    '#bad7ff'
-      magenta: '#aa759f'
-      cyan:    '#88afa2'
-      white:   '#f1f1f1'
+  everforest_dark_hard: &everforest_dark_hard
+      primary:
+        background: '#141414'
+        foreground: '#e1e1e1'
+      normal:
+        black:   '#414b50'
+        red:     '#e67e80'
+        green:   '#a7c080'
+        yellow:  '#dbbc7f'
+        blue:    '#7fbbb3'
+        magenta: '#d699b6'
+        cyan:    '#83c092'
+        white:   '#e1e1e1'
+      bright:
+        black:   '#475258'
+        red:     '#e67e80'
+        green:   '#a7c080'
+        yellow:  '#dbbc7f'
+        blue:    '#7fbbb3'
+        magenta: '#d699b6'
+        cyan:    '#83c092'
+        white:   '#e1e1e1'
+
 # Apply the color scheme.
-colors: *ncf
+colors: *everforest_dark_hard

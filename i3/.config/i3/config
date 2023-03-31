@@ -164,18 +164,17 @@ bindsym $mod+p resize grow width 10 px or 10 ppt
 
 set $fg #E1E1E1
 set $bg_dark #141414
-set $accent #202020
 set $bg #373737
-set $blue #BAD7FF
-set $cyan #88AFA2
-set $red #B46958
-set $green #90A959
-set $yellow #F4BF75
-set $orange #FFA557
-set $magenta #AA759F
+set $blue #7FBBB3
+set $aqua #83C092
+set $red #E67E80
+set $green #A7C080
+set $yellow #DBBC7F
+set $orange #E69875
+set $magenta #D699B6
 
 # class                 border|backgr|text|indicator|child_border
-client.focused          $cyan $blue $bg $green $cyan
+client.focused          $aqua $blue $bg $green $aqua
 client.focused_inactive $red $bg $yellow $magenta $bg_dark
 client.unfocused        $bg $bg $yellow $magenta $bg_dark
 client.urgent           $red $red $fg $red $red
@@ -195,7 +194,7 @@ bar {
                 statusline $fg
                 # workspaces section
                 #                    border  backgr. text
-                focused_workspace    $cyan $cyan $bg
+                focused_workspace    $blue $blue $bg
                 inactive_workspace   $bg $bg $fg
                 active_workspace     $bg $bg $blue
                 urgent_workspace     $magenta $magenta $bg
