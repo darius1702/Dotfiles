@@ -54,8 +54,7 @@ require("lazy").setup({
       vim.keymap.set('n', '<leader>rdm', function() require("ros-nvim.ros").show_message_definition() end, { silent = true, noremap = true })
       vim.keymap.set('n', '<leader>rds', function() require("ros-nvim.ros").show_service_definition() end, { silent = true, noremap = true })
     end,
-    -- branch = "devel",
-    dependencies = { "tadachs/mutils.nvim" },
+    dependencies = { "nvim-lua/plenary.nvim" },
   },
 
   -- Markdown
@@ -73,16 +72,10 @@ require("lazy").setup({
   },
 
   -- LaTeX
-  {
-    "lervag/vimtex",
-    ft = "tex",
-  },
+  { "lervag/vimtex", ft = "tex" },
 
   -- Autopairs
-  {
-    "windwp/nvim-autopairs",
-    config = true,
-  },
+  { "windwp/nvim-autopairs", config = true },
 
   -- Neorg
   {
@@ -112,18 +105,9 @@ require("lazy").setup({
   },
 
   -- Syntax
-  {
-    "numToStr/Comment.nvim",
-    config = true,
-  },
-  {
-    "kylechui/nvim-surround",
-    config = true,
-  },
-  {
-    "norcalli/nvim-colorizer.lua",
-    opts = '*';
-  },
+  { "numToStr/Comment.nvim", config = true },
+  { "kylechui/nvim-surround", config = true },
+  { "norcalli/nvim-colorizer.lua", opts = '*' },
 
   -- Git
   {
