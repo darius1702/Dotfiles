@@ -24,12 +24,36 @@ require("lazy").setup({
   },
 
   -- Statusline
-  "nvim-lualine/lualine.nvim",
+  {
+    "nvim-lualine/lualine.nvim",
+    opts = {
+      options = {
+        icons_enabled = false,
+        component_separators = '',
+        section_separators = '',
+      },
+      sections = {
+        lualine_x = {'filetype'},
+      },
+    }
+  },
 
   -- Ros
   {
     'tadachs/ros-nvim',
-    config = function() require("ros-nvim").setup({only_workspace = true }) end,
+    config = function()
+      require("ros-nvim").setup({only_workspace = true })
+
+      -- telescope finder
+      vim.keymap.set('n', '<leader>tr', '<cmd>Telescope ros ros<cr>', { noremap = true })
+
+      -- follow links in launch files
+      vim.keymap.set('n', '<leader>rol', function() require("ros-nvim.ros").open_launch_include() end, { silent = true, noremap = true })
+
+      -- show definition for messages/services in floating window
+      vim.keymap.set('n', '<leader>rdm', function() require("ros-nvim.ros").show_message_definition() end, { silent = true, noremap = true })
+      vim.keymap.set('n', '<leader>rds', function() require("ros-nvim.ros").show_service_definition() end, { silent = true, noremap = true })
+    end,
     -- branch = "devel",
     dependencies = { "tadachs/mutils.nvim" },
   },
@@ -141,7 +165,23 @@ require("lazy").setup({
   "nvim-lua/plenary.nvim",
   "nvim-lua/popup.nvim",
   "nvim-telescope/telescope.nvim",
-  {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    config = function()
+      require'nvim-treesitter.configs'.setup {
+        ensure_installed = { "c", "lua", "vim", "help", "cpp", "markdown" },
+        sync_install = false,
+        auto_install = true,
+        highlight = {
+          enable = true,
+          -- Let vimtex handle latex highlighting
+          disable = { "latex" },
+          additional_vim_regex_highlighting = false,
+        }
+      }
+    end,
+  },
   "nvim-treesitter/playground",
 
   -- LSPZero
