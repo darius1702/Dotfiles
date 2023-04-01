@@ -2,6 +2,8 @@ require('telescope').setup {
   pickers = {
     find_files = {
       theme = "ivy",
+      hidden = true,
+      file_ignore_patterns = { ".git/", "^node_modules/" }
     },
     live_grep = {
       theme = "ivy",
