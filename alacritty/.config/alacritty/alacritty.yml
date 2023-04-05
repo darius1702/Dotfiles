@@ -101,3 +101,6 @@ schemes:
 
 # Apply the color scheme.
 colors: *everforest_dark_hard
+
+key_bindings:
+  - { key: Return, mods: Super|Shift, action: SpawnNewInstance }
