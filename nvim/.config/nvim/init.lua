@@ -9,7 +9,7 @@ vim.opt.termguicolors = true
 require("config")
 
 vim.cmd[[highlight CursorLineNr guifg=#DBBC7F ]]
-vim.cmd[[highlight CursorLine guibg=NONE]]
+vim.cmd[[highlight CursorLine guibg=#1E2326]]
 vim.cmd[[highlight lualine_c_normal guibg=NONE]]
 vim.cmd[[highlight lualine_c_insert guibg=NONE]]
 vim.cmd[[highlight lualine_c_replace guibg=NONE]]

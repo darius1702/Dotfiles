@@ -18,6 +18,7 @@ require("lazy").setup({
       vim.g.everforest_better_performance = 1
       vim.g.everforest_disable_italic_comment = 1
       vim.g.everforest_diagnostic_virtual_text = "colored"
+      vim.g.everforest_background = "hard"
       vim.cmd[[ let g:everforest_colors_override = {'fg' : ['#e1e1e1', '223'], 'bg_visual' : ['#2E383C', '52']} ]]
       vim.cmd.colorscheme('everforest')
     end,
@@ -80,7 +81,7 @@ require("lazy").setup({
   -- Neorg
   {
     "nvim-neorg/neorg",
-    lazy = true,
+    cmd = "Neorg",
     build = ":Neorg sync-parsers",
     opts = {
       load = {
