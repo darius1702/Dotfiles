@@ -7,6 +7,7 @@ set -e
 # link everything
 stow alacritty
 stow dunst
+stow gitconfig
 stow i3
 stow nvim
 stow tmux

@@ -1,0 +1,46 @@
+[user]
+  name = Darius Schefer
+  email = darius1702@gmail.com
+
+[color]
+  ui = auto
+  pager = false
+
+[alias]
+  cringe = bisect bad
+  co = checkout
+  s = status
+  hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+  ls = log --pretty=format:\"%C(yellow)%h\\\\ %ad%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate --date=relative
+  ll = log --pretty=format:\"%C(yellow)%h\\\\ %ad%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate --date=relative --numstat
+
+[init]
+  defaultBranch = main
+
+[pager]
+  branch = false
+  grep = false
+
+[core]
+  editor = nvim
+
+[fetch]
+  prune = true
+
+[pull]
+  prune = true
+
+[difftool]
+  prompt = true
+
+[diff]
+  tool = nvimdiff
+
+[difftool "nvimdiff"]
+  cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+
+[merge]
+  tool = nvimdiff
+
+[mergetool "nvimdiff"]
+  cmd = "nvim"
