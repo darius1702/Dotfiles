@@ -44,7 +44,7 @@ export SAVEHIST=$HISTSIZE
 
 # Quick-edit configs
 alias zc="nvim ~/.config/zsh/.zshrc"
-alias vc="nvim ~/.config/nvim/init.lua"
+alias vc="nvim ~/.config/nvim/lua/config/lazy.lua"
 alias tc="nvim ~/.tmux.conf"
 alias ic="nvim ~/.config/i3/config"
 

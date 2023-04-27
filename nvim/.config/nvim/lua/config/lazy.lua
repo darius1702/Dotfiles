@@ -39,6 +39,23 @@ require("lazy").setup({
     }
   },
 
+  -- Bufferline
+  {
+    'akinsho/bufferline.nvim',
+    version = "v3.*",
+    opts = {
+      options = {
+        show_buffer_close_icons = false,
+        separator_style = { "", "" },
+      },
+      highlights = {
+        buffer_selected = {
+          italic = false,
+        },
+      },
+    },
+  },
+
   -- Ros
   {
     'tadachs/ros-nvim',
@@ -69,6 +86,7 @@ require("lazy").setup({
       vim.g.mkdp_command_for_global = 1
       vim.g.mkdp_browser = "surf"
     end,
+    ft = "markdown"
     -- cmd = {"MarkdownPreview"},
   },
 
@@ -86,7 +104,7 @@ require("lazy").setup({
     opts = {
       load = {
         ["core.defaults"] = {},
-        ["core.norg.dirman"] = {
+        ["core.dirman"] = {
           config = {
             workspaces = {
               notes = "~/Documents/Notes/neorg/",
@@ -94,7 +112,7 @@ require("lazy").setup({
             default_workspace = "notes",
           },
         },
-        ["core.norg.completion"] = {
+        ["core.completion"] = {
           config = {
             engine = "nvim-cmp",
           }
@@ -172,24 +190,24 @@ require("lazy").setup({
   -- LSPZero
   {
     'VonHeikemen/lsp-zero.nvim',
-    branch = 'v1.x',
+    branch = 'v2.x',
     dependencies = {
       -- LSP Support
       {'neovim/nvim-lspconfig'},             -- Required
-      {'williamboman/mason.nvim'},           -- Optional
+      {                                      -- Optional
+        'williamboman/mason.nvim',
+        build = function()
+          pcall(vim.cmd, 'MasonUpdate')
+        end,
+      },
       {'williamboman/mason-lspconfig.nvim'}, -- Optional
 
       -- Autocompletion
-      {'hrsh7th/nvim-cmp'},         -- Required
-      {'hrsh7th/cmp-nvim-lsp'},     -- Required
-      {'hrsh7th/cmp-buffer'},       -- Optional
-      {'hrsh7th/cmp-path'},         -- Optional
-      {'saadparwaiz1/cmp_luasnip'}, -- Optional
-      {'hrsh7th/cmp-nvim-lua'},     -- Optional
-
-      -- Snippets
-      {'L3MON4D3/LuaSnip'},             -- Required
-      {'rafamadriz/friendly-snippets'}, -- Optional
+      {'hrsh7th/nvim-cmp'},     -- Required
+      {'hrsh7th/cmp-nvim-lsp'}, -- Required
+      {'L3MON4D3/LuaSnip'},     -- Required
+      {'hrsh7th/cmp-path'},
+      {'hrsh7th/cmp-buffer'},
     }
   }
 })
