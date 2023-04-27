@@ -16,3 +16,4 @@ stow zsh
 # scripts
 [ -d ~/.local/bin ] || mkdir ~/.local/bin
 [ -e ~/.local/bin/socials ] || ln -sf ~/Dotfiles/scripts/socials.sh ~/.local/bin/socials
+[ -e ~/.local/bin/tmux_neorg ] || ln -sf ~/Dotfiles/scripts/tmux_neorg.sh ~/.local/bin/tmux_neorg

@@ -17,10 +17,10 @@ focus_follows_mouse no
 mouse_warping none
 
 # border style
-for_window [class=".*"] border pixel 1
+for_window [class=".*"] border pixel 2
 
 # gaps
-gaps inner 10
+# gaps inner 10
 
 # show gaps only when there is more than 1 window on current workspace
 # smart_gaps on
@@ -44,7 +44,7 @@ bindsym $mod+b exec --no-startup-id fd . ~/Documents/Books --type f | dmenu -i -
 bindsym $mod+s exec --no-startup-id fd . ~/Documents/Vorlesungen --type f | dmenu -i -p "Skript:" -l 20 | xargs -I{} zathura {}
 
 # neorg
-bindsym $mod+n exec --no-startup-id alacritty -e nvim +"lua require('neorg').setup{}" +"Neorg workspace notes"
+bindsym $mod+n exec --no-startup-id alacritty -e tmux_neorg
 
 # pulsemixer
 bindsym $mod+m exec --no-startup-id alacritty -e pulsemixer
@@ -80,6 +80,9 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl -- set-source-mute 0 toggle
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s 30+
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 30-
 
+# other media keys
+bindsym XF86Favorites exec --no-startup-id notify-send "Favorites key pressed" "Bind me to something useful!"
+
 # screenshots
 bindsym Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
@@ -107,8 +110,10 @@ bindsym $mod+space focus mode_toggle
 # toggle spawn direction
 bindsym $mod+t split toggle
 
-# focus the parent container
+# tabbing
 # bindsym $mod+a focus parent
+# bindsym $mod+Shift+a focus child
+# bindsym $mod+e layout toggle tabbed split
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -174,9 +179,9 @@ set $orange #E69875
 set $magenta #D699B6
 
 # class                 border|backgr|text|indicator|child_border
-client.focused          $aqua $blue $bg $green $aqua
-client.focused_inactive $red $bg $yellow $magenta $bg_dark
-client.unfocused        $bg $bg $yellow $magenta $bg_dark
+client.focused          $aqua $blue $bg $magenta $aqua
+client.focused_inactive $red $bg $yellow $magenta $bg
+client.unfocused        $bg $bg $yellow $magenta $bg
 client.urgent           $red $red $fg $red $red
 
 # polybar
@@ -194,10 +199,9 @@ bar {
                 statusline $fg
                 # workspaces section
                 #                    border  backgr. text
-                focused_workspace    $blue $blue $bg
+                focused_workspace    $green $green $bg
                 inactive_workspace   $bg $bg $fg
                 active_workspace     $bg $bg $blue
                 urgent_workspace     $magenta $magenta $bg
         }
-
 }
