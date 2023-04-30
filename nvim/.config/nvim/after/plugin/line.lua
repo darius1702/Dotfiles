@@ -82,11 +82,6 @@ end
 ins_left {
   -- mode component
   'mode',
-  -- function()
-    -- return ''
-    -- return '▊'
-    -- return '■'
-  -- end,
   color = function()
     -- auto change color according to neovims mode
     local mode_color = {
@@ -122,20 +117,19 @@ ins_left {
 ins_left {
   'filename',
   cond = conditions.buffer_not_empty,
-  color = { fg = colors.fg },
 }
 
 ins_left {
   'branch',
   icon = '',
   padding = { right = 1, left = -1 }, -- remove weird whitespace because no icon
-  color = { fg = colors.magenta },
+  color = { fg = colors.blue, gui = 'bold' },
 }
 
 ins_left {
   'diff',
   -- Is it me or the symbol for modified us really weird
-  symbols = { added = ' ', modified = '柳 ', removed = ' ' },
+  symbols = { added = '+', modified = '~', removed = '-' },
   diff_color = {
     added = { fg = colors.green },
     modified = { fg = colors.orange },
@@ -147,7 +141,7 @@ ins_left {
 ins_right {
   'diagnostics',
   sources = { 'nvim_diagnostic' },
-  symbols = { error = ' ', warn = ' ', info = ' ' },
+  symbols = { error = 'E:', warn = 'W:', info = 'I:', hint = 'H:' },
   diagnostics_color = {
     color_error = { fg = colors.red },
     color_warn = { fg = colors.yellow },
@@ -159,33 +153,9 @@ ins_right { 'location' }
 
 ins_right { 'progress' }
 
--- ins_right {
---   'o:encoding', -- option component same as &encoding in viml
---   fmt = string.upper, -- I'm not sure why it's upper case either ;)
---   cond = conditions.hide_in_width,
---   color = { fg = colors.green, gui = 'bold' },
--- }
-
--- ins_right {
---   'fileformat',
---   fmt = string.upper,
---   icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
---   color = { fg = colors.green, gui = 'bold' },
--- }
-
 ins_right {
   'filetype',
-  -- fmt = string.upper,
   color = { fg = colors.green },
 }
 
--- ins_right {
---   function()
---     return '▊'
---   end,
---   color = { fg = colors.blue },
---   padding = { left = 1 },
--- }
-
--- Now don't forget to initialize lualine
 lualine.setup(config)
