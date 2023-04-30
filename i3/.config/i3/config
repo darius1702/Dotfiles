@@ -26,7 +26,7 @@ for_window [class=".*"] border pixel 2
 # smart_gaps on
 
 # only draw borders when there is more than 1 window on current workspace
-smart_borders on
+# smart_borders on
 
 # download from: https://www.nerdfonts.com/font-downloads
 font pango: Iosevka Nerd Font Mono Semibold 12
@@ -170,6 +170,7 @@ bindsym $mod+p resize grow width 10 px or 10 ppt
 set $fg #E1E1E1
 set $bg_dark #141414
 set $bg #373737
+set $bg_light #565656
 set $blue #7FBBB3
 set $aqua #83C092
 set $red #E67E80
@@ -179,7 +180,7 @@ set $orange #E69875
 set $magenta #D699B6
 
 # class                 border|backgr|text|indicator|child_border
-client.focused          $aqua $blue $bg $magenta $aqua
+client.focused          $aqua $blue $bg $magenta $bg_light
 client.focused_inactive $red $bg $yellow $magenta $bg
 client.unfocused        $bg $bg $yellow $magenta $bg
 client.urgent           $red $red $fg $red $red
