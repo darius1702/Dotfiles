@@ -27,23 +27,6 @@ require("lazy").setup({
   -- Statusline
   "nvim-lualine/lualine.nvim",
 
-  -- Bufferline
-  {
-    'akinsho/bufferline.nvim',
-    version = "v3.*",
-    opts = {
-      options = {
-        show_buffer_close_icons = false,
-        separator_style = { "", "" },
-      },
-      highlights = {
-        buffer_selected = {
-          italic = false,
-        },
-      },
-    },
-  },
-
   -- Ros
   {
     'tadachs/ros-nvim',
