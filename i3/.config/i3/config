@@ -170,7 +170,7 @@ bindsym $mod+p resize grow width 10 px or 10 ppt
 set $fg #E1E1E1
 set $bg_dark #141414
 set $bg #373737
-set $bg_light #565656
+set $bg_light #616161
 set $blue #7FBBB3
 set $aqua #83C092
 set $red #E67E80
@@ -186,23 +186,23 @@ client.unfocused        $bg $bg $yellow $magenta $bg
 client.urgent           $red $red $fg $red $red
 
 # polybar
-# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # i3bar
-bar {
-        status_command i3status -c $HOME/.config/i3/i3status.conf
-        separator_symbol "  "
-        position top
-        colors {
-                # bar background color
-                background $bg_dark
-                # text color used for blocks that do not have a color specified.
-                statusline $fg
-                # workspaces section
-                #                    border  backgr. text
-                focused_workspace    $green $green $bg
-                inactive_workspace   $bg $bg $fg
-                active_workspace     $bg $bg $blue
-                urgent_workspace     $magenta $magenta $bg
-        }
-}
+# bar {
+#         status_command i3status -c $HOME/.config/i3/i3status.conf
+#         separator_symbol "  "
+#         position top
+#         colors {
+#                 # bar background color
+#                 background $bg_dark
+#                 # text color used for blocks that do not have a color specified.
+#                 statusline $fg
+#                 # workspaces section
+#                 #                    border  backgr. text
+#                 focused_workspace    $green $green $bg
+#                 inactive_workspace   $bg $bg $fg
+#                 active_workspace     $bg $bg $blue
+#                 urgent_workspace     $magenta $magenta $bg
+#         }
+# }
