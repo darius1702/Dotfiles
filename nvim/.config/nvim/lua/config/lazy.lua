@@ -89,6 +89,20 @@ require("lazy").setup({
           }
         },
         ["core.integrations.treesitter"] = {},
+        ["core.concealer"] = {
+          config = {
+            icons = {
+              todo = {
+                undone = {
+                  icon = " ",
+                },
+                done = {
+                  icon = "×",
+                },
+              },
+            },
+          },
+        },
       },
     },
     dependencies = { { "nvim-lua/plenary.nvim" } },
