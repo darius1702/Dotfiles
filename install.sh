@@ -10,6 +10,7 @@ stow dunst
 stow gitconfig
 stow i3
 stow nvim
+stow polybar
 stow tmux
 stow zsh
 
