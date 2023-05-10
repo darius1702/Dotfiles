@@ -140,11 +140,11 @@ require("lazy").setup({
   {
     "preservim/vimux",
     keys = {
-      {"<leader>vp", ":VimuxPromptCommand<CR>", desc = "VimuxPromptCommand"},
-      {"<leader>vl", ":VimuxRunLastCommand<CR>", desc = "VimuxRunLastCommand"},
-      {"<leader>vc", ":VimuxCloseRunner<CR>", desc = "VimuxCloseRunner"},
-      {"<leader>vz", ":VimuxZoomRunner<CR>", desc = "VimuxZoomRunner"},
-      {"<leader>vi", ":VimuxInterruptRunner<CR>", desc = "VimuxInterruptRunner"},
+      {"<leader>vp", "<cmd>VimuxPromptCommand<cr>", desc = "VimuxPromptCommand"},
+      {"<leader>vl", "<cmd>VimuxRunLastCommand<cr>", desc = "VimuxRunLastCommand"},
+      {"<leader>vc", "<cmd>VimuxCloseRunner<cr>", desc = "VimuxCloseRunner"},
+      {"<leader>vz", "<cmd>VimuxZoomRunner<cr>", desc = "VimuxZoomRunner"},
+      {"<leader>vi", "<cmd>VimuxInterruptRunner<cr>", desc = "VimuxInterruptRunner"},
     },
   },
   "christoomey/vim-tmux-navigator",
@@ -152,7 +152,43 @@ require("lazy").setup({
   -- Utils
   "nvim-lua/plenary.nvim",
   "nvim-lua/popup.nvim",
-  "nvim-telescope/telescope.nvim",
+  {
+    "nvim-telescope/telescope.nvim",
+    keys = {
+      {"<leader><leader>", "<cmd>Telescope find_files<cr>", desc = "Find files"},
+      {"<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Find buffers"},
+      {"<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Help tags"},
+      {"<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Live grep"},
+      {"<leader>fm", "<cmd>Telescope man_pages<cr>", desc = "Man pages"},
+      {"<leader>/", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Current buffer fuzzy find"},
+    },
+    opts = {
+      pickers = {
+        find_files = {
+          theme = "ivy",
+          hidden = true,
+          file_ignore_patterns = { ".git/", "^node_modules/" }
+        },
+        live_grep = {
+          theme = "ivy",
+        },
+        buffers = {
+          theme = "ivy",
+        },
+        current_buffer_fuzzy_find = {
+          theme = "ivy",
+        },
+        help_tags = {
+          theme = "ivy",
+        },
+        man_pages = {
+          -- list all sections instead of just (1)
+          sections = { "ALL" },
+          theme = "ivy",
+        },
+      },
+    },
+  },
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
