@@ -129,6 +129,8 @@ set $ws9 "9"
 set $ws10 "10"
 
 # Default workspaces for some programs
+assign [class="^Zotero$"] $ws8
+assign [class="^thunderbird$"] $ws9
 assign [class="^Cider$"] $ws10
 
 # switch to workspace
