@@ -12,6 +12,6 @@ for monitor in $(xrandr --query | grep " connected" | cut -d" " -f1); do
 done
 
 # Launch bar(s)
-polybar main 2>&1 | tee -a /tmp/polybar1.log & disown
-[ $docked = true ] && polybar left 2>&1 | tee -a /tmp/polybar1.log & disown
-[ $docked = true ] && polybar right 2>&1 | tee -a /tmp/polybar1.log & disown
+polybar main 2>&1 & disown
+[ $docked = true ] && polybar left 2>&1 & disown
+[ $docked = true ] && polybar right 2>&1 & disown
