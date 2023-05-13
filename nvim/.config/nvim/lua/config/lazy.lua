@@ -206,7 +206,6 @@ require("lazy").setup({
       }
     end,
   },
-  "nvim-treesitter/playground",
 
   -- LSPZero
   {
