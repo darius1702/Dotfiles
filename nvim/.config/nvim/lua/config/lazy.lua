@@ -71,6 +71,7 @@ require("lazy").setup({
   {
     "nvim-neorg/neorg",
     cmd = "Neorg",
+    ft = "norg",
     build = ":Neorg sync-parsers",
     opts = {
       load = {
@@ -78,7 +79,10 @@ require("lazy").setup({
         ["core.dirman"] = {
           config = {
             workspaces = {
-              notes = "~/Documents/Notes/neorg/",
+              notes = "~/Notes/",
+              Personal = "~/Notes/Personal",
+              KITcar = "~/Notes/KITcar",
+              Uni = "~/Notes/Uni",
             },
             default_workspace = "notes",
           },
@@ -91,6 +95,7 @@ require("lazy").setup({
         ["core.integrations.treesitter"] = {},
         ["core.concealer"] = {
           config = {
+            folds = false,
             icons = {
               todo = {
                 undone = {
