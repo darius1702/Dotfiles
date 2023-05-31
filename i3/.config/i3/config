@@ -113,7 +113,7 @@ bindsym $mod+t split toggle
 # tabbing
 # bindsym $mod+a focus parent
 # bindsym $mod+Shift+a focus child
-# bindsym $mod+e layout toggle tabbed split
+bindsym $mod+e layout toggle tabbed split
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -182,9 +182,9 @@ set $orange #E69875
 set $magenta #D699B6
 
 # class                 border|backgr|text|indicator|child_border
-client.focused          $aqua $blue $bg $green $bg_light
-client.focused_inactive $red $bg $yellow $magenta $bg
-client.unfocused        $bg $bg $yellow $magenta $bg
+client.focused          $bg_light $bg_light $fg $green $bg_light
+client.focused_inactive $bg_light $bg $fg $magenta $bg
+client.unfocused        $bg $bg $fg $magenta $bg
 client.urgent           $red $red $fg $red $red
 
 # polybar

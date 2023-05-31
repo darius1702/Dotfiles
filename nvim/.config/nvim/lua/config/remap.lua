@@ -7,10 +7,6 @@ vim.keymap.set("n", "<leader>cc", ":cclose<CR>", { silent = true })
 vim.keymap.set("n", "]c", ":cnext<CR>", { silent = true })
 vim.keymap.set("n", "[c", ":cprev<CR>", { silent = true })
 
--- Buffer navigation
-vim.keymap.set("n", "<Tab>", ":bnext<CR>", { silent = true })
-vim.keymap.set("n", "<S-Tab>", ":bprev<CR>", { silent = true })
-
 vim.keymap.set("n", "<leader>p", "\"+p",{ silent = true })
 vim.keymap.set("x", "<leader>p", "\"_dP",{ silent = true })
 vim.keymap.set("x", "<leader>y", "\"+y",{ silent = true })

@@ -40,10 +40,22 @@ require("lazy").setup({
       vim.keymap.set('n', '<leader>rol', function() require("ros-nvim.ros").open_launch_include() end, { silent = true, noremap = true })
 
       -- show definition for messages/services in floating window
-      vim.keymap.set('n', '<leader>rdm', function() require("ros-nvim.ros").show_message_definition() end, { silent = true, noremap = true })
-      vim.keymap.set('n', '<leader>rds', function() require("ros-nvim.ros").show_service_definition() end, { silent = true, noremap = true })
+      vim.keymap.set('n', '<leader>rdi', function() require("ros-nvim.ros").show_interface_definition() end, { silent = true, noremap = true })
     end,
     dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim", "nvim-treesitter/nvim-treesitter" },
+  },
+
+  -- Jupyter
+  {
+    "untitled-ai/jupyter_ascending.vim",
+    init = function ()
+      vim.g.jupyter_ascending_default_mappings = false
+    end,
+    keys = {
+      { "<leader>jx", "<Plug>JupyterExecute", desc = "Execute Notebook Cell"},
+      { "<leader>jX", "<Plug>JupyterExecuteAll", desc = "Execute all Notebook Cells"},
+      { "<leader>jr", "<Plug>JupyterRestart", desc = "Restart jupyter_ascending"},
+    }
   },
 
   -- Markdown
@@ -160,8 +172,8 @@ require("lazy").setup({
   {
     "nvim-telescope/telescope.nvim",
     keys = {
-      {"<leader><leader>", "<cmd>Telescope find_files<cr>", desc = "Find files"},
-      {"<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Find buffers"},
+      {"<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find files"},
+      {"<leader><leader>", "<cmd>Telescope buffers<cr>", desc = "Find buffers"},
       {"<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Help tags"},
       {"<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Live grep"},
       {"<leader>fm", "<cmd>Telescope man_pages<cr>", desc = "Man pages"},
