@@ -12,13 +12,13 @@ font:
     style: Regular
   bold:
     family: Iosevka Nerd Font Mono
-    style: Semibold
+    style: Bold
   italic:
     family: Iosevka Nerd Font Mono
     style: Oblique
   bold_italic:
     family: Iosevka Nerd Font Mono
-    style: Semibold Oblique
+    style: Bold Oblique
 
 schemes:
   everforest_dark_hard: &everforest_dark_hard

@@ -60,7 +60,7 @@ local config = {
   },
   inactive_sections = {
     -- these are to remove the defaults
-    lualine_a = {},
+    lualine_a = {{'filename', cond = conditions.buffer_not_empty}},
     lualine_b = {},
     lualine_y = {},
     lualine_z = {},
