@@ -8,4 +8,4 @@ export PATH=~/go/bin:$PATH
 export PATH="$HOME/.local/share/fnm:$PATH"
 eval "`fnm env --shell zsh`"
 
-alias kitsrc="source $HOME/kitcar/kitcar-init/config/zshrc_private"
+alias kitsrc="source $HOME/kitcar/kitcar-init/config/zshrc_private && source $HOME/kitcar/kitcar-python-utils/init/bashrc && source $HOME/kitcar/kitcar-gazebo-simulation/init/bashrc"

@@ -3,6 +3,9 @@
 # Wallpaper
 exec_always --no-startup-id ~/.fehbg
 
+# Screen lock
+exec --no-startup-id xss-lock -- $HOME/.config/i3/lock.sh
+
 # ALT Key
 set $mod Mod4
 
@@ -111,7 +114,7 @@ bindsym $mod+t split toggle
 # tabbing
 # bindsym $mod+a focus parent
 # bindsym $mod+Shift+a focus child
-bindsym $mod+e layout toggle tabbed split
+# bindsym $mod+e layout toggle tabbed split
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -125,6 +128,18 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
+
+# Bind workspaces to monitors
+workspace $ws1 output DisplayPort-0
+workspace $ws2 output DisplayPort-0
+workspace $ws3 output DisplayPort-0
+workspace $ws4 output DisplayPort-0
+workspace $ws5 output HDMI-A-0
+workspace $ws6 output HDMI-A-0
+workspace $ws7 output HDMI-A-0
+workspace $ws8 output eDP
+workspace $ws9 output eDP
+workspace $ws10 output eDP
 
 # Default workspaces for some programs
 assign [class="^Zotero$"] $ws8
