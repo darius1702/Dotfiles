@@ -34,6 +34,9 @@ font pango: Iosevka Nerd Font Mono Semibold 12
 # terminal
 bindsym $mod+Return exec --no-startup-id alacritty
 
+# emacs
+bindsym $mod+e exec --no-startup-id emacsclient -c || notify-send "ERROR" "No emacs daemon running"
+
 # browser
 bindsym $mod+Shift+b exec --no-startup-id firefox
 
