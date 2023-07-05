@@ -16,4 +16,4 @@ stow zsh
 
 # scripts
 [ -d ~/.local/bin ] || mkdir ~/.local/bin
-[ -e ~/.local/bin/tmux_neorg ] || ln -sf ~/Dotfiles/scripts/tmux_neorg.sh ~/.local/bin/tmux_neorg
+[ -e ~/.local/bin/tmux_org ] || ln -sf ~/Dotfiles/scripts/tmux_org.sh ~/.local/bin/tmux_org

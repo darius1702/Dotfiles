@@ -84,29 +84,30 @@ ins_left {
   'mode',
   color = function()
     -- auto change color according to neovims mode
-    local mode_color = {
-      n = colors.red,
-      i = colors.green,
-      v = colors.blue,
-      [''] = colors.blue,
-      V = colors.blue,
-      c = colors.magenta,
-      no = colors.red,
-      s = colors.orange,
-      S = colors.orange,
-      [''] = colors.orange,
-      ic = colors.yellow,
-      R = colors.violet,
-      Rv = colors.violet,
-      cv = colors.red,
-      ce = colors.red,
-      r = colors.cyan,
-      rm = colors.cyan,
-      ['r?'] = colors.cyan,
-      ['!'] = colors.red,
-      t = colors.red,
-    }
-    return { fg = colors.bg, bg = mode_color[vim.fn.mode()], gui = 'bold' }
+    -- local mode_color = {
+    --   n = colors.red,
+    --   i = colors.green,
+    --   v = colors.blue,
+    --   [''] = colors.blue,
+    --   V = colors.blue,
+    --   c = colors.magenta,
+    --   no = colors.red,
+    --   s = colors.orange,
+    --   S = colors.orange,
+    --   [''] = colors.orange,
+    --   ic = colors.yellow,
+    --   R = colors.violet,
+    --   Rv = colors.violet,
+    --   cv = colors.red,
+    --   ce = colors.red,
+    --   r = colors.cyan,
+    --   rm = colors.cyan,
+    --   ['r?'] = colors.cyan,
+    --   ['!'] = colors.red,
+    --   t = colors.red,
+    -- }
+    return { fg = colors.bg, bg = colors.fg, gui = 'bold' }
+    -- return { fg = colors.bg, bg = mode_color[vim.fn.mode()], gui = 'bold' }
   end,
   padding = { right = 1, left = 1 },
   fmt = function(str)
@@ -117,24 +118,33 @@ ins_left {
 ins_left {
   'filename',
   cond = conditions.buffer_not_empty,
+  color = {gui = "bold"},
+  padding = {left = 1, right = 3}
+
 }
 
 ins_left {
   'branch',
   icon = '',
-  padding = { right = 1, left = -1 }, -- remove weird whitespace because no icon
-  color = { fg = colors.blue, gui = 'bold' },
+  padding = { right = 3 },
+  fmt = function(str)
+    if str == "" then
+      return ""
+    else
+      return "Git:" .. str
+    end
+  end
 }
 
 ins_left {
   'diff',
-  -- Is it me or the symbol for modified us really weird
   symbols = { added = '+', modified = '~', removed = '-' },
-  diff_color = {
-    added = { fg = colors.green },
-    modified = { fg = colors.orange },
-    removed = { fg = colors.red },
-  },
+  -- diff_color = {
+  --   added = { fg = colors.green },
+  --   modified = { fg = colors.orange },
+  --   removed = { fg = colors.red },
+  -- },
+  padding = {left = 1, right = 3},
   cond = conditions.hide_in_width,
 }
 
@@ -147,15 +157,23 @@ ins_right {
     color_warn = { fg = colors.yellow },
     color_info = { fg = colors.cyan },
   },
+  padding = { left = 2, right = 1 },
 }
 
-ins_right { 'location' }
+ins_right {
+  'location',
+  padding = { left = 2, right = 1 },
+}
 
-ins_right { 'progress' }
+ins_right {
+  'progress',
+  padding = { left = 2, right = 1 },
+}
 
 ins_right {
   'filetype',
-  color = { fg = colors.green },
+  color = { gui = "bold" },
+  padding = { left = 2, right = 1 },
 }
 
 lualine.setup(config)

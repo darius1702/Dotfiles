@@ -24,8 +24,37 @@ require("lazy").setup({
     end,
   },
 
+  -- {
+  --   "darius1702/kit.vim",
+  --   dir = "/home/darius/Projects/kit.vim/",
+  --   dev = "true"
+  -- },
+
   -- Statusline
   "nvim-lualine/lualine.nvim",
+
+  -- Org mode
+  {
+    "nvim-orgmode/orgmode",
+    config = function()
+      require('orgmode').setup_ts_grammar()
+
+      require('nvim-treesitter.configs').setup {
+        highlight = {
+          enable = true,
+          additional_vim_regex_highlighting = {'org'},
+        },
+        ensure_installed = {'org'},
+      }
+
+      require('orgmode').setup({
+        org_agenda_files = {'~/Documents/Org/**'},
+        org_default_notes_file = '~/Documents/Org/refile.org',
+      })
+    end
+  },
+
+
 
   -- Ros
   {
@@ -79,52 +108,6 @@ require("lazy").setup({
   -- Autopairs
   { "windwp/nvim-autopairs", config = true },
 
-  -- Neorg
-  {
-    "nvim-neorg/neorg",
-    cmd = "Neorg",
-    ft = "norg",
-    build = ":Neorg sync-parsers",
-    opts = {
-      load = {
-        ["core.defaults"] = {},
-        ["core.dirman"] = {
-          config = {
-            workspaces = {
-              notes = "~/Notes/",
-              Personal = "~/Notes/Personal",
-              KITcar = "~/Notes/KITcar",
-              Uni = "~/Notes/Uni",
-            },
-            default_workspace = "notes",
-          },
-        },
-        ["core.completion"] = {
-          config = {
-            engine = "nvim-cmp",
-          }
-        },
-        ["core.integrations.treesitter"] = {},
-        ["core.concealer"] = {
-          config = {
-            folds = false,
-            icons = {
-              todo = {
-                undone = {
-                  icon = " ",
-                },
-                done = {
-                  icon = "×",
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-    dependencies = { { "nvim-lua/plenary.nvim" } },
-  },
-
   -- Syntax
   { "numToStr/Comment.nvim", config = true },
   { "kylechui/nvim-surround", config = true },
@@ -146,7 +129,7 @@ require("lazy").setup({
     }
   },
   {
-    "TimUntersberger/neogit",
+    "NeogitOrg/neogit",
     config = true,
     keys = {
       { "<leader>gs", "<cmd>Neogit kind=replace<cr>", desc = "Neogit" }
@@ -240,7 +223,14 @@ require("lazy").setup({
       {'williamboman/mason-lspconfig.nvim'}, -- Optional
 
       -- Autocompletion
-      {'hrsh7th/nvim-cmp'},     -- Required
+      {
+        'hrsh7th/nvim-cmp', -- Required
+        opts = {
+          sources = {
+            { name = 'orgmode' },
+          }
+        }
+      },
       {'hrsh7th/cmp-nvim-lsp'}, -- Required
       {'L3MON4D3/LuaSnip'},     -- Required
       {'hrsh7th/cmp-path'},

@@ -46,8 +46,9 @@ bindsym $mod+b exec --no-startup-id fd . ~/Documents/Books --type f | dmenu -i -
 # uni
 bindsym $mod+s exec --no-startup-id fd . ~/Documents/Vorlesungen --type f | dmenu -i -p "Skript:" -l 20 | xargs -I{} zathura {}
 
-# neorg
-bindsym $mod+n exec --no-startup-id alacritty -e tmux_neorg
+# org
+bindsym $mod+n exec --no-startup-id alacritty -e tmux_org
+bindsym $mod+Shift+n exec --no-startup-id emacsclient -c ~/Documents/Org/index.org
 
 # pulsemixer
 bindsym $mod+m exec --no-startup-id alacritty -e pulsemixer
