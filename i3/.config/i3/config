@@ -48,7 +48,7 @@ bindsym $mod+s exec --no-startup-id fd . ~/Documents/Vorlesungen --type f | dmen
 
 # org
 bindsym $mod+n exec --no-startup-id alacritty -e tmux_org
-bindsym $mod+Shift+n exec --no-startup-id emacsclient -c ~/Documents/Org/index.org
+bindsym $mod+Shift+n exec --no-startup-id emacsclient -c ~/Notes/index.org
 
 # pulsemixer
 bindsym $mod+m exec --no-startup-id alacritty -e pulsemixer
