@@ -127,13 +127,6 @@ ins_left {
   'branch',
   icon = '',
   padding = { right = 3 },
-  fmt = function(str)
-    if str == "" then
-      return ""
-    else
-      return "Git:" .. str
-    end
-  end
 }
 
 ins_left {
