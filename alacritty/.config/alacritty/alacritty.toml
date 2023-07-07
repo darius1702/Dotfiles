@@ -1,0 +1,55 @@
+[colors.bright]
+black = "#475258"
+blue = "#7fbbb3"
+cyan = "#83c092"
+green = "#a7c080"
+magenta = "#d699b6"
+red = "#e67e80"
+white = "#e1e1e1"
+yellow = "#dbbc7f"
+
+[colors.normal]
+black = "#414b50"
+blue = "#7fbbb3"
+cyan = "#83c092"
+green = "#a7c080"
+magenta = "#d699b6"
+red = "#e67e80"
+white = "#e1e1e1"
+yellow = "#dbbc7f"
+
+[colors.primary]
+background = "#141414"
+foreground = "#e1e1e1"
+
+[font]
+size = 9
+
+[font.bold]
+family = "Iosevka Nerd Font Mono"
+style = "Bold"
+
+[font.bold_italic]
+family = "Iosevka Nerd Font Mono"
+style = "Bold Oblique"
+
+[font.italic]
+family = "Iosevka Nerd Font Mono"
+style = "Oblique"
+
+[font.normal]
+family = "Iosevka Nerd Font Mono"
+style = "Regular"
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "Return"
+mods = "Super|Shift"
+
+[window]
+decorations = "none"
+dynamic_padding = true
+
+[window.padding]
+x = 5
+y = 0
