@@ -42,14 +42,6 @@ for k, v in pairs(settings) do
   vim.opt[k] = v
 end
 
-vim.g.vimtex_view_method = "zathura"
-vim.g.vimtex_view_forward_search_on_start = false
-vim.g.vimtex_compiler_latexmk = {
-  build_dir = "build",
-}
-vim.g.VimuxUseNearest = 0
-vim.g.VimuxPromptString = "Run: "
-
 vim.g.netrw_altw = 1
 vim.g.netrw_liststyle = 3
 vim.g.netrw_banner = 0

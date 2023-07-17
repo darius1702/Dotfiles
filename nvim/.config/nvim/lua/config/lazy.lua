@@ -75,9 +75,6 @@ require('lazy').setup({
     -- cmd = {'MarkdownPreview'},
   },
 
-  -- LaTeX
-  'lervag/vimtex',
-
   -- Autopairs
   { 'windwp/nvim-autopairs', config = true },
 
