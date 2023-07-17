@@ -9,4 +9,6 @@ alias kitsrc="source $HOME/kitcar/kitcar-init/config/zshrc_private && source $HO
 alias fnmsrc='export PATH="$HOME/.local/share/fnm:$PATH" && eval "`fnm env --shell zsh`"'
 alias ghcsrc="[ -f "/home/darius/.ghcup/env" ] && source "/home/darius/.ghcup/env" # ghcup-env"
 
+source "$HOME/.cargo/env"
+
 sed -e '1,3d' ~/Notes/refile.org

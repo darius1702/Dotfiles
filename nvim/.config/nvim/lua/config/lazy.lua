@@ -33,49 +33,17 @@ require('lazy').setup({
   -- Statusline
   'nvim-lualine/lualine.nvim',
 
-  -- Org mode
-  {
-    'nvim-orgmode/orgmode',
-    config = function()
-      require('orgmode').setup_ts_grammar()
-
-      require('nvim-treesitter.configs').setup {
-        highlight = {
-          enable = true,
-          additional_vim_regex_highlighting = {'org'},
-        },
-        ensure_installed = {'org'},
-      }
-
-      require('orgmode').setup({
-        org_agenda_files = {'~/Notes/**/*'},
-        org_default_notes_file = '~/Notes/refile.org',
-        org_todo_keywords = {'TODO(t)', 'IN-PROGRESS', 'WAITING', '|', 'DONE'},
-        org_ellipsis = '▾',
-        org_log_done = 'time',
-        org_highlight_latex_and_related = 'entities',
-        org_indent_mode = 'noindent',
-      })
-    end
-  },
-
-
-
   -- Ros
   {
     'tadachs/ros-nvim',
-    config = function()
-      require('ros-nvim').setup({only_workspace = true })
-
-      -- telescope finder
-      vim.keymap.set('n', '<leader>tr', '<cmd>Telescope ros ros<cr>', { noremap = true })
-
-      -- follow links in launch files
-      vim.keymap.set('n', '<leader>rol', function() require('ros-nvim.ros').open_launch_include() end, { silent = true, noremap = true })
-
-      -- show definition for messages/services in floating window
-      vim.keymap.set('n', '<leader>rdi', function() require('ros-nvim.ros').show_interface_definition() end, { silent = true, noremap = true })
-    end,
+    opts = {
+      only_workspace = true
+    },
+    keys = {
+      {'<leader>tr', '<cmd>Telescope ros ros<cr>', desc = 'Telescope Finder'},
+      {'<leader>rol', function() require('ros-nvim.ros').open_launch_include() end, desc = 'Follow links in launch files'},
+      {'<leader>rdi', function() require('ros-nvim.ros').show_interface_definition() end, desc = 'Show definition for messages/services in floating window'},
+    },
     dependencies = { 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope.nvim', 'nvim-treesitter/nvim-treesitter' },
   },
 
@@ -108,7 +76,7 @@ require('lazy').setup({
   },
 
   -- LaTeX
-  { 'lervag/vimtex', ft = 'tex' },
+  'lervag/vimtex',
 
   -- Autopairs
   { 'windwp/nvim-autopairs', config = true },
@@ -142,16 +110,6 @@ require('lazy').setup({
   },
 
   -- tmux
-  {
-    'preservim/vimux',
-    keys = {
-      {'<leader>vp', '<cmd>VimuxPromptCommand<cr>', desc = 'VimuxPromptCommand'},
-      {'<leader>vl', '<cmd>VimuxRunLastCommand<cr>', desc = 'VimuxRunLastCommand'},
-      {'<leader>vc', '<cmd>VimuxCloseRunner<cr>', desc = 'VimuxCloseRunner'},
-      {'<leader>vz', '<cmd>VimuxZoomRunner<cr>', desc = 'VimuxZoomRunner'},
-      {'<leader>vi', '<cmd>VimuxInterruptRunner<cr>', desc = 'VimuxInterruptRunner'},
-    },
-  },
   'christoomey/vim-tmux-navigator',
 
   -- Utils
@@ -207,7 +165,10 @@ require('lazy').setup({
           -- Let vimtex handle latex highlighting
           disable = { 'latex' },
           additional_vim_regex_highlighting = false,
-        }
+        },
+        indent = {
+          enable = true,
+        },
       }
     end,
   },
