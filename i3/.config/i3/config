@@ -36,19 +36,20 @@ bindsym $mod+Return exec --no-startup-id alacritty
 
 # emacs
 bindsym $mod+e exec --no-startup-id emacsclient -c || notify-send "ERROR" "No emacs daemon running"
+bindsym $mod+Shift+d exec --no-startup-id emacsclient -cF "((visibility . nil))" -e "(darius/launcher)"
+for_window [title="^run-command$"] floating enable
 
 # browser
 bindsym $mod+Shift+b exec --no-startup-id firefox
 
 # books
-bindsym $mod+b exec --no-startup-id fd . ~/Documents/Books --type f | dmenu -i -p "Book:" -l 20 | xargs -I{} zathura {}
+bindsym $mod+b exec --no-startup-id ~/.cargo/bin/fd . ~/Documents/Books --type f | dmenu -i -p "Book:" -l 20 | xargs -I{} zathura {}
 
 # uni
-bindsym $mod+s exec --no-startup-id fd . ~/Documents/Vorlesungen --type f | dmenu -i -p "Skript:" -l 20 | xargs -I{} zathura {}
+bindsym $mod+s exec --no-startup-id ~/.cargo/bin/fd . ~/Documents/Vorlesungen --type f | dmenu -i -p "Skript:" -l 20 | xargs -I{} zathura {}
 
 # org
-bindsym $mod+n exec --no-startup-id alacritty -e tmux_org
-bindsym $mod+Shift+n exec --no-startup-id emacsclient -c ~/Notes/index.org
+bindsym $mod+n exec --no-startup-id emacsclient -c ~/Notes/index.org
 
 # pulsemixer
 bindsym $mod+m exec --no-startup-id alacritty -e pulsemixer
@@ -56,7 +57,7 @@ bindsym $mod+m exec --no-startup-id alacritty -e pulsemixer
 # kill focused window
 bindsym $mod+q kill
 
-# dmenu_run
+# dmenu_ru
 bindsym $mod+d exec --no-startup-id dmenu_run -p "Run: " -l 6 -g 6
 
 # passmenu
