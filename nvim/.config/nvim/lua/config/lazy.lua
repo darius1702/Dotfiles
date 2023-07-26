@@ -24,12 +24,6 @@ require('lazy').setup({
     end,
   },
 
-  -- {
-  --   'darius1702/kit.vim',
-  --   dir = '/home/darius/Projects/kit.vim/',
-  --   dev = 'true'
-  -- },
-
   -- Statusline
   'nvim-lualine/lualine.nvim',
 

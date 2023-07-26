@@ -73,7 +73,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+ctrl+l exec --no-startup-id sleep 1 && ~/.config/i3/lock.sh
 
 # exit
-bindsym $mod+Shift+x exec "i3-msg exit"
+# bindsym $mod+Shift+x exec "i3-msg exit"
 
 # volume controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl  -- set-sink-volume @DEFAULT_SINK@ +5%
@@ -86,7 +86,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s 30+
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 30-
 
 # other media keys
-bindsym XF86Favorites exec --no-startup-id notify-send "Favorites key pressed" "Bind me to something useful!"
+bindsym XF86Favorites exec --no-startup-id sh $HOME/Dotfiles/scripts/toggle_trackpad.sh
 
 # screenshots
 bindsym Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
