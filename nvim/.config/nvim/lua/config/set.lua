@@ -27,7 +27,6 @@ local settings = {
   smartindent = true,
   breakindent = true,
   updatetime = 50,
-  go = "a",
   mouse = "a",
   hlsearch = false,
   ignorecase = true,

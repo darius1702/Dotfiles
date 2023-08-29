@@ -43,10 +43,10 @@ for_window [title="^run-command$"] floating enable
 bindsym $mod+Shift+b exec --no-startup-id firefox
 
 # books
-bindsym $mod+b exec --no-startup-id ~/.cargo/bin/fd . ~/Documents/Books --type f | dmenu -i -p "Book:" -l 20 | xargs -I{} zathura {}
+bindsym $mod+b exec --no-startup-id ~/.cargo/bin/fd . ~/Documents/Books --type f | dmenu -p "Book:" -l 20 | xargs -I{} zathura {}
 
 # uni
-bindsym $mod+s exec --no-startup-id ~/.cargo/bin/fd . ~/Documents/Vorlesungen --type f | dmenu -i -p "Skript:" -l 20 | xargs -I{} zathura {}
+bindsym $mod+s exec --no-startup-id ~/.cargo/bin/fd . ~/Documents/Vorlesungen --type f | dmenu -p "Skript:" -l 20 | xargs -I{} zathura {}
 
 # org
 bindsym $mod+n exec --no-startup-id emacsclient -c ~/Notes/index.org
@@ -80,6 +80,7 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl  -- set-sink-volume @DEF
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec --no-startup-id pactl -- set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec --no-startup-id pactl -- set-source-mute 0 toggle
+bindsym XF86Display exec --no-startup-id arandr
 
 # backlight controls
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s 30+

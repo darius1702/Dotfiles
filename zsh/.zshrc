@@ -11,4 +11,4 @@ alias ghcsrc="[ -f "/home/darius/.ghcup/env" ] && source "/home/darius/.ghcup/en
 
 source "$HOME/.cargo/env"
 
-sed -e '1,3d' ~/Notes/refile.org
+sed -e '1,3d' ~/Notes/scratch.org
