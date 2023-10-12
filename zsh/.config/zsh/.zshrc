@@ -49,10 +49,19 @@ alias tc="nvim ~/.tmux.conf"
 alias ic="nvim ~/.config/i3/config"
 
 alias fv="fzf | xargs nvim"
+fcd() {
+  cd "$(fd --type d --no-ignore | fzf)"
+}
+fch() {
+  cd "$(fd --type d --no-ignore --hidden | fzf)"
+}
+
 alias todo="rg -i 'todo|fixme'"
 
 alias vim=nvim
 alias v=nvim
+alias e="emacsclient -c"
+alias et="emacsclient"
 alias ts="tmux new-session -s"
 alias z=zathura
 

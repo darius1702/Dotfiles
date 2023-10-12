@@ -116,39 +116,67 @@ require('lazy').setup({
       {'<leader>fm', '<cmd>Telescope man_pages<cr>', desc = 'Man pages'},
       {'<leader>/', '<cmd>Telescope current_buffer_fuzzy_find<cr>', desc = 'Current buffer fuzzy find'},
     },
+
+    setup = function ()
+      require('telescope').load_extension('fzf')
+    end,
+
     opts = {
       pickers = {
         find_files = {
           theme = 'ivy',
           hidden = true,
-          file_ignore_patterns = { '.git/', '^node_modules/' }
+          file_ignore_patterns = { '.git/', '^node_modules/' },
+          borderchars = {
+            preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
+          },
         },
         live_grep = {
           theme = 'ivy',
+          borderchars = {
+            preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
+          },
         },
         buffers = {
           theme = 'ivy',
+          borderchars = {
+            preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
+          },
         },
         current_buffer_fuzzy_find = {
           theme = 'ivy',
+          borderchars = {
+            preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
+          },
         },
         help_tags = {
           theme = 'ivy',
+          borderchars = {
+            preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
+          },
         },
         man_pages = {
           -- list all sections instead of just (1)
           sections = { 'ALL' },
           theme = 'ivy',
+          borderchars = {
+            preview = { '─', '│', '─', '│', '┌', '┐', '┘', '└'},
+          },
         },
       },
     },
+    dependencies = { 'nvim-telescope/telescope-fzf-native.nvim' },
+  },
+  {
+    'nvim-telescope/telescope-fzf-native.nvim',
+    build = 'make'
   },
   {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     config = function()
       require'nvim-treesitter.configs'.setup {
-        ensure_installed = { 'c', 'lua', 'vim', 'help', 'cpp', 'markdown' },
+        ensure_installed = { 'c', 'lua', 'vim', 'cpp', 'markdown' },
         sync_install = false,
         auto_install = true,
         highlight = {

@@ -17,7 +17,7 @@ focus_follows_mouse no
 mouse_warping none
 
 # border style
-for_window [class=".*"] border pixel 2
+for_window [class=".*"] border pixel 1
 
 # gaps
 # gaps inner 10
@@ -36,8 +36,9 @@ bindsym $mod+Return exec --no-startup-id alacritty
 
 # emacs
 bindsym $mod+e exec --no-startup-id emacsclient -c || notify-send "ERROR" "No emacs daemon running"
-bindsym $mod+Shift+d exec --no-startup-id emacsclient -cF "((visibility . nil))" -e "(darius/launcher)"
-for_window [title="^run-command$"] floating enable
+
+# org
+bindsym $mod+n exec --no-startup-id emacsclient -c ~/Notes/index.org || notify-send "ERROR" "No emacs daemon running"
 
 # browser
 bindsym $mod+Shift+b exec --no-startup-id firefox
@@ -45,11 +46,8 @@ bindsym $mod+Shift+b exec --no-startup-id firefox
 # books
 bindsym $mod+b exec --no-startup-id ~/.cargo/bin/fd . ~/Documents/Books --type f | dmenu -p "Book:" -l 20 | xargs -I{} zathura {}
 
-# uni
-bindsym $mod+s exec --no-startup-id ~/.cargo/bin/fd . ~/Documents/Vorlesungen --type f | dmenu -p "Skript:" -l 20 | xargs -I{} zathura {}
-
-# org
-bindsym $mod+n exec --no-startup-id emacsclient -c ~/Notes/index.org
+# find all pdfs
+bindsym $mod+s exec --no-startup-id find Documents Downloads Desktop Zotero kitcar -type f -name "*.pdf" | dmenu -p "PDF:" -l 20 | xargs -I{} zathura {}
 
 # pulsemixer
 bindsym $mod+m exec --no-startup-id alacritty -e pulsemixer
@@ -83,8 +81,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl -- set-source-mute 0 toggle
 bindsym XF86Display exec --no-startup-id arandr
 
 # backlight controls
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s 30+
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 30-
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s 20+
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 20-
 
 # other media keys
 bindsym XF86Favorites exec --no-startup-id sh $HOME/Dotfiles/scripts/toggle_trackpad.sh
@@ -201,8 +199,8 @@ set $orange #E69875
 set $magenta #D699B6
 
 # class                 border|backgr|text|indicator|child_border
-client.focused          $bg_light $bg_light $fg $green $bg_light
-client.focused_inactive $bg_light $bg $fg $yellow $bg
+client.focused          $bg_light $bg_light $fg $orange $green
+client.focused_inactive $bg_light $bg $fg $bg $bg
 client.unfocused        $bg $bg $fg $magenta $bg
 client.urgent           $red $red $fg $red $red
 
