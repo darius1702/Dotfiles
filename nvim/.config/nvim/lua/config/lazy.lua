@@ -181,8 +181,6 @@ require('lazy').setup({
         auto_install = true,
         highlight = {
           enable = true,
-          -- Let vimtex handle latex highlighting
-          disable = { 'latex' },
           additional_vim_regex_highlighting = false,
         },
         indent = {

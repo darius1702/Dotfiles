@@ -5,10 +5,7 @@
 
 
 # TODO
-- [ ] Add back 'gs' zsh alias to open neogit
-    - Need to find a clean way to do it because neogit is lazy loaded only on '<leader>gs'
-- [ ] Split i3 config into different files
-    - Doesn't work on current version of i3 :(
+- [ ] more cool shit
 
 # Credits
 - Most colors from [everforest](https://github.com/sainnhe/everforest)

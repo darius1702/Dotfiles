@@ -17,7 +17,7 @@ focus_follows_mouse no
 mouse_warping none
 
 # border style
-for_window [class=".*"] border pixel 1
+for_window [class=".*"] border pixel 2
 
 # gaps
 # gaps inner 10
