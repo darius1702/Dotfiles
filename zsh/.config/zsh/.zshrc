@@ -23,15 +23,24 @@ zstyle ':vcs_info:git:*' formats '%F{fg} on %B%F{magenta}%b'
 
 # Prompt variables
 DIR=$'%B%F{cyan}%3~%b'
-CHAR=$'%F{green}%(!.#.\u276f)%f '
+# CHAR=$'%F{green}%(!.#.\u276f)%f '
+CHAR=$'%B%F{green}%(!.#.::)%f%b '
 PROMPT=$'${DIR}${vcs_info_msg_0_}%b%f ${CHAR}'
 
 # Make Shift-Tab go to previous completion suggestion
 zmodload zsh/complist
 bindkey -M menuselect '^[[Z' reverse-menu-complete
 
-# vi-mode (Disabled in favor of the vi-mode plugin below)
-# bindkey -v
+# Emacs keybindings
+bindkey -e
+
+# Disable C-s and C-q in interactive shells
+if [[ -t 0 && $- = *i* ]]
+then
+  stty -ixon
+fi
+
+export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
 export LANG="en_US.UTF-8"
 export PAGER="nvim -R"
@@ -56,12 +65,13 @@ fch() {
   cd "$(fd --type d --no-ignore --hidden | fzf)"
 }
 
+alias "..."="cd ../.."
+
 alias todo="rg -i 'todo|fixme'"
 
 alias vim=nvim
 alias v=nvim
-alias e="emacsclient -c"
-alias et="emacsclient"
+alias e="emacsclient --no-wait -c"
 alias ts="tmux new-session -s"
 alias z=zathura
 
@@ -79,4 +89,4 @@ alias grep="grep --color=auto"
 alias catkin_make="catkin_make -DCMAKE_EXPORT_COMPILE_COMMANDS=1"
 
 # Better vi-mode
-source $HOME/.config/zsh/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+# source $HOME/.config/zsh/zsh-vi-mode/zsh-vi-mode.plugin.zsh

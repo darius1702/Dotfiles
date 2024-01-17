@@ -2,6 +2,7 @@
 
 # Wallpaper
 exec_always --no-startup-id ~/.fehbg
+exec_always --no-startup-id xrdb -merge ~/.Xresources
 
 # Screen lock
 exec --no-startup-id xss-lock -- $HOME/.config/i3/lock.sh
@@ -15,6 +16,9 @@ floating_modifier $mod
 # Mouse settings
 focus_follows_mouse no
 mouse_warping none
+
+# Press workspace key twice to go back to last workspace
+workspace_auto_back_and_forth yes
 
 # border style
 for_window [class=".*"] border pixel 2
@@ -116,9 +120,9 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+t split toggle
 
 # tabbing
-# bindsym $mod+a focus parent
-# bindsym $mod+Shift+a focus child
-# bindsym $mod+e layout toggle tabbed split
+bindsym $mod+a focus parent
+bindsym $mod+Shift+a focus child
+bindsym $mod+Shift+t layout toggle tabbed split
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -199,9 +203,9 @@ set $orange #E69875
 set $magenta #D699B6
 
 # class                 border|backgr|text|indicator|child_border
-client.focused          $bg_light $bg_light $fg $orange $green
-client.focused_inactive $bg_light $bg $fg $bg $bg
-client.unfocused        $bg $bg $fg $magenta $bg
+client.focused          $green $green $bg_dark $orange $green
+client.focused_inactive $bg_light $bg_dark $fg $bg $bg
+client.unfocused        $bg $bg_dark $bg_light $magenta $bg
 client.urgent           $red $red $fg $red $red
 
 # polybar

@@ -1,3 +1,6 @@
+[env]
+TERM = "xterm-256color"
+
 [colors.bright]
 black = "#475258"
 blue = "#7fbbb3"
@@ -23,7 +26,7 @@ background = "#141414"
 foreground = "#e1e1e1"
 
 [font]
-size = 9
+size = 18
 
 [font.bold]
 family = "Iosevka Nerd Font Mono"

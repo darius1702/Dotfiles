@@ -1,4 +1,5 @@
 -- Quickfix list
+vim.keymap.set("i", "jk", "<ESC>", { silent = true })
 vim.keymap.set("n", "<leader>co", ":copen<CR>", { silent = true })
 vim.keymap.set("n", "<leader>cc", ":cclose<CR>", { silent = true })
 vim.keymap.set("n", "]c", ":cnext<CR>", { silent = true })

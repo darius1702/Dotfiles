@@ -11,8 +11,6 @@
   co = checkout
   s = status
   hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
-  ls = log --pretty=format:\"%C(yellow)%h\\\\ %ad%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate --date=relative
-  ll = log --pretty=format:\"%C(yellow)%h\\\\ %ad%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate --date=relative --numstat
 
 [init]
   defaultBranch = main
