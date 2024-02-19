@@ -11,16 +11,34 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
 
   -- Colors
+  -- {
+  --   'sainnhe/everforest',
+  --   config = function()
+  --     vim.g.everforest_transparent_background = 1
+  --     vim.g.everforest_better_performance = 1
+  --     vim.g.everforest_disable_italic_comment = 1
+  --     vim.g.everforest_diagnostic_virtual_text = 'colored'
+  --     vim.g.everforest_background = 'hard'
+  --     vim.cmd[[ let g:everforest_colors_override = {'fg' : ['#e1e1e1', '223'], 'bg_visual' : ['#2E383C', '52']} ]]
+  --     -- vim.cmd.colorscheme('everforest')
+  --   end,
+  -- },
+
   {
-    'sainnhe/everforest',
+    'projekt0n/github-nvim-theme',
+    lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
-      vim.g.everforest_transparent_background = 1
-      vim.g.everforest_better_performance = 1
-      vim.g.everforest_disable_italic_comment = 1
-      vim.g.everforest_diagnostic_virtual_text = 'colored'
-      vim.g.everforest_background = 'hard'
-      vim.cmd[[ let g:everforest_colors_override = {'fg' : ['#e1e1e1', '223'], 'bg_visual' : ['#2E383C', '52']} ]]
-      vim.cmd.colorscheme('everforest')
+      require('github-theme').setup({
+        options = {
+          styles = {
+            functions = 'bold',
+            keywords = 'bold',
+            constants = 'bold',
+          },
+        },
+      })
+      vim.cmd('colorscheme github_light')
     end,
   },
 

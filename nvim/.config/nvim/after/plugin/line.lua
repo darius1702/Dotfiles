@@ -1,23 +1,21 @@
 -- Eviline config for lualine
 -- Author: shadmansaleh
 -- Credit: glepnir
--- Adapted for sainnhe/everforest colors
 local lualine = require('lualine')
 
 -- Color table for highlights
 -- stylua: ignore
 local colors = {
-  bg          = '#141414',
-  bg_inactive = '#272E33',
-  fg          = '#e1e1e1',
-  violet      = '#a9a1e1',
-  red         = '#e67e80',
-  green       = '#a7c080',
-  yellow      = '#dbbc7f',
-  orange      = '#e69875',
-  blue        = '#7fbbb3',
-  magenta     = '#d699b6',
-  cyan        = '#83c092',
+  bg          = '#c8c8c8',
+  bg_inactive = '#c8c8c8',
+  fg          = '#000000',
+  red         = "#D20F39",
+  green       = "#40A02B",
+  yellow      = "#DF8E1D",
+  blue        = "#1E66F5",
+  magenta     = "#EA76CB",
+  cyan        = "#179299",
+  white       = "#ffffff",
 }
 
 local conditions = {
@@ -44,7 +42,7 @@ local config = {
       -- We are going to use lualine_c an lualine_x as left and
       -- right section. Both are highlighted by c theme .  So we
       -- are just setting default looks o statusline
-      normal = { c = { fg = colors.fg, bg = colors.bg_inactive } },
+      normal = { c = { fg = colors.fg, bg = colors.bg } },
       inactive = { c = { fg = colors.fg, bg = colors.bg_inactive } },
     },
   },
@@ -83,30 +81,7 @@ ins_left {
   -- mode component
   'mode',
   color = function()
-    -- auto change color according to neovims mode
-    -- local mode_color = {
-    --   n = colors.red,
-    --   i = colors.green,
-    --   v = colors.blue,
-    --   [''] = colors.blue,
-    --   V = colors.blue,
-    --   c = colors.magenta,
-    --   no = colors.red,
-    --   s = colors.orange,
-    --   S = colors.orange,
-    --   [''] = colors.orange,
-    --   ic = colors.yellow,
-    --   R = colors.violet,
-    --   Rv = colors.violet,
-    --   cv = colors.red,
-    --   ce = colors.red,
-    --   r = colors.cyan,
-    --   rm = colors.cyan,
-    --   ['r?'] = colors.cyan,
-    --   ['!'] = colors.red,
-    --   t = colors.red,
-    -- }
-    return { fg = colors.bg, bg = colors.fg, gui = 'bold' }
+    return { fg = colors.white, bg = colors.blue, gui = 'bold' }
     -- return { fg = colors.bg, bg = mode_color[vim.fn.mode()], gui = 'bold' }
   end,
   padding = { right = 1, left = 1 },
@@ -132,11 +107,6 @@ ins_left {
 ins_left {
   'diff',
   symbols = { added = '+', modified = '~', removed = '-' },
-  -- diff_color = {
-  --   added = { fg = colors.green },
-  --   modified = { fg = colors.orange },
-  --   removed = { fg = colors.red },
-  -- },
   padding = {left = 1, right = 3},
   cond = conditions.hide_in_width,
 }

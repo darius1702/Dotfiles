@@ -7,7 +7,3 @@ vim.g.mapleader = " "
 vim.opt.termguicolors = true
 
 require("config")
-
-vim.cmd[[highlight CursorLineNr guifg=#DBBC7F ]]
-vim.cmd[[highlight CursorLine guibg=#1E2326]]
-vim.cmd[[highlight TelescopeTitle guifg=#DBBC7F]]

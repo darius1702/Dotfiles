@@ -8,10 +8,14 @@ setopt prompt_subst
 setopt globdots
 unsetopt PROMPT_SP
 
+# Emacs keybindings
+bindkey -e
+
 # Use space bar in normal mode to edit command in editor
 autoload -z edit-command-line
 zle -N edit-command-line
-bindkey -M vicmd " " edit-command-line
+bindkey "^X^E" edit-command-line
+bindkey '^H' backward-kill-word
 
 # auto insert first completion match
 # setopt MENU_COMPLETE
@@ -30,9 +34,6 @@ PROMPT=$'${DIR}${vcs_info_msg_0_}%b%f ${CHAR}'
 # Make Shift-Tab go to previous completion suggestion
 zmodload zsh/complist
 bindkey -M menuselect '^[[Z' reverse-menu-complete
-
-# Emacs keybindings
-bindkey -e
 
 # Disable C-s and C-q in interactive shells
 if [[ -t 0 && $- = *i* ]]

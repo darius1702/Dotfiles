@@ -4,6 +4,9 @@
 exec_always --no-startup-id ~/.fehbg
 exec_always --no-startup-id xrdb -merge ~/.Xresources
 
+# Kill ibus
+exec --no-startup-id ibus exit
+
 # Screen lock
 exec --no-startup-id xss-lock -- $HOME/.config/i3/lock.sh
 
@@ -21,7 +24,7 @@ mouse_warping none
 workspace_auto_back_and_forth yes
 
 # border style
-for_window [class=".*"] border pixel 2
+for_window [class=".*"] border pixel 3
 
 # gaps
 # gaps inner 10
@@ -33,7 +36,7 @@ for_window [class=".*"] border pixel 2
 # smart_borders on
 
 # download from: https://www.nerdfonts.com/font-downloads
-font pango: Iosevka Nerd Font Mono Semibold 12
+font pango: IosevkaComfyFixed Nerd Font Semibold 12
 
 # terminal
 bindsym $mod+Return exec --no-startup-id alacritty
@@ -190,22 +193,18 @@ bindsym $mod+i resize grow height 10 px or 10 ppt
 bindsym $mod+o resize shrink height 10 px or 10 ppt
 bindsym $mod+p resize grow width 10 px or 10 ppt
 
+set $active_border #7f90ff
+set $inactive_border #E6E6E5
 set $fg #E1E1E1
 set $bg_dark #141414
 set $bg #373737
 set $bg_light #616161
-set $blue #7FBBB3
-set $aqua #83C092
-set $red #E67E80
-set $green #A7C080
-set $yellow #DBBC7F
-set $orange #E69875
-set $magenta #D699B6
+set $red #FF5F59
 
 # class                 border|backgr|text|indicator|child_border
-client.focused          $green $green $bg_dark $orange $green
-client.focused_inactive $bg_light $bg_dark $fg $bg $bg
-client.unfocused        $bg $bg_dark $bg_light $magenta $bg
+client.focused          $active_border $active_border $inactive_border $orange $active_border
+client.focused_inactive $inactive_border $inactive_border $fg $bg $inactive_border
+client.unfocused        $inactive_border $inactive_border $bg_light $magenta $inactive_border
 client.urgent           $red $red $fg $red $red
 
 # polybar
