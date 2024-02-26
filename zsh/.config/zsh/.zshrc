@@ -16,6 +16,7 @@ autoload -z edit-command-line
 zle -N edit-command-line
 bindkey "^X^E" edit-command-line
 bindkey '^H' backward-kill-word
+bindkey -s '^@' 'cdi^M'
 
 # auto insert first completion match
 # setopt MENU_COMPLETE

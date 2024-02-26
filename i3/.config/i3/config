@@ -47,6 +47,9 @@ bindsym $mod+e exec --no-startup-id emacsclient -c || notify-send "ERROR" "No em
 # org
 bindsym $mod+n exec --no-startup-id emacsclient -c ~/Notes/index.org || notify-send "ERROR" "No emacs daemon running"
 
+# emacs anywhere
+bindsym $mod+Shift+e exec --no-startup-id $HOME/.emacs_anywhere/bin/run
+
 # browser
 bindsym $mod+Shift+b exec --no-startup-id firefox
 
@@ -152,6 +155,9 @@ workspace $ws8 output eDP
 workspace $ws9 output eDP
 workspace $ws10 output eDP
 
+# Make some windows float by default
+for_window [title="^\*Emacs Anywhere\*$"] floating enable
+
 # Default workspaces for some programs
 assign [class="^Zotero$"] $ws8
 assign [class="^thunderbird$"] $ws9
@@ -193,19 +199,19 @@ bindsym $mod+i resize grow height 10 px or 10 ppt
 bindsym $mod+o resize shrink height 10 px or 10 ppt
 bindsym $mod+p resize grow width 10 px or 10 ppt
 
-set $active_border #7f90ff
-set $inactive_border #E6E6E5
+set $active_border #9f9f9f
+set $inactive_border #e0e0e0
 set $fg #E1E1E1
-set $bg_dark #141414
 set $bg #373737
 set $bg_light #616161
-set $red #FF5F59
+set $urgent #FF5F59
+set $indicator #0031a9
 
 # class                 border|backgr|text|indicator|child_border
-client.focused          $active_border $active_border $inactive_border $orange $active_border
-client.focused_inactive $inactive_border $inactive_border $fg $bg $inactive_border
-client.unfocused        $inactive_border $inactive_border $bg_light $magenta $inactive_border
-client.urgent           $red $red $fg $red $red
+client.focused          $active_border $active_border $inactive_border $indicator $active_border
+client.focused_inactive $inactive_border $inactive_border $fg $inactive_border $inactive_border
+client.unfocused        $inactive_border $inactive_border $inactive_border $magenta $inactive_border
+client.urgent           $urgent $urgent $fg $urgent $urgent
 
 # polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -217,7 +223,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 #         position top
 #         colors {
 #                 # bar background color
-#                 background $bg_dark
+#                 background $bg
 #                 # text color used for blocks that do not have a color specified.
 #                 statusline $fg
 #                 # workspaces section

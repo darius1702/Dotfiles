@@ -13,8 +13,7 @@ alias kitsrc="source $HOME/kitcar/kitcar-init/config/zshrc_private && source $HO
 export PATH="$HOME/.local/share/fnm:$PATH" && eval "`fnm env --shell zsh`"
 alias ghcsrc="[ -f "/home/darius/.ghcup/env" ] && source "/home/darius/.ghcup/env" # ghcup-env"
 
-eval "$(zoxide init zsh --no-cmd)"
-alias cd=__zoxide_z
+eval "$(zoxide init zsh --cmd cd)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
