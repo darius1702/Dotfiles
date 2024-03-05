@@ -200,15 +200,15 @@ bindsym $mod+o resize shrink height 10 px or 10 ppt
 bindsym $mod+p resize grow width 10 px or 10 ppt
 
 set $dark_gray  #666666
-set $light_gray #eaeaea
+set $white      #ffffff
 set $fg         #000000
 set $urgent     #a60000
 set $indicator  #0031a9
 
 # class                 |border         |backgr         |text           |indicator      |child_border
-client.focused          $dark_gray      $dark_gray      $light_gray     $indicator      $dark_gray
-client.focused_inactive $dark_gray      $light_gray     $fg             $light_gray     $light_gray
-client.unfocused        $dark_gray      $light_gray     $fg             $light_gray     $light_gray
+client.focused          $white          $white          $fg             $indicator      $dark_gray
+client.focused_inactive $dark_gray      $dark_gray      $white          $white          $white
+client.unfocused        $dark_gray      $dark_gray      $white          $white          $white
 client.urgent           $urgent         $urgent         $fg             $urgent         $urgent
 
 # polybar

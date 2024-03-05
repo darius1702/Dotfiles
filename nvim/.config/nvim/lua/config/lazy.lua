@@ -10,20 +10,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
 
-  -- Colors
-  -- {
-  --   'sainnhe/everforest',
-  --   config = function()
-  --     vim.g.everforest_transparent_background = 1
-  --     vim.g.everforest_better_performance = 1
-  --     vim.g.everforest_disable_italic_comment = 1
-  --     vim.g.everforest_diagnostic_virtual_text = 'colored'
-  --     vim.g.everforest_background = 'hard'
-  --     vim.cmd[[ let g:everforest_colors_override = {'fg' : ['#e1e1e1', '223'], 'bg_visual' : ['#2E383C', '52']} ]]
-  --     -- vim.cmd.colorscheme('everforest')
-  --   end,
-  -- },
-
   {
     'projekt0n/github-nvim-theme',
     lazy = false, -- make sure we load this during startup if it is your main colorscheme
@@ -57,19 +43,6 @@ require('lazy').setup({
       {'<leader>rdi', function() require('ros-nvim.ros').show_interface_definition() end, desc = 'Show definition for messages/services in floating window'},
     },
     dependencies = { 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope.nvim', 'nvim-treesitter/nvim-treesitter' },
-  },
-
-  -- Jupyter
-  {
-    'untitled-ai/jupyter_ascending.vim',
-    init = function ()
-      vim.g.jupyter_ascending_default_mappings = false
-    end,
-    keys = {
-      { '<leader>jx', '<Plug>JupyterExecute', desc = 'Execute Notebook Cell'},
-      { '<leader>jX', '<Plug>JupyterExecuteAll', desc = 'Execute all Notebook Cells'},
-      { '<leader>jr', '<Plug>JupyterRestart', desc = 'Restart jupyter_ascending'},
-    }
   },
 
   -- Markdown
@@ -183,12 +156,14 @@ require('lazy').setup({
         },
       },
     },
-    dependencies = { 'nvim-telescope/telescope-fzf-native.nvim' },
+    dependencies = {
+      {
+        'nvim-telescope/telescope-fzf-native.nvim',
+        build = 'make'
+      }
+    },
   },
-  {
-    'nvim-telescope/telescope-fzf-native.nvim',
-    build = 'make'
-  },
+
   {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
