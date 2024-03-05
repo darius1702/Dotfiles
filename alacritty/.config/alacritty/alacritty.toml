@@ -2,36 +2,34 @@
 TERM = "xterm-256color"
 
 [colors.primary]
-background = "#FFFFFF"
-foreground = "#000000"
+background = '#ffffff'
+foreground = '#000000'
 
+# Normal colors
 [colors.normal]
-# black = "#000000"
-# red = "#a60000"
-# green = "#006800"
-# yellow = "#6f5500"
-# blue = "#0031a9"
-# magenta = "#721045"
-# cyan = "#005e8b"
-# white = "#ffffff"
-black = "#000000"
-red = "#d00000"
-green = "#008900"
-yellow = "#808000"
-blue = "#0000ff"
-magenta = "#dd22dd"
-cyan = "#008899"
-white = "#ffffff"
+black   = '#24292e'
+red     = '#d73a49'
+green   = '#28a745'
+yellow  = '#dbab09'
+blue    = '#0366d6'
+magenta = '#5a32a3'
+cyan    = '#0598bc'
+white   = '#959da5'
 
+# Bright colors
 [colors.bright]
-black = "#000000"
-red = "#d00000"
-green = "#008900"
-yellow = "#808000"
-blue = "#0000ff"
-magenta = "#dd22dd"
-cyan = "#008899"
-white = "#ffffff"
+black   = '#57606a'
+red     = '#cb2431'
+green   = '#22863a'
+yellow  = '#b08800'
+blue    = '#005cc5'
+magenta = '#5a32a3'
+cyan    = '#3192aa'
+white   = '#6a737d'
+
+[colors.selection]
+text = '#000000'
+background = '#bdbdbd'
 
 [font]
 size = 18

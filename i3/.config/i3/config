@@ -27,7 +27,7 @@ workspace_auto_back_and_forth yes
 for_window [class=".*"] border pixel 3
 
 # gaps
-# gaps inner 10
+gaps inner 10
 
 # show gaps only when there is more than 1 window on current workspace
 # smart_gaps on
@@ -199,19 +199,17 @@ bindsym $mod+i resize grow height 10 px or 10 ppt
 bindsym $mod+o resize shrink height 10 px or 10 ppt
 bindsym $mod+p resize grow width 10 px or 10 ppt
 
-set $active_border #9f9f9f
-set $inactive_border #e0e0e0
-set $fg #E1E1E1
-set $bg #373737
-set $bg_light #616161
-set $urgent #FF5F59
-set $indicator #0031a9
+set $dark_gray  #666666
+set $light_gray #eaeaea
+set $fg         #000000
+set $urgent     #a60000
+set $indicator  #0031a9
 
-# class                 border|backgr|text|indicator|child_border
-client.focused          $active_border $active_border $inactive_border $indicator $active_border
-client.focused_inactive $inactive_border $inactive_border $fg $inactive_border $inactive_border
-client.unfocused        $inactive_border $inactive_border $inactive_border $magenta $inactive_border
-client.urgent           $urgent $urgent $fg $urgent $urgent
+# class                 |border         |backgr         |text           |indicator      |child_border
+client.focused          $dark_gray      $dark_gray      $light_gray     $indicator      $dark_gray
+client.focused_inactive $dark_gray      $light_gray     $fg             $light_gray     $light_gray
+client.unfocused        $dark_gray      $light_gray     $fg             $light_gray     $light_gray
+client.urgent           $urgent         $urgent         $fg             $urgent         $urgent
 
 # polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -228,9 +226,9 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 #                 statusline $fg
 #                 # workspaces section
 #                 #                    border  backgr. text
-#                 focused_workspace    $green $green $bg
-#                 inactive_workspace   $bg $bg $fg
-#                 active_workspace     $bg $bg $blue
-#                 urgent_workspace     $magenta $magenta $bg
+#                 focused_workspace    $fg     $bg     $fg
+#                 inactive_workspace   $bg     $bg     $fg
+#                 active_workspace     $bg     $bg     $fg
+#                 urgent_workspace     $urgent $bg     $urgent
 #         }
 # }
