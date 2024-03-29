@@ -6,5 +6,7 @@ swww img ~/Documents/Wall/wall108.jpg &
 nm-applet --indicator &
 
 waybar &
+swayidle before-sleep 'swaylock -e -F -i ~/Documents/Wall/wall103.jpg -s fill' timeout 5 notify-send aaaa &
 
 mako
+

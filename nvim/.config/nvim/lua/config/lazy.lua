@@ -17,6 +17,7 @@ require('lazy').setup({
     config = function()
       require('github-theme').setup({
         options = {
+          transparent = true,
           styles = {
             functions = 'bold',
             keywords = 'bold',
@@ -24,7 +25,7 @@ require('lazy').setup({
           },
         },
       })
-      vim.cmd('colorscheme github_light')
+      vim.cmd('colorscheme github_dark_default')
     end,
   },
 
@@ -45,22 +46,6 @@ require('lazy').setup({
     dependencies = { 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope.nvim', 'nvim-treesitter/nvim-treesitter' },
   },
 
-  -- Markdown
-  {
-    'iamcco/markdown-preview.nvim',
-    build = function()
-      vim.fn['mkdp#util#install']()
-    end,
-    config = function()
-      vim.g.mkdp_auto_close = 1
-      vim.g.mkdp_command_for_global = 1
-      vim.g.mkdp_browser = 'surf'
-    end,
-    ft = 'markdown'
-    -- cmd = {'MarkdownPreview'},
-  },
-
-  -- Autopairs
   { 'windwp/nvim-autopairs', config = true },
 
   -- Syntax
@@ -81,13 +66,6 @@ require('lazy').setup({
     keys = {
       { '<leader>hp', '<cmd>Gitsigns preview_hunk<cr>', desc = 'Preview Hunk'},
       { '<leader>hb', '<cmd>Gitsigns blame_line<cr>', desc = 'Blame current line'},
-    }
-  },
-  {
-    'NeogitOrg/neogit',
-    config = true,
-    keys = {
-      { '<leader>gs', '<cmd>Neogit kind=replace<cr>', desc = 'Neogit' }
     }
   },
 
@@ -182,35 +160,4 @@ require('lazy').setup({
       }
     end,
   },
-
-  -- LSPZero
-  {
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v2.x',
-    dependencies = {
-      -- LSP Support
-      {'neovim/nvim-lspconfig'},             -- Required
-      {                                      -- Optional
-        'williamboman/mason.nvim',
-        build = function()
-          pcall(vim.cmd, 'MasonUpdate')
-        end,
-      },
-      {'williamboman/mason-lspconfig.nvim'}, -- Optional
-
-      -- Autocompletion
-      {
-        'hrsh7th/nvim-cmp', -- Required
-        opts = {
-          sources = {
-            { name = 'orgmode' },
-          }
-        }
-      },
-      {'hrsh7th/cmp-nvim-lsp'}, -- Required
-      {'L3MON4D3/LuaSnip'},     -- Required
-      {'hrsh7th/cmp-path'},
-      {'hrsh7th/cmp-buffer'},
-    }
-  }
 })

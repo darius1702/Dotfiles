@@ -2,7 +2,7 @@ vim.cmd([[set spelllang=en_us]])
 local settings = {
 
   -- default values anyway, maybe remove sometime
-  bg = "light",
+  bg = "dark",
   hidden = true,
   encoding = "utf-8",
   laststatus = 2,

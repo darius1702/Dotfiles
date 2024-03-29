@@ -2,52 +2,52 @@
 TERM = "xterm-256color"
 
 [colors.primary]
-background = '#ffffff'
-foreground = '#000000'
+background = '#121212'
+foreground = '#ffffff'
 
 # Normal colors
 [colors.normal]
 black   = '#24292e'
-red     = '#d73a49'
-green   = '#28a745'
-yellow  = '#dbab09'
-blue    = '#0366d6'
-magenta = '#5a32a3'
-cyan    = '#0598bc'
-white   = '#959da5'
+red     = '#C01C28'
+green   = '#2EC27E'
+yellow  = '#F5C211'
+blue    = '#1E78E4'
+magenta = '#9841BB'
+cyan    = '#0AB9DC'
+white   = '#C0BFBC'
 
 # Bright colors
 [colors.bright]
 black   = '#57606a'
-red     = '#cb2431'
-green   = '#22863a'
-yellow  = '#b08800'
-blue    = '#005cc5'
-magenta = '#5a32a3'
-cyan    = '#3192aa'
-white   = '#6a737d'
+red     = '#ED333B'
+green   = '#57E389'
+yellow  = '#F8E45C'
+blue    = '#51A1FF'
+magenta = '#C061CB'
+cyan    = '#4FD2FD'
+white   = '#F6F5F4'
 
 [colors.selection]
 text = '#000000'
 background = '#bdbdbd'
 
 [font]
-size = 18
+size = 13
 
 [font.bold]
-family = "IosevkaComfyFixed Nerd Font"
+family = "IosevkaComfyFixed"
 style = "Bold"
 
 [font.bold_italic]
-family = "IosevkaComfyFixed Nerd Font"
+family = "IosevkaComfyFixed"
 style = "Bold Oblique"
 
 [font.italic]
-family = "IosevkaComfyFixed Nerd Font"
+family = "IosevkaComfyFixed"
 style = "Oblique"
 
 [font.normal]
-family = "IosevkaComfyFixed Nerd Font"
+family = "IosevkaComfyFixed"
 style = "Regular"
 
 [[keyboard.bindings]]

@@ -1,0 +1,69 @@
+@define-color module-bg rgba(255, 255, 255, 0.3);
+@define-color bar-bg rgba(255, 255, 255, 0.3);
+@define-color fg #000000;
+@define-color workspace-active-bg #bfc9ff;
+@define-color workspace-urgent-bg #d00000;
+
+@define-color red #f85552;
+@define-color yellow #f8de7e;
+
+* {
+    font-family: Iosevka Comfy Fixed, FontAwesome;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0;
+}
+
+window#waybar {
+    background-color: @bar-bg;
+    color: @fg;
+}
+
+#memory,
+#backlight,
+#clock,
+#clock-date,
+#pulseaudio,
+#disk,
+#network,
+#tray,
+#battery {
+    background-color: @module-bg;
+    color: @fg;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#workspaces {
+    background: @bar-bg;
+}
+
+#workspaces button {
+    padding: 1px 5px 1px 5px;
+    animation: none;
+    border-radius: 0;
+}
+
+#workspaces button.active {
+    background-color: @workspace-active-bg;
+    color: @fg;
+}
+
+#workspaces button.urgent {
+    background-color: @workspace-urgent-bg;
+    color: @fg;
+}
+
+#battery.warning {
+    color: @fg;
+    background-color: @yellow;
+}
+
+#battery.critical {
+    color: @fg;
+    background-color: @red;
+}
+
+#tray menu {
+    padding: 5px;
+}

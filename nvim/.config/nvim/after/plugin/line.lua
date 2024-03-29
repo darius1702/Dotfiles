@@ -6,16 +6,16 @@ local lualine = require('lualine')
 -- Color table for highlights
 -- stylua: ignore
 local colors = {
-  bg          = '#e7eaf0',
-  bg_inactive = '#e7eaf0',
-  fg          = '#000000',
-  red         = "#D20F39",
-  green       = "#40A02B",
-  yellow      = "#DF8E1D",
-  blue        = "#1E66F5",
-  magenta     = "#EA76CB",
-  cyan        = "#179299",
-  white       = "#ffffff",
+  red     = '#C01C28',
+  green   = '#2EC27E',
+  yellow  = '#F5C211',
+  blue    = '#1E78E4',
+  magenta = '#9841BB',
+  cyan    = '#0AB9DC',
+  white   = '#ffffff',
+  bg          = '#313131',
+  bg_inactive = '#313131',
+  fg          = '#ffffff',
 }
 
 local conditions = {
@@ -81,7 +81,7 @@ ins_left {
   -- mode component
   'mode',
   color = function()
-    return { fg = colors.white, bg = colors.blue, gui = 'bold' }
+    return { fg = colors.bg, bg = colors.green, gui = 'bold' }
     -- return { fg = colors.bg, bg = mode_color[vim.fn.mode()], gui = 'bold' }
   end,
   padding = { right = 1, left = 1 },

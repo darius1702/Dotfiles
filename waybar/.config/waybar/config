@@ -1,0 +1,72 @@
+{
+  "height": 20,
+  "layer": "top",
+  "position": "top",
+  "spacing": 15,
+  "modules-left": ["hyprland/workspaces"],
+  "modules-right": ["network", "pulseaudio", "memory", "disk", "backlight", "battery", "clock#date", "clock", "tray"],
+
+  "backlight": {
+    "format": "Bl {percent}%",
+    "on-scroll-up": "brightnessctl set +5%",
+    "on-scroll-down": "brightnessctl set 5%-",
+    "tooltip": false,
+  },
+
+  "memory": {
+    "interval": 30,
+    "format": "Mem {used}G",
+    "tooltip": false,
+  },
+
+  "pulseaudio": {
+    "format": "Vol {volume}%",
+    "format-bluetooth": "BL {volume}%",
+    "format-bluetooth-muted": "BL muted",
+    "format-muted": "muted",
+    "on-click": "pamixer -t",
+    "on-click-right": "pavucontrol",
+    "on-scroll-up": "pamixer -i 1",
+    "on-scroll-down": "pamixer -d 1",
+  },
+
+  "network": {
+    "format-wifi": "{ipaddr}",
+    "format-ethernet": "Eth {ipaddr}",
+    "format-disconnected": "disconnected",
+    "tooltip": false,
+  },
+
+  "disk": {
+    "format": "Disk {percentage_free}%"
+  },
+
+  "battery": {
+    "bat": "BAT0",
+    "adapter": "ADP0",
+    "interval": 60,
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "Bat {capacity}%",
+    "format-alt": "{power}W",
+    "format-warning": "Low {capacity}%",
+    "format-critical": "Critical {capacity}%",
+    "format-charging": "Chg {capacity}%",
+    "format-full": "Full {capacity}%",
+    "tooltip": false,
+  },
+
+  "clock": {
+    "format": "{:%H:%M}",
+  },
+
+  "clock#date": {
+    "format": "{:%d.%m.%Y}",
+  },
+
+  "tray": {
+    "spacing": 5,
+  },
+}

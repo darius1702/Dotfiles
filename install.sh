@@ -1,8 +1,9 @@
 #!/bin/sh
 set -xe
 
-# zsh better vi mode
-#[ -d ./zsh/.config/zsh/zsh-vi-mode ] && echo "[INFO] zsh-vi-mode was cloned already, skipping..." || git clone https://github.com/jeffreytse/zsh-vi-mode.git ./zsh/.config/zsh/zsh-vi-mode
+# rofi theme
+mkdir -p ~/.local/share/rofi/themes/
+cp ./squared-blue.rasi ~/.local/share/rofi/themes/
 
 # link everything
 stow alacritty
@@ -14,3 +15,5 @@ stow nvim
 stow tmux
 stow zsh
 stow hyprland
+stow waybar
+stow rofi
