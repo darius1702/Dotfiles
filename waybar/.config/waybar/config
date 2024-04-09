@@ -21,8 +21,8 @@
 
   "pulseaudio": {
     "format": "Vol {volume}%",
-    "format-bluetooth": "BL {volume}%",
-    "format-bluetooth-muted": "BL muted",
+    "format-bluetooth": "Bluetooth {volume}%",
+    "format-bluetooth-muted": "Bluetooth muted",
     "format-muted": "muted",
     "on-click": "pamixer -t",
     "on-click-right": "pavucontrol",
@@ -52,7 +52,7 @@
     "format": "Bat {capacity}%",
     "format-alt": "{power}W",
     "format-warning": "Low {capacity}%",
-    "format-critical": "Critical {capacity}%",
+    "format-critical": "Low {capacity}%",
     "format-charging": "Chg {capacity}%",
     "format-full": "Full {capacity}%",
     "tooltip": false,
