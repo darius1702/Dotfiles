@@ -10,8 +10,7 @@ in
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./cachix.nix
+      ./amogus-hardware-configuration.nix
     ];
 
   # Bootloader.
@@ -131,6 +130,7 @@ in
     nodejs_20
 
     file
+    unzip
     wget
     htop
     git
