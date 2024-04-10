@@ -2,7 +2,6 @@
 @define-color bar-bg rgba(255, 255, 255, 0);
 @define-color fg #000000;
 @define-color workspace-active-bg #bfc9ff;
-@define-color workspace-urgent-bg #d00000;
 
 @define-color red #f85552;
 @define-color yellow #f8de7e;
@@ -39,6 +38,7 @@ window#waybar {
 }
 
 #workspaces button {
+    border-radius: 0;
     padding: 1px 4px 1px 4px;
 }
 
@@ -48,7 +48,7 @@ window#waybar {
 }
 
 #workspaces button.urgent {
-    background-color: @workspace-urgent-bg;
+    background-color: @red;
     color: @fg;
 }
 

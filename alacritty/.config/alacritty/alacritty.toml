@@ -27,10 +27,6 @@ magenta = '#C061CB'
 cyan    = '#4FD2FD'
 white   = '#F6F5F4'
 
-[colors.selection]
-text = '#000000'
-background = '#bdbdbd'
-
 [font]
 size = 13
 
