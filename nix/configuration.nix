@@ -133,6 +133,8 @@ in
     unzip
     wget
     htop
+    man-pages
+    man-pages-posix
     git
     git-lfs
     gnupg
@@ -184,6 +186,9 @@ in
     swaylock
     swayidle
   ];
+
+  # Add manpages for libraries and development utilities
+  documentation.dev.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
