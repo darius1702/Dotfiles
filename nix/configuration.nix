@@ -17,6 +17,9 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Enable sysrq for emergency REISUB etc
+  boot.kernel.sysctl."kernel.sysrq" = 502;
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
  networking = {
