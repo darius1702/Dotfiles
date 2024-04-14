@@ -1,11 +1,11 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, inputs, ... }:
 
 let
-  unstable = import inputs.unstable { system = "x86_64-linux"; allowUnfree = true; };
+  unstable = import inputs.unstable {
+    system = "x86_64-linux";
+    allowUnfree = true;
+  };
 in
 {
   imports =
@@ -13,61 +13,66 @@ in
       ./amogus-hardware-configuration.nix
     ];
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  nix.settings = {
+    experimental-features = [ "nix-command" "flakes" ];
+    auto-optimise-store = true;
+  };
 
-  # Enable sysrq for emergency REISUB etc
-  boot.kernel.sysctl."kernel.sysrq" = 502;
+  boot = {
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+    tmp.useTmpfs = true;
+
+    # Enable sysrq for emergency REISUB etc
+    kernel.sysctl."kernel.sysrq" = 502;
+  };
 
  networking = {
   hostName = "amogus";
-# Enable networking
   networkmanager.enable = true;
-# wpa_supplicant.
+
+  # wpa_supplicant.
   wireless.enable = false;
+
   nameservers = [ "1.1.1.1" "1.0.0.1"];
-# Configure network proxy if necessary
-# networking.proxy.default = "http://user:password@proxy:port/";
-# networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+
+  # Configure network proxy if necessary
+  #networking.proxy.default = "http://user:password@proxy:port/";
+  #networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
  };
 
-  # Set your time zone.
   time.timeZone = "Europe/Berlin";
 
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
 
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "de_DE.UTF-8";
-    LC_IDENTIFICATION = "de_DE.UTF-8";
-    LC_MEASUREMENT = "de_DE.UTF-8";
-    LC_MONETARY = "de_DE.UTF-8";
-    LC_NAME = "de_DE.UTF-8";
-    LC_NUMERIC = "de_DE.UTF-8";
-    LC_PAPER = "de_DE.UTF-8";
-    LC_TELEPHONE = "de_DE.UTF-8";
-    LC_TIME = "de_DE.UTF-8";
+    extraLocaleSettings = {
+      LC_ADDRESS = "de_DE.UTF-8";
+      LC_IDENTIFICATION = "de_DE.UTF-8";
+      LC_MEASUREMENT = "de_DE.UTF-8";
+      LC_MONETARY = "de_DE.UTF-8";
+      LC_NAME = "de_DE.UTF-8";
+      LC_NUMERIC = "de_DE.UTF-8";
+      LC_PAPER = "de_DE.UTF-8";
+      LC_TELEPHONE = "de_DE.UTF-8";
+      LC_TIME = "de_DE.UTF-8";
+    };
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
 
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-
-  xdg.portal.enable = true;
-
-  # Configure keymap in X11
   services.xserver = {
+    enable = true;
+
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
+
     layout = "de";
     xkbVariant = "us";
   };
 
-  # Configure console keymap
+  xdg.portal.enable = true;
+
   console.keyMap = "de";
 
   # Enable CUPS to print documents.
@@ -107,7 +112,6 @@ in
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.darius = {
     isNormalUser = true;
     description = "Darius Schefer";
@@ -118,11 +122,8 @@ in
     ];
   };
 
-  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
 
     unstable.alacritty
@@ -181,7 +182,6 @@ in
     swww
     slurp
     grim
-    imv
     swappy
     wl-clipboard
     networkmanagerapplet
@@ -192,9 +192,6 @@ in
 
   # Add manpages for libraries and development utilities
   documentation.dev.enable = true;
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
 
   programs.steam = {
     enable = true;
