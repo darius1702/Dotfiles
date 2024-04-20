@@ -3,17 +3,21 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
-    unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
   };
 
-  outputs = { self, nixpkgs, unstable, ... }@inputs: {
-    nixosConfigurations.amogus = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
+  outputs = { self, nixpkgs, nixpkgs-unstable, ... }:
+    let
+      system = "x86_64-linux";
+      pkgs = import nixpkgs { inherit system; config.allowUnfree = true; };
+      unstable = import nixpkgs-unstable { inherit system; config.allowUnfree = true; };
+    in {
+      nixosConfigurations.amogus = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit pkgs; inherit unstable; };
 
-      modules = [
-        ./configuration.nix
-      ];
-
+        modules = [
+          ./configuration.nix
+        ];
+      };
     };
-  };
 }

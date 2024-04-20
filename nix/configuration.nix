@@ -1,12 +1,6 @@
 
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, unstable, ... }:
 
-let
-  unstable = import inputs.unstable {
-    system = "x86_64-linux";
-    allowUnfree = true;
-  };
-in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -171,6 +165,7 @@ in
     noto-fonts-color-emoji
     nerdfonts
     iosevka-comfy.comfy-fixed
+    roboto
     font-awesome
 
     libnotify
@@ -202,6 +197,7 @@ in
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
+    package = unstable.hyprland;
   };
 
   programs.zsh.enable = true;
