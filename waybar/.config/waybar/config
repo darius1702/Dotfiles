@@ -4,12 +4,12 @@
   "position": "top",
   "spacing": 15,
   "modules-left": ["hyprland/workspaces"],
-  "modules-right": ["network", "pulseaudio", "memory", "disk", "backlight", "battery", "clock#date", "clock", "tray"],
+  "modules-right": ["network", "pulseaudio", "memory", "disk", "backlight", "battery", "clock", "tray"],
 
   "backlight": {
-    "format": "Bl {percent}%",
-    "on-scroll-up": "brightnessctl set +5%",
-    "on-scroll-down": "brightnessctl set 5%-",
+    "format": " {percent}%",
+    "on-scroll-up": "brightnessctl set +5",
+    "on-scroll-down": "brightnessctl set 5-",
     "tooltip": false,
   },
 
@@ -20,10 +20,10 @@
   },
 
   "pulseaudio": {
-    "format": "Vol {volume}%",
+    "format": " {volume}%",
     "format-bluetooth": "Bluetooth {volume}%",
     "format-bluetooth-muted": "Bluetooth muted",
-    "format-muted": "muted",
+    "format-muted": "󰖁",
     "on-click": "pamixer -t",
     "on-click-right": "pavucontrol",
     "on-scroll-up": "pamixer -i 1",
@@ -38,7 +38,7 @@
   },
 
   "disk": {
-    "format": "Disk {percentage_free}%"
+    "format": "  {percentage_free}%"
   },
 
   "battery": {
@@ -49,21 +49,14 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "Bat {capacity}%",
-    "format-alt": "{power}W",
-    "format-warning": "Low {capacity}%",
-    "format-critical": "Low {capacity}%",
-    "format-charging": "Chg {capacity}%",
-    "format-full": "Full {capacity}%",
+    "format": "{icon} {capacity}%",
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "format-charging": "󰂄 {capacity}%",
     "tooltip": false,
   },
 
   "clock": {
-    "format": "{:%H:%M}",
-  },
-
-  "clock#date": {
-    "format": "{:%d.%m.%Y}",
+    "format": "{:%a %d.%m.%Y | %H:%M}",
   },
 
   "tray": {

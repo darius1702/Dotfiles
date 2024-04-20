@@ -5,6 +5,7 @@
 
 @define-color red #f85552;
 @define-color yellow #f8de7e;
+@define-color green #8adf80;
 
 * {
     font-family: Iosevka Comfy Fixed, FontAwesome;
@@ -60,6 +61,11 @@ window#waybar {
 #battery.critical {
     color: @fg;
     background-color: @red;
+}
+
+#battery.charging {
+    color: @fg;
+    background-color: @green;
 }
 
 #tray menu {
