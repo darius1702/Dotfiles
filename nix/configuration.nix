@@ -1,5 +1,5 @@
 
-{ config, pkgs, unstable, ... }:
+{ config, pkgs, unstable, nixpkgs-unstable, ... }:
 
 {
   imports =
@@ -7,9 +7,12 @@
       ./amogus-hardware-configuration.nix
     ];
 
-  nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
-    auto-optimise-store = true;
+  nix = {
+    registry.nixpkgs.flake = nixpkgs-unstable;
+    settings = {
+      experimental-features = [ "nix-command" "flakes" ];
+      auto-optimise-store = true;
+    };
   };
 
   boot = {

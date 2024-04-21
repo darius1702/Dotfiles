@@ -13,7 +13,7 @@
       unstable = import nixpkgs-unstable { inherit system; config.allowUnfree = true; };
     in {
       nixosConfigurations.amogus = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit pkgs; inherit unstable; };
+        specialArgs = { inherit pkgs; inherit unstable; inherit nixpkgs-unstable; };
 
         modules = [
           ./configuration.nix
