@@ -68,7 +68,10 @@
     xkbVariant = "us";
   };
 
-  xdg.portal.enable = true;
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+  };
 
   console.keyMap = "de";
 
