@@ -128,12 +128,13 @@
 
     unstable.alacritty
     unstable.neovim
+    unstable.devenv
 
     gcc
     clang-tools
     nodejs_20
 
-    file
+
     unzip
     wget
     htop
