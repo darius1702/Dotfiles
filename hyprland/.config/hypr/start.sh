@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 swww init &
-swww img ~/Documents/Wall/wall114.png &
+swww img ~/Documents/Wall/wall63.jpg &
 
 nm-applet --indicator &
 
