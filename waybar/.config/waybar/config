@@ -4,7 +4,7 @@
   "position": "top",
   "spacing": 15,
   "modules-left": ["hyprland/workspaces"],
-  "modules-right": ["network", "pulseaudio", "memory", "disk", "backlight", "battery", "clock", "tray"],
+  "modules-right": ["pulseaudio", "memory", "disk", "backlight", "battery", "clock", "tray"],
 
   "backlight": {
     "format": " {percent}%",
@@ -31,10 +31,11 @@
   },
 
   "network": {
-    "format-wifi": "{ipaddr}",
-    "format-ethernet": "Eth {ipaddr}",
-    "format-disconnected": "disconnected",
-    "tooltip": false,
+    "format-wifi": "󰖩  {essid}",
+    "format-ethernet": "Eth@{ipaddr}",
+    "format-disconnected": "󱚼",
+    "tooltip": true,
+    "tooltip-format": "{ipaddr}",
   },
 
   "disk": {
