@@ -6,6 +6,13 @@ setopt no_list_ambiguous
 setopt auto_cd
 setopt prompt_subst
 setopt globdots
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
 unsetopt PROMPT_SP
 
 # Emacs keybindings
@@ -50,6 +57,7 @@ export MANPAGER="nvim +Man!"
 export EDITOR="nvim"
 export CLICOLOR=1
 export HISTFILE="$HOME/.config/zsh/.zsh_history"
+export HISTDUP=erase
 export HISTSIZE=100000
 export SAVEHIST=$HISTSIZE
 
