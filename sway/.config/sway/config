@@ -1,0 +1,180 @@
+exec dbus-update-activation-environment --systemd SWAYSOCK WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE
+
+input "type:keyboard" {
+    xkb_layout de
+    xkb_variant us
+    xkb_options ctrl:nocaps
+}
+
+exec swaybg -i ~/Documents/Wall/wall63.jpg
+
+# Windows Key
+set $mod Mod4
+
+floating_modifier $mod
+focus_follows_mouse no
+mouse_warping none
+
+workspace_auto_back_and_forth yes
+
+for_window [class=".*"] border pixel 2
+gaps inner 5
+
+font pango: IosevkaTerm NFM Semibold 12
+
+bindsym $mod+Return exec alacritty
+
+# emacs
+bindsym $mod+e exec emacsclient -c || notify-send "ERROR" "No emacs daemon running"
+
+# org
+bindsym $mod+n exec emacsclient -c ~/Notes/index.org || notify-send "ERROR" "No emacs daemon running"
+
+# browser
+bindsym $mod+Shift+b exec firefox
+
+# books
+bindsym $mod+b exec fdfind . ~/Documents/Books --type f | wmenu -i -p "Book:" -l 20 | xargs -I{} zathura {}
+
+# find all pdfs
+bindsym $mod+s exec find Documents Downloads Desktop Zotero kitcar -type f -name "*.pdf" | wmenu -i -p "PDF:" -l 20 | xargs -I{} zathura {}
+
+# audio control
+bindsym $mod+m exec alacritty -e pavucontrol
+
+# kill focused window
+bindsym $mod+q kill
+
+# run
+bindsym $mod+d exec rofi -show run
+
+# passmenu
+bindsym $mod+Shift+p exec bash $HOME/Dotfiles/scripts/passmenu-wmenu.sh
+
+# reload sway
+bindsym $mod+Shift+r exec swaymsg reload
+
+# volume controls
+bindsym XF86AudioRaiseVolume exec pactl  -- set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl -- set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec pactl -- set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec pactl -- set-source-mute 0 toggle
+bindsym XF86Display exec wdisplays
+
+# backlight controls
+bindsym XF86MonBrightnessUp exec brightnessctl s 5+
+bindsym XF86MonBrightnessDown exec brightnessctl s 5-
+
+# screenshots
+bindsym Print exec grim -g "$(slurp)" - | wl-copy
+bindsym Shift+Print exec grim -g "$(slurp)" - | swappy -f - -o - | wl-copy
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# toggle spawn direction
+bindsym $mod+t split toggle
+
+bindsym $mod+a focus parent
+bindsym $mod+Shift+a focus child
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# Bind workspaces to monitors
+workspace $ws1 output DisplayPort-0
+workspace $ws2 output DisplayPort-0
+workspace $ws3 output DisplayPort-0
+workspace $ws4 output DisplayPort-0
+workspace $ws5 output HDMI-A-0
+workspace $ws6 output HDMI-A-0
+workspace $ws7 output HDMI-A-0
+workspace $ws8 output eDP
+workspace $ws9 output eDP
+workspace $ws10 output eDP
+
+# Default workspaces for some programs
+assign [class="^Zotero$"] $ws8
+assign [class="^thunderbird$"] $ws9
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# move workspaces between monitors
+bindsym $mod+ctrl+shift+k move workspace to output up
+bindsym $mod+ctrl+shift+j move workspace to output down
+bindsym $mod+ctrl+shift+h move workspace to output left
+bindsym $mod+ctrl+shift+l move workspace to output right
+
+# resize window (you can also use the mouse for that)
+bindsym $mod+u resize shrink width 10 px or 10 ppt
+bindsym $mod+i resize grow height 10 px or 10 ppt
+bindsym $mod+o resize shrink height 10 px or 10 ppt
+bindsym $mod+p resize grow width 10 px or 10 ppt
+
+set $dark_gray  #666666
+set $white      #ffffff
+set $blue       #33ccff
+set $fg         #000000
+set $urgent     #a60000
+set $indicator  #0031a9
+
+# class                 |border         |backgr         |text           |indicator      |child_border
+client.focused          $white          $white          $fg             $indicator      $blue
+client.focused_inactive $dark_gray      $dark_gray      $white          $white          $dark_gray
+client.unfocused        $dark_gray      $dark_gray      $white          $white          $dark_gray
+client.urgent           $urgent         $urgent         $fg             $urgent         $urgent
+
+# status bar
+exec_always pkill waybar
+exec_always nm-applet
+exec_always waybar

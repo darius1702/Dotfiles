@@ -9,11 +9,12 @@ cp ./squared-blue.rasi ~/.local/share/rofi/themes/
 stow alacritty
 #stow dunst
 stow gitconfig
-#stow i3
 stow nvim
-#stow polybar
 stow tmux
 stow zsh
-stow hyprland
-stow waybar
-stow rofi
+#stow i3
+#stow hyprland
+stow sway
+#stow rofi
+#stow polybar
+#stow waybar

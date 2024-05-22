@@ -31,19 +31,19 @@ white   = '#F6F5F4'
 size = 13
 
 [font.bold]
-family = "IosevkaComfyFixed"
+family = "IosevkaTerm NFM"
 style = "Bold"
 
 [font.bold_italic]
-family = "IosevkaComfyFixed"
+family = "IosevkaTerm NFM"
 style = "Bold Oblique"
 
 [font.italic]
-family = "IosevkaComfyFixed"
+family = "IosevkaTerm NFM"
 style = "Oblique"
 
 [font.normal]
-family = "IosevkaComfyFixed"
+family = "IosevkaTerm NFM"
 style = "Regular"
 
 [[keyboard.bindings]]

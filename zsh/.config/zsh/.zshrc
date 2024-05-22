@@ -37,7 +37,6 @@ zstyle ':vcs_info:git:*' formats '%F{fg} on %B%F{blue}%b'
 DIR=$'%B%F{green}%3~%b'
 CHAR=$'%B%F{cyan}%(!.#.::)%f%b '
 PROMPT=$'${DIR}${vcs_info_msg_0_}%b%f ${CHAR}'
-# PROMPT='%B%F{green}[k3~%b${vcs_info_msg_0_}%B%F{green}]%(!.#.$)%f%b '
 
 # Make Shift-Tab go to previous completion suggestion
 zmodload zsh/complist
@@ -67,14 +66,6 @@ alias vc="nvim ~/.config/nvim/lua/config/lazy.lua"
 alias tc="nvim ~/.tmux.conf"
 alias ic="nvim ~/.config/i3/config"
 
-alias fv="fzf | xargs nvim"
-fcd() {
-  cd "$(fd --type d --no-ignore | fzf)"
-}
-fch() {
-  cd "$(fd --type d --no-ignore --hidden | fzf)"
-}
-
 alias "..."="cd ../.."
 
 alias todo="rg -i 'todo|fixme'"
@@ -96,7 +87,3 @@ alias ll="ls -lh --color=auto"
 alias lla="ls -lAh --color=auto"
 
 alias grep="grep --color=auto"
-alias catkin_make="catkin_make -DCMAKE_EXPORT_COMPILE_COMMANDS=1"
-
-# Better vi-mode
-# source $HOME/.config/zsh/zsh-vi-mode/zsh-vi-mode.plugin.zsh
