@@ -77,19 +77,6 @@ local function ins_right(component)
   table.insert(config.sections.lualine_x, component)
 end
 
--- ins_left {
---   -- mode component
---   'mode',
---   color = function()
---     return { fg = colors.bg, bg = colors.green, gui = 'bold' }
---     -- return { fg = colors.bg, bg = mode_color[vim.fn.mode()], gui = 'bold' }
---   end,
---   padding = { right = 1, left = 1 },
---   fmt = function(str)
---     return string.sub(str, 1, 1)
---   end,
--- }
-
 ins_left {
   'filename',
   cond = conditions.buffer_not_empty,

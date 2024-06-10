@@ -23,7 +23,7 @@ autoload -z edit-command-line
 zle -N edit-command-line
 bindkey "^X^E" edit-command-line
 bindkey '^H' backward-kill-word
-bindkey -s '^@' 'cdi^M'
+bindkey -s '^@' '^A^Kcdi^M'
 
 # auto insert first completion match
 # setopt MENU_COMPLETE
@@ -60,13 +60,14 @@ export HISTDUP=erase
 export HISTSIZE=100000
 export SAVEHIST=$HISTSIZE
 
+
+# Make cmake output the compilation database
+export CMAKE_EXPORT_COMPILE_COMMANDS="on"
+
 # Quick-edit configs
 alias zc="nvim ~/.config/zsh/.zshrc"
 alias vc="nvim ~/.config/nvim/lua/config/lazy.lua"
 alias tc="nvim ~/.tmux.conf"
-alias ic="nvim ~/.config/i3/config"
-
-alias "..."="cd ../.."
 
 alias todo="rg -i 'todo|fixme'"
 
@@ -76,7 +77,6 @@ alias e="emacsclient --no-wait -c"
 alias ts="tmux new-session -s"
 alias z=zathura
 
-alias gcm="git commit -m"
 alias cp="cp -iv"
 alias mv="mv -iv"
 
