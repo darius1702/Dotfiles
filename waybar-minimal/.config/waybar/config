@@ -1,0 +1,87 @@
+{
+  "height": 20,
+  "layer": "bottom",
+  "position": "top",
+  "spacing": 15,
+  "modules-left": ["sway/workspaces"],
+  "modules-right": ["memory", "disk", "battery", "clock", "tray", "custom/notification"],
+
+  "backlight": {
+    "format": " {percent}%",
+    "on-scroll-up": "brightnessctl set 5+",
+    "on-scroll-down": "brightnessctl set 5-",
+    "tooltip": false,
+  },
+
+  "memory": {
+    "interval": 30,
+    "format": "Mem {used}G",
+    "tooltip": false,
+  },
+
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{} {icon}",
+    "format-icons": {
+      "notification": "󱅫",
+      "none": "",
+      "dnd-notification": " ",
+      "dnd-none": "󰂛",
+      "inhibited-notification": " ",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": " ",
+      "dnd-inhibited-none": " ",
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "sleep 0.1 && swaync-client -t -sw",
+    "on-click-right": "sleep 0.1 && swaync-client -d -sw",
+    "escape": true,
+  },
+
+  "pulseaudio": {
+    "format": " {volume}%",
+    "format-bluetooth": "Bluetooth {volume}%",
+    "format-bluetooth-muted": "Bluetooth muted",
+    "format-muted": "󰖁",
+    "on-click": "pamixer -t",
+    "on-click-right": "pavucontrol",
+    "on-scroll-up": "pamixer -i 1",
+    "on-scroll-down": "pamixer -d 1",
+  },
+
+  "network": {
+    "format-wifi": "󰖩  {essid}",
+    "format-ethernet": "Eth@{ipaddr}",
+    "format-disconnected": "󱚼",
+    "tooltip": true,
+    "tooltip-format": "{ipaddr}",
+  },
+
+  "disk": {
+    "format": " {percentage_free}%"
+  },
+
+  "battery": {
+    "bat": "BAT0",
+    "adapter": "ADP0",
+    "interval": 60,
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "format-charging": "󰂄 {capacity}%",
+    "tooltip": false,
+  },
+
+  "clock": {
+    "format": "{:%a %d.%m.%Y | %H:%M}",
+  },
+
+  "tray": {
+    "spacing": 5,
+  },
+}

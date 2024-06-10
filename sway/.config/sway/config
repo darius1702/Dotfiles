@@ -7,13 +7,23 @@ input "type:keyboard" {
 }
 
 exec swaybg -i ~/Documents/Wall/wall63.jpg
+exec swaync
+
+# Output configuration
+output eDP-1-1 position 5760,1447
+output DP-1 position 1920,487
+output HDMI-A-1 position 0,1105
 
 # Windows Key
 set $mod Mod4
 
+# Menu arguments
+set $bemenu_args --fn "Iosevka Term NFP" -m "-1" --tb "#3548cf" --tf "#ffffff" --hb "#7f90ff" --hf "#000000"
+
 floating_modifier $mod
 focus_follows_mouse no
 mouse_warping none
+seat '*' hide_cursor 5000
 
 workspace_auto_back_and_forth yes
 
@@ -21,6 +31,8 @@ for_window [class=".*"] border pixel 2
 gaps inner 5
 
 font pango: IosevkaTerm NFM Semibold 12
+
+bindsym $mod+Ctrl+l exec ~/.config/sway/lock.sh
 
 bindsym $mod+Return exec alacritty
 
@@ -34,10 +46,10 @@ bindsym $mod+n exec emacsclient -c ~/Notes/index.org || notify-send "ERROR" "No 
 bindsym $mod+Shift+b exec firefox
 
 # books
-bindsym $mod+b exec fdfind . ~/Documents/Books --type f | wmenu -i -p "Book:" -l 20 | xargs -I{} zathura {}
+bindsym $mod+b exec fdfind . ~/Documents/Books --type f | bemenu -i -p "Book:" -l 20 $bemenu_args | xargs -I{} zathura {}
 
 # find all pdfs
-bindsym $mod+s exec find Documents Downloads Desktop Zotero kitcar -type f -name "*.pdf" | wmenu -i -p "PDF:" -l 20 | xargs -I{} zathura {}
+bindsym $mod+s exec find Documents Downloads Desktop Zotero kitcar -type f -name "*.pdf" | bemenu -i -p "PDF:" -l 20  $bemenu_args | xargs -I{} zathura {}
 
 # audio control
 bindsym $mod+m exec alacritty -e pavucontrol
@@ -46,13 +58,17 @@ bindsym $mod+m exec alacritty -e pavucontrol
 bindsym $mod+q kill
 
 # run
-bindsym $mod+d exec rofi -show run
+bindsym $mod+d exec bemenu-run -w -i -l 20 -p "Run" $bemenu_args
 
 # passmenu
-bindsym $mod+Shift+p exec bash $HOME/Dotfiles/scripts/passmenu-wmenu.sh
+bindsym $mod+Shift+p exec bash $HOME/Dotfiles/scripts/passmenu-bemenu.sh
 
 # reload sway
 bindsym $mod+Shift+r exec swaymsg reload
+
+# notifications
+bindsym XF86Favorites exec swaync-client -d -sw
+bindsym $mod+Shift+n exec swaync-client -t -sw
 
 # volume controls
 bindsym XF86AudioRaiseVolume exec pactl  -- set-sink-volume @DEFAULT_SINK@ +5%
@@ -110,16 +126,16 @@ set $ws9 "9"
 set $ws10 "10"
 
 # Bind workspaces to monitors
-workspace $ws1 output DisplayPort-0
-workspace $ws2 output DisplayPort-0
-workspace $ws3 output DisplayPort-0
-workspace $ws4 output DisplayPort-0
-workspace $ws5 output HDMI-A-0
-workspace $ws6 output HDMI-A-0
-workspace $ws7 output HDMI-A-0
-workspace $ws8 output eDP
-workspace $ws9 output eDP
-workspace $ws10 output eDP
+workspace $ws1 output DP-1
+workspace $ws2 output DP-1
+workspace $ws3 output DP-1
+workspace $ws4 output DP-1
+workspace $ws5 output HDMI-A-1
+workspace $ws6 output HDMI-A-1
+workspace $ws7 output HDMI-A-1
+workspace $ws8 output eDP-1
+workspace $ws9 output eDP-1
+workspace $ws10 output eDP-1
 
 # Default workspaces for some programs
 assign [class="^Zotero$"] $ws8

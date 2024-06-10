@@ -17,4 +17,5 @@ stow zsh
 stow sway
 #stow rofi
 #stow polybar
+stow waybar-minimal
 #stow waybar
