@@ -27,7 +27,7 @@ workspace_auto_back_and_forth yes
 for_window [class=".*"] border pixel 3
 
 # gaps
-gaps inner 10
+gaps inner 7
 
 # show gaps only when there is more than 1 window on current workspace
 # smart_gaps on
@@ -36,37 +36,34 @@ gaps inner 10
 # smart_borders on
 
 # download from: https://www.nerdfonts.com/font-downloads
-font pango: IosevkaComfyFixed Nerd Font Semibold 12
+font pango: IosevkaTerm NFP Semibold 12
 
 # terminal
 bindsym $mod+Return exec --no-startup-id alacritty
 
 # emacs
-bindsym $mod+e exec --no-startup-id emacsclient -c || notify-send "ERROR" "No emacs daemon running"
+bindsym $mod+e exec --no-startup-id emacsclient -c -n -a ""
 
 # org
 bindsym $mod+n exec --no-startup-id emacsclient -c ~/Notes/index.org || notify-send "ERROR" "No emacs daemon running"
-
-# emacs anywhere
-bindsym $mod+Shift+e exec --no-startup-id $HOME/.emacs_anywhere/bin/run
 
 # browser
 bindsym $mod+Shift+b exec --no-startup-id firefox
 
 # books
-bindsym $mod+b exec --no-startup-id ~/.cargo/bin/fd . ~/Documents/Books --type f | dmenu -p "Book:" -l 20 | xargs -I{} zathura {}
+bindsym $mod+b exec --no-startup-id fdfind . ~/Documents/Books --type f | dmenu -p "Book:" -l 20 | xargs -I{} zathura {}
 
 # find all pdfs
 bindsym $mod+s exec --no-startup-id find Documents Downloads Desktop Zotero kitcar -type f -name "*.pdf" | dmenu -p "PDF:" -l 20 | xargs -I{} zathura {}
 
 # pulsemixer
-bindsym $mod+m exec --no-startup-id alacritty -e pulsemixer
+bindsym $mod+m exec --no-startup-id alacritty -e pavucontrol
 
 # kill focused window
 bindsym $mod+q kill
 
 # dmenu_ru
-bindsym $mod+d exec --no-startup-id dmenu_run -p "Run: " -l 6 -g 6
+bindsym $mod+d exec --no-startup-id dmenu_run -p "Run: " -l 6
 
 # passmenu
 bindsym $mod+Shift+p exec --no-startup-id bash $HOME/Dotfiles/scripts/passmenu.sh
@@ -91,8 +88,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl -- set-source-mute 0 toggle
 bindsym XF86Display exec --no-startup-id arandr
 
 # backlight controls
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s 20+
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 20-
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s 5+
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 5-
 
 # other media keys
 bindsym XF86Favorites exec --no-startup-id sh $HOME/Dotfiles/scripts/toggle_trackpad.sh
@@ -128,7 +125,6 @@ bindsym $mod+t split toggle
 # tabbing
 bindsym $mod+a focus parent
 bindsym $mod+Shift+a focus child
-bindsym $mod+Shift+t layout toggle tabbed split
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -155,8 +151,7 @@ workspace $ws8 output eDP
 workspace $ws9 output eDP
 workspace $ws10 output eDP
 
-# Make some windows float by default
-for_window [title="^\*Emacs Anywhere\*$"] floating enable
+
 
 # Default workspaces for some programs
 assign [class="^Zotero$"] $ws8
@@ -199,17 +194,17 @@ bindsym $mod+i resize grow height 10 px or 10 ppt
 bindsym $mod+o resize shrink height 10 px or 10 ppt
 bindsym $mod+p resize grow width 10 px or 10 ppt
 
-set $dark_gray  #666666
-set $white      #ffffff
-set $fg         #000000
-set $urgent     #a60000
-set $indicator  #0031a9
+# set $dark_gray  #666666
+# set $white      #ffffff
+# set $fg         #000000
+# set $urgent     #a60000
+# set $indicator  #0031a9
 
 # class                 |border         |backgr         |text           |indicator      |child_border
-client.focused          $white          $white          $fg             $indicator      $dark_gray
-client.focused_inactive $dark_gray      $dark_gray      $white          $white          $white
-client.unfocused        $dark_gray      $dark_gray      $white          $white          $white
-client.urgent           $urgent         $urgent         $fg             $urgent         $urgent
+# client.focused          $white          $white          $fg             $indicator      $dark_gray
+# client.focused_inactive $dark_gray      $dark_gray      $white          $white          $white
+# client.unfocused        $dark_gray      $dark_gray      $white          $white          $white
+# client.urgent           $urgent         $urgent         $fg             $urgent         $urgent
 
 # polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh

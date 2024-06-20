@@ -6,12 +6,11 @@
 # Otherwise you can use the nuclear option:
 killall -q polybar
 
-docked=false
-for monitor in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-  [ "$monitor" != "eDP" ] && docked=true
-done
-
-# Launch bar(s)
-polybar main 2>&1 & disown
-[ $docked = true ] && polybar left 2>&1 & disown
-[ $docked = true ] && polybar right 2>&1 & disown
+if type "xrandr"; then
+  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+    echo $m
+    MONITOR=$m polybar main &
+  done
+else
+  polybar main &
+fi

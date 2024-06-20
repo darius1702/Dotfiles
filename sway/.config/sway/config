@@ -37,7 +37,7 @@ bindsym $mod+Ctrl+l exec ~/.config/sway/lock.sh
 bindsym $mod+Return exec alacritty
 
 # emacs
-bindsym $mod+e exec emacsclient -c || notify-send "ERROR" "No emacs daemon running"
+bindsym $mod+e exec emacsclient -c -n -a ""
 
 # org
 bindsym $mod+n exec emacsclient -c ~/Notes/index.org || notify-send "ERROR" "No emacs daemon running"

@@ -41,7 +41,7 @@ window#waybar {
 
 #workspaces button {
     border-radius: 0;
-    padding: 1px 4px 1px 4px;
+    padding: 0px 4px 0px 4px;
 }
 
 #workspaces button.focused {
