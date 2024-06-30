@@ -62,8 +62,8 @@ bindsym $mod+m exec --no-startup-id alacritty -e pavucontrol
 # kill focused window
 bindsym $mod+q kill
 
-# dmenu_ru
-bindsym $mod+d exec --no-startup-id dmenu_run -p "Run: " -l 6
+# dmenu_run
+bindsym $mod+d exec --no-startup-id dmenu_run -p "Run: "
 
 # passmenu
 bindsym $mod+Shift+p exec --no-startup-id bash $HOME/Dotfiles/scripts/passmenu.sh
@@ -88,8 +88,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl -- set-source-mute 0 toggle
 bindsym XF86Display exec --no-startup-id arandr
 
 # backlight controls
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s 5+
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 5-
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s 10+
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 10-
 
 # other media keys
 bindsym XF86Favorites exec --no-startup-id sh $HOME/Dotfiles/scripts/toggle_trackpad.sh
