@@ -25,18 +25,22 @@ bindkey "^X^E" edit-command-line
 bindkey '^H' backward-kill-word
 bindkey -s '^@' '^A^Kcdi^M'
 
+# Make zsh stop eating the space before a | character
+ZLE_REMOVE_SUFFIX_CHARS=$' \t\n;&'
+
 # auto insert first completion match
 # setopt MENU_COMPLETE
 
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
-zstyle ':vcs_info:git:*' formats '%F{fg} on %B%F{blue}%b'
+zstyle ':vcs_info:git:*' formats ' %F{white}on %B%F{blue}%b'
 
-# Prompt variables
-DIR=$'%B%F{green}%3~%b'
-CHAR=$'%B%F{cyan}%(!.#.::)%f%b '
-PROMPT=$'${DIR}${vcs_info_msg_0_}%b%f ${CHAR}'
+# Prompt
+DIR=$'%B%F{green}%3~%b%f'
+CHAR=$'%B%F{cyan}::%f%b'
+PROMPT=$'${DIR}${vcs_info_msg_0_}%b ${CHAR} '
+RPROMPT=$'%(?..%F{red}[%?])'
 
 # Make Shift-Tab go to previous completion suggestion
 zmodload zsh/complist
@@ -60,14 +64,13 @@ export HISTDUP=erase
 export HISTSIZE=100000
 export SAVEHIST=$HISTSIZE
 
-
 # Make cmake output the compilation database
 export CMAKE_EXPORT_COMPILE_COMMANDS="on"
 
 # Quick-edit configs
-alias zc="nvim ~/.config/zsh/.zshrc"
-alias vc="nvim ~/.config/nvim/lua/config/lazy.lua"
-alias tc="nvim ~/.tmux.conf"
+alias zc="$EDITOR ~/.config/zsh/.zshrc"
+alias vc="$EDITOR ~/.config/nvim/lua/config/lazy.lua"
+alias tc="$EDITOR ~/.tmux.conf"
 
 alias todo="rg -i 'todo|fixme'"
 

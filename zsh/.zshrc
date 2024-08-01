@@ -22,5 +22,5 @@ eval "$(zoxide init zsh --cmd cd)"
 
 alias imv=imv-x11
 
-alias ros1dev="fnmsrc && devcontainer exec --workspace-folder=/home/darius/kitcar/kitcar-ros zsh"
+alias ros1dev=" devcontainer exec --workspace-folder=/home/darius/kitcar/kitcar-ros zsh"
 alias nuc="ssh kitcar@kitcarnuc"
