@@ -24,3 +24,7 @@ alias imv=imv-x11
 
 alias ros1dev=" devcontainer exec --workspace-folder=/home/darius/kitcar/kitcar-ros zsh"
 alias nuc="ssh kitcar@kitcarnuc"
+
+[ -f ~/Software/fzf-git.sh/fzf-git.sh ] && source ~/Software/fzf-git.sh/fzf-git.sh
+
+export PATH="$HOME/.juliaup/bin:$PATH"

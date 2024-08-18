@@ -10,9 +10,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
 
-  -- Statusline
-  'nvim-lualine/lualine.nvim',
-
   { 'windwp/nvim-autopairs', config = true },
 
   -- Syntax

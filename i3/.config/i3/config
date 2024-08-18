@@ -1,8 +1,11 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 # Wallpaper
-exec_always --no-startup-id ~/.fehbg
+# exec_always --no-startup-id ~/.fehbg
+exec_always --no-startup-id hsetroot -solid MediumPurple4
 exec_always --no-startup-id xrdb -merge ~/.Xresources
+exec_always --no-startup-id nm-applet
+exec_always --no-startup-id blueman-applet
 
 # Kill ibus
 exec --no-startup-id ibus exit
@@ -37,7 +40,7 @@ gaps inner 7
 # smart_borders on
 
 # download from: https://www.nerdfonts.com/font-downloads
-font pango: IosevkaTerm NFP Semibold 12
+font pango: IosevkaTerm NFM Light 12
 
 # terminal
 bindsym $mod+Return exec --no-startup-id alacritty
@@ -249,16 +252,4 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 #         status_command i3status -c $HOME/.config/i3/i3status.conf
 #         separator_symbol "  "
 #         position top
-#         colors {
-#                 # bar background color
-#                 background $bg
-#                 # text color used for blocks that do not have a color specified.
-#                 statusline $fg
-#                 # workspaces section
-#                 #                    border  backgr. text
-#                 focused_workspace    $fg     $bg     $fg
-#                 inactive_workspace   $bg     $bg     $fg
-#                 active_workspace     $bg     $bg     $fg
-#                 urgent_workspace     $urgent $bg     $urgent
-#         }
 # }

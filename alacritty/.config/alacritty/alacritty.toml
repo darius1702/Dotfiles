@@ -7,7 +7,7 @@ foreground = '#ffffff'
 
 # Normal colors
 [colors.normal]
-black   = '#24292e'
+black   = '#000000'
 red     = '#C01C28'
 green   = '#2EC27E'
 yellow  = '#F5C211'
@@ -31,19 +31,19 @@ white   = '#F6F5F4'
 size = 13
 
 [font.bold]
-family = "IosevkaTerm NFM"
+family = "JetBrainsMonoNL NF"
 style = "Bold"
 
 [font.bold_italic]
-family = "IosevkaTerm NFM"
-style = "Bold Oblique"
+family = "JetBrainsMonoNL NF"
+style = "Bold Italic"
 
 [font.italic]
-family = "IosevkaTerm NFM"
-style = "Oblique"
+family = "JetBrainsMonoNL NF"
+style = "Italic"
 
 [font.normal]
-family = "IosevkaTerm NFM"
+family = "JetBrainsMonoNL NF"
 style = "Regular"
 
 [[keyboard.bindings]]

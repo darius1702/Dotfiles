@@ -34,13 +34,12 @@ ZLE_REMOVE_SUFFIX_CHARS=$' \t\n;&'
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
-zstyle ':vcs_info:git:*' formats ' %F{white}on %B%F{blue}%b'
+zstyle ':vcs_info:git:*' formats ' %F{white}on %B%F{magenta}%b'
 
 # Prompt
-DIR=$'%B%F{green}%3~%b%f'
-CHAR=$'%B%F{cyan}::%f%b'
-PROMPT=$'${DIR}${vcs_info_msg_0_}%b ${CHAR} '
-RPROMPT=$'%(?..%F{red}[%?])'
+DIR=$'%B%F{cyan}%~%b%f'
+CHAR=$'%(?..%b%F{yellow}%? )%B%F{green}::%f%b'
+PROMPT=$'${DIR}${vcs_info_msg_0_}%b%6(~.\n. )${CHAR} '
 
 # Make Shift-Tab go to previous completion suggestion
 zmodload zsh/complist
@@ -57,7 +56,7 @@ export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 export LANG="en_US.UTF-8"
 export PAGER="nvim -R"
 export MANPAGER="nvim +Man!"
-export EDITOR="nvim"
+export EDITOR="emacs -nw -q -l ~/.emacs.d/.emacs.minimal.el"
 export CLICOLOR=1
 export HISTFILE="$HOME/.config/zsh/.zsh_history"
 export HISTDUP=erase
@@ -76,9 +75,13 @@ alias todo="rg -i 'todo|fixme'"
 
 alias vim=nvim
 alias v=nvim
-alias e="emacsclient --no-wait -c"
+alias e="$EDITOR"
 alias ts="tmux new-session -s"
-alias z=zathura
+
+z()
+{
+  zathura --fork $1
+}
 
 alias cp="cp -iv"
 alias mv="mv -iv"

@@ -5,10 +5,10 @@ local settings = {
   bg = "dark",
   hidden = true,
   encoding = "utf-8",
-  laststatus = 2,
+  ruler = true,
   --
 
-  ruler = false,
+  laststatus = 1,
   scrolloff = 3,
   signcolumn = "yes",
   cursorline = true,
