@@ -34,11 +34,11 @@ ZLE_REMOVE_SUFFIX_CHARS=$' \t\n;&'
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
-zstyle ':vcs_info:git:*' formats ' %F{white}on %B%F{magenta}%b'
+zstyle ':vcs_info:git:*' formats ' %F{white}on %B%F{cyan}%b'
 
 # Prompt
-DIR=$'%B%F{cyan}%~%b%f'
-CHAR=$'%(?..%b%F{yellow}%? )%B%F{green}::%f%b'
+DIR=$'%B%F{yellow}%~%b%f'
+CHAR=$'%(?..%b%F{yellow}%? )%B%F{fg}->%f%b'
 PROMPT=$'${DIR}${vcs_info_msg_0_}%b%6(~.\n. )${CHAR} '
 
 # Make Shift-Tab go to previous completion suggestion
