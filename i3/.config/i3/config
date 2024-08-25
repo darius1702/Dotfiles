@@ -1,8 +1,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 # Wallpaper
-# exec_always --no-startup-id ~/.fehbg
-exec_always --no-startup-id hsetroot -solid MediumPurple4
+exec_always --no-startup-id ~/.fehbg
 exec_always --no-startup-id xrdb -merge ~/.Xresources
 exec_always --no-startup-id nm-applet
 exec_always --no-startup-id blueman-applet
@@ -55,10 +54,10 @@ bindsym $mod+n exec --no-startup-id emacsclient -c ~/Notes/index.org || notify-s
 bindsym $mod+Shift+b exec --no-startup-id firefox
 
 # books
-bindsym $mod+b exec --no-startup-id fdfind . ~/Documents/Books --type f | dmenu -p "Book:" -l 20 | xargs -I{} zathura {}
+bindsym $mod+b exec --no-startup-id fdfind . ~/Documents/Books --type f | dmenu -i -p "Book:" -l 20 | xargs -I{} zathura {}
 
 # find all pdfs
-bindsym $mod+s exec --no-startup-id find Documents Downloads Desktop Zotero kitcar -type f -name "*.pdf" | dmenu -p "PDF:" -l 20 | xargs -I{} zathura {}
+bindsym $mod+s exec --no-startup-id find Documents Downloads Desktop Zotero kitcar -type f -name "*.pdf" | dmenu -i -p "PDF:" -l 20 | xargs -I{} zathura {}
 
 # pulsemixer
 bindsym $mod+m exec --no-startup-id alacritty -e pavucontrol
@@ -67,7 +66,8 @@ bindsym $mod+m exec --no-startup-id alacritty -e pavucontrol
 bindsym $mod+q kill
 
 # dmenu_run
-bindsym $mod+d exec --no-startup-id dmenu_run -p "Run: "
+# bindsym $mod+d exec --no-startup-id dmenu_run -p "Run: "
+bindsym $mod+d exec --no-startup-id rofi -show run -monitor -1
 
 # passmenu
 bindsym $mod+Shift+p exec --no-startup-id bash $HOME/Dotfiles/scripts/passmenu.sh
@@ -100,7 +100,7 @@ bindsym XF86Favorites exec --no-startup-id sh $HOME/Dotfiles/scripts/toggle_trac
 
 # screenshots
 bindsym Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
-bindsym Shift+Print exec --no-startup-id echo | dmenu -p "Filename:" | xargs -I{}  maim --select $HOME/Desktop/{}.png
+bindsym Shift+Print exec --no-startup-id maim --select | swappy -f - -o - | xclip -selection clipboard -t image/png
 
 # change focus
 bindsym $mod+h focus left
@@ -233,13 +233,14 @@ bindsym $mod+o resize shrink height 10 px or 10 ppt
 bindsym $mod+p resize grow width 10 px or 10 ppt
 
 # set $dark_gray  #666666
-# set $white      #ffffff
-# set $fg         #000000
+set $white      #ffffff
+set $fg         #000000
+set $bg 	#000000
 # set $urgent     #a60000
 # set $indicator  #0031a9
 
-# class                 |border         |backgr         |text           |indicator      |child_border
-# client.focused          $white          $white          $fg             $indicator      $dark_gray
+# class                  |border         |backgr         |text           |indicator      |child_border
+client.focused            #ffffff         #000000         #000000               #ffffff         #ff0000
 # client.focused_inactive $dark_gray      $dark_gray      $white          $white          $white
 # client.unfocused        $dark_gray      $dark_gray      $white          $white          $white
 # client.urgent           $urgent         $urgent         $fg             $urgent         $urgent
