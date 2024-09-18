@@ -54,7 +54,7 @@ super + shift + s
 
 # lock
 super + ctrl + l
-      ~/Dotfiles/i3/.config/i3/lock.sh
+      ~/Dotfiles/bspwm/.config/bspwm/lock.sh
 
 # restart bspwm
 super + shift + r

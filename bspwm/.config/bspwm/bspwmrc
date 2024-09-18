@@ -13,12 +13,13 @@ nm-applet
 blueman-applet
 export _JAVA_AWT_WM_NONREPARENTING=1
 
+
 # bar
 ~/.config/polybar/launch.sh
 
 # workspaces setup
-num_monitors="$(xrandr --query | grep ' connected' | wc -l)"
-if [num-monitors -eq 1 ]; then
+monitors="$(xrandr --query | grep ' connected' | wc -l)"
+if [ $monitors -eq 1 ]; then
     bspc monitor eDP -d 1 2 3 4 5 6 7 8 9 10
 else
     bspc monitor DisplayPort-0 -d 1 2 3 4
@@ -30,11 +31,11 @@ fi
 # looks
 bspc config border_width        2
 bspc config window_gap          11
-bspc config top_padding         35
+bspc config top_padding         33
 
 bspc config focused_border_color "#00bbff"
 
-bspc config split_ratio          0.55
+bspc config split_ratio          0.5
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 

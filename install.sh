@@ -14,19 +14,21 @@ stow tmux
 stow zsh
 stow rofi
 
-# window managers
+### X11 ###
 stow bspwm
 #stow i3
+stow polybar
+stow picom
+stow dunst
+
+### Wayland ###
 #stow hyprland
 #stow sway
-
-# status bars
-stow polybar
 #stow waybar-minimal
 #stow waybar
-
-# notifications
-stow dunst
 #stow mako
+
+
+
 
 echo "!!! Copy the keyboard and gpu configurations to /etc/X11/corg.conf.d/ !!!"

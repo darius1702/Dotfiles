@@ -38,7 +38,8 @@ zstyle ':vcs_info:git:*' formats ' %F{white}on %B%F{cyan}%b'
 
 # Prompt
 DIR=$'%B%F{yellow}%~%b%f'
-CHAR=$'%(?..%b%F{yellow}%? )%B%F{fg}->%f%b'
+# CHAR=$'%(?..%b%F{yellow}%? )%B%F{fg}->%f%b'
+CHAR=$'%B%F{fg}->%f%b'
 PROMPT=$'${DIR}${vcs_info_msg_0_}%b%6(~.\n. )${CHAR} '
 
 # Make Shift-Tab go to previous completion suggestion

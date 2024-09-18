@@ -5,7 +5,6 @@
 
 vim.g.mapleader = " "
 vim.opt.termguicolors = true
-vim.cmd("colorscheme lunaperche")
 vim.cmd("hi! Normal guibg=None")
 
 require("config")

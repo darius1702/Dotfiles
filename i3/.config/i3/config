@@ -5,6 +5,8 @@ exec_always --no-startup-id ~/.fehbg
 exec_always --no-startup-id xrdb -merge ~/.Xresources
 exec_always --no-startup-id nm-applet
 exec_always --no-startup-id blueman-applet
+exec_always --no-startup-id pgrep -x picom > /dev/null || picom
+exec_always --no-startup-id xset r rate 200 30
 
 # Kill ibus
 exec --no-startup-id ibus exit
@@ -27,10 +29,10 @@ mouse_warping none
 workspace_auto_back_and_forth yes
 
 # border style
-for_window [class=".*"] border pixel 3
+for_window [class=".*"] border pixel 2
 
 # gaps
-gaps inner 7
+gaps inner 11
 
 # show gaps only when there is more than 1 window on current workspace
 # smart_gaps on
@@ -43,6 +45,7 @@ font pango: IosevkaTerm NFM Light 12
 
 # terminal
 bindsym $mod+Return exec --no-startup-id alacritty
+
 
 # emacs
 bindsym $mod+e exec --no-startup-id emacsclient -c -n -a ""
@@ -60,10 +63,14 @@ bindsym $mod+b exec --no-startup-id fdfind . ~/Documents/Books --type f | dmenu 
 bindsym $mod+s exec --no-startup-id find Documents Downloads Desktop Zotero kitcar -type f -name "*.pdf" | dmenu -i -p "PDF:" -l 20 | xargs -I{} zathura {}
 
 # pulsemixer
-bindsym $mod+m exec --no-startup-id alacritty -e pavucontrol
+bindsym $mod+m exec --no-startup-id pavucontrol
 
 # kill focused window
 bindsym $mod+q kill
+
+# scratchpad
+bindsym $mod+grave scratchpad show
+bindsym $mod+Shift+grave move scratchpad
 
 # dmenu_run
 # bindsym $mod+d exec --no-startup-id dmenu_run -p "Run: "
@@ -89,7 +96,7 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl  -- set-sink-volume @DEF
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec --no-startup-id pactl -- set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec --no-startup-id pactl -- set-source-mute 0 toggle
-bindsym XF86Display exec --no-startup-id arandr
+bindsym XF86Display exec --no-startup-id ~/Dotfiles/scripts/screenlayout.py
 
 # backlight controls
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s 10+
@@ -122,6 +129,10 @@ bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
+
+# switch between monitors
+bindsym $mod+period focus output right
+bindsym $mod+comma focus output left
 
 # toggle spawn direction
 bindsym $mod+t split toggle
@@ -168,7 +179,7 @@ workspace $ws9 output eDP
 workspace $ws10 output eDP
 
 # Default workspaces for some programs
-assign [class="^Zotero$"] $ws8
+# assign [class="^Zotero$"] $ws8 # really annoying because this also makes all the popups spawn on ws8 even if zotero is somewhere else
 assign [class="^thunderbird$"] $ws9
 assign [class="^Cider$"] $ws10
 
@@ -240,7 +251,7 @@ set $bg 	#000000
 # set $indicator  #0031a9
 
 # class                  |border         |backgr         |text           |indicator      |child_border
-client.focused            #ffffff         #000000         #000000               #ffffff         #ff0000
+client.focused            #ffffff         #000000         #000000               #ffffff         #00bbff
 # client.focused_inactive $dark_gray      $dark_gray      $white          $white          $white
 # client.unfocused        $dark_gray      $dark_gray      $white          $white          $white
 # client.urgent           $urgent         $urgent         $fg             $urgent         $urgent
