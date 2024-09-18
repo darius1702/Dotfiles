@@ -20,7 +20,7 @@
   grep = false
 
 [core]
-  editor = nvim
+  editor = emacs -nw -q -l ~/.emacs.d/.emacs.minimal.el
 
 [fetch]
   prune = true
