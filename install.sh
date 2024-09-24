@@ -13,6 +13,7 @@ stow nvim
 stow tmux
 stow zsh
 stow rofi
+stow zathura
 
 ### X11 ###
 stow bspwm
