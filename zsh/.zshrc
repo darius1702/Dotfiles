@@ -1,7 +1,5 @@
 source ~/.config/zsh/.zshrc
 
-export PATH="$HOME/.local/bin/:$PATH"
-
 # Rust tools
 source "$HOME/.cargo/env"
 
@@ -18,13 +16,19 @@ eval $(fnm env)
 eval "$(zoxide init zsh --cmd cd)"
 
 # fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(fzf --zsh)
 
-alias imv=imv-x11
+alias imv=imv-wayland
 
-alias ros1dev=" devcontainer exec --workspace-folder=/home/darius/kitcar/kitcar-ros zsh"
-alias nuc="ssh kitcar@kitcarnuc"
+# alias ros1dev=" devcontainer exec --workspace-folder=/home/darius/kitcar/kitcar-ros zsh"
+# alias nuc="ssh kitcar@kitcarnuc"
 
 [ -f ~/Software/fzf-git.sh/fzf-git.sh ] && source ~/Software/fzf-git.sh/fzf-git.sh
 
 export PATH="$HOME/.juliaup/bin:$PATH"
+
+export PATH="$HOME/.local/bin/:$PATH"
+
+[ -f "/home/darius/.ghcup/env" ] && . "/home/darius/.ghcup/env" # ghcup-env
+
+eval "$(direnv hook zsh)"

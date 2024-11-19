@@ -5,5 +5,5 @@
 
 swayidle timeout 5 'hyprctl dispatch exec systemctl suspend' &
 pid=$!
-swaylock -e -F -i ~/Documents/Wall/wall103.jpg -s fill
+hyprlock
 kill $pid

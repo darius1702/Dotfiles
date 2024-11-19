@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 
-swww init &
-swww img ~/Documents/Wall/wall63.jpg &
+# Wallpaper
+swaybg -i ~/Documents/Wall/wall117.jpg -m fill &
 
-nm-applet --indicator &
+iwgtk -i &
+blueman-applet &
 
 waybar &
-swayidle before-sleep 'swaylock -e -F -i ~/Documents/Wall/wall103.jpg -s fill' timeout 5 notify-send aaaa &
+# swayidle before-sleep 'swaylock -e -F -i ~/Documents/Wall/wall103.jpg -s fill' timeout 5 notify-send aaaa &
 
 mako

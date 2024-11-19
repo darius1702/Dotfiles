@@ -54,7 +54,7 @@ mods = "Super|Shift"
 [window]
 decorations = "none"
 dynamic_padding = true
-opacity = 0.5
+opacity = 1
 
 [window.padding]
 x = 5

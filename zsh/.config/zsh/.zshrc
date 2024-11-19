@@ -39,7 +39,7 @@ zstyle ':vcs_info:git:*' formats ' %F{white}on %B%F{cyan}%b'
 # Prompt
 DIR=$'%B%F{yellow}%~%b%f'
 # CHAR=$'%(?..%b%F{yellow}%? )%B%F{fg}->%f%b'
-CHAR=$'%B%F{fg}>>%f%b'
+CHAR=$'%B%F{fg}->%f%b'
 PROMPT=$'${DIR}${vcs_info_msg_0_}%b%6(~.\n. )${CHAR} '
 
 # Make Shift-Tab go to previous completion suggestion
@@ -57,7 +57,7 @@ export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 export LANG="en_US.UTF-8"
 export PAGER="nvim -R"
 export MANPAGER="nvim +Man!"
-export EDITOR="emacs -nw -q -l ~/.emacs.d/.emacs.minimal.el"
+export EDITOR="emacsclient -c -nw"
 export CLICOLOR=1
 export HISTFILE="$HOME/.config/zsh/.zsh_history"
 export HISTDUP=erase
@@ -74,8 +74,8 @@ alias tc="$EDITOR ~/.tmux.conf"
 
 alias todo="rg -i 'todo|fixme'"
 
-alias vim=nvim
-alias v=nvim
+alias vim="$EDITOR"
+alias v="$EDITOR"
 alias e="$EDITOR"
 alias ts="tmux new-session -s"
 

@@ -16,20 +16,19 @@ stow rofi
 stow zathura
 
 ### X11 ###
-stow bspwm
+#stow bspwm
 #stow i3
-stow polybar
-stow picom
-stow dunst
+#stow polybar
+#stow picom
+#stow dunst
 
 ### Wayland ###
-#stow hyprland
+stow hyprland
 #stow sway
-#stow waybar-minimal
-#stow waybar
-#stow mako
+#stow hikari
+stow waybar
+stow mako
 
 
-
-
-echo "!!! Copy the keyboard and gpu configurations to /etc/X11/corg.conf.d/ !!!"
+echo "[!] Copy the keyboard and gpu configurations to /etc/X11/corg.conf.d/"
+echo "[!] ./iwd/main.conf belongs in /etc/iwd/main.conf"

@@ -1,21 +1,16 @@
-@define-color module-bg rgba(255, 255, 255, 0.7);
-@define-color bar-bg rgba(255, 255, 255, 0);
-@define-color fg #000000;
-@define-color workspace-active-bg #ffffff;
-
-@define-color red #f85552;
-@define-color yellow #f8de7e;
-@define-color green #8adf80;
-
-* {
-    font-family: IosevkaTerm NFP, FontAwesome;
-    font-size: 14px;
-    font-weight: 400;
-    padding: 0;
-}
+@define-color bg       rgba(16, 16, 16, 0.6);
+@define-color fg       #e1e1e1;
+@define-color good     #00c877;
+@define-color alert    #ff0000;
+@define-color warning  #ffff00;
+@define-color disabled #909090;
 
 window#waybar {
-    background-color: @bar-bg;
+    padding: 0;
+    font-family: JetBrainsMonoNL NFM, FontAwesome;
+    font-size: 16px;
+    font-weight: 300;
+    background-color: @bg;
     color: @fg;
 }
 
@@ -30,44 +25,56 @@ window#waybar {
 #battery {
     padding-left: 10px;
     padding-right: 10px;
-    background-color: @module-bg;
     color: @fg;
 }
 
-#workspaces {
-    background: @module-bg;
+#pulseaudio.muted {
+    color: @disabled;
 }
 
 #workspaces button {
     border-radius: 0;
     padding: 1px 4px 1px 4px;
+    color: @disabled;
 }
 
-#workspaces button.focused {
-    background-color: @workspace-active-bg;
+#workspaces button.visible {
+    color: @disabled;
+}
+
+#workspaces button.active {
     color: @fg;
 }
 
 #workspaces button.urgent {
-    background-color: @red;
     color: @fg;
+}
+
+#workspaces button:hover {
+    box-shadow: none;
+    text-shadow: none;
+    background: none;
+    transition: none;
+    border-color: transparent;
 }
 
 #battery.warning {
-    color: @fg;
-    background-color: @yellow;
+    color: @warning;
 }
 
 #battery.critical {
-    color: @fg;
-    background-color: @red;
+    color: @alert;
 }
 
 #battery.charging {
-    color: @fg;
-    background-color: @green;
+    color: @good;
+}
+
+#tray {
+    font-family: Noto Sans
 }
 
 #tray menu {
-    padding: 5px;
+    font-size: 13px;
+    font-weight: 400;
 }
