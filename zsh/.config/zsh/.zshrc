@@ -51,13 +51,14 @@ if [[ -t 0 && $- = *i* ]]
 then
   stty -ixon
 fi
+export EDITOR="nvim"
+export EMACS="emacsclient -c -n"
 
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
 export LANG="en_US.UTF-8"
 export PAGER="nvim -R"
 export MANPAGER="nvim +Man!"
-export EDITOR="emacsclient -c -nw"
 export CLICOLOR=1
 export HISTFILE="$HOME/.config/zsh/.zsh_history"
 export HISTDUP=erase
@@ -76,7 +77,7 @@ alias todo="rg -i 'todo|fixme'"
 
 alias vim="$EDITOR"
 alias v="$EDITOR"
-alias e="$EDITOR"
+alias e="$EMACS"
 alias ts="tmux new-session -s"
 
 z()

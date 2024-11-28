@@ -1,11 +1,11 @@
 {
   "height": 26,
   "layer": "bottom",
-  "position": "top",
+  "position": "bottom",
   "spacing": 10,
   "modules-left": ["hyprland/workspaces"],
-  "modules-center": ["clock"],
-  "modules-right": ["memory", "pulseaudio", "backlight", "battery", "tray"],
+  "modules-center": [],
+  "modules-right": ["memory", "pulseaudio", "backlight", "battery", "tray", "clock"],
 
   "mpris": {
     "format": "{status_icon} {dynamic}",
@@ -74,7 +74,7 @@
   },
 
   "clock": {
-    "format": "{:%a %d.%m.  %H:%M}",
+    "format": "{:%a %d.%m. %H:%M}",
     "tooltip": false,
   },
 

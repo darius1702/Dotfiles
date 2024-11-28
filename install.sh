@@ -28,6 +28,7 @@ stow hyprland
 #stow hikari
 stow waybar
 stow mako
+stow iwgtk
 
 
 echo "[!] Copy the keyboard and gpu configurations to /etc/X11/corg.conf.d/"
