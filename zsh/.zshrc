@@ -32,3 +32,9 @@ export PATH="$HOME/.local/bin/:$PATH"
 [ -f "/home/darius/.ghcup/env" ] && . "/home/darius/.ghcup/env" # ghcup-env
 
 eval "$(direnv hook zsh)"
+
+function cd_fun() {
+    \cd $(find . -maxdepth 2 -type d | shuf | head -n 1)
+}
+
+alias cd=cd_fun
