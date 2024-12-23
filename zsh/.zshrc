@@ -29,6 +29,8 @@ export PATH="$HOME/.juliaup/bin:$PATH"
 
 export PATH="$HOME/.local/bin/:$PATH"
 
+export PATH="/opt/Jetbrains/Toolbox/scripts/:$PATH"
+
 [ -f "/home/darius/.ghcup/env" ] && . "/home/darius/.ghcup/env" # ghcup-env
 
 eval "$(direnv hook zsh)"

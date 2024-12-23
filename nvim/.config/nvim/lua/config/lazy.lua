@@ -11,13 +11,11 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
 
   { 'windwp/nvim-autopairs', config = true },
-
-  -- Syntax
   { 'numToStr/Comment.nvim', config = true },
   { 'kylechui/nvim-surround', config = true },
+
   { 'norcalli/nvim-colorizer.lua', opts = '*' },
 
-  -- Git
   {
     'lewis6991/gitsigns.nvim',
     opts = {
