@@ -20,5 +20,5 @@ password=$(printf '%s\n' "${password_files[@]}" | rofi -dmenu -p password "$@")
 [[ -n $password ]] || exit
 
 if [[ $typeit -eq 0 ]]; then
-	wl-copy $(pass show "$password" | head -1) & sleep 45s && wl-copy -c
+	wl-copy "$(pass show "$password" | head -1)" & sleep 45s && wl-copy -c
 fi
