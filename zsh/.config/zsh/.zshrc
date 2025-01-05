@@ -36,6 +36,11 @@ precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 zstyle ':vcs_info:git:*' formats ' %F{white}on %B%F{cyan}%b'
 
+# OS 133 sequence to jump to prompt
+precmd() {
+    print -Pn "\e]133;A\e\\"
+}
+
 # Prompt
 DIR=$'%B%F{yellow}%~%b%f'
 # CHAR=$'%(?..%b%F{yellow}%? )%B%F{fg}->%f%b'

@@ -7,7 +7,8 @@
 
 window#waybar {
     padding: 0;
-    font-family: JetBrainsMonoNL NFM, FontAwesome;
+    font-family: ZedMono NFM Extd, FontAwesome;
+    /* font-family: JetBrainsMonoNL NFM, FontAwesome; */
     font-size: 16px;
     font-weight: 300;
     background: linear-gradient(rgba(0, 0, 0, 0), @bg 80%);
