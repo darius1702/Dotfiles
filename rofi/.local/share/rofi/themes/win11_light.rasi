@@ -1,5 +1,5 @@
 * {
-  font: "JetBrainsMonoNL NF 12";
+  font: "ZedMono NFP Extd 12";
 
   bg0    : #ffffff;
   bg1    : #f4f4f4;
@@ -24,12 +24,13 @@ element-icon, element-text, scrollbar {
 
 window {
   location : center;
-  width    : 400px;
+  width    : 600px;
   height   : 500px;
   y-offset : -4px;
 
   background-color : @bg1;
-  border-radius    : 8px;
+  border: 3px solid;
+  border-color: @fg0;
 }
 
 mainbox {
@@ -43,23 +44,13 @@ inputbar {
   children         : [ entry ];
   border           : 0 0 2px 0 solid;
   border-color     : @accent;
-  border-radius    : 2px;
   background-color : @bg0;
 }
 
-entry, element-icon, element-text {
-  vertical-align: 0.5;
-}
-
 entry {
-  font              : "JetBrainsMonoNL NF 12";
-  placeholder       : "Run:";
+  font              : "ZedMono NFP Extd 12";
+  placeholder       : ">>>";
   placeholder-color : @fg1;
-}
-
-textbox {
-  padding          : 4px 8px;
-  background-color : @bg2;
 }
 
 listview {
@@ -72,7 +63,6 @@ listview {
 element {
   spacing       : 1em;
   padding       : 8px;
-  border-radius : 2px;
 }
 
 element normal urgent {
@@ -97,12 +87,4 @@ element selected {
 
 element selected urgent {
   background-color: @urgent;
-}
-
-element-icon {
-  size: 1.5em;
-}
-
-element-text {
-  text-color: inherit;
 }

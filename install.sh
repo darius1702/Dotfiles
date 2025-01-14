@@ -3,8 +3,6 @@ set -xe
 
 # rofi theme
 mkdir -p ~/.local/share/rofi/themes/
-cp ./squared-blue.rasi ~/.local/share/rofi/themes/
-cp ./win11_light.rasi ~/.local/share/rofi/themes/
 
 # link everything
 stow Xresources
