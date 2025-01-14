@@ -34,15 +34,16 @@ ZLE_REMOVE_SUFFIX_CHARS=$' \t\n;&'
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
-zstyle ':vcs_info:git:*' formats ' %F{white}on %B%F{cyan}%b'
+zstyle ':vcs_info:git:*' formats ' %F{white}on %B%b'
 
-# OS 133 sequence to jump to prompt
+# OSC 133 sequence to jump to prompt
 precmd() {
     print -Pn "\e]133;A\e\\"
 }
 
 # Prompt
-DIR=$'%B%F{yellow}%~%b%f'
+# DIR=$'%B%F{yellow}%~%b%f'
+DIR=$'%B%F{red}%~%b%f'
 # CHAR=$'%(?..%b%F{yellow}%? )%B%F{fg}->%f%b'
 CHAR=$'%B%F{fg}->%f%b'
 PROMPT=$'${DIR}${vcs_info_msg_0_}%b%6(~.\n. )${CHAR} '
@@ -58,6 +59,7 @@ then
 fi
 export EDITOR="nvim"
 export EMACS="emacsclient -c -n"
+export RISCV="/opt/riscv"
 
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
