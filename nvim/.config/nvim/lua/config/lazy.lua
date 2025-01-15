@@ -10,6 +10,17 @@ end
 vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
 
+  { 'catppuccin/nvim',
+    config = function()
+      require('catppuccin').setup({
+        flavor = 'mocha',
+        transparent_background = true,
+        no_italic = true,
+      })
+      vim.cmd.colorscheme 'catppuccin'
+    end
+  },
+
   { 'windwp/nvim-autopairs', config = true },
   { 'numToStr/Comment.nvim', config = true },
   { 'kylechui/nvim-surround', config = true },
