@@ -5,6 +5,11 @@
 @define-color warning  #ffff00;
 @define-color disabled #909090;
 
+
+* {
+    min-height: 0;
+}
+
 window#waybar {
     padding: 0;
     font-family: ZedMono NFM Extd, FontAwesome;

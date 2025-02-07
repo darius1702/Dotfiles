@@ -6,13 +6,14 @@ mkdir -p ~/.local/share/rofi/themes/
 
 # link everything
 stow Xresources
-stow alacritty
+# stow alacritty
 stow gitconfig
 stow nvim
 stow tmux
 stow zsh
 stow rofi
 stow zathura
+stow foot
 
 ### X11 ###
 #stow bspwm

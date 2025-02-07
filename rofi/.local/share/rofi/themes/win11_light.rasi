@@ -1,5 +1,5 @@
 * {
-  font: "ZedMono NFP Extd 12";
+  font: "ZedMono NFP Extd 11";
 
   bg0    : #ffffff;
   bg1    : #f4f4f4;
@@ -16,6 +16,7 @@
   margin  : 0;
   padding : 0;
   spacing : 0;
+  highlight: none;
 }
 
 element-icon, element-text, scrollbar {
@@ -24,8 +25,8 @@ element-icon, element-text, scrollbar {
 
 window {
   location : center;
-  width    : 600px;
-  height   : 500px;
+  width    : 500px;
+  height   : 400px;
   y-offset : -4px;
 
   background-color : @bg1;
@@ -48,7 +49,6 @@ inputbar {
 }
 
 entry {
-  font              : "ZedMono NFP Extd 12";
   placeholder       : ">>>";
   placeholder-color : @fg1;
 }
