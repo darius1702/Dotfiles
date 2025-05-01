@@ -1,6 +1,6 @@
 # Colorscheme
 [general]
-import = [ "./modus-vivendi.toml" ]
+import = [ "./catppuccin-mocha.toml" ]
 
 [env]
 TERM = "xterm-256color"
@@ -11,20 +11,20 @@ TERM = "xterm-256color"
 size = 13
 
 [font.bold]
-family = "ZedMono NFM"
+family = "Iosevka Term NFP"
 style = "Bold"
 
 [font.bold_italic]
-family = "ZedMono NFM"
+family = "Iosevka Term NFP"
 style = "Bold Italic"
 
 [font.italic]
-family = "ZedMono NFM"
+family = "Iosevka Term NFP"
 style = "Italic"
 
 [font.normal]
-family = "ZedMono NFM"
-style = "Regular"
+family = "Iosevka Term NFP"
+style = "Light"
 
 [[keyboard.bindings]]
 action = "SpawnNewInstance"
@@ -38,4 +38,4 @@ opacity = 1
 
 [window.padding]
 x = 5
-y = 0
+y = 5

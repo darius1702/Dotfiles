@@ -5,6 +5,11 @@
 
 vim.g.mapleader = " "
 vim.opt.termguicolors = true
-vim.cmd("hi! Normal guibg=None")
+vim.cmd "colorscheme lunaperche"
+
+-- transparent background
+vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
 
 require("config")

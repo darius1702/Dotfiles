@@ -57,8 +57,8 @@ if [[ -t 0 && $- = *i* ]]
 then
   stty -ixon
 fi
-export EDITOR="nvim"
-export EMACS="emacsclient -c -n"
+export EDITOR="emacs -q -nw -l ~/.emacs.d/.emacs.minimal.el"
+export EMACS=$EDITOR
 export RISCV="/opt/riscv"
 
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
@@ -77,20 +77,22 @@ export CMAKE_EXPORT_COMPILE_COMMANDS="on"
 
 # Quick-edit configs
 alias zc="$EDITOR ~/.config/zsh/.zshrc"
-alias vc="$EDITOR ~/.config/nvim/lua/config/lazy.lua"
+alias vc="nvim ~/.config/nvim/lua/config/lazy.lua"
 alias tc="$EDITOR ~/.tmux.conf"
 
 alias todo="rg -i 'todo|fixme'"
 
-alias vim="$EDITOR"
-alias v="$EDITOR"
+alias vim=nvim
+alias v=nvim
 alias e="$EMACS"
 alias ts="tmux new-session -s"
 
-z()
-{
-  zathura --fork $1
-}
+alias z=zathura
+# Hyprland does window swallowing
+# z()
+# {
+#   zathura --fork $1
+# }
 
 alias cp="cp -iv"
 alias mv="mv -iv"

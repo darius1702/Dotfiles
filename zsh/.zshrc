@@ -43,3 +43,6 @@ export PATH="$RISCV/multilib-noRVC/bin/:$PATH"
 
 export PATH="/usr/lib/icecream/bin/:$PATH"
 alias is="icecream-sundae -s 192.168.2.100"
+
+alias fzivpn="sudo openvpn /etc/openvpn/client/fzi.ovpn"
+alias kitvpn="sudo openvpn /etc/openvpn/client/kit.ovpn"
