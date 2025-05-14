@@ -5,7 +5,7 @@
   "spacing": 10,
   "modules-left": ["hyprland/workspaces"],
   "modules-center": [],
-  "modules-right": ["memory", "pulseaudio", "backlight", "battery", "tray", "clock"],
+  "modules-right": ["pulseaudio", "backlight", "battery", "tray", "clock"],
 
   "mpris": {
     "format": "{status_icon} {dynamic}",
@@ -23,7 +23,7 @@
   },
 
   "backlight": {
-    "format": " {percent}%",
+    "format": " {percent}%",
     "on-scroll-up": "brightnessctl set +5",
     "on-scroll-down": "brightnessctl set 5-",
     "tooltip": false,
@@ -62,7 +62,7 @@
   "battery": {
     "bat": "BAT0",
     "adapter": "ADP0",
-    "interval": 60,
+    "interval": 10,
     "states": {
       "warning": 30,
       "critical": 15

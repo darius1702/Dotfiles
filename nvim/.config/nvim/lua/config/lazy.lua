@@ -9,6 +9,20 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    config = function()
+      require("catppuccin").setup({
+        flavour = "mocha",
+        transparent_background = true,
+        no_italic = true,
+        no_underline = true,
+      })
+      vim.cmd.colorscheme "catppuccin"
+    end,
+  },
 
   { 'windwp/nvim-autopairs', config = true },
   { 'numToStr/Comment.nvim', config = true },

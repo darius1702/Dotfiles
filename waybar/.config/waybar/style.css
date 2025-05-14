@@ -1,9 +1,10 @@
-@define-color bg       rgba(16, 16, 16, 0.5);
+/* @define-color bg       rgba(16, 16, 16, 0.4); */
+@define-color bg       rgba(0, 0, 0, 0.5);
 @define-color fg       #e1e1e1;
 @define-color good     #00c877;
 @define-color alert    #ff0000;
 @define-color warning  #ffff00;
-@define-color disabled #909090;
+@define-color disabled #b4b4d3;
 
 
 * {
@@ -12,12 +13,13 @@
 
 window#waybar {
     padding: 0;
-    font-family: ZedMono NFM Extd, FontAwesome;
+    /* font-family: IBM Plex Sans Text , FontAwesome; */
+    font-family: Iosevka Aile Medium, FontAwesome;
     /* font-family: JetBrainsMonoNL NFM, FontAwesome; */
     font-size: 16px;
     font-weight: 300;
-    /* background: linear-gradient(rgba(0, 0, 0, 0), @bg 80%); */
-    background: rgba(0,0,0,0);
+    background: linear-gradient(rgba(0, 0, 0, 0) 20%, @bg);
+    /* background: @bg; */
     color: @fg;
 }
 

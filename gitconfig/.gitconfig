@@ -15,12 +15,12 @@
 [init]
   defaultBranch = main
 
+[url "git@github.com:"]
+	insteadOf = gh:
+
 [pager]
   branch = false
   grep = false
-
-[core]
-  editor = emacsclient -nw -c
 
 [fetch]
   prune = true
