@@ -1,0 +1,4 @@
+[general]
+fullscreen = false
+corner-roundness = 0
+copy-command = "wl-copy"

@@ -43,9 +43,9 @@ precmd() {
 
 # Prompt
 # DIR=$'%B%F{yellow}%~%b%f'
-DIR=$'%B%F{red}%~%b%f'
+DIR=$'%B%F{magenta}%~%b%f'
 # CHAR=$'%(?..%b%F{yellow}%? )%B%F{fg}->%f%b'
-CHAR=$'%B%F{fg}->%f%b'
+CHAR=$'%B%F{fg}>%f%b'
 PROMPT=$'${DIR}${vcs_info_msg_0_}%b%6(~.\n. )${CHAR} '
 
 # Make Shift-Tab go to previous completion suggestion
@@ -57,9 +57,13 @@ if [[ -t 0 && $- = *i* ]]
 then
   stty -ixon
 fi
-export EDITOR="emacs -q -nw -l ~/.emacs.d/.emacs.minimal.el"
-export EMACS=$EDITOR
-export RISCV="/opt/riscv"
+
+export EDITOR=nvim
+export VISUAL=$EDITOR
+
+export FZF_DEFAULT_OPTS="--style minimal --color fg:15,bg+:0,pointer:2,info:8,prompt:1,hl:2,hl+:2"
+export FZF_CTRL_R_OPTS="--height 10 --layout reverse"
+export _ZO_FZF_OPTS="--prompt 'Jump > ' --height 10 --layout reverse $FZF_DEFAULT_OPTS"
 
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
@@ -77,14 +81,14 @@ export CMAKE_EXPORT_COMPILE_COMMANDS="on"
 
 # Quick-edit configs
 alias zc="$EDITOR ~/.config/zsh/.zshrc"
-alias vc="nvim ~/.config/nvim/lua/config/lazy.lua"
+alias vc="$EDITOR ~/.config/nvim/lua/config/lazy.lua"
 alias tc="$EDITOR ~/.tmux.conf"
 
 alias todo="rg -i 'todo|fixme'"
 
 alias vim=nvim
 alias v=nvim
-alias e="$EMACS"
+alias e=emacs
 alias ts="tmux new-session -s"
 
 alias z=zathura

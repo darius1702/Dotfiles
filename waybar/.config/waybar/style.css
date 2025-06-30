@@ -4,7 +4,7 @@
 @define-color good     #00c877;
 @define-color alert    #ff0000;
 @define-color warning  #ffff00;
-@define-color disabled #b4b4d3;
+@define-color disabled #9a9aac;
 
 
 * {
@@ -18,8 +18,9 @@ window#waybar {
     /* font-family: JetBrainsMonoNL NFM, FontAwesome; */
     font-size: 16px;
     font-weight: 300;
-    background: linear-gradient(rgba(0, 0, 0, 0) 20%, @bg);
+    /* background: linear-gradient(rgba(0, 0, 0, 0) 20%, @bg); */
     /* background: @bg; */
+    background: none;
     color: @fg;
 }
 
