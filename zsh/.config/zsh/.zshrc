@@ -81,7 +81,7 @@ export CMAKE_EXPORT_COMPILE_COMMANDS="on"
 
 # Quick-edit configs
 alias zc="$EDITOR ~/.config/zsh/.zshrc"
-alias vc="$EDITOR ~/.config/nvim/lua/config/lazy.lua"
+alias vc="$EDITOR ~/.config/nvim/init.lua"
 alias tc="$EDITOR ~/.tmux.conf"
 
 alias todo="rg -i 'todo|fixme'"
