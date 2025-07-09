@@ -1,8 +1,2 @@
 .DS_Store
-configstore/
-jgit/
-NuGet/
-swi-prolog/
-raycast/
-nvim/.config/nvim/lazy-lock.json
 systemd/.config/systemd/user/default.target.wants/

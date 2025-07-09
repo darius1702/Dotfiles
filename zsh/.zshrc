@@ -1,10 +1,10 @@
 source ~/.config/zsh/.zshrc
 
-# Rust tools
-source "$HOME/.cargo/env"
+# Rust
+[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
-# NodeJS
-eval $(fnm env)
+# Node.js version manager
+[ -f "/usr/bin/fnm" ] && eval $(fnm env)
 
 # Haskell
 [ -f "/home/darius/.ghcup/env" ] && source "/home/darius/.ghcup/env"
@@ -13,15 +13,10 @@ eval $(fnm env)
 [[ ! -r /home/darius/.opam/opam-init/init.zsh ]] || source /home/darius/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
 # cd database
-eval "$(zoxide init zsh --cmd cd)"
+[ -f "/usr/bin/zoxide" ] && eval "$(zoxide init zsh --cmd cd)"
 
 # fzf
-source <(fzf --zsh)
-
-alias imv=imv-wayland
-
-# alias ros1dev=" devcontainer exec --workspace-folder=/home/darius/kitcar/kitcar-ros zsh"
-# alias nuc="ssh kitcar@kitcarnuc"
+[ -f "/usr/bin/fzf" ] && source <(fzf --zsh)
 
 export PATH="$HOME/.juliaup/bin:$PATH"
 
@@ -37,7 +32,7 @@ export PATH="$PATH:$HOME/.local/share/gem/ruby/3.4.0/bin" # ruby gems
 
 [ -f "/home/darius/.ghcup/env" ] && . "/home/darius/.ghcup/env"
 
-eval "$(direnv hook zsh)"
+[ -f "/usr/bin/direnv" ] && eval "$(direnv hook zsh)"
 
 export RISCV="/opt/riscv"
 export PATH="$RISCV/bin/:$PATH"

@@ -2,3 +2,4 @@ autoload/
 undo/
 spell/
 .netrwhist
+lazy-lock.json
