@@ -5,7 +5,6 @@ set -xe
 mkdir -p ~/.local/share/rofi/themes/
 
 # link everything
-stow Xresources # Idk if these do anything tbh
 stow gitconfig
 stow nvim
 stow zsh
