@@ -17,6 +17,9 @@ source ~/.config/zsh/.zshrc
 
 # fzf
 [ -f "/usr/bin/fzf" ] && source <(fzf --zsh)
+# we only want C-r, bind C-t and M-c back to the defaults
+bindkey -M emacs '^T' transpose-chars
+bindkey -M emacs '\ec' capitalize-word
 
 export PATH="$HOME/.juliaup/bin:$PATH"
 
