@@ -29,7 +29,7 @@
     "format-stopped" : "",
     "on-click-right" : "",
     "on-click-middle" : "",
-    "ignored-players": ["firefox"],
+//    "ignored-players": ["firefox"],
     "tooltip" : false
   },
 
