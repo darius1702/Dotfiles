@@ -39,7 +39,7 @@ window#waybar {
 }
 
 #pulseaudio.muted {
-    color: @disabled;
+  color: @disabled;
 }
 
 #workspaces button {

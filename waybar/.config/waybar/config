@@ -36,8 +36,8 @@
   "pulseaudio": {
     "format": "󰕾 {volume}%",
     "format-bluetooth": "󰂯 {volume}%",
-    "format-bluetooth-muted": "󰂯 muted",
-    "format-muted": "󰖁 muted",
+    "format-bluetooth-muted": "󰂲",
+    "format-muted": "󰖁",
     "on-click": "pamixer -t",
     "on-click-right": "pwvucontrol",
     "on-scroll-up": "pamixer -i 1",
