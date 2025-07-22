@@ -42,11 +42,7 @@ precmd() {
 }
 
 # Prompt
-# DIR=$'%B%F{yellow}%~%b%f'
-DIR=$'%B%F{magenta}%~%b%f'
-# CHAR=$'%(?..%b%F{yellow}%? )%B%F{fg}->%f%b'
-CHAR=$'%B%F{fg}>%f%b'
-PROMPT=$'${DIR}${vcs_info_msg_0_}%b%6(~.\n. )${CHAR} '
+PROMPT='%F{red}[%n]%f %F{magenta}%B%~%b%f %# '
 
 # Make Shift-Tab go to previous completion suggestion
 zmodload zsh/complist
@@ -60,10 +56,6 @@ fi
 
 export EDITOR=nvim
 export VISUAL=$EDITOR
-
-export FZF_DEFAULT_OPTS="--style minimal --color fg:15,bg+:0,pointer:2,info:8,prompt:1,hl:2,hl+:2"
-export FZF_CTRL_R_OPTS="--height 10 --layout reverse"
-export _ZO_FZF_OPTS="--prompt 'Jump > ' --height 10 --layout reverse $FZF_DEFAULT_OPTS"
 
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
@@ -79,17 +71,9 @@ export SAVEHIST=$HISTSIZE
 # Make cmake output the compilation database
 export CMAKE_EXPORT_COMPILE_COMMANDS="on"
 
-# Quick-edit configs
-alias zc="$EDITOR ~/.config/zsh/.zshrc"
-alias vc="$EDITOR ~/.config/nvim/init.lua"
-alias tc="$EDITOR ~/.tmux.conf"
-
-alias todo="rg -i 'todo|fixme'"
-
 alias vim=nvim
 alias v=nvim
 alias e=emacs
-alias ts="tmux new-session -s"
 
 alias z=zathura
 # Hyprland does window swallowing
