@@ -108,3 +108,4 @@ alias ll="ls -lh --color=auto"
 alias lla="ls -lAh --color=auto"
 
 alias grep="grep --color=auto"
+alias ip="ip -c"
