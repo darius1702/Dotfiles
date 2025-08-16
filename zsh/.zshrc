@@ -45,3 +45,10 @@ alias is="icecream-sundae -s 192.168.2.51"
 
 alias fzivpn="sudo openvpn /etc/openvpn/client/fzi.ovpn"
 alias kitvpn="sudo openvpn /etc/openvpn/client/kit.ovpn"
+
+# bun completions
+[ -s "/home/darius/.bun/_bun" ] && source "/home/darius/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

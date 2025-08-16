@@ -43,7 +43,7 @@ precmd() {
 
 # Prompt
 # DIR=$'%B%F{yellow}%~%b%f'
-DIR=$'%B%F{magenta}%~%b%f'
+DIR=$'%B%F{yellow}%~%b%f'
 # CHAR=$'%(?..%b%F{yellow}%? )%B%F{fg}->%f%b'
 CHAR=$'%B%F{fg}>%f%b'
 PROMPT=$'${DIR}${vcs_info_msg_0_}%b%6(~.\n. )${CHAR} '
@@ -61,7 +61,7 @@ fi
 export EDITOR=nvim
 export VISUAL=$EDITOR
 
-export FZF_DEFAULT_OPTS="--style minimal --color fg:15,bg+:0,pointer:2,info:8,prompt:1,hl:2,hl+:2"
+export FZF_DEFAULT_OPTS="--style minimal --color fg:8,bg+:0,pointer:2,info:8,prompt:1,hl:2,hl+:2 --bind=ctrl-j:accept,ctrl-k:kill-line"
 export FZF_CTRL_R_OPTS="--height 10 --layout reverse"
 export _ZO_FZF_OPTS="--prompt 'Jump > ' --height 10 --layout reverse $FZF_DEFAULT_OPTS"
 

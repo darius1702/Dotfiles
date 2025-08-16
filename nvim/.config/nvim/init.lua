@@ -4,7 +4,7 @@
 --  /_/_/ /_/_/\__(_)_/\__,_/\__,_/
 
 vim.g.mapleader = " "
-vim.opt.termguicolors = true
+vim.o.termguicolors = true
 
 -- transparent background
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
@@ -13,7 +13,7 @@ vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
 
 vim.cmd([[set spelllang=en_us]])
 local settings = {
-  laststatus = 1,
+  laststatus = 2,
   scrolloff = 3,
   signcolumn = "yes",
   showmode = false,
@@ -40,7 +40,7 @@ vim.cmd([[set undodir=$HOME/.config/nvim/undo]])
 vim.o.grepprg="rg --vimgrep --no-heading -i --"
 
 for k, v in pairs(settings) do
-  vim.opt[k] = v
+  vim.o[k] = v
 end
 
 vim.g.netrw_altw = 1
