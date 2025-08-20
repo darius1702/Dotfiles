@@ -26,6 +26,7 @@ window#waybar {
   transition: 0.1s
 }
 
+#network,
 #memory,
 #backlight,
 #clock,
@@ -46,6 +47,7 @@ window#waybar {
   color: @disabled;
 }
 
+#network:hover,
 #backlight:hover,
 #wireplumber:hover,
 #mpris:hover {
@@ -96,6 +98,16 @@ window#waybar {
   color: @active;
 }
 
+#network.disconnected {
+  color: @disabled;
+}
+
+#network.disabled {
+  color: @disabled;
+  background: @alert-bg;
+  border-radius: 5px;
+}
+
 #battery.warning {
   color: @active;
   background: @warning-bg;
@@ -115,8 +127,9 @@ window#waybar {
 }
 
 #tray {
+  padding-left: 0;
+  padding-right: 0;
   font-family: Noto Sans;
-  border-radius: 5px;
 }
 
 #tray menu {
