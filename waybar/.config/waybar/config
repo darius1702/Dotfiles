@@ -29,6 +29,8 @@
     "format-stopped" : "",
     "on-click-right" : "",
     "on-click-middle" : "",
+    "on-scroll-up" : "",
+    "on-scroll-down" : "",
 //    "ignored-players": ["firefox"],
     "tooltip" : false
   },
@@ -38,10 +40,10 @@
     "format-bluetooth": "󰂯 {volume}%",
     "format-bluetooth-muted": "󰂲",
     "format-muted": "󰖁",
-    "on-click": "pamixer -t",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
     "on-click-right": "pwvucontrol",
-    "on-scroll-up": "pamixer -i 1",
-    "on-scroll-down": "pamixer -d 1",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.5%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.5%-",
     "tooltip": false,
   },
 

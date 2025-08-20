@@ -1,5 +1,7 @@
-@define-color bg       rgba(0, 0, 0, 0.5);
-@define-color fg       #e1e1e1;
+@define-color bg       rgba(0, 0, 0, 0.3);
+/* @define-color fg       #e1e1e1; */
+@define-color fg       #c1c1c1;
+@define-color active   #e1e1e1;
 @define-color good     #00c877;
 @define-color alert    #ff0000;
 @define-color warning  #ffff00;
@@ -12,12 +14,11 @@
 
 window#waybar {
     padding: 0;
-    /* font-family: IBM Plex Sans Text , FontAwesome; */
     font-family: Iosevka Aile, FontAwesome;
-    /* font-family: JetBrainsMonoNL NFM, FontAwesome; */
     font-size: 16px;
     font-weight: 500;
-    background: linear-gradient(rgba(0, 0, 0, 0), @bg);
+    /* background: linear-gradient(180deg, rgba(0, 0, 0, 0), @bg); */
+    background: @bg;
     color: @fg;
 }
 
@@ -40,29 +41,40 @@ window#waybar {
 }
 
 #workspaces button {
-    border-radius: 0;
-    padding: 1px 4px 1px 4px;
+    border-radius: 5px;
+    padding: 2px 4px 1px 4px;
     color: @disabled;
-}
-
-#workspaces button.visible {
-    color: @disabled;
-}
-
-#workspaces button.active {
-    color: @fg;
-}
-
-#workspaces button.urgent {
-    color: @fg;
+    transition: 0.1s;
 }
 
 #workspaces button:hover {
+    color: @active;
     box-shadow: none;
     text-shadow: none;
-    background: none;
-    transition: none;
     border-color: transparent;
+    background: none;
+    font-weight: 900;
+}
+
+#workspaces button.visible {
+    color: @active;
+    background: rgba(200, 200, 200, 0.2);
+}
+
+#workspaces button.active {
+    color: @active;
+    font-weight: 900;
+    background: rgba(200, 200, 200, 0.25);
+}
+
+#workspaces button.active:hover {
+    color: @active;
+    font-weight: 900;
+    background: rgba(200, 200, 200, 0.25);
+}
+
+#workspaces button.urgent {
+    color: @active;
 }
 
 #battery.warning {
@@ -78,7 +90,7 @@ window#waybar {
 }
 
 #tray {
-    font-family: Noto Sans
+    font-family: Noto Sans;
 }
 
 #tray menu {
