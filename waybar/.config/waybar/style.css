@@ -1,25 +1,29 @@
-@define-color bg       rgba(0, 0, 0, 0.3);
-/* @define-color fg       #e1e1e1; */
-@define-color fg       #c1c1c1;
-@define-color active   #e1e1e1;
-@define-color good     #00c877;
-@define-color alert    #ff0000;
-@define-color warning  #ffff00;
-@define-color disabled #9a9aac;
+@define-color bg                rgba(0, 0, 0, 0.3);
+@define-color fg                #c1c1c1;
+
+@define-color disabled          #9a9aac;
+@define-color active            #e1e1e1;
+@define-color active-bg         rgba(200, 200, 200, 0.25);
+@define-color active-bg-lighter rgba(200, 200, 200, 0.2);
+
+@define-color good-bg           rgba(69, 255, 80, 0.25);
+@define-color alert-bg          rgba(255, 40, 40, 0.35);
+@define-color warning-bg        rgba(240, 240, 80, 0.3);
 
 
 * {
-    min-height: 0;
+  min-height: 0;
 }
 
 window#waybar {
-    padding: 0;
-    font-family: Iosevka Aile, FontAwesome;
-    font-size: 16px;
-    font-weight: 500;
-    /* background: linear-gradient(180deg, rgba(0, 0, 0, 0), @bg); */
-    background: @bg;
-    color: @fg;
+  padding: 0;
+  font-family: Iosevka Aile, FontAwesome;
+  font-size: 16px;
+  font-weight: 500;
+  /* background: linear-gradient(180deg, rgba(0, 0, 0, 0), @bg); */
+  background: @bg;
+  color: @fg;
+  transition: 0.1s
 }
 
 #memory,
@@ -27,73 +31,95 @@ window#waybar {
 #clock,
 #clock-date,
 #pulseaudio,
+#wireplumber,
+#mpris,
 #disk,
 #network,
-#tray,
-#battery {
-    padding-left: 10px;
-    padding-right: 10px;
-    color: @fg;
+#battery,
+#tray {
+  padding-left: 8px;
+  padding-right: 8px;
+  color: @fg;
 }
 
-#pulseaudio.muted {
+#wireplumber.muted {
   color: @disabled;
 }
 
+#backlight:hover,
+#wireplumber:hover,
+#mpris:hover {
+  color: @active;
+  background: @active-bg;
+  border-radius: 5px;
+  transition: 0.1s;
+}
+
 #workspaces button {
-    border-radius: 5px;
-    padding: 2px 4px 1px 4px;
-    color: @disabled;
-    transition: 0.1s;
+  border-radius: 5px;
+  padding: 2px 4px 1px 4px;
+  color: @active;
+  transition: 0.1s;
 }
 
 #workspaces button:hover {
-    color: @active;
-    box-shadow: none;
-    text-shadow: none;
-    border-color: transparent;
-    background: none;
-    font-weight: 900;
+  color: @active;
+  box-shadow: none;
+  text-shadow: none;
+  border-color: transparent;
+  background: none;
+  font-weight: 900;
+}
+
+#workspaces button.empty {
+  color: @disabled;
 }
 
 #workspaces button.visible {
-    color: @active;
-    background: rgba(200, 200, 200, 0.2);
+  color: @active;
+  background: @active-bg-lighter;
 }
 
 #workspaces button.active {
-    color: @active;
-    font-weight: 900;
-    background: rgba(200, 200, 200, 0.25);
+  color: @active;
+  font-weight: 900;
+  background: @active-bg;
 }
 
 #workspaces button.active:hover {
-    color: @active;
-    font-weight: 900;
-    background: rgba(200, 200, 200, 0.25);
+  color: @active;
+  font-weight: 900;
+  background: @active-bg;
 }
 
 #workspaces button.urgent {
-    color: @active;
+  color: @active;
 }
 
 #battery.warning {
-    color: @warning;
+  color: @active;
+  background: @warning-bg;
+  border-radius: 5px;
 }
 
 #battery.critical {
-    color: @alert;
+  color: @active;
+  background: @alert-bg;
+  border-radius: 5px;
 }
 
 #battery.charging {
-    color: @good;
+  color: @active;
+  background: @good-bg;
+  border-radius: 5px;
 }
 
 #tray {
-    font-family: Noto Sans;
+  font-family: Noto Sans;
+  border-radius: 5px;
 }
 
 #tray menu {
-    font-size: 13px;
-    font-weight: 400;
+  font-size: 13px;
+  font-weight: 400;
 }

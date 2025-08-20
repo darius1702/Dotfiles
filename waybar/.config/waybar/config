@@ -7,43 +7,47 @@
   "modules-center": [],
   "modules-right": ["group/media", "backlight", "battery", "tray", "clock"],
 
+  "hyprland/workspaces": {
+    "persistent-workspaces": {
+      "DP-1": [ 1, 2, 3, 4 ],
+      "HDMI-A-1": [ 5, 6, 7 ],
+      "eDP-1": [ 8, 9, 10 ],
+    },
+  },
+
   "group/media": {
     "orientation": "horizontal",
     "drawer": {
       "transition-duration": 400,
-      "children-class": "not-pulseaudio",
       "transition-left-to-right": false,
     },
     "modules": [
-      "pulseaudio",
+      "wireplumber",
       "mpris"
     ]
   },
 
   "mpris": {
-    "format": "{status_icon} {artist} - {title} |",
+    "format": "{status_icon}  {artist} - {title}",
     "status-icons": {
-		"paused": "󰐊",
-		"playing": "󰏤",
+	  "paused": "󰐊",
+	  "playing": "󰏤",
 	},
     "format-stopped" : "",
     "on-click-right" : "",
     "on-click-middle" : "",
     "on-scroll-up" : "",
     "on-scroll-down" : "",
-//    "ignored-players": ["firefox"],
     "tooltip" : false
   },
 
-  "pulseaudio": {
+  "wireplumber": {
     "format": "󰕾 {volume}%",
-    "format-bluetooth": "󰂯 {volume}%",
-    "format-bluetooth-muted": "󰂲",
-    "format-muted": "󰖁",
+    "format-muted": "󰖁 {volume}%",
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
     "on-click-right": "pwvucontrol",
-    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.5%+",
-    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.5%-",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-",
     "tooltip": false,
   },
 
@@ -54,22 +58,12 @@
     "tooltip": false,
   },
 
-  "memory": {
-    "interval": 30,
-    "format": " {used}G",
-    "tooltip": false,
-  },
-
   "network": {
     "format-wifi": "󰖩 {essid}",
     "format-ethernet": "Eth@{ipaddr}",
     "format-disconnected": "󱚼",
     "tooltip": true,
     "tooltip-format": "{ipaddr}",
-  },
-
-  "disk": {
-    "format": " {percentage_free}%"
   },
 
   "battery": {
