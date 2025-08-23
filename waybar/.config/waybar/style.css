@@ -40,11 +40,8 @@ window#waybar {
 #tray {
   padding-left: 8px;
   padding-right: 8px;
+  padding-top: 2px; /* centered vertically */
   color: @fg;
-}
-
-#wireplumber.muted {
-  color: @disabled;
 }
 
 #network:hover,
@@ -55,6 +52,33 @@ window#waybar {
   background: @active-bg;
   border-radius: 5px;
   transition: 0.1s;
+}
+
+#taskbar {
+  color: @disabled;
+}
+
+#taskbar button {
+  all: unset; /* annoying default sytles */
+  padding: 1px 10px 0px 6px;
+  transition: 0.1s;
+  margin-right: 10px;
+}
+
+#taskbar button.active {
+  color: @active;
+  background: @active-bg;
+  border-radius: 5px;
+}
+
+#taskbar button:hover {
+  color: @active;
+  /* background: @active-bg-lighter; */
+  border-radius: 5px;
+}
+
+#wireplumber.muted {
+  color: @disabled;
 }
 
 #workspaces button {

@@ -1,0 +1,43 @@
+#!/usr/bin/bash
+
+max=`brightnessctl max`
+
+last_id=0
+last_id_file="/tmp/last_notification_id"
+
+reset_last_id_file () {
+    echo 0 > $last_id_file
+    echo 0
+}
+
+get_last_id () {
+    echo $([ -f $last_id_file ] && cat $last_id_file || reset_last_id_file)
+}
+
+current_brightness () {
+    cur=`brightnessctl get`
+    percent=`echo "scale=2;$cur / $max * 100" | bc | sed "s/\.00//"`
+    echo "$percent%"
+}
+
+notify_brightness () {
+    notify-send "Brightness $1" \
+                $(current_brightness) \
+                -r $(get_last_id) \
+                -p > "$last_id_file"
+}
+
+case "$1" in
+    up)
+        brightnessctl s 2000+
+        notify_brightness "increased"
+    ;;
+    down)
+        brightnessctl s 2000-
+        notify_brightness "decreased"
+    ;;
+    *)
+        echo "Usage:"
+        echo "    $0 [up/down]"
+    ;;
+esac
