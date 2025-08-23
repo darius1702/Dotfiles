@@ -1,43 +1,46 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
-max=`brightnessctl max`
-
-last_id=0
 last_id_file="/tmp/last_notification_id"
 
-reset_last_id_file () {
-    echo 0 > $last_id_file
-    echo 0
+get_last_id() {
+    [[ -f "$last_id_file" ]] && cat "$last_id_file" || echo 0
 }
 
-get_last_id () {
-    echo $([ -f $last_id_file ] && cat $last_id_file || reset_last_id_file)
+save_last_id() {
+    echo "$1" > "$last_id_file"
 }
+
+max_brightness=$(brightnessctl max)
 
 current_brightness () {
-    cur=`brightnessctl get`
-    percent=`echo "scale=2;$cur / $max * 100" | bc | sed "s/\.00//"`
-    echo "$percent%"
+    local cur
+    cur=$(brightnessctl get)
+    awk -v cur="$cur" \
+        -v max="$max_brightness" \
+        'BEGIN { printf("%d\n", (cur / max) * 100) }'
 }
 
-notify_brightness () {
-    notify-send "Brightness $1" \
-                $(current_brightness) \
-                -r $(get_last_id) \
-                -p > "$last_id_file"
+notify_brightness() {
+    local id
+    id=$(notify-send "Brightness: $(current_brightness)%" \
+                     -h int:value:"$(current_brightness)" \
+                     -h string:synchronous:brightness \
+                     -r $(get_last_id) \
+                     -p)
+    save_last_id "$id"
 }
 
 case "$1" in
     up)
         brightnessctl s 2000+
-        notify_brightness "increased"
-    ;;
+        notify_brightness
+        ;;
     down)
         brightnessctl s 2000-
-        notify_brightness "decreased"
-    ;;
+        notify_brightness
+        ;;
     *)
-        echo "Usage:"
-        echo "    $0 [up/down]"
-    ;;
+        echo "USAGE:"
+        echo "  $0 [up/down]"
+        ;;
 esac

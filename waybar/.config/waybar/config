@@ -48,8 +48,8 @@
   },
 
   "wireplumber": {
-    "format": "󰕾 {volume}%",
-    "format-muted": "󰖁 {volume}%",
+    "format": "󰕾  {volume}%",
+    "format-muted": "󰖁  {volume}%",
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
     "on-click-right": "pwvucontrol",
     "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+",
