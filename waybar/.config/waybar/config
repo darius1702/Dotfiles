@@ -94,5 +94,8 @@
 
   "tray": {
     "spacing": 15,
+    "icons": {
+        "indicator-solaar": "input-mouse-symbolic",
+    }
   },
 }
