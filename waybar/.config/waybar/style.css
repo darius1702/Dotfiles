@@ -20,8 +20,7 @@ window#waybar {
   font-family: Iosevka Aile, FontAwesome;
   font-size: 16px;
   font-weight: 500;
-  /* background: linear-gradient(180deg, rgba(0, 0, 0, 0), @bg); */
-  background: @bg;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0), @bg);
   color: @fg;
   transition: 0.1s
 }

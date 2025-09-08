@@ -14,7 +14,7 @@ stow zathura
 stow hyprland
 stow foot
 stow waybar
-stow mako
+stow fnott
 stow iwgtk
 stow rofi       # rofi-wayland package on Arch
 stow satty
