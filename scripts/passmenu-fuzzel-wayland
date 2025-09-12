@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# https://github.com/alpacathunder1/passmenu-rofi-wayland
+# based on https://github.com/alpacathunder1/passmenu-rofi-wayland
 
 shopt -s nullglob globstar
 
@@ -15,7 +15,7 @@ password_files=( "$prefix"/**/*.gpg )
 password_files=( "${password_files[@]#"$prefix"/}" )
 password_files=( "${password_files[@]%.gpg}" )
 
-password=$(printf '%s\n' "${password_files[@]}" | rofi -dmenu -p password "$@")
+password=$(printf '%s\n' "${password_files[@]}" | fuzzel -d -p " " "$@")
 
 [[ -n $password ]] || exit
 

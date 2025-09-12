@@ -3,7 +3,8 @@
 
 [colors]
 foreground=cdd6f4
-background=1e1e2e
+# background=1e1e2e
+background=1c1c1c
 
 regular0=45475a
 regular1=f38ba8

@@ -1,9 +1,6 @@
 #!/bin/sh
 set -xe
 
-# Rofi themes will stow to here
-mkdir -p ~/.local/share/rofi/themes/
-
 ### Misc ###
 stow gitconfig
 stow nvim
@@ -12,12 +9,14 @@ stow zathura
 
 ### Wayland ###
 stow hyprland
-stow foot
 stow waybar
-stow fnott
 stow iwgtk
-stow rofi       # rofi-wayland package on Arch
 stow satty
+
+# dnkl stack
+stow foot
+stow fnott
+stow fuzzel
 
 stow systemd
 systemctl --user daemon-reload
