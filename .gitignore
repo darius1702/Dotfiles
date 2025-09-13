@@ -1,2 +1,3 @@
 .DS_Store
 systemd/.config/systemd/user/default.target.wants/
+zsh/zsh-autosuggestions/
