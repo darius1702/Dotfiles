@@ -2,11 +2,11 @@
   "height": 0,
   "layer": "bottom",
   "position": "bottom",
-  "spacing": 10,
+  "spacing": 5,
   // "modules-left": ["hyprland/workspaces", "wlr/taskbar"],
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["clock"],
-  "modules-right": ["group/media", "battery", "network", "tray"],
+  "modules-right": ["network", "tray", "group/media", "battery"],
 
   "hyprland/workspaces": {
     "persistent-workspaces": {

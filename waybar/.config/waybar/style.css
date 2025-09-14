@@ -13,16 +13,16 @@
 
 * {
   min-height: 0;
+  transition: 0.1s
 }
 
 window#waybar {
   padding: 0;
-  font-family: Iosevka Aile, FontAwesome;
+  font-family: Inter, FontAwesome;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0), @bg);
   color: @fg;
-  transition: 0.1s
 }
 
 #network,
@@ -30,13 +30,11 @@ window#waybar {
 #backlight,
 #clock,
 #clock-date,
-#pulseaudio,
 #wireplumber,
 #mpris,
 #disk,
 #network,
-#battery,
-#tray {
+#battery {
   padding-left: 8px;
   padding-right: 8px;
   padding-top: 2px; /* centered vertically */
@@ -50,7 +48,6 @@ window#waybar {
   color: @active;
   background: @active-bg;
   border-radius: 5px;
-  transition: 0.1s;
 }
 
 #taskbar {
@@ -93,7 +90,6 @@ window#waybar {
   text-shadow: none;
   border-color: transparent;
   background: none;
-  font-weight: 900;
 }
 
 #workspaces button.empty {
@@ -107,13 +103,11 @@ window#waybar {
 
 #workspaces button.active {
   color: @active;
-  font-weight: 900;
   background: @active-bg;
 }
 
 #workspaces button.active:hover {
   color: @active;
-  font-weight: 900;
   background: @active-bg;
 }
 
@@ -150,8 +144,7 @@ window#waybar {
 }
 
 #tray {
-  padding-left: 0;
-  font-family: Noto Sans;
+  padding: 2px 5px 0 3px;
 }
 
 #tray menu {
