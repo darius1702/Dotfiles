@@ -18,7 +18,7 @@
 
 window#waybar {
   padding: 0;
-  font-family: Inter, FontAwesome;
+  font-family: Iosevka Aile, FontAwesome;
   font-size: 16px;
   font-weight: 400;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0), @bg);
@@ -39,6 +39,10 @@ window#waybar {
   padding-right: 8px;
   padding-top: 2px; /* centered vertically */
   color: @fg;
+}
+
+#network {
+  padding-right: 15px;
 }
 
 #network:hover,
@@ -144,7 +148,9 @@ window#waybar {
 }
 
 #tray {
-  padding: 2px 5px 0 3px;
+  padding-top: 2px;
+  padding-right: 8px;
+  font-family: Inter;
 }
 
 #tray menu {
