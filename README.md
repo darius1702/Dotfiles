@@ -3,5 +3,4 @@
 ![screenshot](./screenshot.png)
 ./install.sh requires [GNU Stow](https://www.gnu.org/software/stow/)
 
-Rofi theme adapted from the [rofi-themes-collection](https://github.com/newmanls/rofi-themes-collection).
 I can't remember where the wallpaper is from :c
