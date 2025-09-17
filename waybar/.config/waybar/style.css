@@ -18,7 +18,7 @@
 
 window#waybar {
   padding: 0;
-  font-family: Iosevka Aile, FontAwesome;
+  font-family: Inter;
   font-size: 16px;
   font-weight: 400;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0), @bg);
