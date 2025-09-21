@@ -4,12 +4,13 @@
 --  /_/_/ /_/_/\__(_)_/\__,_/\__,_/
 
 vim.g.mapleader = " "
-vim.o.termguicolors = true
+vim.o.termguicolors = false
 
 -- transparent background
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
+
 
 vim.cmd([[set spelllang=en_us]])
 local settings = {
@@ -90,20 +91,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 1000,
-    config = function()
-      require("catppuccin").setup({
-        flavour = "mocha",
-        transparent_background = true,
-        no_italic = true,
-        no_underline = true,
-      })
-      vim.cmd.colorscheme "catppuccin"
-    end,
-  },
 
   { 'windwp/nvim-autopairs', config = true },
   { 'kylechui/nvim-surround', config = true },

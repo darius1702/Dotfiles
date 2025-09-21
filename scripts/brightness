@@ -32,11 +32,11 @@ notify_brightness() {
 
 case "$1" in
     up)
-        brightnessctl s 2000+
+        brightnessctl s 200+
         notify_brightness
         ;;
     down)
-        brightnessctl s 2000-
+        brightnessctl s 200-
         notify_brightness
         ;;
     *)

@@ -3,53 +3,25 @@
   "layer": "bottom",
   "position": "bottom",
   "spacing": 5,
-  // "modules-left": ["hyprland/workspaces", "wlr/taskbar"],
-  "modules-left": ["hyprland/workspaces"],
-  "modules-center": ["clock"],
-  "modules-right": ["group/media", "battery", "network", "tray"],
+  "modules-left": ["custom/logo", "wlr/taskbar"],
+  "modules-right": ["memory", "wireplumber", "backlight", "battery", "network", "hyprland/workspaces", "clock"],
 
-  "hyprland/workspaces": {
-    "persistent-workspaces": {
-      "DP-1": [ 1, 2, 3, 4 ],
-      "HDMI-A-1": [ 5, 6, 7 ],
-      "eDP-1": [ 8, 9, 10 ],
-    },
+  "custom/logo": {
+    "format" : "> Start",
+    "tooltip": false,
+    "on-click": "fuzzel",
   },
 
   "wlr/taskbar": {
-    "format": "{icon} {title:.25}",
+    "format": "{icon} {title:.20}",
+    "icon-size": 15,
+    "tooltip": false,
     "on-click": "activate",
   },
 
-  "group/media": {
-    "orientation": "horizontal",
-    "drawer": {
-      "transition-duration": 400,
-      "transition-left-to-right": false,
-    },
-    "modules": [
-      "wireplumber",
-      "mpris"
-    ]
-  },
-
-  "mpris": {
-    "format": "{status_icon}  {artist} - {title:.25}",
-    "status-icons": {
-	  "paused": "󰐊",
-	  "playing": "󰏤",
-	},
-    "format-stopped" : "",
-    "on-click-right" : "",
-    "on-click-middle" : "",
-    "on-scroll-up" : "",
-    "on-scroll-down" : "",
-    "tooltip" : false
-  },
-
   "wireplumber": {
-    "format": "󰕾  {volume}%",
-    "format-muted": "󰖁  {volume}%",
+    "format": "V:{volume}%",
+    "format-muted": "M:{volume}%",
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
     "on-click-right": "pwvucontrol",
     "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+",
@@ -58,9 +30,14 @@
   },
 
   "backlight": {
-    "format": " {percent}%",
-    "on-scroll-up": "brightnessctl set 1000+",
-    "on-scroll-down": "brightnessctl set 1000-",
+    "format": "B:{percent}%",
+    "on-scroll-up": "brightnessctl set 50+",
+    "on-scroll-down": "brightnessctl set 50-",
+    "tooltip": false,
+  },
+
+  "memory": {
+    "format": "{used}/{total}G [{percentage}%]",
     "tooltip": false,
   },
 
@@ -69,7 +46,7 @@
     "format-ethernet": "",
     "format-disconnected": "󰤫",
     "format-disabled": "󰤮",
-    "tooltip-format": "{ipaddr}",
+    "tooltip": false,
     "on-click": "iwgtk",
   },
 
@@ -81,21 +58,18 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "{icon} {capacity}%",
+    "format": "P:{capacity}%",
     "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
     "format-charging": "󰂄 {capacity}%",
     "tooltip": false,
   },
 
   "clock": {
-    "format": "{:%a %d.%m. %H:%M}",
+    "format": "{:%m/%d %H:%M}",
     "tooltip": false,
   },
 
   "tray": {
     "spacing": 10,
-    "icons": {
-        "indicator-solaar": "solaar-init",
-    }
   },
 }

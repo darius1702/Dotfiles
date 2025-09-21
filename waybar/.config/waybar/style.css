@@ -1,10 +1,9 @@
-@define-color bg                rgba(0, 0, 0, 0.3);
-@define-color fg                #c1c1c1;
+@define-color fg                #000000;
+@define-color disabled          #505050;
+@define-color urgent            #fa4323;
 
-@define-color disabled          #9a9aac;
-@define-color active            #e1e1e1;
-@define-color active-bg         rgba(200, 200, 200, 0.25);
-@define-color active-bg-lighter rgba(200, 200, 200, 0.2);
+@define-color bg                #c0c0c0;
+@define-color bg-active         #b3b3b3;
 
 @define-color good-bg           rgba(69, 255, 80, 0.25);
 @define-color alert-bg          rgba(255, 40, 40, 0.35);
@@ -12,69 +11,98 @@
 
 
 * {
+  all: unset;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  margin: 0;
+  transition: none;
   min-height: 0;
-  transition: 0.1s
 }
 
 window#waybar {
   padding: 0;
-  font-family: Inter;
-  font-size: 16px;
+  font-family: BigBlueTermPlus Nerd Font Mono;
+  font-size: 12px;
   font-weight: 400;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0), @bg);
+  background-color: @bg;
   color: @fg;
 }
 
-#network,
-#memory,
-#backlight,
-#clock,
-#clock-date,
-#wireplumber,
-#mpris,
-#disk,
-#network,
-#battery {
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 2px; /* centered vertically */
-  color: @fg;
+#custom-logo {
+  padding: 1px 5px 1px 3px;
+  margin: 2px 0 2px 4px;
+  border-bottom: 1px solid #313131;
+  border-left: 1px solid #ffffff;
+  border-top: 1px solid #ffffff;
+  border-right: 1px solid #313131;
+
 }
 
-#network {
-  padding-right: 15px;
-}
-
-#network:hover,
-#backlight:hover,
-#wireplumber:hover,
-#mpris:hover {
-  color: @active;
-  background: @active-bg;
-  border-radius: 5px;
-}
-
-#taskbar {
-  color: @disabled;
+#custom-logo:hover {
+  background-color: @bg-active;
+  border-top: 1px solid #313131;
+  border-right: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  border-left: 1px solid #313131;
 }
 
 #taskbar button {
-  all: unset; /* annoying default sytles */
-  padding: 1px 10px 0px 6px;
-  transition: 0.1s;
-  margin-right: 10px;
+  padding: 1px 4px 1px 2px;
+  margin: 2px 5px 2px 5px;
+  border: 1px solid #c0c0c0;
+  border-bottom: 1px solid #313131;
+  border-left: 1px solid #ffffff;
+  border-top: 1px solid #ffffff;
+  border-right: 1px solid #313131;
 }
 
 #taskbar button.active {
-  color: @active;
-  background: @active-bg;
-  border-radius: 5px;
+  background-color: @bg-active;
+  border-top: 1px solid #313131;
+  border-right: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  border-left: 1px solid #313131;
 }
 
 #taskbar button:hover {
-  color: @active;
-  /* background: @active-bg-lighter; */
-  border-radius: 5px;
+  background-color: @bg-active;
+  border-top: 1px solid #313131;
+  border-right: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  border-left: 1px solid #313131;
+}
+
+#wireplumber,
+#memory,
+#backlight,
+#battery,
+#clock {
+  margin: 2px;
+  margin-right: 3px;
+  padding: 1px 4px 1px 4px;
+  border-top: 1px solid #313131;
+  border-right: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  border-left: 1px solid #313131;
+}
+
+#network {
+  margin: 2px;
+  padding: 1px 5px 1px 5px;
+  font-size: 13pt;
+  border-bottom: 1px solid #313131;
+  border-left: 1px solid #ffffff;
+  border-top: 1px solid #ffffff;
+  border-right: 1px solid #313131;
+}
+
+#network:hover {
+  background-color: @bg-active;
+  border-top: 1px solid #313131;
+  border-right: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  border-left: 1px solid #313131;
 }
 
 #wireplumber.muted {
@@ -82,41 +110,32 @@ window#waybar {
 }
 
 #workspaces button {
-  border-radius: 5px;
-  padding: 2px 4px 1px 4px;
-  color: @active;
-  transition: 0.1s;
-}
-
-#workspaces button:hover {
-  color: @active;
-  box-shadow: none;
-  text-shadow: none;
-  border-color: transparent;
-  background: none;
-}
-
-#workspaces button.empty {
-  color: @disabled;
-}
-
-#workspaces button.visible {
-  color: @active;
-  background: @active-bg-lighter;
+  margin: 2px;
+  padding: 1px 5px 1px 5px;
+  border-bottom: 1px solid #313131;
+  border-left: 1px solid #ffffff;
+  border-top: 1px solid #ffffff;
+  border-right: 1px solid #313131;
 }
 
 #workspaces button.active {
-  color: @active;
-  background: @active-bg;
+  background-color: @bg-active;
+  border-top: 1px solid #313131;
+  border-right: 1px solid @bg-active;
+  border-bottom: 1px solid @bg-active;
+  border-left: 1px solid #313131;
 }
 
-#workspaces button.active:hover {
-  color: @active;
-  background: @active-bg;
+#workspaces button:hover {
+  background-color: @bg-active;
+  border-top: 1px solid #313131;
+  border-right: 1px solid @bg-active;
+  border-bottom: 1px solid @bg-active;
+  border-left: 1px solid #313131;
 }
 
 #workspaces button.urgent {
-  color: @active;
+  color: @urgent;
 }
 
 #network.disconnected {
@@ -126,34 +145,20 @@ window#waybar {
 #network.disabled {
   color: @disabled;
   background: @alert-bg;
-  border-radius: 5px;
 }
 
 #battery.warning {
-  color: @active;
+  color: @fg;
   background: @warning-bg;
-  border-radius: 5px;
 }
 
 #battery.critical {
-  color: @active;
+  color: @fg;
   background: @alert-bg;
-  border-radius: 5px;
 }
 
 #battery.charging {
-  color: @active;
+  color: @fg;
   background: @good-bg;
-  border-radius: 5px;
-}
 
-#tray {
-  padding-top: 2px;
-  padding-right: 8px;
-  font-family: Inter;
-}
-
-#tray menu {
-  font-size: 13px;
-  font-weight: 400;
 }

@@ -43,7 +43,7 @@ precmd() {
 
 # Prompt
 # DIR=$'%B%F{yellow}%~%b%f'
-DIR=$'%B%F{yellow}%~%b%f'
+DIR=$'%B%F{red}[%m] %F{yellow}%~%b%f'
 # CHAR=$'%(?..%b%F{yellow}%? )%B%F{fg}->%f%b'
 CHAR=$'%B%F{fg}>%f%b'
 PROMPT=$'${DIR}${vcs_info_msg_0_}%b%6(~.\n. )${CHAR} '
