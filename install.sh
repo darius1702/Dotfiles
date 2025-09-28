@@ -12,6 +12,7 @@ stow hyprland
 stow waybar
 stow iwgtk
 stow satty
+stow syshud
 
 # dnkl stack
 stow foot

@@ -46,4 +46,4 @@ alias is="icecream-sundae -s 192.168.2.51"
 alias fzivpn="sudo openvpn /etc/openvpn/client/fzi.ovpn"
 alias kitvpn="sudo openvpn /etc/openvpn/client/kit.ovpn"
 
-[ -d "$HOME/Dotfiles/zsh/zsh-autosuggestions/" ] && source $HOME/Dotfiles/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+[ -d "$HOME/Dotfiles/zsh/.config/zsh/zsh-autosuggestions/" ] && source $HOME/Dotfiles/zsh/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh

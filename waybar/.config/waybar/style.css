@@ -4,76 +4,61 @@
 @define-color disabled          #9a9aac;
 @define-color active            #e1e1e1;
 @define-color active-bg         rgba(200, 200, 200, 0.25);
-@define-color active-bg-lighter rgba(200, 200, 200, 0.2);
+@define-color active-bg-lighter rgba(200, 200, 200, 0.15);
 
-@define-color good-bg           rgba(69, 255, 80, 0.25);
 @define-color alert-bg          rgba(255, 40, 40, 0.35);
-@define-color warning-bg        rgba(240, 240, 80, 0.3);
 
 
 * {
   min-height: 0;
-  transition: 0.1s
 }
 
 window#waybar {
   padding: 0;
-  font-family: Inter;
+  font-family: IBM Plex Sans;
   font-size: 16px;
   font-weight: 400;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0), @bg);
   color: @fg;
 }
 
+/* use GTK theme for tooltip styling */
+tooltip {
+  background-color: @theme_bg_color;
+  border-radius: 2px;
+}
+
+tooltip label {
+  color: @theme_fg_color;
+}
+
 #network,
-#memory,
 #backlight,
 #clock,
-#clock-date,
 #wireplumber,
-#mpris,
-#disk,
-#network,
-#battery {
+#mpris {
   padding-left: 8px;
   padding-right: 8px;
   padding-top: 2px; /* centered vertically */
   color: @fg;
+  transition: 0.1s
+}
+
+#wireplumber {
+  padding-right: 12px;
 }
 
 #network {
   padding-right: 15px;
 }
 
+tray:hover,
 #network:hover,
 #backlight:hover,
 #wireplumber:hover,
 #mpris:hover {
   color: @active;
   background: @active-bg;
-  border-radius: 5px;
-}
-
-#taskbar {
-  color: @disabled;
-}
-
-#taskbar button {
-  all: unset; /* annoying default sytles */
-  padding: 1px 10px 0px 6px;
-  transition: 0.1s;
-  margin-right: 10px;
-}
-
-#taskbar button.active {
-  color: @active;
-  background: @active-bg;
-  border-radius: 5px;
-}
-
-#taskbar button:hover {
-  color: @active;
-  /* background: @active-bg-lighter; */
   border-radius: 5px;
 }
 
@@ -110,13 +95,9 @@ window#waybar {
   background: @active-bg;
 }
 
-#workspaces button.active:hover {
-  color: @active;
-  background: @active-bg;
-}
-
 #workspaces button.urgent {
   color: @active;
+  background-color: @alert-bg;
 }
 
 #network.disconnected {
@@ -129,31 +110,129 @@ window#waybar {
   border-radius: 5px;
 }
 
-#battery.warning {
-  color: @active;
-  background: @warning-bg;
-  border-radius: 5px;
-}
-
-#battery.critical {
-  color: @active;
-  background: @alert-bg;
-  border-radius: 5px;
-}
-
-#battery.charging {
-  color: @active;
-  background: @good-bg;
-  border-radius: 5px;
-}
-
 #tray {
+  margin-left: 7px;
+  margin-right: 10px;
   padding-top: 2px;
-  padding-right: 8px;
-  font-family: Inter;
 }
 
 #tray menu {
   font-size: 13px;
   font-weight: 400;
+}
+
+/* catppuccin strikes again */
+@define-color battery-fg rgba(239, 241, 245, 0.8);
+@define-color battery-charging-fg rgba(150, 255, 150, 0.9); /* except for this one */
+
+@define-color battery-bar rgba(239, 241, 245, 0.3);
+@define-color battery-charging-bar rgba(64, 160, 43, 0.8);
+@define-color battery-warning-bar rgba(223, 142, 29, 0.7);
+@define-color battery-alert-bar rgba(210, 15, 57, 0.8);
+
+@define-color battery-bg rgba(239, 241, 245, 0.1);
+@define-color battery-charging-bg rgba(64, 160, 43, 0.3);
+@define-color battery-warning-bg rgba(223, 142, 29, 0.3);
+@define-color battery-alert-bg rgba(210, 15, 57, 0.4);
+
+#battery {
+  color: @battery-fg;
+  font-weight: 500;
+  min-width: 29px;
+  margin-right: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 10px;
+}
+
+#battery.charging {
+  color: @battery-charging-fg;
+}
+
+#battery.100 {
+  background: @battery-bar;
+}
+
+#battery.charging.100 {
+  background: @battery-charging-bar;
+}
+
+#battery.90 {
+  background: linear-gradient(90deg, @battery-bar 90%, @battery-bg 90%);
+}
+
+#battery.charging.90 {
+  background: linear-gradient(90deg, @battery-charging-bar 90%, @battery-charging-bg 90%);
+}
+
+#battery.80 {
+  background: linear-gradient(90deg, @battery-bar 80%, @battery-bg 80%);
+}
+
+#battery.charging.80 {
+  background: linear-gradient(90deg, @battery-charging-bar 80%, @battery-charging-bg 80%);
+}
+
+#battery.70 {
+  background: linear-gradient(90deg, @battery-bar 70%, @battery-bg 70%);
+}
+
+#battery.charging.70 {
+  background: linear-gradient(90deg, @battery-charging-bar 70%, @battery-charging-bg 70%);
+}
+
+#battery.60 {
+  background: linear-gradient(90deg, @battery-bar 60%, @battery-bg 60%);
+}
+
+#battery.charging.60 {
+  background: linear-gradient(90deg, @battery-charging-bar 60%, @battery-charging-bg 60%);
+}
+
+#battery.50 {
+  background: linear-gradient(90deg, @battery-bar 50%, @battery-bg 50%);
+}
+
+#battery.charging.50 {
+  background: linear-gradient(90deg, @battery-charging-bar 50%, @battery-charging-bg 50%);
+}
+
+#battery.40 {
+  background: linear-gradient(90deg, @battery-bar 40%, @battery-bg 40%);
+}
+
+#battery.charging.40 {
+  background: linear-gradient(90deg, @battery-charging-bar 40%, @battery-charging-bg 40%);
+}
+
+#battery.30 {
+  background: linear-gradient(90deg, @battery-warning-bar 30%, @battery-warning-bg 30%);
+}
+
+#battery.charging.30 {
+  background: linear-gradient(90deg, @battery-charging-bar 30%, @battery-charging-bg 30%);
+}
+
+#battery.20 {
+  background: linear-gradient(90deg, @battery-warning-bar 20%, @battery-warning-bg 20%);
+}
+
+#battery.charging.20 {
+  background: linear-gradient(90deg, @battery-charging-bar 20%, @battery-charging-bg 20%);
+}
+
+#battery.15 {
+  background: linear-gradient(90deg, @battery-alert-bar 15%, @battery-alert-bg 15%);
+}
+
+#battery.charging.15 {
+  background: linear-gradient(90deg, @battery-charging-bar 15%, @battery-charging-bg 15%);
+}
+
+#battery.10 {
+  background: linear-gradient(90deg, @battery-alert-bar 10%, @battery-alert-bg 10%);
+}
+
+#battery.charging.10 {
+  background: linear-gradient(90deg, @battery-charging-bar 10%, @battery-charging-bg 10%);
 }
