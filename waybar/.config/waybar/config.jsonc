@@ -6,7 +6,7 @@
   // "modules-left": ["hyprland/workspaces", "wlr/taskbar"],
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["clock"],
-  "modules-right": ["group/media", "network", "tray", "battery"],
+  "modules-right": ["group/media", "bluetooth", "network", "battery"],
 
   "hyprland/workspaces": {
     "persistent-workspaces": {
@@ -14,11 +14,6 @@
       "HDMI-A-1": [ 5, 6, 7 ],
       "eDP-1": [ 8, 9, 10 ],
     },
-  },
-
-  "wlr/taskbar": {
-    "format": "{icon} {title:.25}",
-    "on-click": "activate",
   },
 
   "group/media": {
@@ -73,6 +68,18 @@
     "on-click": "iwgtk",
   },
 
+  "bluetooth": {
+    "format-on": "󰂯",
+    "format-connected": "󰂯",
+    "format-off": "󰂲",
+    "format-no-controller": "󰂲",
+    "format-disabled": "󰂲",
+    "on-click": "blueman-manager",
+    "tooltip": true,
+    "tooltip-format-connected": "{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias} connected",
+  },
+
   "battery": {
     "bat": "BAT0",
     "adapter": "ADP0",
@@ -91,7 +98,6 @@
       "10": 10
     },
     "format": "{capacity}",
-    "format-charging": "{capacity}",
     "tooltip": false,
   },
 
