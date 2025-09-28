@@ -3,7 +3,6 @@
   "layer": "bottom",
   "position": "bottom",
   "spacing": 5,
-  // "modules-left": ["hyprland/workspaces", "wlr/taskbar"],
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["clock"],
   "modules-right": ["group/media", "bluetooth", "network", "battery"],
@@ -98,6 +97,8 @@
       "10": 10
     },
     "format": "{capacity}",
+    "format-charging": "{capacity}󱐋",
+    "format-full": "󱐋",
     "tooltip": false,
   },
 
