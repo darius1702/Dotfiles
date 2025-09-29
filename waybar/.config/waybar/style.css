@@ -2,9 +2,8 @@
 @define-color fg                #c1c1c1;
 
 @define-color disabled          #9a9aac;
-@define-color active            #e1e1e1;
-@define-color active-bg         rgba(200, 200, 200, 0.25);
-@define-color active-bg-lighter rgba(200, 200, 200, 0.15);
+@define-color active            #f0f0f0;
+@define-color active-bg rgba(200, 200, 200, 0.15);
 
 @define-color alert-bg          rgba(255, 40, 40, 0.35);
 
@@ -15,7 +14,7 @@
 
 window#waybar {
   font-family: IBM Plex Sans;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 400;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0), @bg);
   color: @fg;
@@ -38,28 +37,26 @@ tooltip label {
 #clock,
 #wireplumber,
 #mpris {
-  padding-left: 8px;
+  margin: 0;
+  margin-bottom: 3px;
+  padding-left: 7px;
   padding-right: 8px;
   color: @fg;
-  transition: 0.1s
+  transition: 0.1s;
+  border-radius: 5px;
 }
 
 #bluetooth {
+  color: @fg;
   padding-right: 9px;
   margin-right: 3px;
   margin-left: 3px;
 }
 
-#bluetooth.discovering {
+#bluetooth.discovering.on {
   color: rgb(90, 150, 250);
-  background-color: @active-bg-lighter;
+  background-color: @active-bg;
   border-radius: 5px;
-}
-
-#bluetooth.on, /* on but not connected */
-#bluetooth.off,
-#bluetooth.disabled {
-  color: @disabled;
 }
 
 #mpris {
@@ -71,68 +68,57 @@ tooltip label {
   padding-right: 10px;
 }
 
-#wireplumber.muted {
-  color: @disabled;
-}
-
 #network {
-  margin-right: 4px;
-  padding-right: 13px;
+  margin-right: 6px;
+  padding-right: 12px;
   padding-left: 6px;
 }
 
-#network.disconnected {
-  color: @disabled;
-}
-
 #network.disabled {
-  color: @disabled;
   background: @alert-bg;
   border-radius: 5px;
 }
 
+#bluetooth.on, /* on but not connected */
+#bluetooth.off,
+#bluetooth.disabled,
+#network.disconnected,
+#wireplumber.muted {
+  color: @disabled;
+}
+
+#clock:hover,
 #network:hover,
 #bluetooth:hover,
 #backlight:hover,
 #wireplumber:hover,
 #mpris:hover {
   color: @active;
-  background: @active-bg;
-  border-radius: 5px;
 }
 
 #workspaces button {
+  all: unset;
+  margin: 3px 2px;
+  margin-top: 0;
+  color: @disabled;
   border-radius: 5px;
-  padding: 1px 4px 1px 4px;
-  color: @active;
+  padding: 0px 7px 0px 7px;
   transition: 0.1s;
 }
 
-#workspaces button:hover {
-  color: @active;
-  box-shadow: none;
-  text-shadow: none;
-  border-color: transparent;
-  background: none;
-}
-
-#workspaces button.empty {
-  color: @disabled;
-}
-
-#workspaces button.visible {
-  color: @active;
-  background: @active-bg-lighter;
-}
-
+#workspaces button:hover,
+#workspaces button.visible,
 #workspaces button.active {
   color: @active;
-  background: @active-bg;
 }
 
 #workspaces button.urgent {
-  color: @active;
   background-color: @alert-bg;
+}
+
+#tray {
+  all: unset;
+  margin-right: 10px;
 }
 
 /* catppuccin strikes again */
@@ -140,7 +126,7 @@ tooltip label {
 @define-color battery-charging-fg rgba(150, 255, 150, 0.9); /* except for this one */
 
 @define-color battery-bar rgba(239, 241, 245, 0.3);
-@define-color battery-charging-bar rgba(64, 160, 43, 0.8);
+@define-color battery-charging-bar rgba(64, 160, 43, 0.7);
 @define-color battery-warning-bar rgba(223, 142, 29, 0.7);
 @define-color battery-alert-bar rgba(210, 15, 57, 0.8);
 
@@ -150,13 +136,19 @@ tooltip label {
 @define-color battery-alert-bg rgba(210, 15, 57, 0.4);
 
 #battery {
+  padding-top: 0;
+  padding-bottom: 1px;
+  margin-top: 0;
+  margin-bottom: 4px;
+  font-weight: 600;
+  font-size: 14px;
   color: @battery-fg;
-  font-weight: 500;
-  min-width: 31px;
+  min-width: 25px;
   margin-right: 5px;
   padding-left: 5px;
   padding-right: 5px;
-  border-radius: 10px;
+  border-radius: 9px;
+  transition: 0.1s;
 }
 
 #battery.charging {

@@ -2,10 +2,10 @@
   "height": 0,
   "layer": "bottom",
   "position": "bottom",
-  "spacing": 5,
+  "spacing": 0,
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["clock"],
-  "modules-right": ["group/media", "bluetooth", "network", "battery"],
+  "modules-right": ["group/media", "bluetooth", "network", "group/tray"],
 
   "hyprland/workspaces": {
     "persistent-workspaces": {
@@ -15,10 +15,22 @@
     },
   },
 
+  "group/tray": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 250,
+      "transition-left-to-right": false,
+    },
+    "modules": [
+      "battery",
+      "tray"
+    ]
+  },
+
   "group/media": {
     "orientation": "horizontal",
     "drawer": {
-      "transition-duration": 400,
+      "transition-duration": 250,
       "transition-left-to-right": false,
     },
     "modules": [
@@ -104,11 +116,13 @@
 
   "clock": {
     "format": "{:%a %d.%m. %H:%M}",
+    "on-click": "emacs $HOME/Notes/index.org",
     "tooltip": false,
   },
 
   "tray": {
-    "spacing": 17,
+    "icon-size": 15,
+    "spacing": 10,
     "icons": {
         "indicator-solaar": "solaar-init",
     }
