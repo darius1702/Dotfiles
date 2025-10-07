@@ -1,11 +1,11 @@
 @define-color bg                rgba(0, 0, 0, 0.3);
 @define-color fg                #c1c1c1;
 
-@define-color disabled          #9a9aac;
+@define-color disabled          #8a8a9c;
 @define-color active            #f0f0f0;
 @define-color active-bg rgba(200, 200, 200, 0.15);
 
-@define-color alert-bg          rgba(255, 40, 40, 0.35);
+@define-color alert-bg rgba(255, 40, 40, 0.35);
 
 
 * {
@@ -30,7 +30,6 @@ tooltip label {
   color: @theme_fg_color;
 }
 
-/* TODO the padding and margin stuff here is ugly */
 #network,
 #bluetooth,
 #backlight,
@@ -38,7 +37,6 @@ tooltip label {
 #wireplumber,
 #mpris {
   margin: 0;
-  margin-bottom: 3px;
   padding-left: 7px;
   padding-right: 8px;
   color: @fg;
@@ -69,7 +67,7 @@ tooltip label {
 }
 
 #network {
-  margin-right: 6px;
+  margin-right: 8px;
   padding-right: 12px;
   padding-left: 6px;
 }
@@ -98,12 +96,16 @@ tooltip label {
 
 #workspaces button {
   all: unset;
-  margin: 3px 2px;
+  margin: 0 2px;
   margin-top: 0;
-  color: @disabled;
+  color: @fg;
   border-radius: 5px;
   padding: 0px 7px 0px 7px;
   transition: 0.1s;
+}
+
+#workspaces button.empty {
+  color: @disabled;
 }
 
 #workspaces button:hover,
@@ -136,10 +138,10 @@ tooltip label {
 @define-color battery-alert-bg rgba(210, 15, 57, 0.4);
 
 #battery {
-  padding-top: 0;
+  padding-top: 1px;
   padding-bottom: 1px;
-  margin-top: 0;
-  margin-bottom: 4px;
+  margin-top: 2px;
+  margin-bottom: 3px;
   font-weight: 600;
   font-size: 14px;
   color: @battery-fg;

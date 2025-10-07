@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -xeu
+
+# NOTE this needs to be run with sudo to write to /etc/
+reflector --country Germany --protocol https --sort rate --latest 15 --save /etc/pacman.d/mirrorlist

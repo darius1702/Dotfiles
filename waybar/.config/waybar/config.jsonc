@@ -60,7 +60,7 @@
     "on-click-right": "pwvucontrol",
     "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+ -l 1.2",
     "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%- -l 1.2",
-    "tooltip-format": "{node_name} - {volume}%",
+    "tooltip-format": "{volume}%\n{node_name}",
   },
 
   "backlight": {
@@ -75,7 +75,7 @@
     "format-ethernet": "",
     "format-disconnected": "󰤫",
     "format-disabled": "󰤮",
-    "tooltip-format": "{ipaddr}",
+    "tooltip-format": "{ipaddr}\n{essid}",
     "on-click": "iwgtk",
   },
 
@@ -123,8 +123,5 @@
   "tray": {
     "icon-size": 15,
     "spacing": 10,
-    "icons": {
-        "indicator-solaar": "solaar-init",
-    }
   },
 }
