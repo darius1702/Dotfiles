@@ -5,7 +5,7 @@
   "spacing": 0,
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["clock"],
-  "modules-right": ["group/media", "bluetooth", "network", "group/tray"],
+  "modules-right": ["group/media", "network", "group/tray"],
 
   "hyprland/workspaces": {
     "persistent-workspaces": {
@@ -115,7 +115,7 @@
   },
 
   "clock": {
-    "format": "{:%a %d.%m. %H:%M}",
+    "format": "{:%H:%M  %a %d.%m.}",
     "on-click": "emacs $HOME/Notes/index.org",
     "tooltip": false,
   },

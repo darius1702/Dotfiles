@@ -13,10 +13,11 @@
 }
 
 window#waybar {
-  font-family: IBM Plex Sans;
+  font-family: SF Pro Text;
   font-size: 15px;
-  font-weight: 400;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0), @bg);
+  font-weight: 500;
+  /* background: linear-gradient(180deg, rgba(0, 0, 0, 0), @bg); */
+  background: none;
   color: @fg;
 }
 

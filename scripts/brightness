@@ -1,15 +1,5 @@
 #!/usr/bin/env bash
 
-last_id_file="/tmp/last_notification_id"
-
-get_last_id() {
-    [[ -f "$last_id_file" ]] && cat "$last_id_file" || echo 0
-}
-
-save_last_id() {
-    echo "$1" > "$last_id_file"
-}
-
 max_brightness=$(brightnessctl max)
 
 current_brightness () {
@@ -20,14 +10,12 @@ current_brightness () {
         'BEGIN { printf("%d\n", (cur / max) * 100) }'
 }
 
+# string:x-canonical-private-synchronous:osd makes repeated notifications replace each other
 notify_brightness() {
-    local id
-    id=$(notify-send "Brightness: $(current_brightness)%" \
-                     -h int:value:"$(current_brightness)" \
-                     -h string:synchronous:brightness \
-                     -r $(get_last_id) \
-                     -p)
-    save_last_id "$id"
+    notify-send "Brightness: $(current_brightness)%" \
+                -h string:x-canonical-private-synchronous:osd \
+                -h int:value:"$(current_brightness)" \
+                -e
 }
 
 case "$1" in
