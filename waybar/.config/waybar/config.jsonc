@@ -116,7 +116,8 @@
 
   "clock": {
     "format": "{:%H:%M  %a %d.%m.}",
-    "on-click": "emacs $HOME/Notes/index.org",
+    "on-click": "emacs -e darius/org-agenda-fullscreen",
+    "on-click-right": "emacs $HOME/Notes/index.org",
     "tooltip": false,
   },
 
