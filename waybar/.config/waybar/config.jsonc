@@ -3,7 +3,7 @@
   "layer": "bottom",
   "position": "bottom",
   "spacing": 0,
-  "modules-left": ["hyprland/workspaces"],
+  "modules-left": ["hyprland/workspaces", "hyprland/submap"],
   "modules-center": ["clock"],
   "modules-right": ["group/media", "network", "group/tray"],
 
@@ -13,6 +13,11 @@
       "HDMI-A-1": [ 5, 6, 7 ],
       "eDP-1": [ 8, 9, 10 ],
     },
+  },
+
+  "hyprland/submap": {
+    "format": " 󰌎 ",
+    "on-click": "hyprctl dispatch submap reset"
   },
 
   "group/tray": {
@@ -116,8 +121,8 @@
 
   "clock": {
     "format": "{:%H:%M  %a %d.%m.}",
-    "on-click": "emacs -e darius/org-agenda-fullscreen",
-    "on-click-right": "emacs $HOME/Notes/index.org",
+    "on-click": "emacsclient -c -e '(darius/org-agenda-fullscreen)'",
+    "on-click-right": "emacsclient -c $HOME/Notes/index.org",
     "tooltip": false,
   },
 
