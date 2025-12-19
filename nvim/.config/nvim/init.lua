@@ -6,7 +6,8 @@
 vim.g.mapleader = " "
 vim.o.termguicolors = true
 
--- transparent background
+vim.cmd('colorscheme lunaperche')
+
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
@@ -18,8 +19,8 @@ local settings = {
   signcolumn = "yes",
   showmode = false,
   showcmd = false,
-  number = true,
-  relativenumber = true,
+  number = false,
+  relativenumber = false,
   splitbelow = true,
   splitright = true,
   langmenu = "en_US",
@@ -90,20 +91,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 1000,
-    config = function()
-      require("catppuccin").setup({
-        flavour = "mocha",
-        transparent_background = true,
-        no_italic = true,
-        no_underline = true,
-      })
-      vim.cmd.colorscheme "catppuccin"
-    end,
-  },
 
   { 'windwp/nvim-autopairs', config = true },
   { 'kylechui/nvim-surround', config = true },

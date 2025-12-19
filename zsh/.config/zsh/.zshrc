@@ -34,7 +34,7 @@ ZLE_REMOVE_SUFFIX_CHARS=$' \t\n;&'
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
-zstyle ':vcs_info:git:*' formats ' %F{white}on %B%b'
+zstyle ':vcs_info:git:*' formats ' on %F{green}%b'
 
 # OSC 133 sequence to jump to prompt
 precmd() {
@@ -42,9 +42,9 @@ precmd() {
 }
 
 # Prompt
-DIR=$'%B%F{yellow}%~%b%f'
-CHAR=$'%B%F{fg}>%f%b'
-PROMPT=$'${DIR}${vcs_info_msg_0_}%b%6(~.\n. )${CHAR} '
+DIR=$'%F{blue}%~%f'
+CHAR=$'%F{fg}>%f'
+PROMPT=$'${DIR}${vcs_info_msg_0_}%6(~.\n. )${CHAR} '
 
 # Make Shift-Tab go to previous completion suggestion
 zmodload zsh/complist

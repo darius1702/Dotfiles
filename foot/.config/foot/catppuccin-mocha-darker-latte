@@ -1,4 +1,4 @@
-# _*_ conf _*_
+# -*- mode: conf -*-
 # Catppuccin Mocha
 
 [colors]
