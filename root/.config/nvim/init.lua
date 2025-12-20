@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.opt.termguicolors = true
+vim.o.termguicolors = true
 
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
@@ -39,20 +39,30 @@ vim.g.netrw_liststyle = 3
 vim.g.netrw_banner = 0
 
 -- Key bindings --
-vim.keymap.set("i", "jk", "<ESC>", { silent = true })
-vim.keymap.set("i", "<C-G>", "<ESC>", { silent = true })
-vim.keymap.set("v", "<C-G>", "<ESC>", { silent = true })
+function map(mode, l, r, opts)
+  opts = opts or { silent = true }
+  vim.keymap.set(mode, l, r, opts)
+end
+
+map('i', 'jk', '<ESC>')
+map('i', '<C-G>', '<ESC>')
+map('v', '<C-G>', '<ESC>')
+
+-- Quickfix list
+map('n', '<leader>co', vim.cmd.copen)
+map('n', '<leader>cc', vim.cmd.cclose)
+map('n', ']c', function () pcall(vim.cmd.cnext) end)
+map('n', '[c', function () pcall(vim.cmd.cprev) end)
 
 -- Copy and paste
-vim.keymap.set("n", "<leader>p", "\"+p", { silent = true })
-vim.keymap.set("x", "<leader>p", "\"_dP", { silent = true })
-vim.keymap.set("x", "<leader>y", "\"+y", { silent = true })
-vim.keymap.set("n", "<leader>d", "\"_p", { silent = true })
-vim.keymap.set("v", "<leader>d", "\"_p", { silent = true })
+map('n', '<leader>p', '\"+p')
+map('x', '<leader>p', '\"_dP')
+map('x', '<leader>y', '\"+y')
+map('n', '<leader>d', '\"_p')
+map('v', '<leader>d', '\"_p')
 
 -- Open file under cursor in vertical split
-vim.keymap.set("n", "<C-W><C-F>", "<C-W>vgf", { silent = true })
+map('n', '<C-W><C-F>', '<C-W>vgf')
 
 -- Open a file explorer
-vim.keymap.set("n", "<leader>e", ":Ex<CR>", { silent = true })
-
+map('n', '<leader>e', vim.cmd.Ex)

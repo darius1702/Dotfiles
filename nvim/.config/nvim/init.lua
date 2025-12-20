@@ -3,34 +3,34 @@
 --   / / / / / / /__ / / /_/ / /_/ /
 --  /_/_/ /_/_/\__(_)_/\__,_/\__,_/
 
-vim.g.mapleader = " "
+vim.g.mapleader = ' '
 vim.o.termguicolors = true
 
-vim.cmd('colorscheme lunaperche')
+vim.cmd([[colorscheme lunaperche]])
 
-vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
+vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'NormalNC', { bg = 'none' })
 
 vim.cmd([[set spelllang=en_us]])
 local settings = {
   laststatus = 2,
   scrolloff = 3,
-  signcolumn = "yes",
+  signcolumn = 'yes',
   showmode = false,
   showcmd = false,
   number = false,
   relativenumber = false,
   splitbelow = true,
   splitright = true,
-  langmenu = "en_US",
+  langmenu = 'en_US',
   expandtab = true,
   shiftwidth = 2,
   softtabstop = 2,
   smartindent = true,
   breakindent = true,
   updatetime = 50,
-  mouse = "a",
+  mouse = 'a',
   hlsearch = false,
   ignorecase = true,
   undofile = true,
@@ -38,7 +38,7 @@ local settings = {
 }
 
 vim.cmd([[set undodir=$HOME/.config/nvim/undo]])
-vim.o.grepprg="rg --vimgrep --no-heading -i --"
+vim.o.grepprg='rg --vimgrep --no-heading -i --'
 
 for k, v in pairs(settings) do
   vim.o[k] = v
@@ -49,28 +49,33 @@ vim.g.netrw_liststyle = 3
 vim.g.netrw_banner = 0
 
 -- Key bindings --
-vim.keymap.set("i", "jk", "<ESC>", { silent = true })
-vim.keymap.set("i", "<C-G>", "<ESC>", { silent = true })
-vim.keymap.set("v", "<C-G>", "<ESC>", { silent = true })
+function map(mode, l, r, opts)
+  opts = opts or { silent = true }
+  vim.keymap.set(mode, l, r, opts)
+end
+
+map('i', 'jk', '<ESC>')
+map('i', '<C-G>', '<ESC>')
+map('v', '<C-G>', '<ESC>')
 
 -- Quickfix list
-vim.keymap.set("n", "<leader>co", ":copen<CR>", { silent = true })
-vim.keymap.set("n", "<leader>cc", ":cclose<CR>", { silent = true })
-vim.keymap.set("n", "]c", ":cnext<CR>", { silent = true })
-vim.keymap.set("n", "[c", ":cprev<CR>", { silent = true })
+map('n', '<leader>co', vim.cmd.copen)
+map('n', '<leader>cc', vim.cmd.cclose)
+map('n', ']c', function () pcall(vim.cmd.cnext) end)
+map('n', '[c', function () pcall(vim.cmd.cprev) end)
 
 -- Copy and paste
-vim.keymap.set("n", "<leader>p", "\"+p", { silent = true })
-vim.keymap.set("x", "<leader>p", "\"_dP", { silent = true })
-vim.keymap.set("x", "<leader>y", "\"+y", { silent = true })
-vim.keymap.set("n", "<leader>d", "\"_p", { silent = true })
-vim.keymap.set("v", "<leader>d", "\"_p", { silent = true })
+map('n', '<leader>p', '\"+p')
+map('x', '<leader>p', '\"_dP')
+map('x', '<leader>y', '\"+y')
+map('n', '<leader>d', '\"_p')
+map('v', '<leader>d', '\"_p')
 
 -- Open file under cursor in vertical split
-vim.keymap.set("n", "<C-W><C-F>", "<C-W>vgf", { silent = true })
+map('n', '<C-W><C-F>', '<C-W>vgf')
 
 -- Open a file explorer
-vim.keymap.set("n", "<leader>e", ":Ex<CR>", { silent = true })
+map('n', '<leader>e', vim.cmd.Ex)
 
 -- formatoptions
 vim.cmd([[au FileType * set fo-=o]])
@@ -79,53 +84,39 @@ vim.cmd([[autocmd BufWritePre * %s/\s\+$//e]])
 
 vim.cmd([[autocmd FileType tex set spell]])
 
--- Plugins --
-local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    'git', 'clone', '--filter=blob:none',
-    'https://github.com/folke/lazy.nvim.git',
-    '--branch=stable', -- latest stable release
-    lazypath,
-  })
+function gh(str)
+  return 'https://github.com/' .. str
 end
-vim.opt.rtp:prepend(lazypath)
-require('lazy').setup({
 
-  { 'windwp/nvim-autopairs', config = true },
-  { 'kylechui/nvim-surround', config = true },
+-- Plugins --
+vim.pack.add({
+  gh('windwp/nvim-autopairs'),
+  gh('kylechui/nvim-surround'),
+  gh('lewis6991/gitsigns.nvim'),
+  gh('nvim-treesitter/nvim-treesitter'),
+})
 
-  {
-    'lewis6991/gitsigns.nvim',
-    opts = {
-      signs = {
-        delete = { text = '│' },
-        changedelete = { text = '│' },
-      },
-    },
-    lazy = false,
-    keys = {
-      { '<leader>hp', '<cmd>Gitsigns preview_hunk<cr>', desc = 'Preview Hunk'},
-      { '<leader>hb', '<cmd>Gitsigns blame_line<cr>', desc = 'Blame current line'},
-    }
+require('nvim-autopairs').setup()
+require('nvim-surround').setup()
+
+require('nvim-treesitter').setup {
+  ensure_installed = { 'c', 'cpp', 'lua', 'markdown' },
+  sync_install = false,
+  auto_install = true,
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
   },
-
-  {
-    'nvim-treesitter/nvim-treesitter',
-    build = ':TSUpdate',
-    config = function()
-      require'nvim-treesitter.configs'.setup {
-        ensure_installed = { 'c', 'cpp', 'lua', 'markdown' },
-        sync_install = false,
-        auto_install = true,
-        highlight = {
-          enable = true,
-          additional_vim_regex_highlighting = false,
-        },
-        indent = {
-          enable = true,
-        },
-      }
-    end,
+  indent = {
+    enable = true,
   },
+}
+
+require('gitsigns').setup({
+  on_attach = function(_)
+    local gitsigns = require('gitsigns')
+    map('n', '<leader>ht', gitsigns.toggle_signs)
+    map('n', '<leader>hp', gitsigns.preview_hunk)
+    map('n', '<leader>hb', gitsigns.blame_line)
+  end
 })
