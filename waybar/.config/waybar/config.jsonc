@@ -1,14 +1,14 @@
 {
   "height": 0,
   "layer": "bottom",
-  "position": "bottom",
-  "spacing": 0,
-  "margin-top": 5,
+  "position": "top",
+  "spacing": 4,
   "modules-left": ["hyprland/workspaces", "hyprland/submap"],
   "modules-center": ["clock"],
   "modules-right": ["group/media", "network", "group/battery-with-tray"],
 
   "hyprland/workspaces": {
+    "format": " ",
     "persistent-workspaces": {
       "DP-1": [ 1, 2, 3, 4 ],
       "HDMI-A-1": [ 5, 6, 7 ],
@@ -17,7 +17,7 @@
   },
 
   "hyprland/submap": {
-    "format": " 󰌎 ",
+    "format": "  󰌎 ",
     "on-click": "hyprctl dispatch submap reset"
   },
 
@@ -121,9 +121,7 @@
   },
 
   "clock": {
-    "format": "{:%H:%M  %a %d.%m.}",
-    "on-click": "emacsclient -c -e '(darius/org-agenda-fullscreen)'",
-    "on-click-right": "emacsclient -c $HOME/Notes/index.org",
+    "format": "{:%H:%M    %a %d %b}",
     "tooltip": false,
   },
 
