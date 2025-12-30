@@ -41,7 +41,7 @@ tooltip label {
   padding-left: 7px;
   padding-right: 8px;
   padding-top: 4px;
-  padding-bottom: 6px;
+  padding-bottom: 4px;
 
   color: @fg;
   transition: 0.1s;
@@ -98,8 +98,8 @@ tooltip label {
 
 #workspaces button {
   all: unset;
-  margin: 0 2px;
-  margin-top: 0;
+  margin: 0;
+  margin-left: 1px;
   color: @low-prio;
   border-radius: 5px;
   padding: 0px 7px 0px 7px;
@@ -145,7 +145,7 @@ tooltip label {
 
 #battery {
   margin-top: 4px;
-  margin-right: 5px;
+  margin-right: 7px;
   margin-bottom: 5px;
   padding: 1px 5px;
   font-weight: 600;
