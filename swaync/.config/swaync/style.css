@@ -1,0 +1,64 @@
+:root {
+  --border-radius: 5px;
+  --border: 2px solid rgba(255, 255, 255, 0.2);
+  --cc-bg: rgba(0, 0, 0, 0.5);
+
+  --widget-background: rgba(0, 0, 0, 0.6);
+  --noti-bg-alpha: 1;
+
+  --padding: calc(var(--border-radius) / 2);
+}
+
+.control-center {
+  font-family: SFPro Text;
+  background: var(--cc-bg);
+}
+
+.widgets > .widget {
+  border-radius: var(--border-radius);
+  padding: var(--border-radius);
+  border: var(--border);
+  background: var(--widget-background);
+}
+
+.control-center-list-placeholder {
+  padding: var(--border-radius);
+}
+
+.notification-group {
+  border-radius: var(--border-radius);
+  padding: 8px;
+}
+
+.widget.widget-mpris {
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  border: none;
+}
+
+.widget-mpris > box > button {
+  border: var(--border);
+}
+
+.widget.widget-mpris > carouselindicatordots {
+  border-radius: var(--border-radius);
+  border: var(--border);
+  --dots-padding: 4px;
+  padding: var(--dots-padding);
+  padding-left: var(--dots-padding);
+  padding-right: calc(6px + var(--dots-padding));
+  margin: 0;
+  margin-top: var(--padding);
+}
+.widget-mpris > box > button:hover {
+  background: rgba(46, 46, 46, 1);
+}
+.widget-mpris-player {
+  box-shadow: none;
+  border: var(--border);
+  margin: 0 var(--padding);
+}
+.widget-mpris-player:only-child {
+  margin: 0;
+}

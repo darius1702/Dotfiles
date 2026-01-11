@@ -5,7 +5,7 @@
   "spacing": 4,
   "modules-left": ["hyprland/workspaces", "hyprland/submap"],
   "modules-center": ["clock"],
-  "modules-right": ["group/media", "network", "group/battery-with-tray"],
+  "modules-right": ["custom/notification", "group/media", "network", "group/battery-with-tray"],
 
   "hyprland/workspaces": {
     "format": " ",
@@ -19,6 +19,18 @@
   "hyprland/submap": {
     "format": "  󰌎 ",
     "on-click": "hyprctl dispatch submap reset"
+  },
+
+  "group/clock-and-notifications": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 250,
+      "transition-left-to-right": false,
+    },
+    "modules": [
+      "clock",
+      "custom/notification"
+    ]
   },
 
   "group/battery-with-tray": {
@@ -123,10 +135,33 @@
   "clock": {
     "format": "{:%H:%M    %a %d %b}",
     "tooltip": false,
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
   },
 
   "tray": {
     "icon-size": 15,
     "spacing": 10,
   },
+
+  "custom/notification": {
+    "tooltip": true,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": " ",
+      "none": "",
+      "dnd-notification": " ",
+      "dnd-none": " ",
+      "inhibited-notification": " ",
+      "inhibited-none": " ",
+      "dnd-inhibited-notification": " ",
+      "dnd-inhibited-none": " "
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  }
 }
