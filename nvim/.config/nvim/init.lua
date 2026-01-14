@@ -21,6 +21,7 @@ local settings = {
   showcmd = false,
   number = false,
   relativenumber = false,
+  linebreak = true,
   splitbelow = true,
   splitright = true,
   langmenu = 'en_US',

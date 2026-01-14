@@ -1,5 +1,2 @@
-autoload/
-undo/
-spell/
-.netrwhist
-nvim-pack-lock.json
+*
+!init.lua

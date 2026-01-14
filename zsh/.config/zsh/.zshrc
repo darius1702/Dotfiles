@@ -84,9 +84,10 @@ alias tc="$EDITOR ~/.tmux.conf"
 
 alias todo="rg -i 'todo|fixme'"
 
-alias vim=nvim
-alias v=nvim
-alias e=emacs
+local emacs="emacsclient -cn -a ''"
+alias e=$emacs
+alias vim=$emacs
+alias v=$emacs
 alias ts="tmux new-session -s"
 
 alias z=zathura
