@@ -45,6 +45,9 @@ for k, v in pairs(settings) do
   vim.o[k] = v
 end
 
+vim.opt.list = true
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+
 vim.g.netrw_altw = 1
 vim.g.netrw_liststyle = 3
 vim.g.netrw_banner = 0

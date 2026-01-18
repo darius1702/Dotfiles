@@ -1,8 +1,7 @@
 @define-color bg                rgba(0 ,0 ,0 , 0.35);
 @define-color fg                rgba(255, 255, 255, 0.8);
 
-@define-color disabled          #999999;
-@define-color low-prio          #bebebe;
+@define-color disabled          #bcbcbc;
 @define-color active            #ffffff;
 @define-color active-bg rgba(200, 200, 200, 0.15);
 
@@ -31,6 +30,8 @@ tooltip label {
   color: @theme_fg_color;
 }
 
+#custom-emacs-pomm,
+#custom-notification,
 #network,
 #bluetooth,
 #backlight,
@@ -70,6 +71,10 @@ tooltip label {
   padding-right: 10px;
 }
 
+#wireplumber.muted {
+  color: @disabled;
+}
+
 #network {
   margin-right: 4px;
   padding-right: 12px;
@@ -85,9 +90,14 @@ tooltip label {
 #bluetooth.off,
 #bluetooth.disabled,
 #network.disconnected {
-  color: @low-prio;
+  color: @disabled;
 }
 
+#custom-notification {
+  padding-right: 5px;
+}
+
+#custom-notification:hover,
 #network:hover,
 #bluetooth:hover,
 #backlight:hover,
@@ -100,7 +110,7 @@ tooltip label {
   all: unset;
   margin: 0;
   margin-left: 1px;
-  color: @low-prio;
+  color: @active;
   border-radius: 5px;
   padding: 0px 7px 0px 7px;
   transition: 0.1s;
@@ -108,16 +118,13 @@ tooltip label {
 
 #workspaces button.empty {
   color: @disabled;
-
-}
-
-#workspaces button.visible {
-  color: @active;
 }
 
 #workspaces button:hover,
+#workspaces button.visible,
 #workspaces button.active {
   color: @active;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 #workspaces button.urgent {

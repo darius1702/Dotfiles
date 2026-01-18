@@ -1,9 +1,9 @@
 :root {
   --border-radius: 5px;
-  --border: 2px solid rgba(255, 255, 255, 0.2);
-  --cc-bg: rgba(0, 0, 0, 0.5);
-
-  --widget-background: rgba(0, 0, 0, 0.6);
+  --border: 2px solid rgba(0, 0, 0, 0);
+  --cc-bg: rgba(255, 255, 255, 0.7);
+  --cc-fg: rgba(0, 0, 0, 1);
+  --widget-background: rgba(255, 255, 255, 0.8);
   --noti-bg-alpha: 1;
 
   --padding: calc(var(--border-radius) / 2);
@@ -12,9 +12,12 @@
 .control-center {
   font-family: SFPro Text;
   background: var(--cc-bg);
+  color: var(--cc-fg);
 }
 
 .widgets > .widget {
+  color: var(--cc-fg);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: var(--border-radius);
   padding: var(--border-radius);
   border: var(--border);
@@ -25,9 +28,26 @@
   padding: var(--border-radius);
 }
 
+.notification-group .notification-group-buttons,
+.notification-group .notification-group-headers .notification-group-icon,
+.notification-group .notification-group-headers .notification-group-header {
+  color: var(--cc-fg);
+}
+
+.notification-group-header {
+  color: var(--cc-fg);
+  font-weight: 400;
+  font-size: 14pt;
+}
+
 .notification-group {
+  background: none;
   border-radius: var(--border-radius);
   padding: 8px;
+}
+
+.widget.widget-dnd > label {
+  color: var(--cc-fg);
 }
 
 .widget.widget-mpris {

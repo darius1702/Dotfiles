@@ -59,7 +59,11 @@
       "text": " Do Not Disturb"
     },
     "volume": {
-      "label": "  "
+      "label": "  ",
+      "show-per-app": true,
+      "show-per-app-label": true,
+      "expand-button-label": "",
+      "collapse-button-label": ""
     },
     "mpris": {
       "autohide": true

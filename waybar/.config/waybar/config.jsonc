@@ -2,7 +2,7 @@
   "height": 0,
   "layer": "bottom",
   "position": "top",
-  "spacing": 4,
+  "spacing": 7,
   "modules-left": ["hyprland/workspaces", "hyprland/submap"],
   "modules-center": ["clock"],
   "modules-right": ["custom/notification", "group/media", "network", "group/battery-with-tray"],
@@ -71,9 +71,9 @@
   },
 
   "wireplumber": {
-    "format": "{icon}",
-    "format-muted": "󰖁",
-    "format-icons": ["󰕿", "󰖀", "󰕾"],
+    "format": "󰕾",
+    "format-muted": "󰝟",
+    // "format-icons": ["", "", "", "", ""],
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
     "on-click-right": "pwvucontrol",
     "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+ -l 1.2",
@@ -89,10 +89,12 @@
   },
 
   "network": {
-    "format-wifi": "󰤨",
+    "format-wifi": "{icon}",
     "format-ethernet": "",
     "format-disconnected": "󰤫",
+    "format-linked": "󰤩",
     "format-disabled": "󰤮",
+    "format-icons" : ["󰤟", "󰤢", "󰤥", "󰤨"],
     "tooltip-format": "{ipaddr}\n{essid}",
     "on-click": "iwgtk",
   },
@@ -144,18 +146,26 @@
     "spacing": 10,
   },
 
+  // "custom/emacs-pomm": {
+  //   "hide-empty-text": true,
+  //   "tooltip": false,
+  //   "interval": 5,
+  //   "exec-if": "emacsclient -a false -e 't'",
+  //   "exec": "emacsclient --eval \"(if (boundp 'pomm-current-mode-line-string) pomm-current-mode-line-string)\" | xargs echo -e"
+  // },
+
   "custom/notification": {
     "tooltip": true,
     "format": "{icon}",
     "format-icons": {
-      "notification": " ",
+      "notification": " ",
       "none": "",
-      "dnd-notification": " ",
-      "dnd-none": " ",
-      "inhibited-notification": " ",
-      "inhibited-none": " ",
-      "dnd-inhibited-notification": " ",
-      "dnd-inhibited-none": " "
+      "dnd-notification": " ",
+      "dnd-none": " ",
+      "inhibited-notification": " ",
+      "inhibited-none": " ",
+      "dnd-inhibited-notification": " ",
+      "dnd-inhibited-none": " "
     },
     "return-type": "json",
     "exec-if": "which swaync-client",

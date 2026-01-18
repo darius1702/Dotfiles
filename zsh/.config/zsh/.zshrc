@@ -18,12 +18,22 @@ unsetopt PROMPT_SP
 # Emacs keybindings
 bindkey -e
 
-# Use space bar in normal mode to edit command in editor
+bindkey '^G' deactivate-region
+bindkey '^H' backward-kill-word
+bindkey '^W' kill-region
+bindkey '^[^ ' select-in-word
+bindkey '^X^_' redo
+
 autoload -z edit-command-line
 zle -N edit-command-line
 bindkey "^X^E" edit-command-line
-bindkey '^H' backward-kill-word
-bindkey -s '^@' '^A^Kcdi^M'
+
+# zoxide on M-SPC
+bindkey -s '^[ ' '^A^Kcdi^M'
+
+# Make Shift-Tab go to previous completion suggestion
+zmodload zsh/complist
+bindkey -M menuselect '^[[Z' reverse-menu-complete
 
 # Make zsh stop eating the space before a | character
 ZLE_REMOVE_SUFFIX_CHARS=$' \t\n;&'
@@ -43,12 +53,9 @@ precmd() {
 
 # Prompt
 DIR=$'%F{blue}%~%f'
-CHAR=$'%F{fg}>%f'
-PROMPT=$'${DIR}${vcs_info_msg_0_}%6(~.\n. )${CHAR} '
-
-# Make Shift-Tab go to previous completion suggestion
-zmodload zsh/complist
-bindkey -M menuselect '^[[Z' reverse-menu-complete
+CHAR=$'%F{fg}%f'
+# PROMPT=$'${DIR}${vcs_info_msg_0_}%6(~.\n. )${CHAR} '
+PROMPT=$'${DIR}${vcs_info_msg_0_}\n${CHAR} '
 
 # Disable C-s and C-q in interactive shells
 if [[ -t 0 && $- = *i* ]]
@@ -59,9 +66,9 @@ fi
 export EDITOR=nvim
 export VISUAL=$EDITOR
 
-export FZF_DEFAULT_OPTS="--style minimal --color fg:8,bg+:0,pointer:2,info:8,prompt:1,hl:2,hl+:2 --bind=ctrl-j:accept,ctrl-k:kill-line"
+export FZF_DEFAULT_OPTS="--style minimal --color fg:8,bg+:0,pointer:2,info:8,prompt:4,hl:2,hl+:2 --bind=ctrl-j:accept,ctrl-k:kill-line"
 export FZF_CTRL_R_OPTS="--height 10 --layout reverse"
-export _ZO_FZF_OPTS="--prompt 'Jump > ' --height 10 --layout reverse $FZF_DEFAULT_OPTS"
+export _ZO_FZF_OPTS="--prompt '>> ' --height 10 --layout reverse $FZF_DEFAULT_OPTS"
 
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
