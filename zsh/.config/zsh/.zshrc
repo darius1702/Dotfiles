@@ -28,9 +28,6 @@ autoload -z edit-command-line
 zle -N edit-command-line
 bindkey "^X^E" edit-command-line
 
-# zoxide on M-SPC
-bindkey -s '^[ ' '^A^Kcdi^M'
-
 # Make Shift-Tab go to previous completion suggestion
 zmodload zsh/complist
 bindkey -M menuselect '^[[Z' reverse-menu-complete
@@ -66,7 +63,7 @@ fi
 export EDITOR=nvim
 export VISUAL=$EDITOR
 
-export FZF_DEFAULT_OPTS="--style minimal --color fg:8,bg+:0,pointer:2,info:8,prompt:4,hl:2,hl+:2 --bind=ctrl-j:accept,ctrl-k:kill-line"
+export FZF_DEFAULT_OPTS="--style minimal --color fg:7,bg+:0,pointer:2,info:4,prompt:4,hl:2,hl+:2 --bind=ctrl-j:accept,ctrl-k:kill-line"
 export FZF_CTRL_R_OPTS="--height 10 --layout reverse"
 export _ZO_FZF_OPTS="--prompt '>> ' --height 10 --layout reverse $FZF_DEFAULT_OPTS"
 

@@ -14,6 +14,8 @@ source ~/.config/zsh/.zshrc
 
 # cd database
 [ -f "/usr/bin/zoxide" ] && eval "$(zoxide init zsh --cmd cd)"
+# jump with M-SPC
+bindkey -s '^[ ' '^A^Kcdi^M'
 
 # fzf
 [ -f "/usr/bin/fzf" ] && source <(fzf --zsh)
