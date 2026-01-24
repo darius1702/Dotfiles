@@ -1,0 +1,11 @@
+#!/bin/bash
+
+selection=$(hyprctl -j clients |
+                jq -r '.[].title' |
+                sort -u |
+                fuzzel --dmenu --minimal-lines -p "Go: " |
+                sed 's/[][\.^$*+?(){}|]/\\&/g')
+
+[ -z "$selection" ] && exit
+
+hyprctl dispatch focuswindow "title:^${selection}$"

@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-fd . ~/Documents/Books --type f | fuzzel -d -w 100 -p "  " -a bottom | xargs -I{} zathura {}
+# fd . ~/Documents/Books --type f | fuzzel -d -w 100 -p "  " -a bottom | xargs -I{} zathura {}
+fd . ~/Documents/Books --type f | vicinae dmenu --placeholder "Open book:  " | xargs -I{} zathura {}

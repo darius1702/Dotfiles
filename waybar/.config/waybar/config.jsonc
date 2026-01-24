@@ -4,8 +4,8 @@
   "position": "top",
   "spacing": 7,
   "modules-left": ["hyprland/workspaces", "hyprland/submap"],
-  "modules-center": ["clock"],
-  "modules-right": ["custom/notification", "group/media", "network", "group/battery-with-tray"],
+  "modules-center": ["custom/notification-pad", "clock", "custom/notification"],
+  "modules-right": ["group/media", "network", "group/battery-with-tray"],
 
   "hyprland/workspaces": {
     // "format": " ",
@@ -41,6 +41,7 @@
     },
     "modules": [
       "battery",
+      "bluetooth",
       "tray"
     ]
   },
@@ -105,7 +106,7 @@
     "format-off": "󰂲",
     "format-no-controller": "󰂲",
     "format-disabled": "󰂲",
-    "on-click": "blueman-manager",
+    "on-click": "vicinae vicinae://extensions/Gelei/bluetooth/devices",
     "tooltip": true,
     "tooltip-format-connected": "{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias} connected",
@@ -173,5 +174,26 @@
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
     "escape": true
+  },
+
+  // pad the clock to the left if there is a new notification
+  // so the indicator doesn't make the clock jump left
+  // ugly hack but the jumping is super annoying
+  "custom/notification-pad": {
+    "exec": "swaync-client -swb",
+    "return-type": "json",
+    "format": "{icon}",
+    "format-icons": {
+      "notification": " ",
+      "none": "",
+      "dnd-notification": " ",
+      "dnd-none": " ",
+      "inhibited-notification": " ",
+      "inhibited-none": " ",
+      "dnd-inhibited-notification": " ",
+      "dnd-inhibited-none": " "
+    },
+    "tooltip": false,
+    "on-click": ""
   }
 }

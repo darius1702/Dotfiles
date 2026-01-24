@@ -31,7 +31,6 @@ tooltip label {
 }
 
 #custom-emacs-pomm,
-#custom-notification,
 #network,
 #bluetooth,
 #backlight,
@@ -51,9 +50,10 @@ tooltip label {
 
 #bluetooth {
   color: @fg;
-  padding-right: 9px;
   margin-right: 3px;
   margin-left: 3px;
+  padding-left: 0px;
+  padding-right: 15px;
 }
 
 #bluetooth.discovering.on {
@@ -94,7 +94,13 @@ tooltip label {
 }
 
 #custom-notification {
-  padding-right: 5px;
+  color: @fg;
+  transition: 0.1s;
+}
+
+/* notification clock padding hack */
+#custom-notification-pad {
+  color: transparent;
 }
 
 #custom-notification:hover,

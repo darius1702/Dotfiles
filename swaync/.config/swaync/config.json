@@ -36,6 +36,7 @@
   "widgets": [
     "inhibitors",
     "dnd",
+    "buttons-grid",
     "volume",
  	"backlight",
     "mpris",
@@ -71,6 +72,26 @@
     "backlight": {
       "label": " 󰃞 ",
       "device": "amdgpu_bl1"
+    },
+    "buttons-grid": {
+      "buttons-per-row": 3,
+      "actions": [
+        {
+          "label": "",
+          "type": "normal",
+          "command": "iwgtk"
+        },
+        {
+          "label": "󰂯",
+          "type": "normal",
+          "command": "vicinae vicinae://extensions/Gelei/bluetooth/devices"
+        },
+        {
+          "label": "",
+          "type": "normal",
+          "command": "resources"
+        }
+      ]
     }
   }
 }

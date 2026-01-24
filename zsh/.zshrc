@@ -35,8 +35,6 @@ export PATH="$PATH:$HOME/.local/share/coursier/bin" # scala
 
 export PATH="$PATH:$HOME/.local/share/gem/ruby/3.4.0/bin" # ruby gems
 
-[ -f "/home/darius/.ghcup/env" ] && . "/home/darius/.ghcup/env"
-
 [ -f "/usr/bin/direnv" ] && eval "$(direnv hook zsh)"
 
 export RISCV="/opt/riscv"
