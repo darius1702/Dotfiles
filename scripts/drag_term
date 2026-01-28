@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-read -r x y w h < <(slurp -f "%x %y %w %h")
+read -r x y w h < <(slurp -f "%x %y %w %h" -b 00000000 -s ffffffaa)
 
 if [ -n "$w" ]; then
     hyprctl dispatch exec "[float;move (cursor_x-window_w) (cursor_y-window_h);size $w $h] foot"

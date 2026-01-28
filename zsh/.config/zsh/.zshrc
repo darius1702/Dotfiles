@@ -41,7 +41,7 @@ ZLE_REMOVE_SUFFIX_CHARS=$' \t\n;&'
 autoload -Uz vcs_info
 precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
-zstyle ':vcs_info:git:*' formats ' on %F{green}%b'
+zstyle ':vcs_info:git:*' formats ' on %F{white}%b'
 
 # OSC 133 sequence to jump to prompt
 precmd() {
@@ -49,7 +49,7 @@ precmd() {
 }
 
 # Prompt
-DIR=$'%F{blue}%~%f'
+DIR=$'%F{magenta}%~%f'
 CHAR=$'%F{fg}%f'
 # PROMPT=$'${DIR}${vcs_info_msg_0_}%6(~.\n. )${CHAR} '
 PROMPT=$'${DIR}${vcs_info_msg_0_}\n${CHAR} '

@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+# USAGE: screenshot [-e] [filename]
+# copies to clipboard or filename if given
+# -e to edit in satty first
+
+EDIT=false
+OUTPUT=""
+
+while [[ "$#" -gt 0 ]]; do
+    case $1 in
+        -e|--edit) EDIT=true ;;
+        *) OUTPUT="$1" ;;
+    esac
+    shift
+done
+
+GEOMETRY=$(slurp)
+if [ -z "$GEOMETRY" ]; then
+    exit 1
+fi
+
+if [ "$EDIT" = true ]; then
+    if [ -n "$OUTPUT" ]; then
+        grim -g "$GEOMETRY" - | satty --filename - --output-filename "$OUTPUT"
+    else
+        grim -g "$GEOMETRY" - | satty --filename -
+    fi
+else
+    if [ -n "$OUTPUT" ]; then
+        grim -g "$GEOMETRY" "$OUTPUT"
+    else
+        grim -g "$GEOMETRY" - | wl-copy
+    fi
+fi

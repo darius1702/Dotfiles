@@ -1,5 +1,7 @@
 source ~/.config/zsh/.zshrc
 
+export PATH="$HOME/.local/bin/:$PATH"
+
 # Rust
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
@@ -22,12 +24,6 @@ bindkey -s '^[ ' '^A^Kcdi^M'
 # we only want C-r, bind C-t and M-c back to the defaults
 bindkey -M emacs '^T' transpose-chars
 bindkey -M emacs '\ec' capitalize-word
-
-export PATH="$HOME/.juliaup/bin:$PATH"
-
-export PATH="$HOME/.local/bin/:$PATH"
-
-export PATH="/opt/Jetbrains/Toolbox/scripts/:$PATH"
 
 export PATH="/opt/zig/:$PATH"
 
