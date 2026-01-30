@@ -16,7 +16,8 @@ window#waybar {
   font-family: SF Pro Text;
   font-size: 14px;
   font-weight: 500;
-  background: @bg;
+  /* background: @bg; */
+  background: none;
   color: @fg;
 }
 
