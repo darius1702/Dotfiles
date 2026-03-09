@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+g=$(slurp) || exit 1
+res=$(grim -g "$g" - | zbarimg --raw -q -)
+
+if [ -n "$res" ] ; then
+    printf '%s' "$res" | wl-copy
+    notify-send "Copied to clipboard:" "$res"
+fi

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+c=$(hyprpicker) || exit 1
+
+if [ -n "$c" ]; then
+    printf '%s' "$c" | wl-copy
+    notify-send "Copied color to clipboard:" "$c"
+fi

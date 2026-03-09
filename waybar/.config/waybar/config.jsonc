@@ -2,7 +2,7 @@
   "layer": "bottom",
   "position": "top",
   "spacing": 7,
-  "modules-left": ["hyprland/workspaces", "hyprland/submap"],
+  "modules-left": ["hyprland/workspaces"],
   "modules-center": ["custom/notification-pad", "clock", "custom/notification"],
   "modules-right": ["group/media", "network", "group/battery-with-tray"],
 
@@ -73,7 +73,6 @@
   "wireplumber": {
     "format": "󰕾",
     "format-muted": "󰝟",
-    // "format-icons": ["", "", "", "", ""],
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
     "on-click-right": "pwvucontrol",
     "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+ -l 1.2",
@@ -105,7 +104,7 @@
     "format-off": "󰂲",
     "format-no-controller": "󰂲",
     "format-disabled": "󰂲",
-    "on-click": "vicinae vicinae://extensions/Gelei/bluetooth/devices",
+    "on-click": "blueman-manager",
     "tooltip": true,
     "tooltip-format-connected": "{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias} connected",

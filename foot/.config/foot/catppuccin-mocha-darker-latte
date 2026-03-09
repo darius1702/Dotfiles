@@ -1,7 +1,7 @@
 # -*- mode: conf -*-
 # Catppuccin Mocha
 
-[colors]
+[colors-dark]
 foreground=cdd6f4
 background=1c1c1e
 
@@ -39,7 +39,7 @@ urls=89b4fa
 
 # Catppuccin Latte
 
-[colors2]
+[colors-light]
 foreground=4c4f69
 background=eff1f5
 
