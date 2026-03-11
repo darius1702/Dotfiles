@@ -11,8 +11,8 @@
     "persistent-workspaces": {
       "HDMI-A-1": [ 1, 2, 3, 4 ],
       "DP-1": [ 5, 6, 7 ],
-      "eDP-1": [ 8, 9, 10 ],
-    },
+      "eDP-1": [ 8, 9, 10 ]
+    }
   },
 
   "hyprland/submap": {
@@ -24,7 +24,7 @@
     "orientation": "horizontal",
     "drawer": {
       "transition-duration": 250,
-      "transition-left-to-right": false,
+      "transition-left-to-right": false
     },
     "modules": [
       "clock",
@@ -36,7 +36,7 @@
     "orientation": "horizontal",
     "drawer": {
       "transition-duration": 250,
-      "transition-left-to-right": false,
+      "transition-left-to-right": false
     },
     "modules": [
       "battery",
@@ -49,7 +49,7 @@
     "orientation": "horizontal",
     "drawer": {
       "transition-duration": 250,
-      "transition-left-to-right": false,
+      "transition-left-to-right": false
     },
     "modules": [
       "wireplumber",
@@ -61,7 +61,7 @@
     "format": "{status_icon}",
     "status-icons": {
 	  "paused": "󰐊",
-	  "playing": "󰏤",
+	  "playing": "󰏤"
 	},
     "on-click-right" : "",
     "on-click-middle" : "",
@@ -77,14 +77,14 @@
     "on-click-right": "pwvucontrol",
     "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+ -l 1.2",
     "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%- -l 1.2",
-    "tooltip-format": "{volume}%\n{node_name}",
+    "tooltip-format": "{volume}%\n{node_name}"
   },
 
   "backlight": {
     "format": " {percent}%",
     "on-scroll-up": "brightnessctl set 1000+",
     "on-scroll-down": "brightnessctl set 1000-",
-    "tooltip": false,
+    "tooltip": false
   },
 
   "network": {
@@ -95,7 +95,7 @@
     "format-disabled": "󰤮",
     "format-icons" : ["󰤟", "󰤢", "󰤥", "󰤨"],
     "tooltip-format": "{ipaddr}\n{essid}",
-    "on-click": "iwgtk",
+    "on-click": "iwgtk"
   },
 
   "bluetooth": {
@@ -107,7 +107,7 @@
     "on-click": "blueman-manager",
     "tooltip": true,
     "tooltip-format-connected": "{device_enumerate}",
-    "tooltip-format-enumerate-connected": "{device_alias} connected",
+    "tooltip-format-enumerate-connected": "{device_alias} connected"
   },
 
   "battery": {
@@ -130,19 +130,19 @@
     "format": "{capacity}",
     "format-charging": "{capacity}󱐋",
     "format-full": "󱐋",
-    "tooltip": false,
+    "tooltip": false
   },
 
   "clock": {
     "format": "{:%H:%M    %a %d %b}",
     "tooltip": false,
     "on-click": "swaync-client -t -sw",
-    "on-click-right": "swaync-client -d -sw",
+    "on-click-right": "swaync-client -d -sw"
   },
 
   "tray": {
     "icon-size": 15,
-    "spacing": 10,
+    "spacing": 10
   },
 
   // "custom/emacs-pomm": {
