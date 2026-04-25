@@ -50,7 +50,8 @@ precmd() {
 
 # Prompt
 DIR=$'%F{magenta}%~%f'
-CHAR=$'%F{fg}%f'
+#CHAR=$'%F{fg}%f'
+CHAR=$'%F{fg}>%f'
 # PROMPT=$'${DIR}${vcs_info_msg_0_}%6(~.\n. )${CHAR} '
 PROMPT=$'${DIR}${vcs_info_msg_0_}\n${CHAR} '
 

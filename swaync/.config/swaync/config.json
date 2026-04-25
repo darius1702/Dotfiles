@@ -74,7 +74,7 @@
       "device": "amdgpu_bl1"
     },
     "buttons-grid": {
-      "buttons-per-row": 3,
+      "buttons-per-row": 4,
       "actions": [
         {
           "label": "",
@@ -87,9 +87,14 @@
           "command": "vicinae vicinae://extensions/Gelei/bluetooth/devices"
         },
         {
-          "label": "",
+          "label": "",
           "type": "normal",
           "command": "resources"
+        },
+        {
+          "label": "",
+          "type": "normal",
+          "command": "icemon -s 192.168.2.51"
         }
       ]
     }

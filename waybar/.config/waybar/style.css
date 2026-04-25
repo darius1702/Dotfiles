@@ -113,6 +113,10 @@ tooltip label {
   color: @active;
 }
 
+#workspaces {
+  margin-left: 5px;
+}
+
 #workspaces button {
   all: unset;
   margin: 3px 0 3px 1px;

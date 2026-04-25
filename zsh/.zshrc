@@ -6,6 +6,12 @@ if [[ $TERM == "dumb" ]]; then
   return
 fi
 
+source ~/.config/zsh/.zshrc
+
+# for eat in emacs
+[ -n "$EAT_SHELL_INTEGRATION_DIR" ] && \
+  source "$EAT_SHELL_INTEGRATION_DIR/zsh"
+
 # Rust
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
@@ -37,15 +43,13 @@ alias kitvpn="sudo openvpn /etc/openvpn/client/kit.ovpn"
 
 [ -d "$HOME/Dotfiles/zsh/.config/zsh/zsh-autosuggestions/" ] && source $HOME/Dotfiles/zsh/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# cd database
-[ -f "/usr/bin/zoxide" ] && eval "$(zoxide init zsh --cmd cd)"
-# jump with M-SPC
-bindkey -s '^[ ' '^A^Kcdi^M'
-
 # fzf
 [ -f "/usr/bin/fzf" ] && source <(fzf --zsh)
 # we only want C-r, bind C-t and M-c back to the defaults
 bindkey -M emacs '^T' transpose-chars
 bindkey -M emacs '\ec' capitalize-word
 
-source ~/.config/zsh/.zshrc
+# cd database
+[ -f "/usr/bin/zoxide" ] && eval "$(zoxide init zsh --cmd cd)"
+# jump with M-SPC
+bindkey -s '^[ ' '^A^Kcdi^M'

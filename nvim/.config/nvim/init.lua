@@ -53,7 +53,7 @@ vim.g.netrw_liststyle = 3
 vim.g.netrw_banner = 0
 
 -- Key bindings --
-function map(mode, l, r, opts)
+local function map(mode, l, r, opts)
   opts = opts or { silent = true }
   vim.keymap.set(mode, l, r, opts)
 end
@@ -88,7 +88,7 @@ vim.cmd([[autocmd BufWritePre * %s/\s\+$//e]])
 
 vim.cmd([[autocmd FileType tex set spell]])
 
-function gh(str)
+local function gh(str)
   return 'https://github.com/' .. str
 end
 
