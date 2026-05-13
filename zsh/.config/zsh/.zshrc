@@ -113,3 +113,5 @@ alias lla="ls -lAh --color=auto"
 
 alias grep="grep --color=auto"
 alias ip="ip -c"
+
+alias devc="devcontainer up --workspace-folder=./ && devcontainer exec --workspace-folder=./ zsh"
