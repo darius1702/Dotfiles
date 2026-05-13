@@ -4,17 +4,20 @@ local terminal      = "foot"
 local browser       = "zen-browser"
 local zotero        = "gtk-launch zotero.desktop"
 local emacs         = "emacsclient -cn -a ''"
-local scripts       = "/home/datius/Dotfiles/scripts"
 local lock          = "loginctl lock-session"
 local menu          = "vicinae toggle"
-local cliphist      = "vicinae vicinae://extensions/vicinae/clipboard/history"
+local cliphist      = "vicinae vicinae://launch/clipboard/history"
 local passmenu      = "vicinae vicinae://launch/@tinkerbells/store.vicinae.pass/pass"
 local notifications = "swaync-client -t -sw"
 
+local function scripts(name)
+    return "/home/darius/Dotfiles/scripts/" .. name
+end
+
 hl.gesture({
-    fingers = 3,
+    fingers   = 3,
     direction = "horizontal",
-    action = "workspace"
+    action    = "workspace"
 })
 
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
@@ -32,17 +35,20 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(emacs))
 hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd("emacsclient -e '(undelete-frame)'"))
 hl.bind(mainMod .. " + CTRL + L", hl.dsp.exec_cmd(lock))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd(notifications))
-hl.bind(mainMod .. " + P", hl.dsp.exec_cmd(passmenu))
+hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd(passmenu))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd(zotero))
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(cliphist))
-hl.bind(mainMod .. " + S", hl.dsp.exec_cmd(scripts .. "/find-pdf"))
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd(scripts .. "/find-book"))
-hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd(scripts .. "/screenshot"))
-hl.bind(mainMod .. " + SHIFT + Print", hl.dsp.exec_cmd(scripts .. "/screenshot -e ~/Pictures/screenshot_$(date +'%d-%m-%Y_%H:%M').png"))
-hl.bind(mainMod .. " + CTRL + Print", hl.dsp.exec_cmd(scripts .. "/qr-to-clipboard"))
+hl.bind(mainMod .. " + S", hl.dsp.exec_cmd(scripts("find_pdf")))
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd(scripts("find_book")))
 hl.bind(mainMod .. " + XF86Display", hl.dsp.exec_cmd("nwg-displays"))
-hl.bind(mainMod .. " + mouse:274", hl.dsp.exec_cmd(scripts .. "/colorpicker"))
+hl.bind(mainMod .. " + mouse:274", hl.dsp.exec_cmd(scripts("colorpicker")))
+
+-- screnshots and qr code reader
+hl.bind("Print", hl.dsp.exec_cmd(scripts("screenshot")))
+hl.bind("SHIFT + Print", hl.dsp.exec_cmd(scripts("screenshot -e ~/Pictures/screenshot_$(date +'%d-%m-%Y_%H:%M').png")))
+hl.bind("CTRL + Print", hl.dsp.exec_cmd(scripts("qr-to-clipboard")))
+
 
 -- move window with mouse
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
@@ -74,12 +80,6 @@ hl.bind(mainMod .. " + SHIFT + h", hl.dsp.window.move({ direction = "left" }))
 hl.bind(mainMod .. " + SHIFT + l", hl.dsp.window.move({ direction = "right" }))
 hl.bind(mainMod .. " + SHIFT + k", hl.dsp.window.move({ direction = "up" }))
 hl.bind(mainMod .. " + SHIFT + j", hl.dsp.window.move({ direction = "down" }))
-
--- moving windows between monitors
--- hl.bind(mainMod .. " + CTRL + SHIFT + h", hl.dsp.window.move({ monitor = "left" }))
--- hl.bind(mainMod .. " + CTRL + SHIFT + l", hl.dsp.window.move({ monitor = "right" }))
--- hl.bind(mainMod .. " + CTRL + SHIFT + k", hl.dsp.window.move({ monitor = "up" }))
--- hl.bind(mainMod .. " + CTRL + SHIFT + j", hl.dsp.window.move({ monitor = "down" }))
 
 -- move with 1-10, f1-f12
 for i = 1, 10 do

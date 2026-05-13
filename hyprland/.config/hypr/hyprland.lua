@@ -78,7 +78,7 @@ hl.config({
     decoration = {
         rounding              = 2,
         rounding_power        = 4,
-        border_part_of_window = true,
+        border_part_of_window = false,
 
         blur = {
             enabled  = false,
