@@ -1,7 +1,7 @@
 require("monitors")
 require("environment")
 require("binds")
--- require("windowrules")
+require("windowrules")
 
 hl.on("hyprland.start", function ()
   hl.exec_cmd("hyprpm reload")
@@ -32,7 +32,6 @@ hl.config({
 
         follow_mouse = 2,
         float_switch_override_focus = 0,
-        sensitivity = 0,
 
         touchpad = {
             natural_scroll = false,
@@ -45,7 +44,6 @@ hl.config({
         no_warps = true,
         inactive_timeout = 5,
     },
-
 
     general = {
         gaps_in       = 3,

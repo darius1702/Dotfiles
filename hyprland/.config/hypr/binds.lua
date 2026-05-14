@@ -49,7 +49,6 @@ hl.bind("Print", hl.dsp.exec_cmd(scripts("screenshot")))
 hl.bind("SHIFT + Print", hl.dsp.exec_cmd(scripts("screenshot -e ~/Pictures/screenshot_$(date +'%d-%m-%Y_%H:%M').png")))
 hl.bind("CTRL + Print", hl.dsp.exec_cmd(scripts("qr-to-clipboard")))
 
-
 -- move window with mouse
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
@@ -70,26 +69,32 @@ hl.bind("XF86MonBrightnessUp",  hl.dsp.exec_cmd("brightnessctl -e3 set 5%+"), { 
 hl.bind("XF86MonBrightnessDown",hl.dsp.exec_cmd("brightnessctl -e3 set 5%-"), { locked = true, repeating = true })
 
 -- moving focus
-hl.bind(mainMod .. " + h", hl.dsp.focus({ direction = "left" }))
-hl.bind(mainMod .. " + l", hl.dsp.focus({ direction = "right" }))
-hl.bind(mainMod .. " + k", hl.dsp.focus({ direction = "up" }))
-hl.bind(mainMod .. " + j", hl.dsp.focus({ direction = "down" }))
+hl.bind(mainMod .. " + h", hl.dsp.focus({ direction = "l" }))
+hl.bind(mainMod .. " + l", hl.dsp.focus({ direction = "r" }))
+hl.bind(mainMod .. " + k", hl.dsp.focus({ direction = "u" }))
+hl.bind(mainMod .. " + j", hl.dsp.focus({ direction = "d" }))
 
 -- moving windows
-hl.bind(mainMod .. " + SHIFT + h", hl.dsp.window.move({ direction = "left" }))
-hl.bind(mainMod .. " + SHIFT + l", hl.dsp.window.move({ direction = "right" }))
-hl.bind(mainMod .. " + SHIFT + k", hl.dsp.window.move({ direction = "up" }))
-hl.bind(mainMod .. " + SHIFT + j", hl.dsp.window.move({ direction = "down" }))
+hl.bind(mainMod .. " + SHIFT + h", hl.dsp.window.move({ direction = "l" }))
+hl.bind(mainMod .. " + SHIFT + l", hl.dsp.window.move({ direction = "r" }))
+hl.bind(mainMod .. " + SHIFT + k", hl.dsp.window.move({ direction = "u" }))
+hl.bind(mainMod .. " + SHIFT + j", hl.dsp.window.move({ direction = "d" }))
+
+-- moving workspaces between monitors
+hl.bind(mainMod .. " + CTRL + SHIFT + h", hl.dsp.workspace.move({ monitor = "l" }))
+hl.bind(mainMod .. " + CTRL + SHIFT + l", hl.dsp.workspace.move({ monitor = "r" }))
+hl.bind(mainMod .. " + CTRL + SHIFT + k", hl.dsp.workspace.move({ monitor = "u" }))
+hl.bind(mainMod .. " + CTRL + SHIFT + j", hl.dsp.workspace.move({ monitor = "d" }))
 
 -- move with 1-10, f1-f12
 for i = 1, 10 do
     local key = i % 10
     hl.bind(mainMod .. " + " .. key,             hl.dsp.focus({ workspace = i}))
-    hl.bind(mainMod .. " + SHIFT + " .. key,     hl.dsp.window.move({ workspace = i }))
+    hl.bind(mainMod .. " + SHIFT + " .. key,     hl.dsp.window.move({ workspace = i, follow = false }))
 end
 
 for i = 1, 12 do
     local key = "F" .. i
     hl.bind(mainMod .. " + " .. key,             hl.dsp.focus({ workspace = 10 + i}))
-    hl.bind(mainMod .. " + SHIFT + " .. key,     hl.dsp.window.move({ workspace = 10 + i }))
+    hl.bind(mainMod .. " + SHIFT + " .. key,     hl.dsp.window.move({ workspace = 10 + i, follow = false }))
 end
