@@ -5,9 +5,9 @@ hl.env("XCURSOR_THEME", "Bibata-Modern-Ice")
 hl.env("XCURSOR_SIZE", "20")
 
 -- XDG stuff
-hl.env("XDG_SESSION_TYPE", "wayland")
-hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
-hl.env("XDG_SESSION_DESKTOP", "Hyprland")
+-- hl.env("XDG_SESSION_TYPE", "wayland")
+-- hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
+-- hl.env("XDG_SESSION_DESKTOP", "Hyprland")
 
 -- tell apps to use wayland
 hl.env("QT_QPA_PLATFORM", "wayland;xcb")

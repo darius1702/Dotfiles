@@ -24,7 +24,8 @@ systemctl --user enable --now ssh-agent.service
 [ -d "$HOME/Dotfiles/zsh/zsh-autosuggestions/" ] || git clone https://github.com/zsh-users/zsh-autosuggestions ~/Dotfiles/zsh/zsh-autosuggestions
 
 echo "[!] ./iwd/main.conf belongs in /etc/iwd/main.conf"
-echo "[!] ./systemd-boot/arch.conf belongs in /boot/loader/entries/ (adjust root UUID)"
+echo "[!] ./systemd-related/systemd-boot/arch.conf belongs in /boot/loader/entries/ (adjust root UUID)"
+echo "[!] install the rest of systemd-related to /etc/systemd/..."
+echo "[!] ./networking also goes in /etc"
 echo "[!] move ./root files to /root"
 echo "[!] remember to adjust /etc/makepkg.conf"
-echo "[!] remember to install cliphist"

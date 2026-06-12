@@ -2,6 +2,15 @@ require("monitors")
 require("environment")
 require("binds")
 require("windowrules")
+require("workspaces")
+
+-- fallback
+hl.monitor({
+    output   = "",
+    mode     = "preferred",
+    position = "auto",
+    scale    = "auto",
+})
 
 hl.on("hyprland.start", function ()
   hl.exec_cmd("hyprpm reload")

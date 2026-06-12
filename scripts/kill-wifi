@@ -1,0 +1,10 @@
+#!/bin/sh
+set -xe
+
+modprobe -r ath11k_pci
+modprobe -r ath11k
+sleep 3
+modprobe ath11k_pci
+modprobe ath11k
+sleep 2
+systemctl restart iwd

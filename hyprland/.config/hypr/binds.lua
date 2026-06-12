@@ -23,7 +23,7 @@ hl.gesture({
 hl.bind(mainMod .. " + Q"                   , hl.dsp.window.close())
 hl.bind(mainMod .. " + F"                   , hl.dsp.window.fullscreen({ mode = 0}))
 hl.bind(mainMod .. " + I"                   , hl.dsp.window.toggle_swallow())
-hl.bind(mainMod .. " + Tab"                 , hl.dsp.focus({ urgent_or_last = true }))
+hl.bind(mainMod .. " + TAB"                 , hl.dsp.focus({ workspace = "previous_per_monitor" }))
 hl.bind(mainMod .. " + SHIFT + SPACE"       , hl.dsp.window.float())
 
 hl.bind(mainMod .. " + SHIFT + RETURN"      , hl.dsp.layout("swapwithmaster"))
