@@ -24,8 +24,6 @@ source ~/.config/zsh/.zshrc
 # OCaml
 [[ ! -r /home/darius/.opam/opam-init/init.zsh ]] || source /home/darius/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
-export PATH="/opt/zig/:$PATH"
-
 export PATH="$PATH:$HOME/.local/share/coursier/bin" # scala
 
 export PATH="$PATH:$HOME/.local/share/gem/ruby/3.4.0/bin" # ruby gems
@@ -53,3 +51,4 @@ bindkey -M emacs '\ec' capitalize-word
 [ -f "/usr/bin/zoxide" ] && eval "$(zoxide init zsh --cmd cd)"
 # jump with M-SPC
 bindkey -s '^[ ' '^A^Kcdi^M'
+

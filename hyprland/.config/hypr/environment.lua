@@ -16,4 +16,5 @@ hl.env("GDK_BACKEND", "wayland,x11,*")
 hl.env("SDL_VIDEODRIVER", "wayland")
 
 -- ssh agent
-hl.env("SSH_AUTH_SOCK", "$XDG_RUNTIME_DIR/ssh-agent.socket")
+local runtime_dir = os.getenv("XDG_RUNTIME_DIR") or "/run/user/1000"
+hl.env("SSH_AUTH_SOCK", runtime_dir .. "/ssh-agent.socket")

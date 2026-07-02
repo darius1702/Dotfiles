@@ -6,11 +6,13 @@
 vim.g.mapleader = ' '
 vim.o.termguicolors = true
 
-vim.cmd([[colorscheme lunaperche]])
+vim.cmd([[colorscheme slate]])
 
 vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
 vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
 vim.api.nvim_set_hl(0, 'NormalNC', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'SignColumn', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'StatusLine', { bg = 'LightGray', fg = "Black" })
 
 vim.cmd([[set spelllang=en_us]])
 local settings = {
@@ -58,9 +60,11 @@ local function map(mode, l, r, opts)
   vim.keymap.set(mode, l, r, opts)
 end
 
+-- Help on F1 is annoying
+map({'i', 'n'}, '<F1>', '<NOP>')
+
 map('i', 'jk', '<ESC>')
-map('i', '<C-G>', '<ESC>')
-map('v', '<C-G>', '<ESC>')
+map({'i', 'v'}, '<C-G>', '<ESC>')
 
 -- Quickfix list
 map('n', '<leader>co', vim.cmd.copen)
@@ -69,11 +73,9 @@ map('n', ']c', function () pcall(vim.cmd.cnext) end)
 map('n', '[c', function () pcall(vim.cmd.cprev) end)
 
 -- Copy and paste
-map('n', '<leader>p', '\"+p')
-map('x', '<leader>p', '\"_dP')
+map({'n', 'x'}, '<leader>p', '\"+p')
+map({'n', 'v'}, '<leader>d', '\"_d')
 map('x', '<leader>y', '\"+y')
-map('n', '<leader>d', '\"_p')
-map('v', '<leader>d', '\"_p')
 
 -- Open file under cursor in vertical split
 map('n', '<C-W><C-F>', '<C-W>vgf')

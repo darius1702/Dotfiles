@@ -1,0 +1,11 @@
+[Match]
+Type=wlan
+WLANInterfaceType=station
+
+[Network]
+MulticastDNS=resolve
+DHCP=yes
+IgnoreCarrierLoss=3s
+
+[DHCPv4]
+RouteMetric=200
