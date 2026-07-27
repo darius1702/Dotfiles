@@ -19,10 +19,10 @@ source ~/.config/zsh/.zshrc
 [ -f "/usr/bin/fnm" ] && eval $(fnm env)
 
 # Haskell
-[ -f "/home/darius/.ghcup/env" ] && source "/home/darius/.ghcup/env"
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
 
 # OCaml
-[[ ! -r /home/darius/.opam/opam-init/init.zsh ]] || source /home/darius/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+[[ ! -r $HOME/.opam/opam-init/init.zsh ]] || source "$HOME/.opam/opam-init/init.zsh"  > /dev/null 2> /dev/null
 
 export PATH="$PATH:$HOME/.local/share/coursier/bin" # scala
 
@@ -51,4 +51,3 @@ bindkey -M emacs '\ec' capitalize-word
 [ -f "/usr/bin/zoxide" ] && eval "$(zoxide init zsh --cmd cd)"
 # jump with M-SPC
 bindkey -s '^[ ' '^A^Kcdi^M'
-

@@ -13,20 +13,11 @@ hl.monitor({
 })
 
 hl.on("hyprland.start", function ()
-  hl.exec_cmd("hyprpm reload")
-  hl.exec_cmd("hypridle")
-  hl.exec_cmd("hyprpolkitagent")
-  hl.exec_cmd("hyprsunset")
-
-  hl.exec_cmd("swaybg -i $HOME/.config/hypr/current_wallpaper -m fill")
-  hl.exec_cmd("$HOME/Dotfiles/scripts/waybar-hotreload") -- status bar
-  hl.exec_cmd("swaync")                                  -- notifications
-  hl.exec_cmd("solaar -w hide -b solaar")                -- logitech devices
-  hl.exec_cmd("syshud -p top")                           -- pretty OSD
-  hl.exec_cmd("batsignal -w 15 -c 8")                    -- low battery notification
-  hl.exec_cmd("blueman-applet")                          -- bluetooth
-  hl.exec_cmd("vicinae server")
-end)
+                            hl.exec_cmd("hyprpm reload")
+                            hl.exec_cmd("hypridle")
+                            hl.exec_cmd("noctalia")                 -- shell
+                            hl.exec_cmd("solaar -w hide -b solaar") -- logitech devices
+                        end)
 
 hl.config({
     input = {
@@ -55,14 +46,12 @@ hl.config({
     },
 
     general = {
+        layout        = "master",
+
         gaps_in       = 3,
         gaps_out      = 5,
         float_gaps    = 5,
         border_size   = 3,
-
-        allow_tearing = false,
-
-        layout        = "master",
 
         col = {
             active_border   = "rgba(ffeeeeaa)",
@@ -75,6 +64,8 @@ hl.config({
             window_gap   = 15,
             monitor_gap  = 15,
         },
+
+        allow_tearing = false,
     },
 
     master = {
@@ -100,7 +91,6 @@ hl.config({
             render_power = 3,
             color        = "rgba(00000088)",
         },
-
     },
 
     animations = {

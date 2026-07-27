@@ -5,19 +5,19 @@ set -xe
 stow gitconfig
 stow nvim
 stow zsh
-stow zathura
 
-### Wayland ###
+### Desktop ###
 stow hyprland # compositor
 stow foot     # terminal
-stow fuzzel   # dmenu
-stow waybar   # bar
-stow swaync   # notifications
-stow syshud   # brightness/volume osd
-stow iwgtk    # wifi gui
 stow satty    # screenshot editor
+stow zathura  # pdf viewer
+# stow fuzzel   # dmenu
+# stow waybar   # bar
+# stow swaync   # notifications
+# stow syshud   # brightness/volume osd
+# stow iwgtk    # wifi gui
 
-stow systemd
+# openssh comes with an agent in /usr/lib/systemd/user/
 systemctl --user daemon-reload
 systemctl --user enable --now ssh-agent.service
 

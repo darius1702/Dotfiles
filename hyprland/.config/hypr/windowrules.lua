@@ -1,39 +1,39 @@
 hl.window_rule({
-    name = "make-icemon-floating",
+    match = { class = "dev.noctalia.Noctalia" },
+    float = true,
+    size = { 1080, 920 },
+})
+
+hl.window_rule({
     match = { class = "org.kde.icemon" },
     size = { 650, 500 },
     float = true,
 })
 
 hl.window_rule({
-    name = "make-resources-floating",
     match = { class = "net.nokyan.Resources" },
     float = true,
 })
 
 hl.window_rule({
-    name = "make-iwgtk-floating",
     match = { class = "org.twosheds.iwgtk" },
     size = { 600, 700 },
     float = true,
 })
 
 hl.window_rule({
-    name = "make-weather-floating",
     match = { class = "org.gnome.Weather" },
     size = { 750, 600 },
     float = true,
 })
 
 hl.window_rule({
-    name = "make-pwvucontrol-floating",
     match = { class = "com.saivert.pwvucontrol" },
     size = { 1000, 600 },
     float = true,
 })
 
 hl.window_rule({
-    name = "make-blueman-floating",
     match = { class = "blueman-manager" },
     size = { 300, 600 },
     float = true,
