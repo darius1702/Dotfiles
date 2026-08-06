@@ -1,29 +1,35 @@
-vim.g.mapleader = " "
+vim.g.mapleader = ' '
 vim.o.termguicolors = true
 
-vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
+vim.cmd([[colorscheme slate]])
+
+vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'NormalNC', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'SignColumn', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'StatusLine', { bg = 'LightGray', fg = 'Black' })
+
 
 vim.cmd([[set spelllang=en_us]])
 local settings = {
   laststatus = 1,
   scrolloff = 3,
-  signcolumn = "yes",
+  signcolumn = 'yes',
   showmode = false,
   showcmd = false,
   number = true,
   relativenumber = true,
+  linebreak = true,
   splitbelow = true,
   splitright = true,
-  langmenu = "en_US",
+  langmenu = 'en_US',
   expandtab = true,
   shiftwidth = 2,
   softtabstop = 2,
   smartindent = true,
   breakindent = true,
   updatetime = 50,
-  mouse = "a",
+  mouse = 'a',
   hlsearch = false,
   ignorecase = true,
   undofile = true,
@@ -33,6 +39,9 @@ local settings = {
 for k, v in pairs(settings) do
   vim.opt[k] = v
 end
+
+vim.opt.list = true
+vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 vim.g.netrw_altw = 1
 vim.g.netrw_liststyle = 3
@@ -44,22 +53,16 @@ function map(mode, l, r, opts)
   vim.keymap.set(mode, l, r, opts)
 end
 
-map('i', 'jk', '<ESC>')
-map('i', '<C-G>', '<ESC>')
-map('v', '<C-G>', '<ESC>')
+-- Help on F1 is annoying
+map({'i', 'n'}, '<F1>', '<NOP>')
 
--- Quickfix list
-map('n', '<leader>co', vim.cmd.copen)
-map('n', '<leader>cc', vim.cmd.cclose)
-map('n', ']c', function () pcall(vim.cmd.cnext) end)
-map('n', '[c', function () pcall(vim.cmd.cprev) end)
+map('i', 'jk', '<ESC>')
+map({'i', 'v'}, '<C-G>', '<ESC>')
 
 -- Copy and paste
-map('n', '<leader>p', '\"+p')
-map('x', '<leader>p', '\"_dP')
+map({'n', 'x'}, '<leader>p', '\"+p')
+map({'n', 'v'}, '<leader>d', '\"_p')
 map('x', '<leader>y', '\"+y')
-map('n', '<leader>d', '\"_p')
-map('v', '<leader>d', '\"_p')
 
 -- Open file under cursor in vertical split
 map('n', '<C-W><C-F>', '<C-W>vgf')

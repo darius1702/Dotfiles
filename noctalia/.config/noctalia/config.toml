@@ -1,0 +1,206 @@
+[bar.default]
+background_opacity = 0.0
+capsule_radius = 7
+center = [ "cat", "clock" ]
+color = "surface_variant"
+concave_edge_corners = false
+end = [ "weather", "spacer_2", "tray", "volume", "network", "bluetooth", "battery", "notifications" ]
+font_weight = 600
+icon_color = "surface_variant"
+margin_ends = 0
+radius = 0
+start = [ "workspaces" ]
+thickness = 27
+widget_spacing = 11
+
+[battery]
+warning_threshold = 15
+
+[brightness]
+enable_ddcutil = true
+
+[calendar]
+enabled = true
+
+[[control_center.shortcuts]]
+type = "wifi"
+
+[[control_center.shortcuts]]
+type = "bluetooth"
+
+[[control_center.shortcuts]]
+type = "audio"
+
+[[control_center.shortcuts]]
+type = "notification"
+
+[[control_center.shortcuts]]
+type = "nightlight"
+
+[[control_center.shortcuts]]
+type = "wallpaper"
+
+[desktop_widgets]
+enabled = false
+schema_version = 2
+
+[dock]
+concave_edge_corners = false
+enabled = false
+inactive_scale = 0.95000001415610313
+magnification_scale = 1.2000000029802322
+radius = 5
+reserve_space = false
+smart_auto_hide = true
+
+[keybinds]
+cancel = [ "Escape", "Ctrl+g" ]
+down = [ "Down", "Ctrl+n" ]
+up = [ "Up", "Ctrl+p" ]
+
+[location]
+address = "Karlsruhe, Germany"
+
+[lockscreen]
+enabled = false
+
+[osd.kinds]
+media = false
+privacy = false
+
+[plugins]
+enabled = [ "noctalia/bongocat" ]
+
+[shell]
+app_icon_color = "surface_variant"
+clipboard_auto_paste = "off"
+clipboard_image_action_command = "satty -f -"
+corner_radius_scale = 0.2500000037252903
+font_family = "SF Pro"
+polkit_agent = true
+
+    [shell.animation]
+    speed = 2.0000000298023224
+
+    [shell.panel]
+    clipboard_position = "auto"
+    control_center_placement = "floating"
+    launcher_position = "auto"
+    open_near_click_clipboard = true
+    open_near_click_control_center = true
+    open_near_click_launcher = true
+    open_near_click_session = true
+    open_near_click_wallpaper = true
+    polkit_position = "auto"
+    session_position = "top_left"
+    wallpaper_placement = "floating"
+
+    [shell.screenshot]
+    directory = "/home/darius/Pictures/Screenshots"
+
+    [shell.session]
+    grid_columns = 2
+
+    [shell.shadow]
+    alpha = 0.24999999441206455
+
+[theme]
+builtin = "Noctalia"
+mode = "light"
+source = "wallpaper"
+wallpaper_scheme = "m3-fruit-salad"
+
+[wallpaper]
+directory = "/home/darius/Documents/Wall"
+transition = [ "zoom" ]
+transition_duration = 300
+transition_on_startup = true
+
+    [wallpaper.default]
+    path = "/home/darius/Documents/Wall/wall129.jpg"
+
+    [wallpaper.last]
+    path = "/home/darius/Documents/Wall/wall129.jpg"
+
+    [wallpaper.monitors.DP-1]
+    path = "/home/darius/Documents/Wall/wall129.jpg"
+
+    [wallpaper.monitors.HDMI-A-1]
+    path = "/home/darius/Documents/Wall/wall129.jpg"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/home/darius/Documents/Wall/wall129.jpg"
+
+    [[wallpaper.favorite]]
+    palette_source = "wallpaper"
+    path = "/home/darius/Documents/Wall/wall129.jpg"
+    theme_mode = "light"
+    wallpaper_scheme = "m3-fruit-salad"
+
+[widget.battery]
+hide_when_full = true
+warning_color = "#E06B6B"
+
+[widget.bluetooth.actions]
+right = "none"
+
+[widget.cat]
+input_devices = [ "/dev/input/by-path/platform-i8042-serio-0-event-kbd", "/dev/input/event21" ]
+type = "noctalia/bongocat:cat"
+
+[widget.clock]
+anchor = true
+format = "{:%H:%M    %a %d %b}"
+
+[widget.control-center]
+glyph = "chevrons-down"
+
+[widget.network]
+show_label = false
+
+    [widget.network.actions]
+    right = "none"
+
+[widget.notifications]
+capsule_opacity = 0.27000000000000002
+
+[widget.spacer_2]
+length = 46
+type = "spacer"
+
+[widget.taskbar]
+capsule_opacity = 0.56000000000000005
+capsule_padding = 23
+inactive_opacity = 0.83000000000000007
+show_active_indicator = false
+show_window_title = true
+
+    [widget.taskbar.actions]
+    scroll_down = "none"
+    scroll_up = "none"
+
+[widget.tray]
+enabled = false
+
+[widget.volume]
+mute_color = "outline"
+
+    [widget.volume.actions]
+    scroll_down = "volume-down 2%"
+    scroll_up = "volume-up 2%"
+
+[widget.weather]
+capsule_opacity = 0.17999999999999999
+
+[widget.workspaces]
+active_pill_size = 1.9000000000000001
+capsule_opacity = 0.17999999999999999
+focused_color = "outline"
+focused_output_only = true
+inactive_pill_size = 1.4000000000000001
+occupied_color = "on_hover"
+scale = 1.1000000000000001
+
+    [widget.workspaces.actions]
+    scroll_down = "none"
+    scroll_up = "none"

@@ -19,6 +19,11 @@ hl.on("hyprland.start", function ()
                             hl.exec_cmd("solaar -w hide -b solaar") -- logitech devices
                         end)
 
+hl.device({
+    name = "tpps/2-elan-trackpoint",
+    sensitivity = 1,
+})
+
 hl.config({
     input = {
         kb_layout = "de",
@@ -70,7 +75,7 @@ hl.config({
 
     master = {
         orientation = "left",
-        new_on_active = "false",
+        new_on_active = "after",
     },
 
     decoration = {
@@ -99,7 +104,8 @@ hl.config({
 
     misc = {
         font_family = "SF Pro Text",
-        enable_swallow = true,
+        -- swallowing is buggy and also focuses the wrong window after unswallowing
+        enable_swallow = false,
         swallow_regex = "^foot$",
         disable_hyprland_logo = true,
     },

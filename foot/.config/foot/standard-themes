@@ -1,0 +1,66 @@
+# -*- mode: conf -*-
+# https://protesilaos.com/emacs/standard-themes
+# this follows the fg-term-* mappings for colors
+
+# standard-dark
+[colors-dark]
+foreground=ffffff # fg main
+background=000000 # bg main
+
+regular0=000000 # fg-term-black
+regular1=ff6f60 # red
+regular2=44cc44 # green
+regular3=eedd82 # yellow
+regular4=87ceff # blue
+regular5=df8faf # magenta
+regular6=00ffff # cyan
+regular7=a6a6a6 # fg-term-white
+
+bright0=595959 # fg-term-black-bright
+bright1=ff7f24 # red warmer
+bright2=00c06f # green cooler
+bright3=fec43f # yellow warmer
+bright4=80aaff # blue warmer
+bright5=ce82ff # magenta cooler
+bright6=7fffd4 # cyan cooler
+bright7=ffffff # fg-term-white-bright
+
+# bg-alt fg-main
+cursor=363636 ffffff
+
+selection-foreground=ffffff # fg-main
+selection-background=20009d # bg-region
+
+urls=00ffff # cyan
+
+# standard-light
+
+[colors-light]
+foreground=000000 # fg-main
+background=ffffff # bg-main
+
+regular0=000000 # fg-term-black
+regular1=b3303a # red
+regular2=228b22 # green
+regular3=a45f22 # yellow
+regular4=001faf # blue
+regular5=721045 # magenta
+regular6=1f6fbf # cyan
+regular7=a6a6a6 # fg-term-white
+
+bright0=595959 # fg-term-black-bright
+bright1=e00033 # red warmer
+bright2=008858 # green cooler
+bright3=b6532f # yellow warmer
+bright4=3a5fcd # blue warmer
+bright5=800080 # magenta cooler
+bright6=008b8b # cyan cooler
+bright7=ffffff # fg-term-white-bright
+
+# bg-alt fg-main
+cursor=dcdcdc 000000
+
+selection-foreground=000000 # fg-main
+selection-background=eedc82 # bg-region
+
+urls=1f6fbf # cyan
