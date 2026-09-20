@@ -16,8 +16,7 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    match = { class = "org.twosheds.iwgtk" },
-    size = { 600, 700 },
+    match = { class = "be.alexandervanhee.gradia" },
     float = true,
 })
 
@@ -30,12 +29,6 @@ hl.window_rule({
 hl.window_rule({
     match = { class = "com.saivert.pwvucontrol" },
     size = { 1000, 600 },
-    float = true,
-})
-
-hl.window_rule({
-    match = { class = "blueman-manager" },
-    size = { 300, 600 },
     float = true,
 })
 

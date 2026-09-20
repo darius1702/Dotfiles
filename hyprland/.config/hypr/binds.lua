@@ -54,7 +54,12 @@ bind_mod("CONTROL + mouse:274" , exec_cmd(scripts .. "qr-to-clipboard"))
 
 -- screnshots
 hl.bind("Print"                , exec_cmd(scripts .. "screenshot"))
-hl.bind("SHIFT + Print"        , exec_cmd(scripts .. "screenshot -e ~/Pictures/Screenshots/$(date +'%d-%m-%Y_%H:%M').png"))
+hl.bind("SHIFT + Print"        , exec_cmd(scripts .. "screenshot -e"))
+
+-- annotate screen
+bind_mod("A", exec_cmd("wayscriber --daemon-toggle"))
+hl.bind("F6", exec_cmd("wayscriber --light-draw-toggle"))
+hl.bind("SHIFT + F6", exec_cmd("wayscriber --light-toggle"))
 
 -- media keys
 hl.bind("XF86AudioRaiseVolume" , exec_cmd(ipc .. "volume-up 3"), { locked = true, repeating = true })

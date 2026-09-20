@@ -1,3 +1,5 @@
+typeset -U PATH path
+
 export PATH="$HOME/.local/bin/:$PATH"
 
 if [[ $TERM == "dumb" ]]; then
@@ -7,10 +9,6 @@ if [[ $TERM == "dumb" ]]; then
 fi
 
 source ~/.config/zsh/.zshrc
-
-# for eat in emacs
-[ -n "$EAT_SHELL_INTEGRATION_DIR" ] && \
-  source "$EAT_SHELL_INTEGRATION_DIR/zsh"
 
 # Rust
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
@@ -22,23 +20,33 @@ source ~/.config/zsh/.zshrc
 [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
 
 # OCaml
+# path=(${path:#$HOME/.opam/*/bin}) # clean old opam path
+
 [[ ! -r $HOME/.opam/opam-init/init.zsh ]] || source "$HOME/.opam/opam-init/init.zsh"  > /dev/null 2> /dev/null
 
-export PATH="$PATH:$HOME/.local/share/coursier/bin" # scala
+# Scala
+export PATH="$PATH:$HOME/.local/share/coursier/bin"
 
-export PATH="$PATH:$HOME/.local/share/gem/ruby/3.4.0/bin" # ruby gems
+# Ruby
+export PATH="$PATH:$HOME/.local/share/gem/ruby/3.4.0/bin"
+
+# Riscv
 export RISCV="/opt/riscv"
 export PATH="$RISCV/bin/:$PATH"
 
+# Icecc
 export PATH="/usr/lib/icecream/bin/:$PATH"
 alias is="icecream-sundae -s 192.168.2.51"
 alias im="icemon -s 192.168.2.51"
 
+# OpenVPN
 alias fzivpn="sudo openvpn /etc/openvpn/client/fzi.ovpn"
 alias kitvpn="sudo openvpn /etc/openvpn/client/kit.ovpn"
 
+# Direnv
 [ -f "/usr/bin/direnv" ] && eval "$(direnv hook zsh)"
 
+# Autosuggestions
 [ -d "$HOME/Dotfiles/zsh/.config/zsh/zsh-autosuggestions/" ] && source $HOME/Dotfiles/zsh/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # fzf

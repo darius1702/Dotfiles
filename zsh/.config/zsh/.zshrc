@@ -95,12 +95,12 @@ alias vim=$emacs
 alias v=$emacs
 alias ts="tmux new-session -s"
 
-alias z=zathura
+# alias z=zathura
 # Hyprland does window swallowing
-# z()
-# {
-#   zathura --fork $1
-# }
+z()
+{
+  zathura --fork $1
+}
 
 alias cp="cp -iv"
 alias mv="mv -iv"
