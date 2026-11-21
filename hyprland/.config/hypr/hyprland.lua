@@ -12,12 +12,14 @@ hl.monitor({
     scale    = "auto",
 })
 
-hl.on("hyprland.start", function ()
-                            hl.exec_cmd("hyprpm reload")
-                            hl.exec_cmd("hypridle")
-                            hl.exec_cmd("noctalia")                 -- shell
-                            hl.exec_cmd("solaar -w hide -b solaar") -- logitech devices
-                        end)
+local my_autostart = function ()
+    hl.exec_cmd("hyprpm reload")
+    -- hl.exec_cmd("hypridle")              -- off because noctalia lock
+    hl.exec_cmd("noctalia")                 -- shell
+    hl.exec_cmd("solaar -w hide -b solaar") -- logitech devices
+end
+
+hl.on("hyprland.start", my_autostart)
 
 hl.device({
     name = "tpps/2-elan-trackpoint",

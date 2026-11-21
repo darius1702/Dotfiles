@@ -55,6 +55,8 @@ bind_mod("CONTROL + mouse:274" , exec_cmd(scripts .. "qr-to-clipboard"))
 -- screnshots
 hl.bind("Print"                , exec_cmd(scripts .. "screenshot"))
 hl.bind("SHIFT + Print"        , exec_cmd(scripts .. "screenshot -e"))
+-- pin screenshot
+hl.bind("CONTROL + Print"        , exec_cmd("grim -g \"$(slurp)\" - | imv -i floatme -"))
 
 -- annotate screen
 bind_mod("A", exec_cmd("wayscriber --daemon-toggle"))

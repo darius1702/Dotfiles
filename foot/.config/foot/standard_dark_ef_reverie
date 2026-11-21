@@ -1,0 +1,64 @@
+# -*- mode: conf -*-
+# https://protesilaos.com/emacs/standard-themes
+# this follows the fg-term-* mappings for colors
+
+# standard-dark
+[colors-dark]
+foreground=ffffff # fg main
+background=000000 # bg main
+
+regular0=000000 # fg-term-black
+regular1=ff6f60 # red
+regular2=44cc44 # green
+regular3=eedd82 # yellow
+regular4=87ceff # blue
+regular5=df8faf # magenta
+regular6=00ffff # cyan
+regular7=a6a6a6 # fg-term-white
+
+bright0=595959 # fg-term-black-bright
+bright1=ff7f24 # red warmer
+bright2=00c06f # green cooler
+bright3=fec43f # yellow warmer
+bright4=80aaff # blue warmer
+bright5=ce82ff # magenta cooler
+bright6=7fffd4 # cyan cooler
+bright7=ffffff # fg-term-white-bright
+
+# bg-alt fg-main
+cursor=363636 ffffff
+
+selection-foreground=ffffff # fg-main
+selection-background=20009d # bg-region
+
+urls=00ffff # cyan
+
+# Theme: ef-reverie
+
+[colors-light]
+foreground=4f204f
+background=f3eddf
+
+cursor=d9cac8 4f204f
+
+selection-foreground=4f204f
+selection-background=e0d0ba
+
+urls=3060af
+
+regular0=4f204f
+regular1=ba2d2f
+regular2=007a0a
+regular3=87591f
+regular4=375cc6
+regular5=9f4e74
+regular6=3060af
+regular7=b9aaa8
+bright0=6f6877
+bright1=b21f00
+bright2=008250
+bright3=a05900
+bright4=5059c0
+bright5=7755b4
+bright6=0b6e8a
+bright7=f3eddf

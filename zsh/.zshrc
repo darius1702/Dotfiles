@@ -59,3 +59,5 @@ bindkey -M emacs '\ec' capitalize-word
 [ -f "/usr/bin/zoxide" ] && eval "$(zoxide init zsh --cmd cd)"
 # jump with M-SPC
 bindkey -s '^[ ' '^A^Kcdi^M'
+
+alias sudo=run0

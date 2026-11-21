@@ -1,4 +1,9 @@
 hl.window_rule({
+    match = { class = "floatme" },
+    float = true,
+})
+
+hl.window_rule({
     match = { class = "dev.noctalia.Noctalia" },
     float = true,
     size = { 1080, 920 },
@@ -42,4 +47,15 @@ hl.window_rule({
     name = "only-shadow-on-floating",
     match = { float = false },
     no_shadow = true,
+})
+
+hl.window_rule({
+    name = "confetti",
+    match = { title = "confetti" },
+    float = true,
+    no_initial_focus = true,
+    no_shadow = true,
+    no_anim = true,
+    border_size = 0,
+    move = {"0", "monitor_h-480"},
 })
